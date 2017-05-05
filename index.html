@@ -147,7 +147,7 @@ EMAIL=&quot;bege13mot@gmail.com&quot;
 hugo # if using a theme, replace by 'hugo -t &lt;yourtheme&gt;'
 
 # Clone the existing gh-pages for this repo into out/
-git clone &quot;https://$GH_REPO&quot; out
+git clone --depth=1 &quot;https://$GH_REPO&quot; out
 
 # Clean out existing contents
 rm -rf out/**/* || exit 0
@@ -155,12 +155,9 @@ rm -rf out/**/* || exit 0
 # copy files to commit
 cp -R public/* out
 
-# remove existing commit history
-cd out
-rm -rf .git
-
 # Now let's go have some fun with the cloned repo
-git init
+cd out
+git remote
 git config user.name &quot;Travis CI&quot;
 git config user.email &quot;$EMAIL&quot;
 
@@ -177,7 +174,7 @@ git add -A .
 git commit -m &quot;Deploy to GitHub Pages&quot;
 
 # Now that we're all set up, we can push.
-git push -f &quot;https://$GH_TOKEN@$GH_REPO&quot; $SOURCE_BRANCH
+git push &quot;https://$GH_TOKEN@$GH_REPO&quot; $SOURCE_BRANCH
 </code></pre>
 
 <p>В итоге переезд на более &ldquo;стабильную&rdquo; (как минимум более известую и проверенную) успешно состоялся. Заодно и процесс деплоя упростился, после отказа от сторонних скриптов.</p>
