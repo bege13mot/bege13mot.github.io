@@ -148,9 +148,12 @@ rm -rf out/**/* || exit 0
 # copy files to commit
 cp -R public/* out
 
-# Now let's go have some fun with the cloned repo
+# remove existing commit history
 cd out
-git init #remote
+rm -rf .git
+
+# Now let's go have some fun with the cloned repo
+git init
 git config user.name &quot;Travis CI&quot;
 git config user.email &quot;$EMAIL&quot;
 
