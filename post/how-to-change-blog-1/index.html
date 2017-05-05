@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Переезд на Hugo. Часть 1 &nbsp; </title>
+
+  
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/poole-overrides.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde-overrides.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde-x.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/highlight/sunburst.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://bege13mot.github.io/touch-icon-144-precomposed.png">
+  <link href="/icon/fox.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+            
+        <img src="/icon/fox.png" alt="avatar" title="">    
+      
+      <h1></h1>
+      
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/">Ivan V's Blog</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/about/">About</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/post/">Posts</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/tags/">Tags</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/categories/">Categories</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/Bege13mot"><img src="/icon/github.svg" class="fa"></img></a>
+      <a href="https://www.goodreads.com/user/show/5520080-ivan"><img src="/icon/goodreads.svg" class="fa"></img></a>
+      <a href="mailto:bege13mot@gmail.com"><img src="/icon/mail.svg" class="fa"></img></a>
+      <a href="https://ru.linkedin.com/in/voronchihin"><img src="/icon/linkedin.svg" class="fa"></img></a>      
+      <a href="https://bege13mot.github.io/index.xml" type="application/rss+xml"><img src="/icon/rss.svg" class="fa"></img></a>
+      </li>
+    </ul>
+
+    
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1>Переезд на Hugo. Часть 1</h1>
+    <span class="post-date">Jan 30, 2016 &middot; 3 minute read &middot; <a href="https://bege13mot.github.io/post/how-to-change-blog-1/#disqus_thread">Comments</a>
+    </span>
+    <p>
+        
+    <a class="label" href="https://bege13mot.github.io/categories/post">Post</a>
+    
+    
+    Tag:    
+    <a class="label" href="https://bege13mot.github.io/tags/tech">tech</a>
+    </p>
+    <p>Начну с небольшой предыстории. Примерно год назад я переехал на линукс и, раз уж я пустился во все тяжкие, давай думаю перееду на какой-нибудь другой блог, а то <a href="http://bege13mot.tumblr.com/">Tumblr</a> это как-то слишком просто. Где гики ведут блог? Немного поисков, и вот он ответ. Статические генераторы сайтов. Пишем посты в текстовых файлах формата markdown, затем с помощью генератора преобразуем их в html странички - вот и готов блог. Сказано-сделано, развернул Octopress, сконвертировал блог, вроде можно пользоваться. Но вот какая проблема: нормальной миграции так и не получилось, поскольку <a href="http://import.jekyllrb.com/docs/tumblr/">официальный скрипт</a> нормально в текстовый формат не смог сконвертировать, а только в html. В результате у меня были бы только новые посты &ldquo;текстом&rdquo;, а старые - нет. Поэтому идею я забросил.</p>
+
+<p>С тех пор я съехал с линукса - мне там не нравились все шрифты, даже кастомные. Но это уже другой разговор. Но идея про переезд не забыта. Зима, на улице -20 и как-то скучновато. А не попробовать ли мне это еще раз сделать, может на этот раз получиться? Заодно чему-нибудь новому научусь, а то все как-то слишком просто. Нажимай на кнопки, да выбирай тип постов. После непродолжительных поисков нахожу <a href="https://gohugo.io/overview/introduction">Hugo</a>, который во-первых на Go, что значит один exe файл, а не инсталляция Ruby и куча еще к нему, как в случае с Jekyll и Octopress. Во-вторых, у него есть возможность &ldquo;на лету&rdquo; перестраивать блог. Написал пост, сохранил, увидел результат на локальной машине. Быстро и просто, как раз то, что надо.</p>
+
+<p>Теперь другой момент, надо как-то сконвертировать посты из Tumblr в markdown. И вот тут начались пляски с бубном. Про официальный скрипт для Jekyll я уже писал, попробовал парочку Python скриптов, что есть на github, и тоже без результатов. Но я не сдаюсь, путем долгих мучений и экспериментов пришлось сделать следующее -  регистрируюсь на <a href="https://wordpress.com/">wordpress.com</a>, затем через админку связываю с моим блогом на Tumblr, а там уже экспортирую получившиеся посты в xml. А уже их <a href="https://github.com/thomasf/exitwp">конвертируем</a>.</p>
+
+<p>Казалось бы, вот и все, но нет. В результате конвертации получил названия файлов, вида:</p>
+
+<pre><code>	2016-01-26-d0b5d0b4d18b... .markdown
+</code></pre>
+
+<p>Не очень красиво, надо переименовывать. Пусть названия файлов берутся из поля Title - заголовка статьи. Прошу заметить, это далеко не самый простой способ, но см. выше, на улице зима, холодно и скучно. Пишу маленький скрипт на bash (под рукой есть машина с Ubuntu), заголовок статьи транслитерируется с помощью скрипта, найденного на <a href="https://habrahabr.ru/post/137089/">хабре</a>, только пришлось добавить вывод в stdout.</p>
+
+<pre><code>	if __name__ == &quot;__main__&quot;:
+    for line in sys.stdin:
+        sys.stdout.write(transliterate(line))
+</code></pre>
+
+<p>Итоговый скрипт (хотел сделать в одну строку, но, к сожалению, не осилил):</p>
+
+<pre><code>	#!/bin/bash    
+
+	for fn in *.markdown
+	do
+	  fn2=$( grep -H 'title:' $fn |sed -e 's/-[^0-9].*.markdown:title: /-/' | python trans.py | sed -e 's/$/.markdown/' | sed -e 's/[,!:'\'']//g' | sed -e 's/ /-/g' )	 
+	  mv $fn $fn2	
+	done
+	echo &quot;End&quot;
+</code></pre>
+
+<p>На этом, казалось бы, и все, но нет. Открываю фалы, а в поле Slug - те же самые невразумительные символы вида <em>d0b5d0b4d18b</em>. Поскольку slug - это текст ссылки на статью, то и статьи не генерируются, Hugo не нравится форма.</p>
+
+<p>Обойдусь без &ldquo;велосипеда&rdquo;, и напишу более цивилизованный способ конвертации. Скрипт на Python:</p>
+
+<pre><code>	import os,urllib.parse
+
+	for file in os.listdir(&quot;D:\Test\content_1&quot;):	    
+	    if file.endswith(&quot;.markdown&quot;):	        
+	        input = open(file, encoding=&quot;utf8&quot;)
+	        output = open(file[:-8] + 'md', 'w', encoding=&quot;utf8&quot;)	    
+	        for s in input:
+	            if 'slug:' in s:
+	                    s = s.replace(s, 'slug: ' + urllib.parse.unquote(s[6:]))                
+	                    print('slug: ' + urllib.parse.unquote(s[6:]))        
+	            output.write(s)
+        output.close()
+        input.close()
+</code></pre>
+
+<p>Вот и все. Надо выбрать оформление и перенести на <a href="https://pages.github.com">GitHub Pages</a> получившийся результат. Но об этом в следующий раз.</p>
+
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "bege13mot";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_shortname = "bege13mot";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="https://bege13mot.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+  var _gaq=[['_setAccount','UA-73422311-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>It on Ivan V</title>
+    <link>https://bege13mot.github.io/tags/it/</link>
+    <description>Recent content in It on Ivan V</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Thu, 04 May 2017 10:00:00 +0400</lastBuildDate>
+    
+	<atom:link href="https://bege13mot.github.io/tags/it/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Переезд на Travis-CI</title>
+      <link>https://bege13mot.github.io/post/travis-ci/</link>
+      <pubDate>Thu, 04 May 2017 10:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/travis-ci/</guid>
+      <description>Когда только переехал на Hugo, встал вопрос о автоматизации обновления сайта. Я не стал ничего выдумывать и просто следовал рекомендациям на офицальном сайте gohugo.io и настроил Wercker. Все отлично работало.
+Но однажды сборка сломалось, оказалось в образе debian сломался wget. Пришлось немного править настройке. В итоге получилось следующее (определенно избыточно):
+box: debian build: steps: - script: name: install git code: | apt-get update &amp;amp;&amp;amp; apt-get install git -y - script: name: initialize git submodules code: | git submodule update --init --recursive - arjen/hugo-build@1.</description>
+    </item>
+    
+    <item>
+      <title>Thinking in Java by Bruce Eckel</title>
+      <link>https://bege13mot.github.io/post/thinking-java/</link>
+      <pubDate>Sat, 29 Apr 2017 10:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/thinking-java/</guid>
+      <description>Как же долго я читал эту книгу, года три, не меньше. Разные заходы, на разных языках. И наконец дочитал.
+Поэтому это обычная рецензия с краткими заметками. Множество людей уже до меня ее прочитали, разобрали и законспектировали. Так, оставлю маленькое напоминание о том, как сложно это было. Надо бы повторить.
+Заметки:  finalize() - вызывается только в процессе garbage collection. Т.е может так и не быть вызванным. Его полезно использовать например для обьектов, что открывают файлы - перед уничтожением обьекта файл должен быть закрыт.</description>
+    </item>
+    
+    <item>
+      <title>Компьютерные сети. Нисходящий подход, Джеймс Куроуз, Кит Росс</title>
+      <link>https://bege13mot.github.io/post/top-down-approach/</link>
+      <pubDate>Sun, 16 Apr 2017 10:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/top-down-approach/</guid>
+      <description>Пожалуй, идеальная книга для знакомства с сетями. В отличи Компьютерных сетей, Эндрю Таненбаума, здесь упор на практические примеры. Зачем это нужно, как оно помогает решать конкретную задачу. И почти никой теории, в отличии от Таненбаума. Что как раз прекрасно подходит для новичков. А еще в книге есть великолепная глава о том, что происходит при наборе google.com в браузере с точки зрения сети. Со всеми подробностями.
+Заметки:  В контексте IP-протокола принято говорить, что подобная сеть, соединяющая три интерфейса хост-машин и один интерфейс маршрутизатора, представляет собой подсеть.</description>
+    </item>
+    
+    <item>
+      <title>Эффективная работа с унаследованным кодом, Майкл Физерс</title>
+      <link>https://bege13mot.github.io/post/legacy-code/</link>
+      <pubDate>Tue, 28 Feb 2017 10:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/legacy-code/</guid>
+      <description> Честно говоря, этот пост пиша ради двух ссылок на краткие конспекты. Книга прочитана, но этого очевидно мало. Нужна практика, перечитывание и так далее. А рецензию на её уже и без меня много раз писали.
+Заметки:  Краткий конспект на английском
+ И на русском
+  </description>
+    </item>
+    
+    <item>
+      <title>Шпаргалки по Git</title>
+      <link>https://bege13mot.github.io/post/git-cheatsheet/</link>
+      <pubDate>Mon, 20 Feb 2017 10:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/git-cheatsheet/</guid>
+      <description>Графические шпаргалки: раз и два
+Шпаргалка: git init project-name git add text.txt git rm text.txt git status git commit -a -m &amp;quot;Commit description&amp;quot; git push origin master # Скачать все ветки с origin, но не мерджить их в локальный репозиторий git fetch origin git branch some_branch # Начать работать с веткой some_branch (уже существующей) git checkout -b some_branch origin/some_branch #Просмотреть все существующие ветви git branch -a # | grep something git merge some_branch #История с именами файлов и псевдографическим изображением бранчей: git log --stat --graph #Улучшение для log git config --global alias.</description>
+    </item>
+    
+    <item>
+      <title>Шпаргалки по логам</title>
+      <link>https://bege13mot.github.io/post/logs-cheatsheet/</link>
+      <pubDate>Tue, 07 Feb 2017 10:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/logs-cheatsheet/</guid>
+      <description>Прошлое уже два года со времени прошлой стать powershell для тестировщиков по парсингу логов. Теперь больше работаю с Linux серверами и можно переписать статью.
+Основная цель - собрать наиболее часто используемые команды и &amp;ldquo;хитрые техники&amp;rdquo; для повседневной работы уитили grep, find, sed, awk. И так, приступим.
+Поиск по логам:  find - поиск файлов по имени grep - поиск текста в файле sort - сортировка uniq - фильтрация  Find и Grep: # Поиск по pattern в file.</description>
+    </item>
+    
+    <item>
+      <title>Site Reliability Engineering by Betsy Beyer</title>
+      <link>https://bege13mot.github.io/post/google-sre/</link>
+      <pubDate>Mon, 30 Jan 2017 10:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/google-sre/</guid>
+      <description>Хорошая и полезная книга. Главы про мониторинг и инциденты буду перечитывать и не один раз. Но есть и проблемы, как и у прошлой книги &amp;ldquo;How Google Tests Software&amp;rdquo;. Несколько глав воспринимаются как откровенная реклама - смотрите какие крутые у нас системы (ни одной из них нет в свободном доступе), как здорово мы все автоматизируем (без конкретных примеров) и т.д. А может быть мне просто завидно.
+Тем не менее, книга стоящая.</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP. Сетевое администрирование, Крейг Хант</title>
+      <link>https://bege13mot.github.io/post/tcp-ip-hunt/</link>
+      <pubDate>Mon, 30 Jan 2017 10:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/tcp-ip-hunt/</guid>
+      <description>Недостаточно внимательно прочитал описание и вот результат. Вместо книги о базовых сетевых протоколах прочитал руководство по настройке сети. Хорошошее руководство, надо сказать. Но некоторые главы откровенно устарели, например про настройку Apache или собственного email сервера. Остальное же актуально и наверное еще долго им останется.
+Заметки:  Адресная маска работает следующим образом: если бит маски включен, соответствующий ему бит адреса входит в раздел адреса сети, а если бит маски сброшен, соответствующий бит адреса входит в раздел адреса узла.</description>
+    </item>
+    
+    <item>
+      <title>Системное и сетевое администрирование, Томас Лимончелли</title>
+      <link>https://bege13mot.github.io/post/network-administration-limoncelli/</link>
+      <pubDate>Mon, 30 Jan 2017 10:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/network-administration-limoncelli/</guid>
+      <description>Минимум технических деталей, максимум &amp;ldquo;жизненных&amp;rdquo; советов. Как обычно у Лимончелли, будто разговариваешь с другом. Хорошая книга о организации работы - с техникой, сетями и людьми.
+Заметки:  Три правила привилегированного доступа Томa:
+ Будьте внимательны Уважайте неприкосновенность личной информации Если вы что-то испортите, сразу говорите мне.  Часто пользователи применяют жаргон, но делают это неправильно. Они полагают, что именно это хочет слышать системный администратор. Они стараются помочь. Будет вполне оправданно, если системный администратор ответит им на это: &amp;ldquo;Постойте, пожалуйста.</description>
+    </item>
+    
+    <item>
+      <title>Отъявленный программист: лайфхакинг из первых рук, Игорь Савчук</title>
+      <link>https://bege13mot.github.io/post/%D0%BE%D1%82%D1%8A%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%81%D1%82-%D0%BB%D0%B0%D0%B9%D1%84%D1%85%D0%B0%D0%BA%D0%B8%D0%BD%D0%B3/</link>
+      <pubDate>Tue, 26 Jan 2016 18:48:29 +0000</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/%D0%BE%D1%82%D1%8A%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%81%D1%82-%D0%BB%D0%B0%D0%B9%D1%84%D1%85%D0%B0%D0%BA%D0%B8%D0%BD%D0%B3/</guid>
+      <description>Книга - компиляция постов из блога http://blogerator.ru.
+Объединены они тем, что все люди весьма и весьма неординарные. Начиная от Ричарда Столлмана, известного своей необычность, заканчивая Терри Девисом, который пишет свою операционную систем TempleOS, для разговоров с богом. Особенно мне понравилась глава про Криса Касперки - известного российского хакера, его переезде в США, и интересном подходе к устройству на работу. Если вкратце, то он сразу дает понять что не очень хорош, не знает ответов на большинство вопросов.</description>
+    </item>
+    
+    <item>
+      <title>Внутреннее устройство PostgreSQL для практикующих инженеров</title>
+      <link>https://bege13mot.github.io/post/postgressql/</link>
+      <pubDate>Sun, 25 Oct 2015 17:14:05 +0000</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/postgressql/</guid>
+      <description>Очень хорошая двухчасовая видео-лекция об устройстве и проблематике современных СУБД.
+  </description>
+    </item>
+    
+    <item>
+      <title>Web Operations, by John Allspaw</title>
+      <link>https://bege13mot.github.io/post/web-operations-by-john-allspaw/</link>
+      <pubDate>Thu, 10 Sep 2015 15:36:54 +0000</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/web-operations-by-john-allspaw/</guid>
+      <description>В 21 веке книги, особенно технические очень тесно конкурируют со статьями в интернете. А эта вступила с ними в симбиоз. 17 разных статей-глав, которые иногда лишь косвенно связаны общей темой - администрирование web-сайтов. У каждой свой автор, своя тема и только одна вещь общая - опыт и профессионализм авторов. Не важно, о чем говорится - о NoSQL,continuous delivery или диагностике, всюду ощущается огромный опыт. И авторы с радостью им делятся, объясняют и разъясняют, рассказывают как они пришли к таким выводам.</description>
+    </item>
+    
+    <item>
+      <title>Unix и Linux. Руководство системного администратора, Эви Немет</title>
+      <link>https://bege13mot.github.io/post/unix-%D0%B8-linux-%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/</link>
+      <pubDate>Tue, 25 Aug 2015 14:39:23 +0000</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/unix-%D0%B8-linux-%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/</guid>
+      <description>Пишут, что это один из самых крутых учебников по Линкус. И с этим трудно спорить. Это даже не учебник — учебное руководство.
+Последовательно воспитывает, развлекает, дает советы. Каждая глава начинается с веселой картинки, есть подробный список дополнительной литературы, заданий. Написано очень доступно, при том, что темы рассматриваются весьма серьезные и разбираются подробно. Сухость изложения отсутствует как класс.
+Здоровский учебник. Не зря Яндекс на своих курсах КИТ рекомендует его.</description>
+    </item>
+    
+    <item>
+      <title>The Phoenix Project: A Novel about IT by Gene Kim</title>
+      <link>https://bege13mot.github.io/post/the-phoenix-project-a-novel-about-it-by-gene-kim/</link>
+      <pubDate>Fri, 26 Jun 2015 16:22:13 +0000</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/the-phoenix-project-a-novel-about-it-by-gene-kim/</guid>
+      <description>Бизнес-роман, явно вдохновленный “Целью” Голдрата, о чем честно говорится почти в самом начале. Главный герой становится главой ИТ-департамента, отвечающего за сопровождение ПО. И постепенно, шаг за шагом, учитывая теорию ограничений, решает возникающие проблемы.
+В принципе, как таковых рекомендаций в книге мало: самая опасная категория работ - незапланированные; чтобы уменьшить объем незапланированных работ, необходимо использовать системы диагностики и оповещения; нужно стремится автоматизировать выкатывание релиза, чтобы можно было обновляться как можно чаще.</description>
+    </item>
+    
+    <item>
+      <title>Алгоритмы. Руководство по разработке, Стивен Скиена</title>
+      <link>https://bege13mot.github.io/post/%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D1%8B-%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-%D0%BF%D0%BE-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B5/</link>
+      <pubDate>Sun, 14 Jun 2015 18:59:10 +0000</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D1%8B-%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-%D0%BF%D0%BE-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B5/</guid>
+      <description>Вот думаю, а зачем мне читать книгу по алгоритмам? С одной стороны, в подборках “для самообучения” настоятельно рекомендуются книги по ним. С другой стороны, книгу для этого читать совсем не обязательно. Хватает википедии и практики. Я таким образом учился сортировкам и поиску в графах.
+Практика - это хорошо, но без “нудной” теории не получить понимания того, почему так «работает» тот или иной алгоритм, зачем он вообще нужен, и как выбрать нужный.</description>
+    </item>
+    
+    <item>
+      <title>Современные операционные системы, Эндрю Таненбаум</title>
+      <link>https://bege13mot.github.io/post/%D1%81%D0%BE%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B5-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-%D1%8D%D0%BD/</link>
+      <pubDate>Sun, 14 Jun 2015 18:46:11 +0000</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/%D1%81%D0%BE%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B5-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-%D1%8D%D0%BD/</guid>
+      <description>После великолепных “Компьютерных сетей” не грех прочитать еще одну книгу Таненбаума. Прочитал, и она мне понравилась сильно меньше первой.
+Хотя, сейчас пишу вот и думаю - а что в ней плохого? Части про память и обеспечение многопоточности - очень интересные. Про файловые системы, и то как, они обеспечивают надежность - тоже здорово читать. В принципе, все в книги неплохо - объяснения понятные, вещи рассказываются интересные. Но вот юмор почти отсутствует. Дожил - в учебнике по ОС юмора мне недостает.</description>
+    </item>
+    
+    <item>
+      <title>Тестирование dot com, Роман Савин</title>
+      <link>https://bege13mot.github.io/post/%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-dot-com/</link>
+      <pubDate>Sun, 14 Jun 2015 18:33:05 +0000</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-dot-com/</guid>
+      <description>Как обычно, я послушался рекомендаций. Эту книгу для тестировщиков советуют читать одной из первых. И не зря.
+Минимум теории, максимум жизненного опыта и базовых советов. С точки зрения методологии разработки ПО она конечно устарела - по Waterfall уже мало кто работает. Но все остальное - этапы тестирования, автоматизация, ведение тест-кейсов - не думает устаревать.
+Веселая, легкая и даже в некоторой степени мотивирующая книга. Рекомендации не подвели.
+Testing Dot Com by Roman Savin</description>
+    </item>
+    
+    <item>
+      <title>Компьютерные сети, Эндрю Таненбаум</title>
+      <link>https://bege13mot.github.io/post/%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D1%8B%D0%B5-%D1%81%D0%B5%D1%82%D0%B8-%D1%8D%D0%BD%D0%B4%D1%80%D1%8E-%D1%82%D0%B0%D0%BD%D0%B5%D0%BD%D0%B1%D0%B0%D1%83%D0%BC/</link>
+      <pubDate>Fri, 24 Apr 2015 19:34:39 +0000</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D1%8B%D0%B5-%D1%81%D0%B5%D1%82%D0%B8-%D1%8D%D0%BD%D0%B4%D1%80%D1%8E-%D1%82%D0%B0%D0%BD%D0%B5%D0%BD%D0%B1%D0%B0%D1%83%D0%BC/</guid>
+      <description>Продолжаю свою айтишно-образовательную эпопею. На этот раз, один из самых рекомендуемых учебников по сетям. Скажу прямо, где-то на середине книги, а это страница эдак пятисотая, я ошалев от обилия информации, подумывал прервать чтение на что-нибудь более веселое. Но потом попривык (а может кончилось объяснение кода Рида-Соломона для коррекции ошибок) и даже начал получать удовольствие.
+Книга вызвала детский восторг. Помните энциклопедии «все обо всем»? Лично мне они нравились. Тут работают похожие эмоции.</description>
+    </item>
+    
+    <item>
+      <title>Soft Skills by John Z. Sonmez</title>
+      <link>https://bege13mot.github.io/post/soft-skills-by-john-z-sonmez/</link>
+      <pubDate>Thu, 02 Apr 2015 18:23:18 +0000</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/soft-skills-by-john-z-sonmez/</guid>
+      <description>It’s English version of my article on megamozg.ru.
+It happens rarely, but the title of the book fully describes the content - it’s a very detailed guide for programmers. How to build a successful career? How to start your own business? How to get fit effectively? Even how to find a soul mate.
+The author&amp;rsquo;s honesty is a fascinating part of the book. Sonmez gives advices only about what he tries and tells straight about his results.</description>
+    </item>
+    
+    <item>
+      <title>Learn Git Branching</title>
+      <link>https://bege13mot.github.io/post/learn-git-branching/</link>
+      <pubDate>Wed, 18 Mar 2015 04:40:00 +0000</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/learn-git-branching/</guid>
+      <description>A interactive Git visualization tool to educate and challenge!
+ Наглядно, красиво и очень понятно про ветвление в Git. Learn Git Branching</description>
+    </item>
+    
+    <item>
+      <title>Powershell для тестировщиков</title>
+      <link>https://bege13mot.github.io/post/powershell-for-testers/</link>
+      <pubDate>Mon, 16 Mar 2015 04:00:29 +0000</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/powershell-for-testers/</guid>
+      <description>Перед вами «быстрый старт» для работы с PowerShell для начинающих тестировщиков. Вы работаете и в один из дней, наконец, смиряетесь с тем фактом, что человек…
+ Мой дебют на хабре Powershell для тестировщиков.</description>
+    </item>
+    
+    <item>
+      <title>Лекции Яндекса</title>
+      <link>https://bege13mot.github.io/post/%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D0%B8-%D1%8F%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D0%B0/</link>
+      <pubDate>Mon, 09 Mar 2015 07:54:34 +0000</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D0%B8-%D1%8F%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D0%B0/</guid>
+      <description>Недавно посмотрел курс лекция Яндекса про информационные технологии. Очень классный.
+Больше всего понравилось:
+  Простыми словами о самых распространенных уязвимостях.
+    Доступно про разные подсистемы MySQL и индексы.
+    О том как важно настраивать мониторинг и планировать нагрузку.
+    Чем интересна и сложна работа сисадмина. Куда расти и что учить.</description>
+    </item>
+    
+    <item>
+      <title>Введение в системы баз данных, Кристофер Дейт</title>
+      <link>https://bege13mot.github.io/post/%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-%D0%B1%D0%B0%D0%B7-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D0%BA%D1%80%D0%B8%D1%81%D1%82%D0%BE%D1%84/</link>
+      <pubDate>Fri, 06 Mar 2015 08:11:06 +0000</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-%D0%B1%D0%B0%D0%B7-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D0%BA%D1%80%D0%B8%D1%81%D1%82%D0%BE%D1%84/</guid>
+      <description>Основательное раскладывание &amp;ldquo;по полочкам&amp;rdquo; всех основ реляционных баз. Я зря пугался объема и заумности текста - это учебник, написанный весь доступно, поэтому и читается легко и порой даже увлекательно. Работаю с БД регулярно, и не сказал бы, что узнал много нового. Скорее тщательно структурировал уже имеющиеся сведения и наконец понял почему сделано именно так, а не иначе. Наверное для новичков есть более простые и, главное, краткие введения, но крепкую теоретическую основу они не заменят.</description>
+    </item>
+    
+    <item>
+      <title>Паттерны проектирования, Эрик и Элизабет Фримен</title>
+      <link>https://bege13mot.github.io/post/%D0%BF%D0%B0%D1%82%D1%82%D0%B5%D1%80%D0%BD%D1%8B-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D1%8D%D1%80%D0%B8%D0%BA-%D0%B8-%D1%8D%D0%BB%D0%B8%D0%B7%D0%B0/</link>
+      <pubDate>Sat, 31 Jan 2015 08:25:40 +0000</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/%D0%BF%D0%B0%D1%82%D1%82%D0%B5%D1%80%D0%BD%D1%8B-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D1%8D%D1%80%D0%B8%D0%BA-%D0%B8-%D1%8D%D0%BB%D0%B8%D0%B7%D0%B0/</guid>
+      <description>Признаюсь, в этой книге меня привлекли картинки. Любая техническая книга с картинками это ужа радость, а тут… Это скорее не книга, а комикс. Иллюстрации занимают наверняка больше половины. Я уж грешным делом подумал, что и читать ее от начала и до конца будет легко. Не совсем.
+Паттерны весьма абстрактная вещь, и для осознания приходится поднапрячься. Но авторы делают все возможное, чтобы обучение прошло максимально приятно. Очень понятные примеры, подробнейшие объяснения, и самое впечатляющее - если при прочтении возник вопрос, в конце главы он будет разрешен.</description>
+    </item>
+    
+  </channel>
+</rss>

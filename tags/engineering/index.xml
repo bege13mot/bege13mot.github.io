@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Engineering on Ivan V</title>
+    <link>https://bege13mot.github.io/tags/engineering/</link>
+    <description>Recent content in Engineering on Ivan V</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Mon, 07 Nov 2016 10:00:00 +0400</lastBuildDate>
+    
+	<atom:link href="https://bege13mot.github.io/tags/engineering/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Effective Engineer, Edmond Lau</title>
+      <link>https://bege13mot.github.io/post/effective-engineer/</link>
+      <pubDate>Mon, 07 Nov 2016 10:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/effective-engineer/</guid>
+      <description>Отличная книга. Об этом недвусмысленно свидетельствует размер &amp;ldquo;полезных советов&amp;rdquo; в конце статьи.
+Эдмонд Лау(Edmond Lau), проработавший в Google, Quora, Facebook и в куче стартапов поменьше, пишет обо всем понемногу. Советы в основном широко известные, так например, в книге Soft Skills by John Z. Sonmez описываются очень похожие методы обучения и управления временем.
+Автор, не только дает большое количество рекомендаций, но, самое главное, приводит логическое обоснвание этих самых рекомендаций. Инженер получает почти пошаговую инструкцию - начиная от личного развития, заканчивая управлением команды.</description>
+    </item>
+    
+    <item>
+      <title>The unwritten laws of engineering by  W. J. King</title>
+      <link>https://bege13mot.github.io/post/the-unwritten-laws-of-engineering-by-w-j-king/</link>
+      <pubDate>Mon, 24 Aug 2015 19:35:15 +0000</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/the-unwritten-laws-of-engineering-by-w-j-king/</guid>
+      <description>Очень короткая (25 страниц) и чрезвычайно хорошая книга. Эдакое сжатое изложение всех книг про “soft skill”. И не важно, что она написана в 1944 году и для инженеров. Советы нисколько не потеряли актуальности, что для IT, что для других областей. Книгу можно прочитать тут.
+А здесь я сохранил себе наиболее интересные советы: * Чаще всего инженерам мешают административные или личные проблемы, а не технические.
+Отношение к работе:
+ Часто наиболее тривиальные и непримечательные задания дают наилучший результат.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Ivan V</title>
+    <link>https://bege13mot.github.io/categories/</link>
+    <description>Recent content in Categories on Ivan V</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    
+	<atom:link href="https://bege13mot.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Link</title>
+      <link>https://bege13mot.github.io/categories/link/</link>
+      <pubDate>Mon, 20 Mar 2017 10:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/categories/link/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Post</title>
+      <link>https://bege13mot.github.io/categories/post/</link>
+      <pubDate>Thu, 04 May 2017 10:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/categories/post/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

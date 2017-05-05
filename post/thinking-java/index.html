@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Thinking in Java by Bruce Eckel &nbsp; </title>
+
+  
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/poole-overrides.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde-overrides.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde-x.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/highlight/sunburst.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://bege13mot.github.io/touch-icon-144-precomposed.png">
+  <link href="/icon/fox.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+            
+        <img src="/icon/fox.png" alt="avatar" title="">    
+      
+      <h1></h1>
+      
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/">Ivan V's Blog</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/about/">About</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/post/">Posts</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/tags/">Tags</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/categories/">Categories</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/Bege13mot"><img src="/icon/github.svg" class="fa"></img></a>
+      <a href="https://www.goodreads.com/user/show/5520080-ivan"><img src="/icon/goodreads.svg" class="fa"></img></a>
+      <a href="mailto:bege13mot@gmail.com"><img src="/icon/mail.svg" class="fa"></img></a>
+      <a href="https://ru.linkedin.com/in/voronchihin"><img src="/icon/linkedin.svg" class="fa"></img></a>      
+      <a href="https://bege13mot.github.io/index.xml" type="application/rss+xml"><img src="/icon/rss.svg" class="fa"></img></a>
+      </li>
+    </ul>
+
+    
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1>Thinking in Java by Bruce Eckel</h1>
+    <span class="post-date">Apr 29, 2017 &middot; 6 minute read &middot; <a href="https://bege13mot.github.io/post/thinking-java/#disqus_thread">Comments</a>
+    </span>
+    <p>
+        
+    <a class="label" href="https://bege13mot.github.io/categories/post">Post</a>
+    
+    
+    Tag:    
+    <a class="label" href="https://bege13mot.github.io/tags/book">book</a><a class="label" href="https://bege13mot.github.io/tags/it">it</a><a class="label" href="https://bege13mot.github.io/tags/tech">tech</a>
+    </p>
+    
+
+<p><img src="/img/2017/thinking-java.jpg" alt="image" /></p>
+
+<p>Как же долго я читал эту книгу, года три, не меньше. Разные заходы, на разных языках. И наконец дочитал.</p>
+
+<p>Поэтому это обычная рецензия с краткими заметками. Множество людей уже до меня ее прочитали, разобрали и законспектировали. Так, оставлю маленькое напоминание о том, как сложно это было. Надо бы повторить.</p>
+
+<h4 id="заметки">Заметки:</h4>
+
+<ul>
+<li><p>finalize()  - вызывается только в процессе garbage collection. Т.е может так и не быть вызванным. Его полезно использовать например для обьектов, что открывают файлы - перед уничтожением обьекта файл должен быть закрыт.</p></li>
+
+<li><p>A package contains a group of classes, organized together under a single namespace.</p></li>
+
+<li><p>When you compile a .java file, you get an output file for each class in the .java file. Each
+output file has the name of a class in the .java file, but with an extension of .class. Thus you
+can end up with quite a few .class files from a small number of .java files.</p></li>
+
+<li><p>The private keyword means that no one can access that member except the class that
+contains that member, inside methods of that class. Other classes in the same package cannot
+access private members, so it’s as if you’re even insulating the class against yourself.</p></li>
+
+<li><p>The trick is to use the classes without soiling the existing code. In this chapter you’ll see two
+ways to accomplish this. The first is quite straightforward: you simply create objects of your
+existing class inside the new class. This is called composition, because the new class is
+composed of objects of existing classes. You’re simply reusing the functionality of the code,
+not its form.</p></li>
+
+<li><p>The second approach is more subtle. It creates a new class as a type of an existing class. You
+literally take the form of the existing class and add code to it without modifying the existing
+class. This technique is called inheritance, and the compiler does most of the work.
+Inheritance is one of the cornerstones of object-oriented programming, and has additional
+implications that will be explored in the Polymorphism chapter.</p></li>
+
+<li><p>A third relationship, which is not directly supported by Java, is called delegation. This is
+midway between inheritance and composition, because you place a member object in the
+class you’re building (like composition), but at the same time you expose all the methods
+from the member object in your new class (like inheritance)</p></li>
+
+<li><p>Wouldn’t it be much nicer if you could just write a single method that takes the base class as
+its argument, and not any of the specific derived classes? That is, wouldn’t it be nice if you
+could forget that there are derived classes, and write your code to talk only to the base class?
+That’s exactly what polymorphism allows you to do. However, most programmers who come
+from a procedural programming background have a bit of trouble with the way
+polymorphism works.</p></li>
+
+<li><p>Once you learn about polymorphism, you can begin to think that everything happens
+polymorphically. However, only ordinary method calls can be polymorphic. For example, if
+you access a field directly, that access will be resolved at compile time</p></li>
+
+<li><p>If a method is static, it doesn’t behave polymorphically. Static methods are associated with the class, and not the individual objects.</p></li>
+
+<li><p>Each inner class can independently inherit from an implementation. Thus, the inner
+class is not limited by whether the outer class is already inheriting from an
+implementation.
+Without the ability that inner classes provide to inherit—in effect—from more than one
+concrete or abstract class, some design and programming problems would be intractable.
+So one way to look at the inner class is as the rest of the solution of the multiple-inheritance
+problem. Interfaces solve part of the problem, but inner classes effectively allow &ldquo;multiple
+implementation inheritance.&rdquo; That is, inner classes effectively allow you to inherit from more
+than one non-interface.</p></li>
+
+<li><p>The Java container library takes the idea of &ldquo;holding your objects&rdquo; and divides it into two
+distinct concepts, expressed as the basic interfaces of the library:</p>
+
+<ul>
+<li>Collection: a sequence of individual elements with one or more rules applied to
+them. A List must hold the elements in the way that they were inserted, a Set cannot
+have duplicate elements, and a Queue produces the elements in the order
+determined by a queuing discipline (usually the same order in which they are
+inserted).</li>
+<li>Map: a group of key-value object pairs, allowing you to look up a value using a key.
+An ArrayList allows you to look up an object using a number, so in a sense it
+associates numbers to objects. A map allows you to look up an object using another
+object. It’s also called an associative array, because it associates objects with other
+objects, or a dictionary, because you look up a value object using a key object just like
+you look up a definition using a word. Maps are powerful programming tools.</li>
+</ul></li>
+
+<li><p>There are two types of List:</p>
+
+<ul>
+<li>The basic ArrayList, which excels at randomly accessing elements, but is slower
+when inserting and removing elements in the middle of a List.</li>
+<li>The LinkedList, which provides optimal sequential access, with inexpensive
+insertions and deletions from the middle of the List. A LinkedList is relatively slow
+for random access, but it has a larger feature set than the ArrayList.</li>
+</ul></li>
+
+<li><p>One solution is what I call the Adapter Method idiom. The &ldquo;Adapter&rdquo; part comes from design
+patterns, because you must provide a particular interface to satisfy the foreach statement.
+When you have one interface and you need another one, writing an adapter solves the
+problem. Here, I want to add the ability to produce a reverse iterator to the default forward
+iterator, so I can’t override. Instead, I add a method that produces an Iterable object which
+can then be used in the foreach statement. As you see here, this allows us to provide multiple
+ways to use foreach:</p></li>
+
+<li><p>Exception handling, two methods -  Termination vs. resumption</p></li>
+
+<li><p>Exception guidelines
+Use exceptions to:</p>
+
+<ol>
+<li>Handle problems at the appropriate level. (Avoid catching exceptions unless you know
+what to do with them.)</li>
+<li>Fix the problem and call the method that caused the exception again.</li>
+<li>Patch things up and continue without retrying the method.</li>
+<li>Calculate some alternative result instead of what the method was supposed to
+produce.</li>
+<li>Do whatever you can in the current context and rethrow the same exception to a
+higher context.</li>
+<li>Do whatever you can in the current context and throw a different exception to a higher
+context.</li>
+<li>Terminate the program.</li>
+<li>Simplify. (If your exception scheme makes things more complicated, then it is painful
+and annoying to use.)</li>
+<li>Make your library and program safer. (This is a short-term investment for debugging,
+and a long-term investment for application robustness.)</li>
+</ol></li>
+</ul>
+
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "bege13mot";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_shortname = "bege13mot";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="https://bege13mot.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+  var _gaq=[['_setAccount','UA-73422311-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+

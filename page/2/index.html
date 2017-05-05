@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<meta name="generator" content="Hugo 0.21-DEV" />
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Ivan V &nbsp; </title>
+
+  
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/poole-overrides.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde-overrides.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde-x.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/highlight/sunburst.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://bege13mot.github.io/touch-icon-144-precomposed.png">
+  <link href="/icon/fox.png" rel="icon">
+
+  
+  
+  
+  <link href="https://bege13mot.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Ivan V &nbsp; " />
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+            
+        <img src="/icon/fox.png" alt="avatar" title="">    
+      
+      <h1></h1>
+      
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/">Ivan V's Blog</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/about/">About</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/post/">Posts</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/tags/">Tags</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/categories/">Categories</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/Bege13mot"><img src="/icon/github.svg" class="fa"></img></a>
+      <a href="https://www.goodreads.com/user/show/5520080-ivan"><img src="/icon/goodreads.svg" class="fa"></img></a>
+      <a href="mailto:bege13mot@gmail.com"><img src="/icon/mail.svg" class="fa"></img></a>
+      <a href="https://ru.linkedin.com/in/voronchihin"><img src="/icon/linkedin.svg" class="fa"></img></a>      
+      <a href="https://bege13mot.github.io/index.xml" type="application/rss+xml"><img src="/icon/rss.svg" class="fa"></img></a>
+      </li>
+    </ul>
+
+    
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="posts">
+    
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://bege13mot.github.io/post/git-cheatsheet/">Шпаргалки по Git</a>
+      </h1>
+      <span class="post-date">Feb 20, 2017 &nbsp;  &nbsp; <a href="https://bege13mot.github.io/post/git-cheatsheet/#disqus_thread">Comments</a>
+      </span>
+      <p>
+            
+      <a class="label" href="https://bege13mot.github.io/categories/post">Post</a>
+      
+      
+      Tag:      
+      <a class="label" href="https://bege13mot.github.io/tags/tech">tech</a><a class="label" href="https://bege13mot.github.io/tags/it">it</a>
+      </p>
+      
+      
+
+<p>Графические шпаргалки: <a href="http://files.zeroturnaround.com/pdf/zt_git_cheat_sheet.pdf">раз</a> и <a href="https://raw.githubusercontent.com/hbons/git-cheat-sheet/master/preview.png">два</a></p>
+
+<h4 id="шпаргалка">Шпаргалка:</h4>
+
+<pre><code>git init project-name
+
+git add text.txt
+
+git rm text.txt
+
+git status
+
+git commit -a -m &quot;Commit description&quot;
+
+git push origin master
+
+# Скачать все ветки с origin, но не мерджить их в локальный репозиторий
+git fetch origin
+
+git branch some_branch
+
+# Начать работать с веткой some_branch (уже существующей)
+git checkout -b some_branch origin/some_branch
+
+#Просмотреть все существующие ветви
+git branch -a # | grep something
+
+git merge some_branch
+
+#История с именами файлов и псевдографическим изображением бранчей:
+git log --stat --graph
+
+#Улучшение для log
+git config --global alias.grog 'log --graph --abbrev-commit --decorate --all --format=format:&quot;%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)&quot;'
+
+#Изменения, сделанные в заданном коммите:
+git show d8578edf8458ce06fbc5bb76a58c5ca4a58c5ca4
+
+#Посмотреть, кем в последний раз правилась каждая строка файла:
+git blame file.txt
+
+#Откатиться к конкретному коммиту (хэш смотрим в «git log»):
+git reset --hard d8578edf8458ce06fbc5bb76a58c5ca4a58c5ca4
+
+#Попытаться обратить заданный commit (но чаще используется branch/reset + merge):
+git revert d8578edf8458ce06fbc5bb76a58c5ca4a58c5ca4
+
+#Просмотр изменений (суммарных, а не всех по очереди, как в «git log»):
+git diff # подробности см в &quot;git diff --help&quot;
+
+#&quot;Упаковка&quot; репозитория для увеличения скорости работы с ним:
+git gc
+
+#Добавляем ключ на github
+ssh-keygen -t rsa -b 4096 -C &quot;test@test.com&quot;
+vim /home/test/.ssh/id_rsa.pub
+ssh -T git@github.com
+</code></pre>
+
+<h4 id="частые-проблемы">Частые проблемы:</h4>
+
+<p>Закоммитил и тут же понял, что нужно внести небольшие изменения:</p>
+
+<pre><code># внесите изменения 
+git add . 
+git commit --amend 
+# следуйте подсказкам, чтобы изменить или оставить прежний комментарий
+# теперь последний коммит содержит наше изменение!
+</code></pre>
+
+<p>Нужно изменить комментарий к последнему коммиту:</p>
+
+<pre><code>git commit --amend 
+# следуйте подсказкам, чтобы изменить комментарий
+</code></pre>
+
+<p>Закоммитил что-то в master, а оно должно быть в новой ветке:</p>
+
+<pre><code># создайте новую ветку из текущего состояния master
+git checkout -b имя-новой-ветки 
+# удаляем коммит из ветки master
+git checkout master 
+git reset HEAD~ --hard 
+git checkout имя-новой-ветки
+# ваш коммит теперь живет в новой ветке
+</code></pre>
+
+<p>Cлучайно закоммитил не в ту ветку:</p>
+
+<pre><code># откатываем последний коммит, но не удаляем изменения
+git reset HEAD~ --soft 
+git add . 
+git stash 
+# переключаемся на нужную ветку 
+git checkout имя-верной-ветки 
+git stash pop 
+git add . 
+git commit -m &quot;тут ваш комментарий&quot; 
+# теперь изменения в нужной ветке
+</code></pre>
+
+<p>Запускаю diff, но ничего не происходит?</p>
+
+<pre><code>git diff --staged
+</code></pre>
+
+<p>Когда у вас есть файлы, которые специфичны для данного проекта и для вашего рабочего окружения(например, логи, third-party утилита) используйте <code>.git/info/exclude</code>. Этот файл не коммитуется и остается только в локальном репозитории.</p>
+
+<p>Когда у вас несколько проектов и везде создается что-либо, что вы не хотите коммитить(например, *.swp файлы Vim) используйте <code>~/.gitconfig</code>. Вышеприведённый пример папки .idea, которая создается для каждого проекта как раз подходит сюда.</p>
+
+<h4 id="полезные-ссылки">Полезные ссылки:</h4>
+
+<ul>
+<li><p><a href="https://marklodato.github.io/visual-git-guide/index-ru.html">Git: наглядная справка</a></p></li>
+
+<li><p><a href="http://learngitbranching.js.org/">Learn Git Branching</a></p></li>
+
+<li><p><a href="http://eax.me/git-commands/">Шпаргалка по работе с Git от eax.me</a></p></li>
+
+<li><p><a href="https://git-scm.com/book/en/v2">Книга Pro Git</a></p></li>
+
+<li><p><a href="http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/ru/index.html">Книга Волшебство Git</a></p></li>
+</ul>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://bege13mot.github.io/post/arthur-george/">Артур и Джордж, Джулиан Барнс</a>
+      </h1>
+      <span class="post-date">Feb 10, 2017 &nbsp;  &nbsp; <a href="https://bege13mot.github.io/post/arthur-george/#disqus_thread">Comments</a>
+      </span>
+      <p>
+            
+      <a class="label" href="https://bege13mot.github.io/categories/post">Post</a>
+      
+      
+      Tag:      
+      <a class="label" href="https://bege13mot.github.io/tags/book">book</a><a class="label" href="https://bege13mot.github.io/tags/fiction">fiction</a>
+      </p>
+      
+      <p><img src="/img/2017/arthur-george.jpg" alt="image" /></p>
+
+<p>Не правда, и не ложь, не биография, но и не вымысел. Единственный достоверный факт - талант рассказчика у Джулиана Барнса.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://bege13mot.github.io/post/logs-cheatsheet/">Шпаргалки по логам</a>
+      </h1>
+      <span class="post-date">Feb 7, 2017 &nbsp;  &nbsp; <a href="https://bege13mot.github.io/post/logs-cheatsheet/#disqus_thread">Comments</a>
+      </span>
+      <p>
+            
+      <a class="label" href="https://bege13mot.github.io/categories/post">Post</a>
+      
+      
+      Tag:      
+      <a class="label" href="https://bege13mot.github.io/tags/tech">tech</a><a class="label" href="https://bege13mot.github.io/tags/it">it</a>
+      </p>
+      
+      
+
+<p>Прошлое уже два года со времени прошлой стать <a href="https://bege13mot.github.io/post/powershell-for-testers/">powershell для тестировщиков</a> по парсингу логов. Теперь больше работаю с Linux серверами и можно переписать статью.</p>
+
+<p>Основная цель - собрать наиболее часто используемые команды и &ldquo;хитрые техники&rdquo; для повседневной работы уитили <em>grep, find, sed, awk</em>. И так, приступим.</p>
+
+<h3 id="поиск-по-логам">Поиск по логам:</h3>
+
+<ul>
+<li><em>find</em> - поиск файлов по имени</li>
+<li><em>grep</em> - поиск текста в файле</li>
+<li><em>sort</em> - сортировка</li>
+<li><em>uniq</em> - фильтрация</li>
+</ul>
+
+<h4 id="find-и-grep">Find и Grep:</h4>
+
+<pre><code># Поиск по pattern в file. Для архивов удобно использовать zgrep
+# Ключи: r - рекурсивный поиск, E - поддержка регулярных выражений (egrep), o - выводит только совпадений, v - все кроме указанного(invert-match), H - имя файла
+grep -rEovH pattern file
+
+# Найти файлы в директория
+find . -path './web*/somethin/test.log*
+
+# Найти все файлы, без учета регистра и искать в них pattern с перенаправлением ошибок
+find . -type f -iname '*.log*' 2&gt;/dev/null -exec grep -H 'pattern' {} \;
+</code></pre>
+
+<h4 id="sort-и-uniq">Sort и Uniq:</h4>
+
+<pre><code># Найдем общие строки между двумя файлам
+sort file1 file2 | uniq -d
+
+# Найдем частоту события pattern. 
+# sort - сортируем (конкеретно в этом случае не обязательно)
+# uniq -ci - удаляем подсчитываем и удаляем дубликаты, i - без учета регистра
+# sort -rn - сортируем по числу появлений, по убыванию
+grep -oh 'pattern \[.*\]' test.log* | sort | uniq -ci | sort -rn
+</code></pre>
+
+<h4 id="примеры-из-практики">Примеры из практики:</h4>
+
+<p>Часто возникает необходимость найти какое-то событие, узнать номер &ldquo;thread&rdquo; и дальше посмотреть всю историю. В этом поможет конструкция ниже:</p>
+
+<pre><code>grep &quot;`grep 'pattern' test.log | grep -oh &quot;\w\{0,\}.n11&quot;`&quot; test.log.
+
+# Усложним ситуацию. Нам надо найти когда для пользователей в рамках одного &quot;thread&quot; случилось два события. Oдин из способов это сделать:
+find . -path './2017-05-*/test.log*' | while read path; do zgrep &quot;`zgrep 'TEST_EVENT 1'  $path | awk '{print $4}'`&quot; $path | grep -H 'TEST_EVENT 1' -B 2 -A 2 | grep '&quot;TEST_EVENT 2&quot;'; done  
+</code></pre>
+
+<p>Кстати, здесь используется отображение строк до совпадения и после совпадения - <code>grep 'TEST_EVENT 1' -B 2 -A 2</code>, а также цикл по найденным файлам - <code>while read path; do zgrep 'pattern' $path; done</code></p>
+
+<p>При поиске регулярных выражений по маске <code>'(pattern1|pattern2)'</code> <em>grep</em> выводит результат в двух разных строках. Решить эту проблему нам поможет <em>Perl</em>.</p>
+
+<pre><code># Две строки для каждого совпадения
+find . -path './test*/test.log*' -exec zgrep -H 'login/email' {} \; | grep '\[received\]' | egrep -o '(.+\.gz|\w+-\w+-\w+ \d\d:\d\d:\d\d|&quot;email&quot;:&quot;.+@.+\.\w+&quot;)'
+
+# Одна строка
+# Ключи -n - выполнение кода, -e - задает код, -l - обработка окончаний строк
+find . -path './test*/test.log*' -exec zgrep -H 'login/email' {} \; | grep '\[received\]' | perl -lne 'print /(.+\.gz|\w+-\w+-\w+ \d\d:\d\d:\d\d|&quot;email&quot;:&quot;.+@.+\.\w+&quot;)/g'
+</code></pre>
+
+<p>Полезные ссылки:</p>
+
+<ul>
+<li><a href="https://explainshell.com">Explain Shell</a></li>
+<li><a href="https://myopsblog.wordpress.com/2016/03/28/linux-command-prompt-educational-table/">Linux Shell cheatsheet</a></li>
+<li><a href="http://eax.me/regular-expr/">Памятка по регулярным выражениям</a></li>
+<li><a href="https://habrahabr.ru/post/70610/">Однострочные программы на Perl</a></li>
+</ul>
+
+<h3 id="sed">Sed:</h3>
+
+<p><em>Sed</em> - потоковый текстовый редактор</p>
+
+<h4 id="синтаксис">Синтаксис:</h4>
+
+<pre><code># Печатать строки где есть pattern
+sed -n ‘/pattern/p’ file
+
+# Удалить все пустые строки
+sed -i ‘/^$/d’ file – remove all blank lines from file
+
+# Заменить word1 на word2, word3 на word4
+sed ‘s/word1/word2/g; s/word3/word4/g’ file– replacement with multiple patterns in file
+</code></pre>
+
+<h4 id="примеры-из-практики-1">Примеры из практики:</h4>
+
+<pre><code># Заменить одно значение переменной на другое
+find -type f -name &quot;test.*&quot; -exec sed -i 's/MaxSize=[0-9][0-9][0-9]/MaxSize=384/' {} \;\
+
+# Рекурсивная замена по всем вхождениям
+find /home/user/ -type f | xargs sed -i  ‘s/a.example.com/b.example.com/g’ – recursively substitute each mattern match in files located on /home/user
+
+# Убираем из вывода все коменты и пустые строки.
+cat /opt/local/etc/squid/squid.conf | sed '/ *#/d; /^ *$/d'
+
+# Используем регулярные выражения в find. Без sed не работают
+find ./_filestorage/ -regextype sed -regex &quot;.*/[a-f0-9\-]\{36\}\.\(jpg\|JPG\|png\|PNG\|gif\|GIF\)&quot;
+</code></pre>
+
+<p>Полезные ссылки:</p>
+
+<ul>
+<li><a href="http://www.funtoo.org/Sed_by_Example,_Part_1">Sed by Example</a></li>
+<li><a href="https://www.opennet.ru/docs/RUS/bash_scripting_guide/a14586.html">Маленький учебник по Sed и Awk</a></li>
+</ul>
+
+<h3 id="awk">Awk:</h3>
+
+<ul>
+<li><em>Awk</em> - язык обработки текстовой информации</li>
+</ul>
+
+<h4 id="синтаксис-1">Синтаксис:</h4>
+
+<pre><code># F - разделитель 
+# NF - число полей в текущей записи (number of fields)
+# NR - номер текущей записи (record number)
+# FNR - номер записи для текущего файла
+
+# Печатаем первую колонку, разделитель - пробелы или табы
+awk ‘{print $1}’ file
+
+# Разделитель :
+awk -F ‘:’ ‘{print $1}’ file
+
+# Сумма всех строк для 3 колонки
+awk ‘{sum+=$3} END {print sum}’ file
+
+# Среднее для 2 колонки
+awk ‘{avg+=$2}END{print avg/NR}’ file
+
+# Вывести все после 3 строки
+awk ‘NR&gt;3’ file– print everything aftчисло полей в текущей записи the 3rd line
+
+# Частота использования IP
+awk '{ array[$2]++ } END {for (ip in array) print array[ip],ip}' access.log
+</code></pre>
+
+<h4 id="примеры-из-практики-2">Примеры из практики:</h4>
+
+<p>Необходимо посчитать разницу между получением и отменой офера, для этого использовалась функция <em>mktime</em> для работы с временем.</p>
+
+<pre><code>zgrep -E &quot;(Quotation:.+ - notification for .+ cancelled|Quotation:.+ - offer is sent to .+)&quot; ./test/offers.log.gz | awk ' {print ($14 == &quot;&quot; ? $1 &quot; &quot; $2 &quot; &quot; $7 &quot; &quot; $12 : $1 &quot; &quot; $2 &quot; &quot; $7 &quot; &quot; $14) };' | awk '{gsub(&quot;-&quot;, &quot; &quot;, $1); gsub(/,[0-9][0-9][0-9]/, &quot;&quot;, $2); gsub(&quot;:&quot;, &quot; &quot;, $2); print mktime($1 &quot; &quot; $2) &quot; &quot; $3 &quot; &quot; $4;}' | awk '{
+if (array[$3]==&quot;&quot;&amp;&amp;q==&quot;&quot;||(array[$3]==&quot;&quot; &amp;&amp; q==$2)) {array[$3]=$1;q=$2}
+else if (array[$3]!=&quot;&quot; &amp;&amp; q==$2) {array[$3]=$1-array[$3];}
+else {for (i in array) {if (array[i]!=&quot;&quot;) print q, i, array[i];}; delete array;array[$3]=$1;q=$2;}
+} END{for (i in array) print q, i, array[i];}'
+</code></pre>
+
+<p>Полезные ссылки:</p>
+
+<ul>
+<li><a href="http://www.funtoo.org/Awk_by_Example,_Part_1">Awk by Example</a></li>
+<li><a href="http://lib.ru/MAN/DEMOS210/awk.txt">Язык обработки структурированных текстов AWK</a></li>
+</ul>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://bege13mot.github.io/post/links-9/">Ссылки №9</a>
+      </h1>
+      <span class="post-date">Feb 5, 2017 &nbsp;  &nbsp; <a href="https://bege13mot.github.io/post/links-9/#disqus_thread">Comments</a>
+      </span>
+      <p>
+            
+      <a class="label" href="https://bege13mot.github.io/categories/link">Link</a>
+      
+      </p>
+      
+      <p><a href="https://habrahabr.ru/company/centosadmin/blog/321074">Хроника инцидента с базой данных GitLab.com от 2017/01/31</a> - перевод оригинальных постов <a href="https://docs.google.com/document/d/1GCK53YDcBWQveod9kfzW-VCxIABGiryG7_z_6jHdVik/pub">один</a> и <a href="https://about.gitlab.com/2017/02/01/gitlab-dot-com-database-incident/">два.</a></p>
+
+<p><a href="https://ru.alxschwarz.com/teach-dont-tell/">Учить, а не рассказывать</a> - о написании технической документации. Читать и мечтать о недостижимом идеале.</p>
+
+<p><a href="https://www.youtube.com/playlist?list=PLH-XmS0lSi_yLq2XS2Y1DScY6NPbQj4Dt">Лекции с HighLoad++ 2016</a></p>
+
+<p><a href="http://lifepluslinux.blogspot.ru/2017/01/look-before-you-paste-from-website-to.html">Look before you paste from a website to terminal</a> - наглядная демонстрация вреда от копирования напрямую в терминал.</p>
+
+<p><a href="https://www.expeditedssl.com/aws-in-plain-english">Amazon Web Services in Plain English</a> - просто и понятно.</p>
+
+<p><a href="https://github.com/minimaxir/big-list-of-naughty-strings/blob/master/blns.txt">Big-list-of-naughty-strings</a> - однажды пригодится.</p>
+
+<p><a href="http://use-the-index-luke.com/blog/2016-07-29/on-ubers-choice-of-databases">On Uber’s Choice of Databases</a> - разжевывание особенностей работы PostgreSQL.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://bege13mot.github.io/post/jack-glass/">Стеклянный Джек, Адам Робертс</a>
+      </h1>
+      <span class="post-date">Feb 1, 2017 &nbsp;  &nbsp; <a href="https://bege13mot.github.io/post/jack-glass/#disqus_thread">Comments</a>
+      </span>
+      <p>
+            
+      <a class="label" href="https://bege13mot.github.io/categories/post">Post</a>
+      
+      
+      Tag:      
+      <a class="label" href="https://bege13mot.github.io/tags/book">book</a><a class="label" href="https://bege13mot.github.io/tags/fiction">fiction</a>
+      </p>
+      
+      <p><img src="/img/2017/jack-glass.jpg" alt="image" /></p>
+
+<p>Необычный детектив. С самого начала предупреждают - виновен стеклянный Джек. И разумеется, во всех трех историях не так-то просто понять, что именно он - виновен.</p>
+
+<p>Неплохой детектив, но сам мир будущего совсем не так хорошо проработан, как в недавно прочитанной &ldquo;ложной слепоте&rdquo;. Обе книги о будущем, и я их сравнивал. Почти всегда в пользу &ldquo;слепоты&rdquo;. Нет, стеклянный Джек не плохая книга. Просто &ldquo;ложная слепота&rdquo; очень хорошая.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://bege13mot.github.io/post/google-sre/">Site Reliability Engineering by Betsy Beyer</a>
+      </h1>
+      <span class="post-date">Jan 30, 2017 &nbsp;  &nbsp; <a href="https://bege13mot.github.io/post/google-sre/#disqus_thread">Comments</a>
+      </span>
+      <p>
+            
+      <a class="label" href="https://bege13mot.github.io/categories/post">Post</a>
+      
+      
+      Tag:      
+      <a class="label" href="https://bege13mot.github.io/tags/book">book</a><a class="label" href="https://bege13mot.github.io/tags/it">it</a><a class="label" href="https://bege13mot.github.io/tags/tech">tech</a>
+      </p>
+      
+      
+
+<p><img src="/img/2017/google-sre.jpg" alt="image" /></p>
+
+<p>Хорошая и полезная книга. Главы про мониторинг и инциденты буду перечитывать и не один раз. Но есть и проблемы, как и у прошлой книги &ldquo;How Google Tests Software&rdquo;. Несколько глав воспринимаются как откровенная реклама - смотрите какие крутые у нас системы (ни одной из них нет в свободном доступе), как здорово мы все автоматизируем (без конкретных примеров) и т.д. А может быть мне просто завидно.</p>
+
+<p>Тем не менее, книга стоящая. Кстати, теперь доступна и онлайн <a href="https://landing.google.com/sre/book/index.html">Site Reliability Engineering</a>.</p>
+
+<p><a href="http://danluu.com/google-sre-book/">Notes on Google&rsquo;s Site Reliability Engineering book</a> - товарищ постарался и написал краткий конспект по главам.</p>
+
+<h4 id="заметки">Заметки:</h4>
+
+<ul>
+<li><p>The four golden signals of monitoring are latency, traffic, errors, and saturation. If you can only measure four metrics of your user-facing system, focus on these four.</p>
+
+<ul>
+<li><p>Latency - the time it takes to service a request. It’s important to distinguish between the latency of successful requests and the latency of failed requests. For example, an HTTP 500 error triggered due to loss of connection to a database or other critical backend might be served very quickly; however, as an HTTP 500 error indicates a failed request, factoring 500s into your overall latency might result in misleading calculations. On the other hand, a slow error is even worse than a fast error! Therefore, it’s important to track error latency, as opposed to just filtering out errors.</p></li>
+
+<li><p>Traffic - a measure of how much demand is being placed on your system, measured in a high-level system-specific metric. For a web service, this measurement is usually HTTP requests per second, perhaps broken out by the nature of the requests (e.g., static versus dynamic content). For an audio streaming system, this measurement might focus on network I/O rate or concurrent sessions. For a key-value storage system, this measurement might be transactions and retrievals per second.</p></li>
+
+<li><p>Errors - the rate of requests that fail, either explicitly (e.g., HTTP 500s), implicitly (for example, an HTTP 200 success response, but coupled with the wrong content), or by policy (for example, “If you committed to one-second response times, any request over one second is an error”). Where protocol response codes are insufficient to express all failure conditions, secondary (internal) protocols may be necessary to track partial failure modes. Monitoring these cases can be drastically different: catching HTTP 500s at your load balancer can do a decent job of catching all completely failed requests, while only end-to-end system tests can detect that you’re serving the wrong content.</p></li>
+
+<li><p>Saturation - how “full” your service is. A measure of your system fraction, emphasizing the resources that are most constrained (e.g., in a memory-constrained system, show memory; in an I/O-constrained system, show I/O). Note that many systems degrade in performance before they achieve 100% utilization, so having a utilization target is essential. In complex systems, saturation can be supplemented with higher-level load measurement: can your service properly handle double the traffic, handle only 10% more traffic, or handle even less traffic than it currently receives?</p></li>
+</ul></li>
+
+<li><p>Formally, we can think of the troubleshooting process as an application of the hypothetico-deductive method: given a set of observations about a system and a theoretical basis for understanding system behavior, we iteratively hypothesize potential causes for the failure and try to test those hypotheses. In an idealized model such as that in Figure 12-1, we’d start with a problem report telling us that something is wrong with the system. Then we can look at the system’s telemetry and logs to understand its current state. This information, combined with our knowledge of how the system is built, how it should operate, and its failure modes, enables us to identify some possible causes.</p></li>
+
+<li><p>Common Pitfalls Ineffective troubleshooting sessions are plagued by problems at the Triage, Examine, and Diagnose steps, often because of a lack of deep system understanding. The following are common pitfalls to avoid:</p>
+
+<ul>
+<li>Looking at symptoms that aren’t relevant or misunderstanding the meaning of system metrics. Wild goose chases often result.</li>
+<li>Misunderstanding how to change the system, its inputs, or its environment, so as to safely and effectively test hypotheses.</li>
+<li>Coming up with wildly improbable theories about what’s wrong, or latching on to causes of past problems, reasoning that since it happened once, it must be happening again.</li>
+<li>Hunting down spurious correlations that are actually coincidences or are correlated with shared causes.</li>
+</ul></li>
+
+<li><p>Fixing the first and second common pitfalls is a matter of learning the system in question and becoming experienced with the common patterns used in distributed systems.  The third trap is a set of logical fallacies that can be avoided by remembering that not all failures are equally probable—as doctors are taught, “when you hear hoofbeats, think of horses not zebras.&ldquo;Also remember that, all things being equal, we should prefer simpler explanations.&rdquo;</p></li>
+
+<li><p>A Managed Incident Now - let’s examine how this incident might have played out if it were handled using principles of incident management. It’s 2 p.m., and Mary is into her third coffee of the day. The pager’s harsh tone surprises her, and she gulps the drink down. Problem: a datacenter has stopped serving traffic. She starts to investigate. Shortly another alert fires, and the second datacenter out of five is out of order. Because this is a rapidly growing issue, she knows that she’ll benefit from the structure of her incident management framework. Mary snags Sabrina. “Can you take command?” Nodding her agreement, Sabrina quickly gets a rundown of what’s occurred thus far from Mary. She captures these details in an email that she sends to a prearranged mailing list. Sabrina recognizes that she can’t yet scope the impact of the incident, so she asks for Mary’s assessment. Mary responds, “Users have yet to be impacted; let’s just hope we don’t lose a third datacenter.” Sabrina records Mary’s response in a live incident document. When the third alert fires, Sabrina sees the alert among the debugging chatter on IRC and quickly follows up to the email thread with an update. The thread keeps VPs abreast of the high-level status without bogging them down in minutiae. Sabrina asks an external communications representative to start drafting user messaging. She then follows up with Mary to see if they should contact the developer on-call (currently Josephine). Receiving Mary’s approval, Sabrina loops in Josephine.</p></li>
+
+<li><p>Best Practices for Incident Management Prioritize. Stop the bleeding, restore service, and preserve the evidence for rootcausing. Prepare. Develop and document your incident management procedures in advance, in consultation with incident participants. Trust. Give full autonomy within the assigned role to all incident participants. Introspect. Pay attention to your emotional state while responding to an incident. If you start to feel panicky or overwhelmed, solicit more support. Consider alternatives. Periodically consider your options and re-evaluate whether it still makes sense to continue what you’re doing or whether you should be taking another tack in incident response. Practice. Use the process routinely so it becomes second nature. Change it around. Were you incident commander last time? Take on a different role this time. Encourage every team member to acquire familiarity with each role.</p></li>
+
+<li><p>Simple Round Robin One very simple approach to load balancing has each client send requests in roundrobin fashion to each backend task in its subset to which it can successfully connect and which isn’t in lame duck state. For many years, this was our most common approach, and it’s still used by many services. Unfortunately, while Round Robin has the advantage of being very simple and performing significantly better than just selecting backend tasks randomly, the results of this policy can be very poor. While actual numbers depend on many factors, such as varying query cost and machine diversity, we’ve found that Round Robin can result in a spread of up to 2x in CPU consumption from the least to the most loaded task. Such a spread is extremely wasteful and occurs for a number of reasons, including: • Small subsetting • Varying query costs • Machine diversity • Unpredictable performance factors</p></li>
+
+<li><p>Paxos Overview: An Example Protocol Paxos operates as a sequence of proposals, which may or may not be accepted by a majority of the processes in the system. If a proposal isn’t accepted, it fails. Each proposal has a sequence number, which imposes a strict ordering on all of the operations in the system. In the first phase of the protocol, the proposer sends a sequence number to the acceptors. Each acceptor will agree to accept the proposal only if it has not yet seen a proposal with a higher sequence number. Proposers can try again with a higher sequence number if necessary. Proposers must use unique sequence numbers (drawing from disjoint sets, or incorporating their hostname into the sequence number, for instance). If a proposer receives agreement from a majority of the acceptors, it can commit the proposal by sending a commit message with a value.</p></li>
+
+<li><p>First Layer: Soft Deletion; Second Layer: Backups and Their Related Recovery Methods; Overarching Layer: Replication</p></li>
+
+<li><p>Polarizing time means that when a person comes into work each day, they should know if they’re doing just project work or just interrupts. Polarizing their time in this way means they get to concentrate for longer periods of time on the task at hand. They don’t get stressed out because they’re being roped into tasks that drag them away from the work they’re supposed to be doing.</p></li>
+
+<li><p>If you currently assign tickets randomly to victims on your team, stop. Doing so is extremely disrespectful of your team’s time, and works completely counter to the principle of not being interruptible as much as possible. Tickets should be a full-time role, for an amount of time that’s manageable for a person. If you happen to be in the unenviable position of having more tickets than can be closed by the primary and secondary on-call engineers combined, then structure your ticket rotation to have two people handling tickets at any given time. Don’t spread the load across the entire team. People are not machines, and you’re just causing context switches that impact valuable flow time.</p></li>
+</ul>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://bege13mot.github.io/post/tcp-ip-hunt/">TCP/IP. Сетевое администрирование, Крейг Хант</a>
+      </h1>
+      <span class="post-date">Jan 30, 2017 &nbsp;  &nbsp; <a href="https://bege13mot.github.io/post/tcp-ip-hunt/#disqus_thread">Comments</a>
+      </span>
+      <p>
+            
+      <a class="label" href="https://bege13mot.github.io/categories/post">Post</a>
+      
+      
+      Tag:      
+      <a class="label" href="https://bege13mot.github.io/tags/book">book</a><a class="label" href="https://bege13mot.github.io/tags/theory">theory</a><a class="label" href="https://bege13mot.github.io/tags/it">it</a>
+      </p>
+      
+      
+
+<p><img src="/img/2017/tcp-ip-hunt.jpg" alt="image" /></p>
+
+<p>Недостаточно внимательно прочитал описание и вот результат. Вместо книги о базовых сетевых протоколах прочитал руководство по настройке сети. Хорошошее руководство, надо сказать. Но некоторые главы откровенно устарели, например про настройку Apache или собственного email сервера. Остальное же актуально и наверное еще долго им останется.</p>
+
+<h4 id="заметки">Заметки:</h4>
+
+<ul>
+<li><p>Адресная маска работает следующим образом: если бит маски включен, соответствующий ему бит адреса входит в раздел адреса сети, а если бит маски сброшен, соответствующий бит адреса входит в раздел адреса узла.
+Например, для комбинации адреса 172.22.12.4 и сетевой маски 255.255.255.0, в которой включено 24 бита и сброшено 8 бит, первые 24 бита адреса представляют номер сети, а последние 8 бит - адрес узла. Сочетание адреса и маски позволяет определить, что речь идет об адресе узла 4 сети 172.11.12
+Указывать одновременно адрес и маску в десятичном представлении через точку не очень удобно, поэтому есть сокращенное представление. Вместо записи &ldquo;сеть 172.31.26.32  с маской 255.255.255.254&rdquo; можно писать просто 172.31.26.<sup>32</sup>&frasl;<sub>27</sub>. Представление имеет форма <em>адреса/длинна префикса</em>, где длинна префикса - число бит в разделе сети адреса. В отсутствии подобной записи существует большая вероятность, что адрес 172.31.26.32 будет интерпретирован неверно.</p></li>
+
+<li><p>Новая модель маршрутизации базируется на равенстве наборов автономных систем, называемых <em>доменами маршрутизации</em> Домены маршрутизации обмениваются информацией маршрутизации с другими доменами при помощи <em>протокола граничных шлюзов</em> (Border Gateway Protocol, BGP). Каждый домен маршрутизации обрабатывает информацию, полученную от других доменов.</p></li>
+
+<li><p>Для отображения таблицы маршрутизации воспользуемся командой <code>route</code> с ключом -n. Ключ -n предотвращает преобразование адресов IP в имена узлов, облегчая чтение результата.</p></li>
+
+<li><p>Посмотреть на буфер маршрутизации можно при помощи команды <code>route</code> с ключом -C</p></li>
+
+<li><p><code>/etc/host</code> - лежит Таблица узлов</p></li>
+
+<li><p>Команда <code>ifconfig</code> позволяет устанавливать или определять значения настройки сетевых интерфейсов.</p></li>
+
+<li><p>Сетевые интерфейсы - <code>dmesg</code></p></li>
+
+<li><p><code>netstat -in</code> Ключ -i предписывает программе netstat отображать состояние всех настроенных сетевых интерфейсов, а ключ -n - использовать при выводе числовой формат.</p></li>
+
+<li><p><code>nslookup</code> – это инструмент отладки, который входит в состав пакета BIND. Программа позволяет пользователю напрямую обращаться к серверу имен с запросами и получать любую информацию, хранимую в распределенной базе данных DNS. Команда nslookup помогает определить факт работоспособности сервера и корректность его настройки, а также запросить информацию, которой владеют удаленные серверы.</p></li>
+</ul>
+
+<p>При следующей перезагрузке данной системы Red Hat будет запущен вебсервер. Чтобы запустить веб-сервер без перезагрузки, необходимо выполнить сценарий httpd из командной строки: <code>/etc/init.d/httpd start</code></p>
+
+<ul>
+<li><p>Некоторые администраторы следуют традициям, но чаще всего настройки в полном объеме хранятся в файле httpd.conf. Это предпочтительный подход, именно его мы используем в данной главе. Расположение файла httpd.conf зависит от операционной системы. В системе Solaris он хранится в каталоге /etc/apache; в системе Red Hat – в каталоге /etc/httpd/conf; а в системах Caldera – в каталоге /etc/httpd/apache/conf. Страница руководства, посвященная Apache, должна содержать сведения о том, где в данной системе хранится файл httpd.conf; в противном случае просто обратитесь к сценарию, запускающему httpd при загрузке системы. Расположение файла httpd.conf в этом файле определено переменной сценария либо аргументом ключа -f в командной строке httpd. Разумеется, есть еще один способ найти этот файл – при помощи команды find, как в следующем примере для Caldera Linux:
+<code>find / -name httpd.conf -print /etc/httpd/apache/conf/httpd.conf</code></p></li>
+
+<li><p>Работая в системе, вы можете непосредственно наблюдать за попадающей в файл журнала информацией посредством команды tail с ключом -f:
+<code>$ tail –l 1 –f /var/log/httpd/apache/error_log</code>
+Команда tail выводит набор строк из конца файла; в данном случае – из файла /var/log/httpd/apache/error_log. Ключ -l определяет количество выводимых строк. В данном примере -l 1 предписывает tail отобразить (одну) последнюю строку файла. Ключ -f предписывает процессу tail продолжать работу, что позволяет наблюдать записи по мере их добавления в файл. Таким образом, у нас есть возможность наблюдать за файлом в реальном времени.</p></li>
+
+<li><p>Серверы, действующие в качестве промежуточных звеньев между клиентами и веб-серверами, называются прокси-серверами (proxy servers, посредники). При использовании брандмауэра прямой веб-доступ часто блокируется. В этом случае пользователи подключаются к прокси-серверу по локальной сети, тогда как прокси-сервер обладает полномочиями для подключения к удаленному веб-серверу. Прокси-серверы могут хранить копии веб-страниц с удаленных веб-серверов в целях повышения производительности, сокращения объема трафика в территориальной сети и уменьшения нагрузки на популярные веб-сайты.</p></li>
+
+<li><p>Сам по себе сервер Apache надежен и достаточно защищен. Наибольшей угрозой безопасности сервера является пользовательский код, исполняемый сервером – как правило, речь идет о программах CGI (Common Gateway Interface) и SSI (Server Side Includes).</p></li>
+
+<li><p>Злоумышленники часто оставляют после себя файлы или сценарии, позволяющие им повторно войти в систему либо получить полномочия администратора. Используйте команду <code>ls -a | grep</code>^`.` для поиска файлов с именами, начинающимися с точки (.). Злоумышленникам особенно нравятся такие имена, как .mail, .xx, &hellip; (три точки), .. (точка, точка, пробел) или же ..^G (точка, точка, <Ctrl>+<G>).
+Если найден файл с таким или подобным именем, вероятен взлом. (Помните, что в каждом каталоге, за исключением корневого, существует один каталог с именем . и один каталог с именем &hellip;) Изучите содержимое всех подозрительных файлов и следуйте обычной процедуре доклада информации о происшествии.</p></li>
+
+<li><p>В простейшем случае брандмауэр – это фильтрующий маршрутизатор, который блокирует нежелательный трафик. Используйте возможности маршрутизации многосетевого узла под управлением Linux и функции фильтрации iptables для создания фильтрующего маршрутизатора. Ядро Linux делит трафик маршрутизатора на три категории и применяет для каждой из категорий отдельный набор правил фильтров: INPUT Входящий трафик, адресованный процессу локальной системы, должен пройти через правила фильтра INPUT, прежде чем будет принят системой. OUTPUT Исходящий трафик, источником которого является локальная система, должен пройти через правила фильтра OUTPUT, прежде чем будет отправлен.
+FORWARD Трафик, исходящий от внешней системы и адресованный другой внешней системе, должен пройти через правила фильтра FORWARD.</p></li>
+
+<li><p>Примеры команд iptables Если собрать все описанные средства, мы получим брандмауэр, способный защитить сеть.
+Предположим, что у нас есть Linux-маршрутизатор, подключенный к сетевому периметру с адресом 172.16.12.254 через интерфейс eth0 и к внешней сети с адресом 192.168.6.5 через интерфейс eth1. Кроме того, предположим, что в сетевом периметре лишь два сервера – сервер sendmail и сервер Apache. Вот пример команд iptables, которые мы могли бы выполнить на этой Linux-системе с целью защиты сетевого периметра:</p>
+
+<ul>
+<li><code>iptable –F INPUT</code></li>
+<li><code>iptables –F FORWARD</code></li>
+<li><code>iptables –A INPUT –i eth1 –j DROP</code></li>
+<li><code>iptables –A FORWARD –i eth1 –s 172.16.0.0/16 –j DROP</code></li>
+<li><code>iptables –A FORWARD –o eth1 –d 172.16.0.0/16 –j DROP</code></li>
+<li><code>iptables –A FORWARD –d 172.16.12.1 25 –j ACCEPT</code></li>
+<li><code>iptables –A FORWARD –d 172.16.12.6 80 –j ACCEPT</code></li>
+<li><code>iptables –A FORWARD –j DROP</code>
+<br /></li>
+</ul></li>
+
+<li><p>Первые две команды при помощи ключа -F очищают наборы правил, с которыми мы намереваемся работать. Третья команда предписывает удалять все пакеты из внешней сети, адресованные процессам Linux-маршрутизатора. Мы не хотим, чтобы к процессам маршрутизатора обращался кто-либо из внешнего мира. Следующие две команды предписывают удалять пакеты, передаваемые во внешний мир с внутреннего адреса. Если пакеты приходят через внешний интерфейс и имеют внутренний адрес, они удаляются. Точно так же, если пакеты, передаваемые через внешний интерфейс, имеют конечный адрес в локальной сети, они удаляются. Эти правила говорят, что если пакеты из внешней сети (проходящие через интерфейс eth1) некорректно используют адреса внутренней сети (172.16), кто-то пытается организовать атаку, основанную на подделке пакетов, и такие пакеты следует удалять.
+Следующие два правила практически идентичны. Они предписывают принимать пакеты, если пункт назначения и номер порта соответствуют конкретному серверу. Например, порт 25 – это порт SMTP, а 172.16.12.1 – адрес почтового сервера, тогда как порт 80 – это порт HTTP, а 172.16. 12.6 – адрес веб-сервера. Мы принимаем такие входящие соединения, поскольку они адресованы нужным системам. Последнее правило запрещает пропускать любой другой трафик. Эти примеры иллюстрируют мощь встроенных механизмов фильтрации Linux и содержат достаточный объем информации, чтобы вы могли начать самостоятельную работу.</p></li>
+
+<li><p>Инструменты, перечисленные в каталоге и описанные в этой книге:</p>
+
+<ul>
+<li><code>ifconfig</code> - Предоставляет сведения о базовых настройках интерфейса. Полезна для поиска неверных IP-адресов, некорректных масок подсетей, а также неверных широковещательных адресов.</li>
+<li><code>arp</code> - Предоставляет информацию о преобразовании адресов Ethernet/IP. Может использоваться для обнаружения систем локальной сети, при настройке которых использовался неверный IP-адрес.</li>
+<li><code>netstat</code> - Предоставляет самую разнообразную информацию. Повсеместно используется для вывода подробной статистики по каждому из сетевых интерфейсов, по сетевым сокетам, а также таблицам маршрутизации.</li>
+<li><code>ping</code> - Позволяет определить, доступен ли удаленный узел. ping отображает статистику по потерянным пакетам и времени доставки.</li>
+<li><code>nslookup</code> - Предоставляет информацию о службе имен DNS.</li>
+<li><code>dig</code> - Также предоставляет информацию о службе имен. По функциональности схожа с nslookup.</li>
+<li><code>traceroute</code> - Выводит информацию о каждом из транзитных участков маршрута, по которому проходит пакет от вашей системы до удаленной.</li>
+<li><code>snoop</code> - Анализирует отдельные пакеты, которыми обмениваются узлы сети. snoop – это анализатор протоколов TCP/IP, включенный в состав системы Solaris 8. Он позволяет изучать содержимое пакетов, включая заголовки, и наиболее полезен для анализа проблем, связанных с протоколами. <code>tcpdump</code> – инструмент с аналогичными функциями, он поставляется в системах Linux.</li>
+</ul></li>
+</ul>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://bege13mot.github.io/post/pyshi-sokrashyai/">Пиши, сокращай, Максим Ильяхов и Людмила Сарычева</a>
+      </h1>
+      <span class="post-date">Jan 30, 2017 &nbsp;  &nbsp; <a href="https://bege13mot.github.io/post/pyshi-sokrashyai/#disqus_thread">Comments</a>
+      </span>
+      <p>
+            
+      <a class="label" href="https://bege13mot.github.io/categories/post">Post</a>
+      
+      
+      Tag:      
+      <a class="label" href="https://bege13mot.github.io/tags/book">book</a><a class="label" href="https://bege13mot.github.io/tags/non-fiction">non-fiction</a>
+      </p>
+      
+      
+
+<p><img src="/img/2017/pyshi-sokrashyai.jpg" alt="image" /></p>
+
+<p>Образцово-показательная обучающая книга. Авторы методично объясняют, показывают, рассказывают и приводят множество примеров. Как писать &ldquo;хороший&rdquo; текст, что делать, если не получается, как улучшить. Учит, как и &ldquo;просто&rdquo; тексту, так и специфичным - рекламному посту, личному блогу и отзыву на вакансию.</p>
+
+<p>Секрет &ldquo;хорошего&rdquo; текста вы и сами наверняка знаете. Забота о читателе, правда и полезность. Ничего запредельного на первый взгляд, но к чтению настоятельно рекомендуется. Как минимум потому, что авторы неукоснительно выполняют свои же правила - читать одно удовольствие. Кроме того, это ещё и очень хороша оформленная книга.</p>
+
+<p>Немного ссылок:</p>
+
+<ul>
+<li><a href="https://book.glvrd.ru/practice">Как создавалась эта книга</a></li>
+<li><a href="https://soviet.glvrd.ru">Советы и статьи о тексте</a></li>
+<li><a href="https://medium.com/russian/10-000-за-статью-e125fddf0d1b#.w0xfcnavf">Как работается по руководстовм Ильяхова</a></li>
+</ul>
+
+<h4 id="заметки">Заметки:</h4>
+
+<ul>
+<li><p>Десять правил сильного текста:</p>
+
+<ol>
+<li>Сила - в правде</li>
+<li>Смысл важнее формы</li>
+<li>Чем проще - тем лучше</li>
+<li>Пишите, как для себя</li>
+<li>Читайте вслух</li>
+<li>Приводите примеры</li>
+<li>От простого к сложному</li>
+<li>Пользу- вперед</li>
+<li>Поставьте заголовок</li>
+<li>Уважение и забота</li>
+</ol></li>
+
+<li><p>Как писать обучающие статьи:</p>
+
+<ol>
+<li>Захватить внимание</li>
+<li>Познакомить с предметом</li>
+<li>Сначала показать</li>
+<li>От простого к сложному</li>
+<li>Привязать к реальности</li>
+<li>Помочь с трудностями</li>
+<li>Помочь структурой</li>
+<li>Добавить выводов</li>
+</ol></li>
+
+<li><p>Сила информационного стиля - в правде и фактах. Добавьте к этому простую форму, энергичную подачу и понятную структуру, и у вас получится сильный текст.</p></li>
+
+<li><p>Иногда люди пишут не чтобы решить чью-то задачу, а по внутреннему зову. Мы называем это графоманией. В графомании нет ничего плохого - в мире есть гораздо более страшные явления, чем слабый текст. Но чтобы текст был сильным, мы советуем даже графоманией заниматься так, чтобы она решала задачу читателя. Допустим, парня бросила девушка. Он расстроен, он в ярости и теперь хочет поделиться с кем-нибудь своей болью. Он пишет статью в социальной сети о том, какие девушки плохие. Это графомания: текст пишется не для читателя, а для писателя. Чтобы это не было графоманией, парень должен подумать о читателе. Как он может ему помочь? Какую задачу он может решить?</p></li>
+
+<li><p>Не думайте, что расшаркивания и трусливая вежливость – это ваше редкое умение. Мямлить умеют все. А вот говорить честно, прямо и уважительно - единицы. Присоединяйтесь к ним.</p></li>
+
+<li><p>Если не знаете, с чего начать статью, - начните с истории. История всегда привлекает внимание.</p></li>
+
+<li><p>Не стесняйтесь рассказывать клиентам о тонкостях, которые есть в вашей работе. Так вы добиваетесь двух целей: показываете свои сильные стороны и помогаете клиенту увидеть ценность вашей работы.</p></li>
+
+<li><p>Если кажется, что текст получается слишком сухим, придумайте для него изюминку: что-то необычное, творческое и запоминающееся. Хорошая изюминка - такая, которая работает на тему текста не хуже, чем остальные фразы. Если всю дорогу вы рассказывали, как хорошо вы преподаете английский, не следует в изюминке говорить о вашей любимой кошке или о том, как вы занимаетесь конным спортом. Расскажите что-то такое об английском языке, что вызовет улыбку.</p></li>
+
+<li><p>Избегайте оценок своей работы. Вместо этого рассказывайте о результатах и приводите доказательства: ссылки, примеры, публикации, статистику. Результаты работы можно найти всегда, даже если кажется, что их не было.</p></li>
+
+<li><p>Говорить правду, даже если она неудобная. Приводить факты и доказательства. Рассказывать истории и приводить примеры. Писать коротко.</p></li>
+
+<li><p>Побеждайте правдой, а не словами.</p></li>
+
+<li><p>Не знаете, как пишется, напишите проще.</p></li>
+
+<li><p>Критиковать работу - можно, а человека - нельзя</p></li>
+</ul>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://bege13mot.github.io/post/network-administration-limoncelli/">Системное и сетевое администрирование, Томас Лимончелли</a>
+      </h1>
+      <span class="post-date">Jan 30, 2017 &nbsp;  &nbsp; <a href="https://bege13mot.github.io/post/network-administration-limoncelli/#disqus_thread">Comments</a>
+      </span>
+      <p>
+            
+      <a class="label" href="https://bege13mot.github.io/categories/post">Post</a>
+      
+      
+      Tag:      
+      <a class="label" href="https://bege13mot.github.io/tags/book">book</a><a class="label" href="https://bege13mot.github.io/tags/it">it</a>
+      </p>
+      
+      
+
+<p><img src="/img/2017/network-administration-limoncelli.jpg" alt="image" /></p>
+
+<p>Минимум технических деталей, максимум &ldquo;жизненных&rdquo; советов. Как обычно у Лимончелли, будто разговариваешь с другом. Хорошая книга о организации работы - с техникой, сетями и людьми.</p>
+
+<h4 id="заметки">Заметки:</h4>
+
+<ul>
+<li><p>Три правила привилегированного доступа Томa:</p>
+
+<ul>
+<li>Будьте внимательны</li>
+<li>Уважайте неприкосновенность личной информации</li>
+<li>Если вы что-то испортите, сразу говорите мне.</li>
+</ul></li>
+
+<li><p>Часто пользователи применяют жаргон, но делают это неправильно. Они полагают, что именно это хочет слышать системный администратор. Они стараются помочь. Будет вполне оправданно, если системный администратор ответит им на это: &ldquo;Постойте, пожалуйста. Что конкретно вы пытаетесь сделать? Просто расскажите об этом без технических понятий&rdquo;.</p></li>
+
+<li><p>В известной комнате UNIX в Bell Labs на стене висит небольшая табличка: &ldquo;Перестаньте делать то, что не работает&rdquo;.</p></li>
+
+<li><p>Система контроля изменений RCS</p></li>
+
+<li><p>Восприятие - это то, каким люди вас видят, это мера качества. Заметность - это сколько люди вас видят, это мера количества.</p></li>
+
+<li><p>Не оставляйте восприятие и заметность на волю случая. Активно участвуйте в управлении ими. При отсутствии управления они станут катастрофой. Когда мы осознаем эти принципы, мы быстро находим много способов улучшить их.</p></li>
+
+<li><p><em>Доведение до конца</em> -  означает завершение того, что вам поручено сделать. Счастливые системные администраторы поддерживают организованность при помощи письменных или электронных записных книжек либо КПК, в которых записаны их списки дел и календари встреч.</p></li>
+
+<li><p><em>Управление временем</em> предполагает его разумное использование. Вместо того чтобы повышать производительность, работая больше времени, вы можете сделать больше за тоже время при помощи нескольких приемов и небольшого планирования.</p></li>
+
+<li><p>И снова, планирование - это ключ к успешному управлению временем. Вы должны начинать каждый рабочий день, просматривая свой список задач, устанавливая их приоритеты и встраивая в график рабочего дня. Такое вложение пяти минут времени имеет огромную отдачу.</p></li>
+
+<li><p>Когда вы нарушаете свою старую привычку, ваш мозг может попытаться начать принимать решение с нуля. В таком случае отвлеките го, заменив эти мысли установками, которые отражают ваши заранее определенные решения. Вот несколько установок, которые работали для нас.</p>
+
+<ul>
+<li>Любое время подходит для сохранения работы.</li>
+<li>Всегда делайте резервные копии.</li>
+<li>Записывайте запросы</li>
+<li>Возьмите КПК</li>
+<li>Лучше раньше чем больше</li>
+</ul></li>
+
+<li><p>Свободное время прячется повсюду, но, чтобы его найти, вам нужно хорошо поискать.</p>
+
+<ul>
+<li>Найдите &ldquo;легкое время в году&rdquo;</li>
+<li>Лучше убирайте, а не автоматизируйте.</li>
+<li>Удалите себя из двух самых активных списков рассылки, в которые вы входите. Повторяйте раз в месяц.</li>
+<li>Приходите на час раньше.</li>
+</ul></li>
+
+<li><p>Эти советы связаны с просьбами и предложениями. Они особенно полезны при переговорах о зарплате, но справедливы для любых переговоров:</p>
+
+<ul>
+<li>Просите то, чего вы на самом деле хотите.</li>
+<li>После того, как вы что-то попросите или предложите, закройте рот.</li>
+<li>Не раскрывайте свою стратегию оппоненту.</li>
+<li>Всегда отказывайтесь от первого предложения.</li>
+</ul></li>
+</ul>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://bege13mot.github.io/post/startup-of-you/">Жизнь как стартап, Рид Хоффман и Бен Касноча</a>
+      </h1>
+      <span class="post-date">Jan 25, 2017 &nbsp;  &nbsp; <a href="https://bege13mot.github.io/post/startup-of-you/#disqus_thread">Comments</a>
+      </span>
+      <p>
+            
+      <a class="label" href="https://bege13mot.github.io/categories/post">Post</a>
+      
+      
+      Tag:      
+      <a class="label" href="https://bege13mot.github.io/tags/book">book</a><a class="label" href="https://bege13mot.github.io/tags/non-fiction">non-fiction</a>
+      </p>
+      
+      
+
+<p><img src="/img/2017/startup-of-you.jpg" alt="image" /></p>
+
+<p>Несколько затянутая, на мой взгляд, книга с тремя основными идеями поиска работы:
+* Докажите, чем именно вы лучше других претендентов.
+* Имейте запасной план, а лучше не один.
+* Лучшая работа находится не по объявлениям, а через знакомы и их знакомых (&ldquo;слабые связи&rdquo;).</p>
+
+<h4 id="заметки">Заметки:</h4>
+
+<ul>
+<li><p>Если вы хотите найти путь, который дифференцирует вас от других профессионалов, работающих на том же рынке, вот первый шаг: закончите следующее предложение: «Компания выбирает меня среди других профессионалов, потому что…» В чем вы первый? Или единственный? В чем вы быстрее, лучше или дешевле других людей, делающих в этом мире то же самое, что делаете вы? Что вы можете предложить такого, что трудно получить в другом месте? Что вы предлагаете редкого и ценного?</p></li>
+
+<li><p>Иначе говоря, не пытайтесь стать величайшим директором по маркетингу в мире; стремитесь стать величайшим директором по маркетингу для маленьких и средних компаний, работающих в сфере здравоохранения.</p></li>
+
+<li><p>Хороший карьерный план учитывает взаимодействие этих трех фрагментов – наших активов, стремлений и реалий рынка. Все они должны сочетаться друг с другом. Например, приобретение ключевого навыка автоматически не даст конкурентного преимущества. То, что мы умеем что-то делать (активы) и увлечены этим (стремления), не обязательно означает, что кто-то нам за это заплатит (реалии рынка).</p></li>
+
+<li><p>Люди, с которыми мы познакомились в предыдущих главах, обращаются к своей сети постоянно, и это помогает им развивать карьеру. Когда Шерил Сэндберг работала в офисе Ларри Саммерса в World Bank, Ларри попросил ее провести исследование о том, что могло произойти, если бы в 1917 г. США помогли России подавить Октябрьскую революцию. «Как поступил бы обычный студент? – сказал Саммерс в интервью Кену Аулетту, опубликованном в The New Yorker. – Он пошел бы в библиотеку, просмотрел несколько книг по истории России и сказал бы, что никто точно не знает, что случилось бы в таком случае. А Шерил позвонила Ричарду Пайпсу, историку из Гарварда, специалисту по истории Октябрьской революции». Она целый час разговаривала с ним и сделала подробные заметки, которыми на следующий день весьма впечатлила Саммерса.</p></li>
+
+<li><p>Графический конспект от <a href="http://www.thestartupofyou.com/2012/03/visual-notes-for-the-start-up-of-you/">thestartupofyou.com</a></p></li>
+</ul>
+
+<p><img src="/img/2017/sacha-chua-book-notes.jpg" alt="image" /></p>
+
+      
+    </div>
+    
+    
+    
+    <ul class="pagination">
+        
+        <li>
+            <a href="/" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+        </li>
+        
+        <li
+        >
+        <a href="/" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+        </li>
+        
+        <li
+        ><a href="/">1</a></li>
+        
+        <li
+        class="active"><a href="/page/2/">2</a></li>
+        
+        <li
+        ><a href="/page/3/">3</a></li>
+        
+        <li
+        ><a href="/page/4/">4</a></li>
+        
+        <li
+        ><a href="/page/5/">5</a></li>
+        
+        <li
+        ><a href="/page/6/">6</a></li>
+        
+        <li
+        ><a href="/page/7/">7</a></li>
+        
+        <li
+        ><a href="/page/8/">8</a></li>
+        
+        <li
+        ><a href="/page/9/">9</a></li>
+        
+        <li
+        ><a href="/page/10/">10</a></li>
+        
+        <li
+        ><a href="/page/11/">11</a></li>
+        
+        <li
+        ><a href="/page/12/">12</a></li>
+        
+        <li
+        ><a href="/page/13/">13</a></li>
+        
+        <li
+        ><a href="/page/14/">14</a></li>
+        
+        <li
+        ><a href="/page/15/">15</a></li>
+        
+        <li
+        ><a href="/page/16/">16</a></li>
+        
+        <li
+        ><a href="/page/17/">17</a></li>
+        
+        <li
+        ><a href="/page/18/">18</a></li>
+        
+        <li
+        ><a href="/page/19/">19</a></li>
+        
+        <li
+        ><a href="/page/20/">20</a></li>
+        
+        <li
+        >
+        <a href="/page/3/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+        </li>
+        
+        <li>
+            <a href="/page/20/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        </li>
+        
+    </ul>
+    
+  </div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "bege13mot";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+<script src="https://bege13mot.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+  var _gaq=[['_setAccount','UA-73422311-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>

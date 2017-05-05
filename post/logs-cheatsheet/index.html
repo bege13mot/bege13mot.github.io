@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Шпаргалки по логам &nbsp; </title>
+
+  
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/poole-overrides.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde-overrides.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde-x.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/highlight/sunburst.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://bege13mot.github.io/touch-icon-144-precomposed.png">
+  <link href="/icon/fox.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+            
+        <img src="/icon/fox.png" alt="avatar" title="">    
+      
+      <h1></h1>
+      
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/">Ivan V's Blog</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/about/">About</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/post/">Posts</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/tags/">Tags</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/categories/">Categories</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/Bege13mot"><img src="/icon/github.svg" class="fa"></img></a>
+      <a href="https://www.goodreads.com/user/show/5520080-ivan"><img src="/icon/goodreads.svg" class="fa"></img></a>
+      <a href="mailto:bege13mot@gmail.com"><img src="/icon/mail.svg" class="fa"></img></a>
+      <a href="https://ru.linkedin.com/in/voronchihin"><img src="/icon/linkedin.svg" class="fa"></img></a>      
+      <a href="https://bege13mot.github.io/index.xml" type="application/rss+xml"><img src="/icon/rss.svg" class="fa"></img></a>
+      </li>
+    </ul>
+
+    
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1>Шпаргалки по логам</h1>
+    <span class="post-date">Feb 7, 2017 &middot; 4 minute read &middot; <a href="https://bege13mot.github.io/post/logs-cheatsheet/#disqus_thread">Comments</a>
+    </span>
+    <p>
+        
+    <a class="label" href="https://bege13mot.github.io/categories/post">Post</a>
+    
+    
+    Tag:    
+    <a class="label" href="https://bege13mot.github.io/tags/tech">tech</a><a class="label" href="https://bege13mot.github.io/tags/it">it</a>
+    </p>
+    
+
+<p>Прошлое уже два года со времени прошлой стать <a href="https://bege13mot.github.io/post/powershell-for-testers/">powershell для тестировщиков</a> по парсингу логов. Теперь больше работаю с Linux серверами и можно переписать статью.</p>
+
+<p>Основная цель - собрать наиболее часто используемые команды и &ldquo;хитрые техники&rdquo; для повседневной работы уитили <em>grep, find, sed, awk</em>. И так, приступим.</p>
+
+<h3 id="поиск-по-логам">Поиск по логам:</h3>
+
+<ul>
+<li><em>find</em> - поиск файлов по имени</li>
+<li><em>grep</em> - поиск текста в файле</li>
+<li><em>sort</em> - сортировка</li>
+<li><em>uniq</em> - фильтрация</li>
+</ul>
+
+<h4 id="find-и-grep">Find и Grep:</h4>
+
+<pre><code># Поиск по pattern в file. Для архивов удобно использовать zgrep
+# Ключи: r - рекурсивный поиск, E - поддержка регулярных выражений (egrep), o - выводит только совпадений, v - все кроме указанного(invert-match), H - имя файла
+grep -rEovH pattern file
+
+# Найти файлы в директория
+find . -path './web*/somethin/test.log*
+
+# Найти все файлы, без учета регистра и искать в них pattern с перенаправлением ошибок
+find . -type f -iname '*.log*' 2&gt;/dev/null -exec grep -H 'pattern' {} \;
+</code></pre>
+
+<h4 id="sort-и-uniq">Sort и Uniq:</h4>
+
+<pre><code># Найдем общие строки между двумя файлам
+sort file1 file2 | uniq -d
+
+# Найдем частоту события pattern. 
+# sort - сортируем (конкеретно в этом случае не обязательно)
+# uniq -ci - удаляем подсчитываем и удаляем дубликаты, i - без учета регистра
+# sort -rn - сортируем по числу появлений, по убыванию
+grep -oh 'pattern \[.*\]' test.log* | sort | uniq -ci | sort -rn
+</code></pre>
+
+<h4 id="примеры-из-практики">Примеры из практики:</h4>
+
+<p>Часто возникает необходимость найти какое-то событие, узнать номер &ldquo;thread&rdquo; и дальше посмотреть всю историю. В этом поможет конструкция ниже:</p>
+
+<pre><code>grep &quot;`grep 'pattern' test.log | grep -oh &quot;\w\{0,\}.n11&quot;`&quot; test.log.
+
+# Усложним ситуацию. Нам надо найти когда для пользователей в рамках одного &quot;thread&quot; случилось два события. Oдин из способов это сделать:
+find . -path './2017-05-*/test.log*' | while read path; do zgrep &quot;`zgrep 'TEST_EVENT 1'  $path | awk '{print $4}'`&quot; $path | grep -H 'TEST_EVENT 1' -B 2 -A 2 | grep '&quot;TEST_EVENT 2&quot;'; done  
+</code></pre>
+
+<p>Кстати, здесь используется отображение строк до совпадения и после совпадения - <code>grep 'TEST_EVENT 1' -B 2 -A 2</code>, а также цикл по найденным файлам - <code>while read path; do zgrep 'pattern' $path; done</code></p>
+
+<p>При поиске регулярных выражений по маске <code>'(pattern1|pattern2)'</code> <em>grep</em> выводит результат в двух разных строках. Решить эту проблему нам поможет <em>Perl</em>.</p>
+
+<pre><code># Две строки для каждого совпадения
+find . -path './test*/test.log*' -exec zgrep -H 'login/email' {} \; | grep '\[received\]' | egrep -o '(.+\.gz|\w+-\w+-\w+ \d\d:\d\d:\d\d|&quot;email&quot;:&quot;.+@.+\.\w+&quot;)'
+
+# Одна строка
+# Ключи -n - выполнение кода, -e - задает код, -l - обработка окончаний строк
+find . -path './test*/test.log*' -exec zgrep -H 'login/email' {} \; | grep '\[received\]' | perl -lne 'print /(.+\.gz|\w+-\w+-\w+ \d\d:\d\d:\d\d|&quot;email&quot;:&quot;.+@.+\.\w+&quot;)/g'
+</code></pre>
+
+<p>Полезные ссылки:</p>
+
+<ul>
+<li><a href="https://explainshell.com">Explain Shell</a></li>
+<li><a href="https://myopsblog.wordpress.com/2016/03/28/linux-command-prompt-educational-table/">Linux Shell cheatsheet</a></li>
+<li><a href="http://eax.me/regular-expr/">Памятка по регулярным выражениям</a></li>
+<li><a href="https://habrahabr.ru/post/70610/">Однострочные программы на Perl</a></li>
+</ul>
+
+<h3 id="sed">Sed:</h3>
+
+<p><em>Sed</em> - потоковый текстовый редактор</p>
+
+<h4 id="синтаксис">Синтаксис:</h4>
+
+<pre><code># Печатать строки где есть pattern
+sed -n ‘/pattern/p’ file
+
+# Удалить все пустые строки
+sed -i ‘/^$/d’ file – remove all blank lines from file
+
+# Заменить word1 на word2, word3 на word4
+sed ‘s/word1/word2/g; s/word3/word4/g’ file– replacement with multiple patterns in file
+</code></pre>
+
+<h4 id="примеры-из-практики-1">Примеры из практики:</h4>
+
+<pre><code># Заменить одно значение переменной на другое
+find -type f -name &quot;test.*&quot; -exec sed -i 's/MaxSize=[0-9][0-9][0-9]/MaxSize=384/' {} \;\
+
+# Рекурсивная замена по всем вхождениям
+find /home/user/ -type f | xargs sed -i  ‘s/a.example.com/b.example.com/g’ – recursively substitute each mattern match in files located on /home/user
+
+# Убираем из вывода все коменты и пустые строки.
+cat /opt/local/etc/squid/squid.conf | sed '/ *#/d; /^ *$/d'
+
+# Используем регулярные выражения в find. Без sed не работают
+find ./_filestorage/ -regextype sed -regex &quot;.*/[a-f0-9\-]\{36\}\.\(jpg\|JPG\|png\|PNG\|gif\|GIF\)&quot;
+</code></pre>
+
+<p>Полезные ссылки:</p>
+
+<ul>
+<li><a href="http://www.funtoo.org/Sed_by_Example,_Part_1">Sed by Example</a></li>
+<li><a href="https://www.opennet.ru/docs/RUS/bash_scripting_guide/a14586.html">Маленький учебник по Sed и Awk</a></li>
+</ul>
+
+<h3 id="awk">Awk:</h3>
+
+<ul>
+<li><em>Awk</em> - язык обработки текстовой информации</li>
+</ul>
+
+<h4 id="синтаксис-1">Синтаксис:</h4>
+
+<pre><code># F - разделитель 
+# NF - число полей в текущей записи (number of fields)
+# NR - номер текущей записи (record number)
+# FNR - номер записи для текущего файла
+
+# Печатаем первую колонку, разделитель - пробелы или табы
+awk ‘{print $1}’ file
+
+# Разделитель :
+awk -F ‘:’ ‘{print $1}’ file
+
+# Сумма всех строк для 3 колонки
+awk ‘{sum+=$3} END {print sum}’ file
+
+# Среднее для 2 колонки
+awk ‘{avg+=$2}END{print avg/NR}’ file
+
+# Вывести все после 3 строки
+awk ‘NR&gt;3’ file– print everything aftчисло полей в текущей записи the 3rd line
+
+# Частота использования IP
+awk '{ array[$2]++ } END {for (ip in array) print array[ip],ip}' access.log
+</code></pre>
+
+<h4 id="примеры-из-практики-2">Примеры из практики:</h4>
+
+<p>Необходимо посчитать разницу между получением и отменой офера, для этого использовалась функция <em>mktime</em> для работы с временем.</p>
+
+<pre><code>zgrep -E &quot;(Quotation:.+ - notification for .+ cancelled|Quotation:.+ - offer is sent to .+)&quot; ./test/offers.log.gz | awk ' {print ($14 == &quot;&quot; ? $1 &quot; &quot; $2 &quot; &quot; $7 &quot; &quot; $12 : $1 &quot; &quot; $2 &quot; &quot; $7 &quot; &quot; $14) };' | awk '{gsub(&quot;-&quot;, &quot; &quot;, $1); gsub(/,[0-9][0-9][0-9]/, &quot;&quot;, $2); gsub(&quot;:&quot;, &quot; &quot;, $2); print mktime($1 &quot; &quot; $2) &quot; &quot; $3 &quot; &quot; $4;}' | awk '{
+if (array[$3]==&quot;&quot;&amp;&amp;q==&quot;&quot;||(array[$3]==&quot;&quot; &amp;&amp; q==$2)) {array[$3]=$1;q=$2}
+else if (array[$3]!=&quot;&quot; &amp;&amp; q==$2) {array[$3]=$1-array[$3];}
+else {for (i in array) {if (array[i]!=&quot;&quot;) print q, i, array[i];}; delete array;array[$3]=$1;q=$2;}
+} END{for (i in array) print q, i, array[i];}'
+</code></pre>
+
+<p>Полезные ссылки:</p>
+
+<ul>
+<li><a href="http://www.funtoo.org/Awk_by_Example,_Part_1">Awk by Example</a></li>
+<li><a href="http://lib.ru/MAN/DEMOS210/awk.txt">Язык обработки структурированных текстов AWK</a></li>
+</ul>
+
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "bege13mot";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_shortname = "bege13mot";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="https://bege13mot.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+  var _gaq=[['_setAccount','UA-73422311-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+

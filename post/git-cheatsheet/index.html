@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Шпаргалки по Git &nbsp; </title>
+
+  
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/poole-overrides.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde-overrides.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde-x.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/highlight/sunburst.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://bege13mot.github.io/touch-icon-144-precomposed.png">
+  <link href="/icon/fox.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+            
+        <img src="/icon/fox.png" alt="avatar" title="">    
+      
+      <h1></h1>
+      
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/">Ivan V's Blog</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/about/">About</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/post/">Posts</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/tags/">Tags</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/categories/">Categories</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/Bege13mot"><img src="/icon/github.svg" class="fa"></img></a>
+      <a href="https://www.goodreads.com/user/show/5520080-ivan"><img src="/icon/goodreads.svg" class="fa"></img></a>
+      <a href="mailto:bege13mot@gmail.com"><img src="/icon/mail.svg" class="fa"></img></a>
+      <a href="https://ru.linkedin.com/in/voronchihin"><img src="/icon/linkedin.svg" class="fa"></img></a>      
+      <a href="https://bege13mot.github.io/index.xml" type="application/rss+xml"><img src="/icon/rss.svg" class="fa"></img></a>
+      </li>
+    </ul>
+
+    
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1>Шпаргалки по Git</h1>
+    <span class="post-date">Feb 20, 2017 &middot; 3 minute read &middot; <a href="https://bege13mot.github.io/post/git-cheatsheet/#disqus_thread">Comments</a>
+    </span>
+    <p>
+        
+    <a class="label" href="https://bege13mot.github.io/categories/post">Post</a>
+    
+    
+    Tag:    
+    <a class="label" href="https://bege13mot.github.io/tags/tech">tech</a><a class="label" href="https://bege13mot.github.io/tags/it">it</a>
+    </p>
+    
+
+<p>Графические шпаргалки: <a href="http://files.zeroturnaround.com/pdf/zt_git_cheat_sheet.pdf">раз</a> и <a href="https://raw.githubusercontent.com/hbons/git-cheat-sheet/master/preview.png">два</a></p>
+
+<h4 id="шпаргалка">Шпаргалка:</h4>
+
+<pre><code>git init project-name
+
+git add text.txt
+
+git rm text.txt
+
+git status
+
+git commit -a -m &quot;Commit description&quot;
+
+git push origin master
+
+# Скачать все ветки с origin, но не мерджить их в локальный репозиторий
+git fetch origin
+
+git branch some_branch
+
+# Начать работать с веткой some_branch (уже существующей)
+git checkout -b some_branch origin/some_branch
+
+#Просмотреть все существующие ветви
+git branch -a # | grep something
+
+git merge some_branch
+
+#История с именами файлов и псевдографическим изображением бранчей:
+git log --stat --graph
+
+#Улучшение для log
+git config --global alias.grog 'log --graph --abbrev-commit --decorate --all --format=format:&quot;%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)&quot;'
+
+#Изменения, сделанные в заданном коммите:
+git show d8578edf8458ce06fbc5bb76a58c5ca4a58c5ca4
+
+#Посмотреть, кем в последний раз правилась каждая строка файла:
+git blame file.txt
+
+#Откатиться к конкретному коммиту (хэш смотрим в «git log»):
+git reset --hard d8578edf8458ce06fbc5bb76a58c5ca4a58c5ca4
+
+#Попытаться обратить заданный commit (но чаще используется branch/reset + merge):
+git revert d8578edf8458ce06fbc5bb76a58c5ca4a58c5ca4
+
+#Просмотр изменений (суммарных, а не всех по очереди, как в «git log»):
+git diff # подробности см в &quot;git diff --help&quot;
+
+#&quot;Упаковка&quot; репозитория для увеличения скорости работы с ним:
+git gc
+
+#Добавляем ключ на github
+ssh-keygen -t rsa -b 4096 -C &quot;test@test.com&quot;
+vim /home/test/.ssh/id_rsa.pub
+ssh -T git@github.com
+</code></pre>
+
+<h4 id="частые-проблемы">Частые проблемы:</h4>
+
+<p>Закоммитил и тут же понял, что нужно внести небольшие изменения:</p>
+
+<pre><code># внесите изменения 
+git add . 
+git commit --amend 
+# следуйте подсказкам, чтобы изменить или оставить прежний комментарий
+# теперь последний коммит содержит наше изменение!
+</code></pre>
+
+<p>Нужно изменить комментарий к последнему коммиту:</p>
+
+<pre><code>git commit --amend 
+# следуйте подсказкам, чтобы изменить комментарий
+</code></pre>
+
+<p>Закоммитил что-то в master, а оно должно быть в новой ветке:</p>
+
+<pre><code># создайте новую ветку из текущего состояния master
+git checkout -b имя-новой-ветки 
+# удаляем коммит из ветки master
+git checkout master 
+git reset HEAD~ --hard 
+git checkout имя-новой-ветки
+# ваш коммит теперь живет в новой ветке
+</code></pre>
+
+<p>Cлучайно закоммитил не в ту ветку:</p>
+
+<pre><code># откатываем последний коммит, но не удаляем изменения
+git reset HEAD~ --soft 
+git add . 
+git stash 
+# переключаемся на нужную ветку 
+git checkout имя-верной-ветки 
+git stash pop 
+git add . 
+git commit -m &quot;тут ваш комментарий&quot; 
+# теперь изменения в нужной ветке
+</code></pre>
+
+<p>Запускаю diff, но ничего не происходит?</p>
+
+<pre><code>git diff --staged
+</code></pre>
+
+<p>Когда у вас есть файлы, которые специфичны для данного проекта и для вашего рабочего окружения(например, логи, third-party утилита) используйте <code>.git/info/exclude</code>. Этот файл не коммитуется и остается только в локальном репозитории.</p>
+
+<p>Когда у вас несколько проектов и везде создается что-либо, что вы не хотите коммитить(например, *.swp файлы Vim) используйте <code>~/.gitconfig</code>. Вышеприведённый пример папки .idea, которая создается для каждого проекта как раз подходит сюда.</p>
+
+<h4 id="полезные-ссылки">Полезные ссылки:</h4>
+
+<ul>
+<li><p><a href="https://marklodato.github.io/visual-git-guide/index-ru.html">Git: наглядная справка</a></p></li>
+
+<li><p><a href="http://learngitbranching.js.org/">Learn Git Branching</a></p></li>
+
+<li><p><a href="http://eax.me/git-commands/">Шпаргалка по работе с Git от eax.me</a></p></li>
+
+<li><p><a href="https://git-scm.com/book/en/v2">Книга Pro Git</a></p></li>
+
+<li><p><a href="http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/ru/index.html">Книга Волшебство Git</a></p></li>
+</ul>
+
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "bege13mot";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_shortname = "bege13mot";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="https://bege13mot.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+  var _gaq=[['_setAccount','UA-73422311-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+
