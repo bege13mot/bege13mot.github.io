@@ -58,7 +58,7 @@ box: debian build: steps: - script: name: install git code: | apt-get update &am
     <item>
       <title>Шпаргалки по логам</title>
       <link>https://bege13mot.github.io/post/logs-cheatsheet/</link>
-      <pubDate>Tue, 07 Feb 2017 10:00:00 +0400</pubDate>
+      <pubDate>Sun, 19 Feb 2017 10:00:00 +0400</pubDate>
       
       <guid>https://bege13mot.github.io/post/logs-cheatsheet/</guid>
       <description>Прошлое уже два года со времени прошлой стать powershell для тестировщиков по парсингу логов. Теперь больше работаю с Linux серверами и можно переписать статью.
@@ -69,10 +69,10 @@ box: debian build: steps: - script: name: install git code: | apt-get update &am
     <item>
       <title>Site Reliability Engineering by Betsy Beyer</title>
       <link>https://bege13mot.github.io/post/google-sre/</link>
-      <pubDate>Mon, 30 Jan 2017 10:00:00 +0400</pubDate>
+      <pubDate>Sat, 28 Jan 2017 10:00:00 +0400</pubDate>
       
       <guid>https://bege13mot.github.io/post/google-sre/</guid>
-      <description>Хорошая и полезная книга. Главы про мониторинг и инциденты буду перечитывать и не один раз. Но есть и проблемы, как и у прошлой книги &amp;ldquo;How Google Tests Software&amp;rdquo;. Несколько глав воспринимаются как откровенная реклама - смотрите какие крутые у нас системы (ни одной из них нет в свободном доступе), как здорово мы все автоматизируем (без конкретных примеров) и т.д. А может быть мне просто завидно.
+      <description>Хорошая и полезная книга. Главы про мониторинг и инциденты буду перечитывать, и не один раз. Но есть и проблемы, как и у прошлой книги &amp;ldquo;How Google Tests Software&amp;rdquo;. Несколько глав воспринимаются как откровенная реклама - смотрите какие крутые у нас системы (ни одной из них нет в свободном доступе), как здорово мы все автоматизируем (без конкретных примеров) и т.д. А может быть мне просто завидно.
 Тем не менее, книга стоящая.</description>
     </item>
     
