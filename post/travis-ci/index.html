@@ -85,9 +85,9 @@
     Tag:    
     <a class="label" href="https://bege13mot.github.io/tags/tech">tech</a><a class="label" href="https://bege13mot.github.io/tags/it">it</a>
     </p>
-    <p>Когда только переехал на Hugo, встал вопрос о автоматизации обновления сайта. Я не стал ничего выдумывать и просто следовал рекомендациям на офицальном сайте <a href="https://gohugo.io/tutorials/automated-deployments/">gohugo.io</a> и настроил <a href="https://app.wercker.com/">Wercker</a>. Все отлично работало.</p>
+    <p>Когда я только переехал на Hugo, встал вопрос об автоматизации обновления сайта. Не стал ничего выдумывать и просто следовал рекомендациям на офицальном сайте <a href="https://gohugo.io/tutorials/automated-deployments/">gohugo.io</a> и настроил <a href="https://app.wercker.com/">Wercker</a>. Все отлично работало.</p>
 
-<p>Но однажды сборка сломалось, оказалось в образе <em>debian</em> сломался <em>wget</em>. Пришлось немного править настройке. В итоге получилось следующее (определенно избыточно):</p>
+<p>Но однажды сборка сломалась - оказалось в образе <em>debian</em> перестал работать <em>wget</em>. Пришлось немного поправить настройки. В итоге получилось следующее (определенно избыточно):</p>
 
 <pre><code>box: debian
 build:
@@ -115,9 +115,9 @@ deploy:
 
 <p>Время шло, Wercker исправно работал. Но тут его купил Oracle, о чем красноречиво напоминала красная плашка на всех страницах. Может быть, ничего страшного и не случится, но на всякий случай надо подготовить запасной вариант.</p>
 
-<p>Блог хостится на Github, и первая CI, что приходит на ум, конечно <a href="https://travis-ci.org">Travis</a>. Благо и инструкция для этого есть немало. Я использовал <a href="http://www.tutysara.net/posts/2016/09/27/automating-hugo-blog-deployment-to-github-pages-using-travis-ci/">вот эту</a>.</p>
+<p>Блог хостится на Github, и первая CI, что приходит на ум, конечно <a href="https://travis-ci.org">Travis</a>. Благо и инструкций для этого есть немало. Я использовал <a href="http://www.tutysara.net/posts/2016/09/27/automating-hugo-blog-deployment-to-github-pages-using-travis-ci/">вот эту</a>.</p>
 
-<p>Единственно, немного доработал <em>deploy.sh</em>, чтобы деплоить только если есть изменения. Иначе даже при добавлении черновика блог будет пересобираться. За основу взял <a href="https://gist.github.com/domenic/ec8b0fc8ab45f39403dd">статью</a>. Итоговый результат:</p>
+<p>Единственное что, немного доработал <em>deploy.sh</em>, чтобы деплоить только если есть изменения. Иначе даже при добавлении черновика блог будет пересобираться. За основу взял <a href="https://gist.github.com/domenic/ec8b0fc8ab45f39403dd">статью</a>. Итоговый результат:</p>
 
 <pre><code># !/bin/bash
 set -e # Exit with nonzero exit code if anything fails
@@ -170,7 +170,7 @@ git commit -m &quot;Deploy to GitHub Pages&quot;
 git push &quot;https://$GH_TOKEN@$GH_REPO&quot; $SOURCE_BRANCH
 </code></pre>
 
-<p>В итоге переезд на более &ldquo;стабильную&rdquo; (как минимум более известую и проверенную) успешно состоялся. Заодно и процесс деплоя упростился, после отказа от сторонних скриптов.</p>
+<p>Переезд на более &ldquo;стабильный&rdquo; (как минимум более известный и проверенный) CI успешно состоялся. Заодно и процесс деплоя упростился после отказа от сторонних скриптов.</p>
 
   </div>
   <div id="disqus_thread"></div>

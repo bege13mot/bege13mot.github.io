@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.21-DEV" />
+	<meta name="generator" content="Hugo 0.22-DEV" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -92,9 +92,9 @@
       <a class="label" href="https://bege13mot.github.io/tags/tech">tech</a><a class="label" href="https://bege13mot.github.io/tags/it">it</a>
       </p>
       
-      <p>Когда только переехал на Hugo, встал вопрос о автоматизации обновления сайта. Я не стал ничего выдумывать и просто следовал рекомендациям на офицальном сайте <a href="https://gohugo.io/tutorials/automated-deployments/">gohugo.io</a> и настроил <a href="https://app.wercker.com/">Wercker</a>. Все отлично работало.</p>
+      <p>Когда я только переехал на Hugo, встал вопрос об автоматизации обновления сайта. Не стал ничего выдумывать и просто следовал рекомендациям на офицальном сайте <a href="https://gohugo.io/tutorials/automated-deployments/">gohugo.io</a> и настроил <a href="https://app.wercker.com/">Wercker</a>. Все отлично работало.</p>
 
-<p>Но однажды сборка сломалось, оказалось в образе <em>debian</em> сломался <em>wget</em>. Пришлось немного править настройке. В итоге получилось следующее (определенно избыточно):</p>
+<p>Но однажды сборка сломалась - оказалось в образе <em>debian</em> перестал работать <em>wget</em>. Пришлось немного поправить настройки. В итоге получилось следующее (определенно избыточно):</p>
 
 <pre><code>box: debian
 build:
@@ -122,9 +122,9 @@ deploy:
 
 <p>Время шло, Wercker исправно работал. Но тут его купил Oracle, о чем красноречиво напоминала красная плашка на всех страницах. Может быть, ничего страшного и не случится, но на всякий случай надо подготовить запасной вариант.</p>
 
-<p>Блог хостится на Github, и первая CI, что приходит на ум, конечно <a href="https://travis-ci.org">Travis</a>. Благо и инструкция для этого есть немало. Я использовал <a href="http://www.tutysara.net/posts/2016/09/27/automating-hugo-blog-deployment-to-github-pages-using-travis-ci/">вот эту</a>.</p>
+<p>Блог хостится на Github, и первая CI, что приходит на ум, конечно <a href="https://travis-ci.org">Travis</a>. Благо и инструкций для этого есть немало. Я использовал <a href="http://www.tutysara.net/posts/2016/09/27/automating-hugo-blog-deployment-to-github-pages-using-travis-ci/">вот эту</a>.</p>
 
-<p>Единственно, немного доработал <em>deploy.sh</em>, чтобы деплоить только если есть изменения. Иначе даже при добавлении черновика блог будет пересобираться. За основу взял <a href="https://gist.github.com/domenic/ec8b0fc8ab45f39403dd">статью</a>. Итоговый результат:</p>
+<p>Единственное что, немного доработал <em>deploy.sh</em>, чтобы деплоить только если есть изменения. Иначе даже при добавлении черновика блог будет пересобираться. За основу взял <a href="https://gist.github.com/domenic/ec8b0fc8ab45f39403dd">статью</a>. Итоговый результат:</p>
 
 <pre><code># !/bin/bash
 set -e # Exit with nonzero exit code if anything fails
@@ -177,7 +177,7 @@ git commit -m &quot;Deploy to GitHub Pages&quot;
 git push &quot;https://$GH_TOKEN@$GH_REPO&quot; $SOURCE_BRANCH
 </code></pre>
 
-<p>В итоге переезд на более &ldquo;стабильную&rdquo; (как минимум более известую и проверенную) успешно состоялся. Заодно и процесс деплоя упростился, после отказа от сторонних скриптов.</p>
+<p>Переезд на более &ldquo;стабильный&rdquo; (как минимум более известный и проверенный) CI успешно состоялся. Заодно и процесс деплоя упростился после отказа от сторонних скриптов.</p>
 
       
     </div>
@@ -199,7 +199,7 @@ git push &quot;https://$GH_TOKEN@$GH_REPO&quot; $SOURCE_BRANCH
       
       <p><img src="/img/2017/demonkeeping.jpg" alt="image" /></p>
 
-<p>Также смешно как и <a href="https://bege13mot.github.io/post/lust-lizard/">Ящер страсти из бухты грусти</a>, юмор все также черен, люди все так же безумны. Вместо психоаналитиков, жертвой сатиры стала религия. Очень приятно читать, но Мура мне пожалуй хватит. Эти две книги в одном стиле, но &ldquo;ящер&rdquo; понравился больше, поэтому не вижу смысла продолжать.</p>
+<p>Также смешно как и <a href="https://bege13mot.github.io/post/lust-lizard/">Ящер страсти из бухты грусти</a>, юмор все также черен, люди все также безумны. Вместо психоаналитиков жертвой сатиры стала религия. Очень приятно читать, но Мура мне пожалуй хватит. Эти две книги в одном стиле, но &ldquo;ящер&rdquo; понравился больше.</p>
 
       
     </div>
@@ -225,7 +225,7 @@ git push &quot;https://$GH_TOKEN@$GH_REPO&quot; $SOURCE_BRANCH
 
 <p>Как же долго я читал эту книгу, года три, не меньше. Разные заходы, на разных языках. И наконец дочитал.</p>
 
-<p>Поэтому это обычная рецензия с краткими заметками. Множество людей уже до меня ее прочитали, разобрали и законспектировали. Так, оставлю маленькое напоминание о том, как сложно это было. Надо бы повторить.</p>
+<p>Поэтому это обычная рецензия с краткими заметками. Множество людей уже до меня ее прочитали, разобрали и законспектировали. Оставлю маленькое напоминание о том, как сложно это было. Надо бы повторить.</p>
 
 <h4 id="заметки">Заметки:</h4>
 
@@ -696,89 +696,224 @@ and a long-term investment for application robustness.)</li>
     </div>
     
     
+
+<ul class="pagination">
     
-    <ul class="pagination">
-        
-        <li>
-            <a href="/" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-        </li>
-        
-        <li
-        class="disabled">
-        <a href="" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-        </li>
-        
-        <li
-        class="active"><a href="/">1</a></li>
-        
-        <li
-        ><a href="/page/2/">2</a></li>
-        
-        <li
-        ><a href="/page/3/">3</a></li>
-        
-        <li
-        ><a href="/page/4/">4</a></li>
-        
-        <li
-        ><a href="/page/5/">5</a></li>
-        
-        <li
-        ><a href="/page/6/">6</a></li>
-        
-        <li
-        ><a href="/page/7/">7</a></li>
-        
-        <li
-        ><a href="/page/8/">8</a></li>
-        
-        <li
-        ><a href="/page/9/">9</a></li>
-        
-        <li
-        ><a href="/page/10/">10</a></li>
-        
-        <li
-        ><a href="/page/11/">11</a></li>
-        
-        <li
-        ><a href="/page/12/">12</a></li>
-        
-        <li
-        ><a href="/page/13/">13</a></li>
-        
-        <li
-        ><a href="/page/14/">14</a></li>
-        
-        <li
-        ><a href="/page/15/">15</a></li>
-        
-        <li
-        ><a href="/page/16/">16</a></li>
-        
-        <li
-        ><a href="/page/17/">17</a></li>
-        
-        <li
-        ><a href="/page/18/">18</a></li>
-        
-        <li
-        ><a href="/page/19/">19</a></li>
-        
-        <li
-        ><a href="/page/20/">20</a></li>
-        
-        <li
-        >
-        <a href="/page/2/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-        </li>
-        
-        <li>
-            <a href="/page/20/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-        </li>
-        
-    </ul>
+    <li>
+        <a href="/" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
     
+    <li
+    class="disabled">
+    <a href="" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+     
+        
+        
+    
+    
+    <li
+    class="active"><a href="/">1</a></li>
+    
+    
+    
+    
+    
+     
+        
+        
+    
+    
+    <li
+    ><a href="/page/2/">2</a></li>
+    
+    
+    
+    
+    
+     
+        
+        
+    
+    
+    <li
+    ><a href="/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="disabled"><span aria-hidden="true">&hellip;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+     
+        
+        
+    
+    
+    <li
+    ><a href="/page/20/">20</a></li>
+    
+    
+    <li
+    >
+    <a href="/page/2/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li>
+        <a href="/page/20/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+
   </div>
 </div>
 
