@@ -193,6 +193,26 @@ git commit -m &quot;тут ваш комментарий&quot;
 <pre><code>git diff --staged
 </code></pre>
 
+<p>Вернуть fork к изначальному состоянию</p>
+
+<pre><code>git remote add upstream /url/to/original/repo
+git fetch upstream
+git checkout master
+git reset --hard upstream/master  
+git push origin master --force
+</code></pre>
+
+<p>Сделать первый PR</p>
+
+<pre><code>git clone /url/to/fork/repo
+git remote add upstream /url/to/original/repo
+git checkout master
+git pull upstream master
+git push origin master
+$ git checkout -b feature/add
+git push -u origin feature/add
+</code></pre>
+
 <p>Когда у вас есть файлы, которые специфичны для данного проекта и для вашего рабочего окружения(например, логи, third-party утилита) используйте <code>.git/info/exclude</code>. Этот файл не коммитуется и остается только в локальном репозитории.</p>
 
 <p>Когда у вас несколько проектов и везде создается что-либо, что вы не хотите коммитить(например, *.swp файлы Vim) используйте <code>~/.gitconfig</code>. Вышеприведённый пример папки .idea, которая создается для каждого проекта как раз подходит сюда.</p>
