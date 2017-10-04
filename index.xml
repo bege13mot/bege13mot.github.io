@@ -2172,5 +2172,14 @@ How To Read More &amp;ndash; A Lot More</description>
  календари</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://bege13mot.github.io/post/questions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/questions/</guid>
+      <description>General Questions: What function does DNS play on a network? How does DNS work? 1 The first place your computer looks is its local DNS cache, which stores information that your computer has recently retrieved. 2 If the information is not stored locally, your computer queries (contacts) your ISP’s recursive DNS servers. These specialized computers perform the legwork of a DNS query on your behalf. Recursive servers have their own caches, so the process usually ends here and the information is returned to the user.</description>
+    </item>
+    
   </channel>
 </rss>
