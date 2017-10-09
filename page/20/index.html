@@ -776,42 +776,90 @@ The three numbers after load average -  1.00, 1.01, 0.98 - represent the 1-, 5-,
 
 <h4 id="what-do-the-following-commands-do-and-how-would-you-use-them">What do the following commands do and how would you use them?</h4>
 
-<p>tee
-awk
-tr
-cut
-tac
-curl
-wget
-watch
-head
-tail</p>
+<h1 id="tee-reads-from-standard-input-and-writes-to-standard-output-and-to-files-example-ls-1-txt-wc-l-tee-count-txt">tee - Reads from standard input, and writes to standard output and to files. Example: ls -1 *.txt | wc -l | tee count.txt</h1>
+
+<h1 id="awk-the-awk-is-most-useful-when-handling-text-files-that-are-formatted-in-a-predictable-way-for-instance-it-is-excellent-at-parsing-and-manipulating-tabular-data-it-operates-on-a-line-by-line-basis-and-iterates-through-the-entire-file-the-awk-syntax-looks-like-this-awk-print-etc-fstab">awk - The awk is most useful when handling text files that are formatted in a predictable way. For instance, it is excellent at parsing and manipulating tabular data. It operates on a line-by-line basis and iterates through the entire file.The awk syntax looks like this: awk &lsquo;{print}&rsquo; /etc/fstab</h1>
+
+<h1 id="tr-utility-for-translating-or-deleting-or-squeezing-repeated-characters-for-example-tr-a-z-a-z-thegeekstuff-thegeekstuff">tr - utility for translating, or deleting, or squeezing repeated characters. For example: tr a-z A-Z thegeekstuff THEGEEKSTUFF</h1>
+
+<h1 id="cut-the-command-cut-is-used-for-text-processing-the-example-displays-only-the-first-field-of-each-lines-from-etc-passwd-file-using-the-field-delimiter-colon-in-this-case-the-1st-field-is-the-username-cut-d-f-1-etc-passwd">cut - The command cut is used for text processing. The example displays only the first field of each lines from /etc/passwd file using the field delimiter : (colon). In this case, the 1st field is the username. cut -d &lsquo;:&rsquo; -f 1 &lt; /etc/passwd</h1>
+
+<h1 id="tac-which-is-cat-backwards-concatenate-and-print-files-in-reverse-for-example-you-can-use-this-command-like-this-cat-ok-1-2-3-tac-ok-3-2-1">tac - (which is &ldquo;cat&rdquo; backwards) concatenate and print files in reverse. For example you can use this command like this: cat ok - 1 2 3. tac ok - 3 2 1</h1>
+
+<h1 id="curl-curl-is-a-tool-to-transfer-data-from-or-to-a-server-using-one-of-the-supported-protocols-for-example-curl-https-example-com">curl - Curl is a tool to transfer data from or to a server, using one of the supported protocols. For example:curl <a href="https://example.com">https://example.com</a></h1>
+
+<h1 id="wget-wget-is-a-free-utility-for-non-interactive-download-of-files-from-the-web-wget-is-non-interactive-meaning-that-it-can-work-in-the-background-while-the-user-is-not-logged-on">wget - Wget is a free utility for non-interactive download of files from the Web. Wget is non-interactive, meaning that it can work in the background, while the user is not logged on.</h1>
+
+<p>For example: wget -S <a href="https://example.com">https://example.com</a></p>
+
+<h1 id="watch-runs-command-repeatedly-displaying-its-output-and-errors-the-first-screenfull-this-allows-you-to-watch-the-program-output-change-over-time-by-default-the-program-is-run-every-2-seconds-to-watch-the-contents-of-a-directory-change-you-could-use-watch-d-ls-l">watch - runs command repeatedly, displaying its output and errors (the first screenfull). This allows you to watch the program output change over time. By default, the program is run every 2 seconds. To watch the contents of a directory change, you could use: watch -d ls -l</h1>
+
+<h1 id="head-print-the-first-10-lines-of-each-file-to-standard-output-with-more-than-one-file-precede-each-with-a-header-giving-the-file-name-example-head-etc-passws">head - Print the first 10 lines of each FILE to standard output.With more than one FILE, precede each with a header giving the file name. Example - head /etc/passws</h1>
+
+<h1 id="tail-print-the-last-10-lines-of-each-file-to-standard-output-example-tail-etc-passws">tail - Print the last 10 lines of each FILE to standard output. Example: tail /etc/passws</h1>
 
 <h4 id="what-does-an-after-a-command-do">What does an &amp; after a command do?</h4>
 
+<p>Example: perl script.pl &gt; output.log &amp;
+The &amp; makes the command run in the background. If you forget to add &amp; after command, you can stop the current running process with Ctrl-Z and continue it in the background with bg (or in the foreground with fg).</p>
+
 <h4 id="what-does-disown-after-a-command-do">What does &amp; disown after a command do?</h4>
+
+<p>&amp; puts the job in the background, that is, makes it block on attempting to read input, and makes the shell not wait for its completion.
+disown removes the process from the shell&rsquo;s job control, but it still leaves it connected to the terminal. One of the results is that the shell won&rsquo;t send it a SIGHUP. Obviously, it can only be applied to background jobs, because you cannot enter it when a foreground job is running.</p>
 
 <h4 id="what-is-a-packet-filter-and-how-does-it-work">What is a packet filter and how does it work?</h4>
 
+<p>Packet filters act by inspecting the &ldquo;packets&rdquo; which are transferred between computers on the Internet. If a packet does not match the packet filter&rsquo;s set of filtering rules, the packet filter will drop.</p>
+
 <h4 id="what-is-virtual-memory">What is Virtual Memory?</h4>
+
+<p>In computing, virtual memory is a memory management technique that is implemented using both hardware and software. It maps memory addresses used by a program, called virtual addresses, into physical addresses in computer memory. Main storage as seen by a process or task appears as a contiguous address space or collection of contiguous segments. The operating system manages virtual address spaces and the assignment of real memory to virtual memory.</p>
 
 <h4 id="what-is-swap-and-what-is-it-used-for">What is swap and what is it used for?</h4>
 
+<p>Swap is a special type of memory. Swap space in Linux is used when the amount of physical memory (RAM) is full. If the system needs more memory resources and the RAM is full, inactive pages in memory are moved to the swap space. While swap space can help machines with a small amount of RAM, it should not be considered a replacement for more RAM. Swap space is located on hard drives, which have a slower access time than physical memory.</p>
+
 <h4 id="what-is-an-a-record-an-ns-record-a-ptr-record-a-cname-record-an-mx-record">What is an A record, an NS record, a PTR record, a CNAME record, an MX record?</h4>
 
-<h4 id="are-there-any-other-rrs-and-what-are-they-used-for">Are there any other RRs and what are they used for?</h4>
+<h1 id="a-record-returns-a-32-bit-ipv4-address">A record - Returns a 32-bit IPv4 address</h1>
+
+<h1 id="ns-record-delegates-a-dns-zone-to-use-the-given-authoritative-name-servers-name-server-record">NS record - Delegates a DNS zone to use the given authoritative name servers. Name server record</h1>
+
+<h1 id="ptr-record-pointer-to-a-canonical-name-unlike-a-cname-dns-processing-stops-and-just-the-name-is-returned-the-most-common-use-is-for-implementing-reverse-dns-lookups-pointer-record">PTR record - Pointer to a canonical name. Unlike a CNAME, DNS processing stops and just the name is returned. The most common use is for implementing reverse DNS lookups. Pointer record</h1>
+
+<h1 id="cname-record-alias-of-one-name-to-another-the-dns-lookup-will-continue-by-retrying-the-lookup-with-the-new-name">CNAME record - Alias of one name to another: the DNS lookup will continue by retrying the lookup with the new name.</h1>
+
+<h1 id="mx-record-maps-a-domain-name-to-a-list-of-message-transfer-agents-for-that-domain-mail-exchange-record">MX record - Maps a domain name to a list of message transfer agents for that domain. Mail exchange record</h1>
+
+<h4 id="are-there-any-other-rrs-and-what-are-they-used-for-a-lot-of-them-link-to-https-en-wikipedia-org-wiki-list-of-dns-record-types">Are there any other RRs and what are they used for? A lot of them. link to <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">https://en.wikipedia.org/wiki/List_of_DNS_record_types</a></h4>
 
 <h4 id="what-is-a-split-horizon-dns">What is a Split-Horizon DNS?</h4>
 
+<p>This facility can provide a mechanism for security and privacy management by logical or physical separation of DNS information for network-internal access (within an administrative domain, e.g., company) and access from an unsecure, public network (e.g. the Internet).
+Implementation of split-horizon DNS can be accomplished with hardware-based separation or by software solutions. Hardware-based implementations run distinct DNS server devices for the desired access granularity within the networks involved. Software solutions use either multiple DNS server processes on the same hardware or special server software with the built-in capability of discriminating access to DNS zone records. The latter is a common feature of many server software implementations of the DNS protocol (cf. Comparison of DNS server software) and is sometimes the implied meaning of the term split-horizon DNS, since all other forms of implementation can be achieved with any DNS server software.</p>
+
 <h4 id="what-is-the-sticky-bit">What is the sticky bit?</h4>
+
+<p>A sticky bit is a permission bit that is set on a directory that allows only the owner of the file within that directory or the root user to delete or rename the file. No other user has the needed privileges to delete the file created by some other user. To set sticky bit: sudo chmod +t /tmp</p>
 
 <h4 id="what-does-the-immutable-bit-do-to-a-file">What does the immutable bit do to a file?</h4>
 
+<p>A file with an immutable attribute can not be:Modified,Deleted,Renamed,No soft or hard link created by anyone including root user
+Example: chattr +i file</p>
+
 <h4 id="what-is-the-difference-between-hardlinks-and-symlinks-what-happens-when-you-remove-the-source-to-a-symlink-hardlink">What is the difference between hardlinks and symlinks? What happens when you remove the source to a symlink/hardlink?</h4>
+
+<p>A hardlink isn&rsquo;t a pointer to a file, it&rsquo;s a directory entry (a file) pointing to the same inode. Even if you change the name of the other file, a hardlink still points to the file. If you replace the other file with a new version (by copying it), a hardlink will not point to the new file.
+On the other hand, a symlink is actually pointing to another path (a file name); it resolves the name of the file each time you access it through the symlink. If you move the file, the symlink will not follow. If you replace the file with another one, keeping the name, the symlink will point to the new file.</p>
 
 <h4 id="what-is-an-inode-and-what-fields-are-stored-in-an-inode">What is an inode and what fields are stored in an inode?</h4>
 
+<p>inode is a &ldquo;database&rdquo; of all file information that tells about file structure. The inode of each file uses a pointer to point to the specific file, directory or object. The pointer is a unique number which usually is referred to as the inode number.</p>
+
 <h4 id="how-to-force-trigger-a-file-system-check-on-next-reboot">How to force/trigger a file system check on next reboot?</h4>
+
+<p>tune2fs</p>
 
 <h4 id="what-is-snmp-and-what-is-it-used-for">What is SNMP and what is it used for?</h4>
 
@@ -890,28 +938,46 @@ export myvar=hello</p>
 
 <h4 id="hard-linux-questions">Hard Linux Questions:</h4>
 
-<p>What is a tunnel and how you can bypass a http proxy?
-What is the difference between IDS and IPS?
-What shortcuts do you use on a regular basis?
-What is the Linux Standard Base?
-What is an atomic operation?
-Your freshly configured http server is not running after a restart, what can you do?
-What kind of keys are in ~/.ssh/authorized_keys and what it is this file used for?
-I&rsquo;ve added my public ssh key into authorized_keys but I&rsquo;m still getting a password prompt, what can be wrong?
-Did you ever create RPM&rsquo;s, DEB&rsquo;s or solaris pkg&rsquo;s?
-What does :(){ :|:&amp; };: do on your system?
-How do you catch a Linux signal on a script?
-Can you catch a SIGKILL?
-What&rsquo;s happening when the Linux kernel is starting the OOM killer and how does it choose which process to kill first?
-Describe the linux boot process with as much detail as possible, starting from when the system is powered on and ending when you get a prompt.
-What&rsquo;s a chroot jail?
-When trying to umount a directory it says it&rsquo;s busy, how to find out which PID holds the directory?
-What&rsquo;s LD_PRELOAD and when it&rsquo;s used?
-You ran a binary and nothing happened. How would you debug this?
-What are cgroups? Can you specify a scenario where you could use them?
-How can you remove/delete a file with file-name consisting of only non-printable/non-type-able characters?
-How can you increase or decrease the priority of a process in Linux?
-What are run-levels in Linux?</p>
+<h4 id="what-is-a-tunnel-and-how-you-can-bypass-a-http-proxy">What is a tunnel and how you can bypass a http proxy?</h4>
+
+<h4 id="what-is-the-difference-between-ids-and-ips">What is the difference between IDS and IPS?</h4>
+
+<h4 id="what-shortcuts-do-you-use-on-a-regular-basis">What shortcuts do you use on a regular basis?</h4>
+
+<h4 id="what-is-the-linux-standard-base">What is the Linux Standard Base?</h4>
+
+<h4 id="what-is-an-atomic-operation">What is an atomic operation?</h4>
+
+<p>Your freshly configured http server is not running after a restart, what can you do?</p>
+
+<h4 id="what-kind-of-keys-are-in-ssh-authorized-keys-and-what-it-is-this-file-used-for">What kind of keys are in ~/.ssh/authorized_keys and what it is this file used for?</h4>
+
+<p>I&rsquo;ve added my public ssh key into authorized_keys but I&rsquo;m still getting a password prompt, what can be wrong?
+Did you ever create RPM&rsquo;s, DEB&rsquo;s or solaris pkg&rsquo;s?</p>
+
+<h4 id="what-does-do-on-your-system">What does :(){ :|:&amp; };: do on your system?</h4>
+
+<p>How do you catch a Linux signal on a script?
+Can you catch a SIGKILL?</p>
+
+<h4 id="what-s-happening-when-the-linux-kernel-is-starting-the-oom-killer-and-how-does-it-choose-which-process-to-kill-first">What&rsquo;s happening when the Linux kernel is starting the OOM killer and how does it choose which process to kill first?</h4>
+
+<p>Describe the linux boot process with as much detail as possible, starting from when the system is powered on and ending when you get a prompt.</p>
+
+<h4 id="what-s-a-chroot-jail">What&rsquo;s a chroot jail?</h4>
+
+<p>When trying to umount a directory it says it&rsquo;s busy, how to find out which PID holds the directory?</p>
+
+<h4 id="what-s-ld-preload-and-when-it-s-used">What&rsquo;s LD_PRELOAD and when it&rsquo;s used?</h4>
+
+<p>You ran a binary and nothing happened. How would you debug this?</p>
+
+<h4 id="what-are-cgroups-can-you-specify-a-scenario-where-you-could-use-them">What are cgroups? Can you specify a scenario where you could use them?</h4>
+
+<p>How can you remove/delete a file with file-name consisting of only non-printable/non-type-able characters?
+How can you increase or decrease the priority of a process in Linux?</p>
+
+<h4 id="what-are-run-levels-in-linux">What are run-levels in Linux?</h4>
 
 <h4 id="expert-linux-questions">Expert Linux Questions:</h4>
 
@@ -919,84 +985,145 @@ What are run-levels in Linux?</p>
 
 <h4 id="networking-questions">Networking Questions:</h4>
 
-<p>What is localhost and why would ping localhost fail?
-What is the similarity between &ldquo;ping&rdquo; &amp; &ldquo;traceroute&rdquo; ? How is traceroute able to find the hops.
-What is the command used to show all open ports and/or socket connections on a machine?
-Is 300.168.0.123 a valid IPv4 address?
-Which IP ranges/subnets are &ldquo;private&rdquo; or &ldquo;non-routable&rdquo; (RFC 1918)?
-What is a VLAN?
-What is ARP and what is it used for?
-What is the difference between TCP and UDP?
-What is the purpose of a default gateway?
-What is command used to show the routing table on a Linux box?
-A TCP connection on a network can be uniquely defined by 4 things. What are those things?
-When a client running a web browser connects to a web server, what is the source port and what is the destination port of the connection?
-How do you add an IPv6 address to a specific interface?
-You have added an IPv4 and IPv6 address to interface eth0. A ping to the v4 address is working but a ping to the v6 address gives yout the response sendmsg: operation not permitted. What could be wrong?
-What is SNAT and when should it be used?
-Explain how could you ssh login into a Linux system that DROPs all new incoming packets using a SSH tunnel.
-How do you stop a DDoS attack?
-How can you see content of an ip packet?
-What is IPoAC (RFC 1149)?</p>
+<h4 id="what-is-localhost-and-why-would-ping-localhost-fail">What is localhost and why would ping localhost fail?</h4>
+
+<h4 id="what-is-the-similarity-between-ping-traceroute-how-is-traceroute-able-to-find-the-hops">What is the similarity between &ldquo;ping&rdquo; &amp; &ldquo;traceroute&rdquo; ? How is traceroute able to find the hops.</h4>
+
+<h4 id="what-is-the-command-used-to-show-all-open-ports-and-or-socket-connections-on-a-machine">What is the command used to show all open ports and/or socket connections on a machine?</h4>
+
+<h4 id="is-300-168-0-123-a-valid-ipv4-address">Is 300.168.0.123 a valid IPv4 address?</h4>
+
+<h4 id="which-ip-ranges-subnets-are-private-or-non-routable-rfc-1918">Which IP ranges/subnets are &ldquo;private&rdquo; or &ldquo;non-routable&rdquo; (RFC 1918)?</h4>
+
+<h4 id="what-is-a-vlan">What is a VLAN?</h4>
+
+<h4 id="what-is-arp-and-what-is-it-used-for">What is ARP and what is it used for?</h4>
+
+<h4 id="what-is-the-difference-between-tcp-and-udp">What is the difference between TCP and UDP?</h4>
+
+<h4 id="what-is-the-purpose-of-a-default-gateway">What is the purpose of a default gateway?</h4>
+
+<h4 id="what-is-command-used-to-show-the-routing-table-on-a-linux-box">What is command used to show the routing table on a Linux box?</h4>
+
+<h4 id="a-tcp-connection-on-a-network-can-be-uniquely-defined-by-4-things-what-are-those-things">A TCP connection on a network can be uniquely defined by 4 things. What are those things?</h4>
+
+<h4 id="when-a-client-running-a-web-browser-connects-to-a-web-server-what-is-the-source-port-and-what-is-the-destination-port-of-the-connection">When a client running a web browser connects to a web server, what is the source port and what is the destination port of the connection?</h4>
+
+<h4 id="how-do-you-add-an-ipv6-address-to-a-specific-interface">How do you add an IPv6 address to a specific interface?</h4>
+
+<h4 id="you-have-added-an-ipv4-and-ipv6-address-to-interface-eth0-a-ping-to-the-v4-address-is-working-but-a-ping-to-the-v6-address-gives-yout-the-response-sendmsg-operation-not-permitted-what-could-be-wrong">You have added an IPv4 and IPv6 address to interface eth0. A ping to the v4 address is working but a ping to the v6 address gives yout the response sendmsg: operation not permitted. What could be wrong?</h4>
+
+<h4 id="what-is-snat-and-when-should-it-be-used">What is SNAT and when should it be used?</h4>
+
+<h4 id="explain-how-could-you-ssh-login-into-a-linux-system-that-drops-all-new-incoming-packets-using-a-ssh-tunnel">Explain how could you ssh login into a Linux system that DROPs all new incoming packets using a SSH tunnel.</h4>
+
+<h4 id="how-do-you-stop-a-ddos-attack">How do you stop a DDoS attack?</h4>
+
+<h4 id="how-can-you-see-content-of-an-ip-packet">How can you see content of an ip packet?</h4>
+
+<h4 id="what-is-ipoac-rfc-1149">What is IPoAC (RFC 1149)?</h4>
 
 <h3 id="mysql-questions">MySQL questions:</h3>
 
-<p>How do you create a user?
-How do you provide privileges to a user?
-What is the difference between a &ldquo;left&rdquo; and a &ldquo;right&rdquo; join?
-Explain briefly the differences between InnoDB and MyISAM.
-Describe briefly the steps you need to follow in order to create a simple master/slave cluster.
-Why should you run &ldquo;mysql_secure_installation&rdquo; after installing MySQL?
-How do you check which jobs are running?
-How would you take a backup of a MySQL database?</p>
+<h4 id="how-do-you-create-a-user">How do you create a user?</h4>
+
+<h4 id="how-do-you-provide-privileges-to-a-user">How do you provide privileges to a user?</h4>
+
+<h4 id="what-is-the-difference-between-a-left-and-a-right-join">What is the difference between a &ldquo;left&rdquo; and a &ldquo;right&rdquo; join?</h4>
+
+<h4 id="explain-briefly-the-differences-between-innodb-and-myisam">Explain briefly the differences between InnoDB and MyISAM.</h4>
+
+<h4 id="describe-briefly-the-steps-you-need-to-follow-in-order-to-create-a-simple-master-slave-cluster">Describe briefly the steps you need to follow in order to create a simple master/slave cluster.</h4>
+
+<h4 id="why-should-you-run-mysql-secure-installation-after-installing-mysql">Why should you run &ldquo;mysql_secure_installation&rdquo; after installing MySQL?</h4>
+
+<h4 id="how-do-you-check-which-jobs-are-running">How do you check which jobs are running?</h4>
+
+<h4 id="how-would-you-take-a-backup-of-a-mysql-database">How would you take a backup of a MySQL database?</h4>
 
 <h3 id="devops-questions">DevOps Questions:</h3>
 
-<p>Can you describe your workflow when you create a script?
-What is GIT?
-What is a dynamically/statically linked file?
-What does &ldquo;./configure &amp;&amp; make &amp;&amp; make install&rdquo; do?
-What is puppet/chef/ansible used for?
-What is Nagios/Zenoss/NewRelic used for?
-What is Jenkins/TeamCity/GoCI used for?
-What is the difference between Containers and VMs?
-How do you create a new postgres user?
-What is a virtual IP address? What is a cluster?
-How do you print all strings of printable characters present in a file?
-How do you find shared library dependencies?
-What is Automake and Autoconf?
-./configure shows an error that libfoobar is missing on your system, how could you fix this, what could be wrong?
-What are the advantages/disadvantages of script vs compiled program?
-What&rsquo;s the relationship between continuous delivery and DevOps?
-What are the important aspects of a system of continuous integration and deployment?
-How would you enable network file sharing within AWS that would allow EC2 instances in multiple availability zones to share data?</p>
+<h4 id="can-you-describe-your-workflow-when-you-create-a-script">Can you describe your workflow when you create a script?</h4>
+
+<h4 id="what-is-git">What is GIT?</h4>
+
+<h4 id="what-is-a-dynamically-statically-linked-file">What is a dynamically/statically linked file?</h4>
+
+<h4 id="what-does-configure-make-make-install-do">What does &ldquo;./configure &amp;&amp; make &amp;&amp; make install&rdquo; do?</h4>
+
+<h4 id="what-is-puppet-chef-ansible-used-for">What is puppet/chef/ansible used for?</h4>
+
+<h4 id="what-is-nagios-zenoss-newrelic-used-for">What is Nagios/Zenoss/NewRelic used for?</h4>
+
+<h4 id="what-is-jenkins-teamcity-goci-used-for">What is Jenkins/TeamCity/GoCI used for?</h4>
+
+<h4 id="what-is-the-difference-between-containers-and-vms">What is the difference between Containers and VMs?</h4>
+
+<h4 id="how-do-you-create-a-new-postgres-user">How do you create a new postgres user?</h4>
+
+<h4 id="what-is-a-virtual-ip-address-what-is-a-cluster">What is a virtual IP address? What is a cluster?</h4>
+
+<h4 id="how-do-you-print-all-strings-of-printable-characters-present-in-a-file">How do you print all strings of printable characters present in a file?</h4>
+
+<h4 id="how-do-you-find-shared-library-dependencies">How do you find shared library dependencies?</h4>
+
+<h4 id="what-is-automake-and-autoconf">What is Automake and Autoconf?</h4>
+
+<h4 id="configure-shows-an-error-that-libfoobar-is-missing-on-your-system-how-could-you-fix-this-what-could-be-wrong">./configure shows an error that libfoobar is missing on your system, how could you fix this, what could be wrong?</h4>
+
+<h4 id="what-are-the-advantages-disadvantages-of-script-vs-compiled-program">What are the advantages/disadvantages of script vs compiled program?</h4>
+
+<h4 id="what-s-the-relationship-between-continuous-delivery-and-devops">What&rsquo;s the relationship between continuous delivery and DevOps?</h4>
+
+<h4 id="what-are-the-important-aspects-of-a-system-of-continuous-integration-and-deployment">What are the important aspects of a system of continuous integration and deployment?</h4>
+
+<h4 id="how-would-you-enable-network-file-sharing-within-aws-that-would-allow-ec2-instances-in-multiple-availability-zones-to-share-data">How would you enable network file sharing within AWS that would allow EC2 instances in multiple availability zones to share data?</h4>
 
 <h3 id="fun-questions">Fun Questions:</h3>
 
-<p>A careless sysadmin executes the following command: chmod 444 /bin/chmod - what do you do to fix this?
-I&rsquo;ve lost my root password, what can I do?
-I&rsquo;ve rebooted a remote server but after 10 minutes I&rsquo;m still not able to ssh into it, what can be wrong?
-If you were stuck on a desert island with only 5 command-line utilities, which would you choose?
-You come across a random computer and it appears to be a command console for the universe. What is the first thing you type?
-Tell me about a creative way that you&rsquo;ve used SSH?
-You have deleted by error a running script, what could you do to restore it?
-What will happen on 19 January 2038?
-How to reboot server when reboot command is not responding?</p>
+<h4 id="a-careless-sysadmin-executes-the-following-command-chmod-444-bin-chmod-what-do-you-do-to-fix-this">A careless sysadmin executes the following command: chmod 444 /bin/chmod - what do you do to fix this?</h4>
+
+<h4 id="i-ve-lost-my-root-password-what-can-i-do">I&rsquo;ve lost my root password, what can I do?</h4>
+
+<h4 id="i-ve-rebooted-a-remote-server-but-after-10-minutes-i-m-still-not-able-to-ssh-into-it-what-can-be-wrong">I&rsquo;ve rebooted a remote server but after 10 minutes I&rsquo;m still not able to ssh into it, what can be wrong?</h4>
+
+<h4 id="if-you-were-stuck-on-a-desert-island-with-only-5-command-line-utilities-which-would-you-choose">If you were stuck on a desert island with only 5 command-line utilities, which would you choose?</h4>
+
+<h4 id="you-come-across-a-random-computer-and-it-appears-to-be-a-command-console-for-the-universe-what-is-the-first-thing-you-type">You come across a random computer and it appears to be a command console for the universe. What is the first thing you type?</h4>
+
+<h4 id="tell-me-about-a-creative-way-that-you-ve-used-ssh">Tell me about a creative way that you&rsquo;ve used SSH?</h4>
+
+<h4 id="you-have-deleted-by-error-a-running-script-what-could-you-do-to-restore-it">You have deleted by error a running script, what could you do to restore it?</h4>
+
+<h4 id="what-will-happen-on-19-january-2038">What will happen on 19 January 2038?</h4>
+
+<h4 id="how-to-reboot-server-when-reboot-command-is-not-responding">How to reboot server when reboot command is not responding?</h4>
 
 <h4 id="demo-time">Demo Time:</h4>
 
-<p>Unpack test.tar.gz without man pages or google.
-Remove all &ldquo;*.pyc&rdquo; files from testdir recursively?
-Search for &ldquo;my konfu is the best&rdquo; in all *.py files.
-Replace the occurrence of &ldquo;my konfu is the best&rdquo; with &ldquo;I&rsquo;m a linux jedi master&rdquo; in all *.txt files.
-Test if port 443 on a machine with IP address X.X.X.X is reachable.
-Get <a href="http://myinternal.webserver.local/test.html">http://myinternal.webserver.local/test.html</a> via telnet.
-How to send an email without a mail client, just on the command line?
-Write a get_prim method in python/perl/bash/pseudo.
-Find all files which have been accessed within the last 30 days.
-Explain the following command (date ; ps -ef | awk &lsquo;{print $1}&rsquo; | sort | uniq | wc -l ) &gt;&gt; Activity.log
-Write a script to list all the differences between two directories.
-In a log file with contents as <TIME> : [MESSAGE] : [ERROR_NO] - Human readable text display summary/count of specific error numbers that occurred every hour or a specific hour.</p>
+<h4 id="unpack-test-tar-gz-without-man-pages-or-google">Unpack test.tar.gz without man pages or google.</h4>
+
+<h4 id="remove-all-pyc-files-from-testdir-recursively">Remove all &ldquo;*.pyc&rdquo; files from testdir recursively?</h4>
+
+<h4 id="search-for-my-konfu-is-the-best-in-all-py-files">Search for &ldquo;my konfu is the best&rdquo; in all *.py files.</h4>
+
+<h4 id="replace-the-occurrence-of-my-konfu-is-the-best-with-i-m-a-linux-jedi-master-in-all-txt-files">Replace the occurrence of &ldquo;my konfu is the best&rdquo; with &ldquo;I&rsquo;m a linux jedi master&rdquo; in all *.txt files.</h4>
+
+<h4 id="test-if-port-443-on-a-machine-with-ip-address-x-x-x-x-is-reachable">Test if port 443 on a machine with IP address X.X.X.X is reachable.</h4>
+
+<h4 id="get-http-myinternal-webserver-local-test-html-via-telnet">Get <a href="http://myinternal.webserver.local/test.html">http://myinternal.webserver.local/test.html</a> via telnet.</h4>
+
+<h4 id="how-to-send-an-email-without-a-mail-client-just-on-the-command-line">How to send an email without a mail client, just on the command line?</h4>
+
+<h4 id="write-a-get-prim-method-in-python-perl-bash-pseudo">Write a get_prim method in python/perl/bash/pseudo.</h4>
+
+<h4 id="find-all-files-which-have-been-accessed-within-the-last-30-days">Find all files which have been accessed within the last 30 days.</h4>
+
+<h4 id="explain-the-following-command-date-ps-ef-awk-print-1-sort-uniq-wc-l-activity-log">Explain the following command (date ; ps -ef | awk &lsquo;{print $1}&rsquo; | sort | uniq | wc -l ) &gt;&gt; Activity.log</h4>
+
+<h4 id="write-a-script-to-list-all-the-differences-between-two-directories">Write a script to list all the differences between two directories.</h4>
+
+<h4 id="in-a-log-file-with-contents-as-time-message-error-no-human-readable-text-display-summary-count-of-specific-error-numbers-that-occurred-every-hour-or-a-specific-hour">In a log file with contents as <TIME> : [MESSAGE] : [ERROR_NO] - Human readable text display summary/count of specific error numbers that occurred every hour or a specific hour.</h4>
 
       
     </div>
