@@ -859,82 +859,343 @@ On the other hand, a symlink is actually pointing to another path (a file name);
 
 <h4 id="how-to-force-trigger-a-file-system-check-on-next-reboot">How to force/trigger a file system check on next reboot?</h4>
 
-<p>tune2fs</p>
+<p>tune2fs -l /dev/sdbX | grep Last\ c - The following command will tell as when was the last time the filesystem /dev/sdX was checked.
+tune2fs -l /dev/sdbX | grep Max - how many mounts are allowed to pass before filesystem check is forced.
+<em>touch /forcefsck</em> - The simplest way to force fsck filesystem check on a root partition eg. /dev/sda1 is to create an empty file called forcefsck in the partition&rsquo;s root directory.
+This empty file will temporarily override any other settings and force fsck to check the filesystem on the next system reboot. Once the filesystem is checked the forcefsck file will be removed thus next time you reboot your filesystem will NOT be checked again. To enable more permanent solution and force filesystem check on every reboot we need to manipulate filesystem&rsquo;s &ldquo;Maximum mount count&rdquo; parameter.
+tune2fs -c 1 /dev/sdb1</p>
 
 <h4 id="what-is-snmp-and-what-is-it-used-for">What is SNMP and what is it used for?</h4>
 
+<p>Simple Network Management Protocol - is a widely used protocol for monitoring the health and welfare of network equipment (eg. routers), computer equipment and even devices.
+It is commonly used by network and system administrators to gather operational statistics(such as measuring network bandwidth traffic, cpu usage, or available hard drive space) as well as setting system parameters.</p>
+
 <h4 id="what-is-a-runlevel-and-how-to-get-the-current-runlevel">What is a runlevel and how to get the current runlevel?</h4>
+
+<p>To check the runlevel of you system you can use runlevel command with no arguments:
+runlevel
+A system can be booted into (i.e., started up into) any of several runlevels, each of which is represented by a single digit integer. Each runlevel designates a different system configuration and allows access to a different combination of processes (i.e., instances of executing programs).
+The are differences in the runlevels according to the operating system. Seven runlevels are supported in the standard Linux kernel (i.e., core of the operating system). They are:
+0 - System halt; no activity, the system can be safely powered down.
+1 - Single user; rarely used.
+2 - Multiple users, no NFS (network filesystem); also used rarely.
+3 - Multiple users, command line (i.e., all-text mode) interface; the standard runlevel for most Linux-based server hardware.
+4 - User-definable
+5 - Multiple users, GUI (graphical user interface); the standard runlevel for most Linux-based desktop systems.
+6 - Reboot; used when restarting the system.</p>
 
 <h4 id="what-is-ssh-port-forwarding">What is SSH port forwarding?</h4>
 
+<p>SH port forwarding is a mechanism in SSH for tunneling application ports from the client machine to the server machine, or vice versa. It can be used for adding encryption to legacy applications, going through firewalls, and some system administrators and IT professionals use it for opening backdoors into the internal network from their home machines.
+Imagine you’re on a private network which doesn’t allow connections to a specific server. Let’s say you’re at work and imgur.com is being blocked. To get around this we can create a tunnel through a server which isn’t on our network and thus can access Imgur.
+$ ssh -L 9000:imgur.com:80 user@example.com
+The key here is -L which says we’re doing local port forwarding. Then it says we’re forwarding our local port 9000 to imgur.com:80, which is the default port for HTTP. Now open your browser and go to <a href="http://localhost:9000">http://localhost:9000</a>.
+The awesome thing about SSH tunnels is that they are encrypted. Nobody is going to see what sites you’re visiting, they’ll only see an SSH connection to your server.
+To fix this problem you need to have another computer, which is publicly accessible and have SSH access to it. It can be any server on the internet, as long as you can connect to it. We’ll tell SSH to make a tunnel that opens up a new port on the server, and connects it to a local port on your machine.
+$ ssh -R 9000:localhost:3000 user@example.com
+The syntax here is very similar to local port forwarding, with a single change of -L for -R. But as with local port forwarding, the syntax remains the same.</p>
+
 <h4 id="what-is-the-difference-between-local-and-remote-port-forwarding">What is the difference between local and remote port forwarding?</h4>
+
+<p>Yes, if I understand it correctly, local port forwarding from a to b should be identical to remote port forwarding from b to a (and vice versa). An outgoing tunnel from a to b (viewed from a) should be equal to an incoming tunnel from a to b (viewed from b).
+Local port forwarding creates an outgoing tunnel which can be used to bring a public internet computer to local machine. A local user can access a remote host:port combination on a local host, because the given port on the local (client) host is forwarded to the given host and port on the remote side:
+ssh -L local_port:remote_host:remote_port user@hostname
+Remote port forwarding creates an incoming tunnel which can be used to bring a local computer into the public internet. An internet user can access a certain local host:port combination on a remote host. The given port on the remote (server) host is forwarded to the given host and port on the local side:
+ssh -R local_port:remote_host:remote_port user@hostname</p>
 
 <h4 id="what-are-the-steps-to-add-a-user-to-a-system-without-using-useradd-adduser">What are the steps to add a user to a system without using useradd/adduser?</h4>
 
+<p>To create a new account manually, follow these steps:
+Edit /etc/passwd with vipw and add a new line for the new account. Be careful with the syntax. Do not edit directly with an editor. vipw locks the file, so that other commands won&rsquo;t try to update it at the same time. You should make the password field be `*&lsquo;, so that it is impossible to log in.
+Similarly, edit /etc/group with vigr, if you need to create a new group as well.
+Create the home directory of the user with mkdir.
+Copy the files from /etc/skel to the new home directory.
+Fix ownerships and permissions with chown and chmod. The -R option is most useful. The correct permissions vary a little from one site to another, but usually the following commands do the right thing:
+cd /home/newusername
+chown -R username.group .
+chmod -R go=u,go-w .
+chmod go= .
+Set the password with passwd.
+After you set the password in the last step, the account will work. You shouldn&rsquo;t set it until everything else has been done, otherwise the user may inadvertently log in while you&rsquo;re still copying the files.</p>
+
 <h4 id="what-is-major-and-minor-numbers-of-special-files">What is MAJOR and MINOR numbers of special files?</h4>
+
+<p>Char devices are accessed through names in the filesystem. Those names are called special files or device files or simply nodes of the filesystem tree; they are conventionally located in the /dev directory. Special files for char drivers are identified by a &ldquo;c&rdquo; in the first column of the output of ls -l. Block devices appear in /dev as well, but they are identified by a &ldquo;b.&rdquo; The focus of this chapter is on char devices, but much of the following information applies to block devices as well.
+If you issue the ls -l command, you&rsquo;ll see two numbers (separated by a comma) in the device file entries before the date of the last modification, where the file length normally appears. These numbers are the major and minor device number for the particular device. The following listing shows a few devices as they appear on a typical system. Their major numbers are 1, 4, 7, and 10, while the minors are 1, 3, 5, 64, 65, and 129.
+ crw-rw-rw-    1 root     root       1,   3 Apr 11  2002 null
+ crw&mdash;&mdash;-    1 root     root      10,   1 Apr 11  2002 psaux
+ crw&mdash;&mdash;-    1 root     root       4,   1 Oct 28 03:04 tty1
+ crw-rw-rw-    1 root     tty        4,  64 Apr 11  2002 ttys0
+ crw-rw&mdash;-    1 root     uucp       4,  65 Apr 11  2002 ttyS1
+ crw&ndash;w&mdash;-    1 vcsa     tty        7,   1 Apr 11  2002 vcs1
+ crw&ndash;w&mdash;-    1 vcsa     tty        7, 129 Apr 11  2002 vcsa1
+ crw-rw-rw-    1 root     root       1,   5 Apr 11  2002 zero
+Traditionally, the major number identifies the driver associated with the device. For example, /dev/null and /dev/zero are both managed by driver 1, whereas virtual consoles and serial terminals are managed by driver 4; similarly, both vcs1 and vcsa1 devices are managed by driver 7. Modern Linux kernels allow multiple drivers to share major numbers, but most devices that you will see are still organized on the one-major-one-driver principle.
+The minor number is used by the kernel to determine exactly which device is being referred to. Depending on how your driver is written (as we will see below), you can either get a direct pointer to your device from the kernel, or you can use the minor number yourself as an index into a local array of devices. Either way, the kernel itself knows almost nothing about minor numbers beyond the fact that they refer to devices implemented by your driver.</p>
 
 <h4 id="describe-the-mknod-command-and-when-you-d-use-it">Describe the mknod command and when you&rsquo;d use it.</h4>
 
+<p>mknod was originally used to create the character and block devices that populate /dev/. Nowadays software like udev automatically creates and removes device nodes on the virtual filesystem when the corresponding hardware is detected by the kernel, but originally /dev was just a directory in / that was populated during install.
+So yes, in case of a near complete disaster causing the /dev virtual filesystem not to load and/or udev failing spectacularly, using mknod to painstakingly repopulate at least a rudimentary device tree to get something back up can be done&hellip; But yeah, that&rsquo;s sysadmin horror story time. Personally, I recommend a rescue USB stick or CD.
+Aside from creating named pipes, I can&rsquo;t think of a single possible day-to-day use for it that an end user would need to concern themselves with &ndash; and even that is stretching the definition of &lsquo;day to day use&rsquo;.
+mknod is creating a device file, usually to be located in the /dev branch, but not necessarily like your example shows.
+The first parameter is telling which kind of device to create, here c for character device. Other choices might be b for block devices, p for fifo (pipe).
+The second parameter is the major number, it identifies the driver for the kernel to use.
+The third parameter is the minor number, it is passed to the driver for its internal usage.
+To know what major/minor numbers to use, you need to have a look to the device manual pages, e.g.</p>
+
 <h4 id="describe-a-scenario-when-you-get-a-filesystem-is-full-error-but-df-shows-there-is-free-space">Describe a scenario when you get a &ldquo;filesystem is full&rdquo; error, but &lsquo;df&rsquo; shows there is free space.</h4>
+
+<p>The filesystem can run out of inodes, &lsquo;df -i&rsquo; will show that.
+The inode is a data structure in a Unix-style file system that describes a filesystem object such as a file or a directory.</p>
 
 <h4 id="describe-a-scenario-when-deleting-a-file-but-df-not-showing-the-space-being-freed">Describe a scenario when deleting a file, but &lsquo;df&rsquo; not showing the space being freed.</h4>
 
+<p>causing it to not be deleted; restart or kill that process to release the file.
+Use lsof +L1
+to find out which process is using a deleted (unlinked) file.</p>
+
 <h4 id="describe-how-ps-works">Describe how &lsquo;ps&rsquo; works.</h4>
+
+<p>On Linux, the ps command works by reading files in the proc filesystem. The directory /proc/PID contains various files that provide information about process PID. The content of these files is generated on the fly by the kernel when a process reads them.
+You can find documentation about the entries in /proc in the proc(5) man page and in the kernel documentation.
+You can find this out by yourself by observing what the ps command does with strace, a command that lists the system calls made by a process.
+% strace -e open ps
+open(&ldquo;/etc/ld.so.cache&rdquo;, O_RDONLY|O_CLOEXEC) = 3</p>
 
 <h4 id="what-happens-to-a-child-process-that-dies-and-has-no-parent-process-to-wait-for-it-and-what-s-bad-about-this">What happens to a child process that dies and has no parent process to wait for it and what’s bad about this?</h4>
 
+<p>Zombie processes don’t use up any system resources. (Actually, each one uses a very tiny amount of system memory to store its process descriptor.) However, each zombie process retains its process ID (PID). Linux systems have a finite number of process IDs – 32767 by default on 32-bit systems. If zombies are accumulating at a very quick rate – for example, if improperly programmed server software is creating zombie processes under load — the entire pool of available PIDs will eventually become assigned to zombie processes, preventing other processes from launching.
+One way is by sending the SIGCHLD signal to the parent process. This signal tells the parent process to execute the wait() system call and clean up its zombie children. Send the signal with the kill command, replacing pid in the command below with the parent process’s PID:
+kill -s SIGCHLD pid
+When a process dies on Linux, it isn’t all removed from memory immediately — its process descriptor stays in memory (the process descriptor only takes a tiny amount of memory). The process’s status becomes EXIT_ZOMBIE and the process’s parent is notified that its child process has died with the SIGCHLD signal. The parent process is then supposed to execute the wait() system call to read the dead process’s exit status and other information. This allows the parent process to get information from the dead process. After wait() is called, the zombie process is completely removed from memory.</p>
+
 <h4 id="explain-briefly-each-one-of-the-process-states">Explain briefly each one of the process states.</h4>
+
+<p>R - running or runnable (on run queue)
+D - uninterruptible sleep (usually IO)
+S - interruptible sleep (waiting for an event to complete)
+Z - defunct/zombie, terminated but not reaped by its parent
+T - stopped, either by a job control signal or because it is being traced</p>
 
 <h4 id="how-to-know-which-process-listens-on-a-specific-port">How to know which process listens on a specific port?</h4>
 
+<p>You can the following programs to find out about port numbers and its associated process:
+netstat – a command-line tool that displays network connections, routing tables, and a number of network interface statistics.
+fuser – a command line tool to identify processes using files or sockets.
+lsof – a command line tool to list open files under Linux / UNIX to report a list of all open files and the processes that opened them.
+netstat -tulpn
+lsof -i :portNumber
+lsof -i tcp:portNumber
+lsof -i udp:portNumber
+lsof -i :80
+lsof -i :80 | grep LISTEN</p>
+
 <h4 id="what-is-a-zombie-process-and-what-could-be-the-cause-of-it">What is a zombie process and what could be the cause of it?</h4>
+
+<p>When a process dies on Linux, it isn’t all removed from memory immediately — its process descriptor stays in memory (the process descriptor only takes a tiny amount of memory). The process’s status becomes EXIT_ZOMBIE and the process’s parent is notified that its child process has died with the SIGCHLD signal. The parent process is then supposed to execute the wait() system call to read the dead process’s exit status and other information. This allows the parent process to get information from the dead process. After wait() is called, the zombie process is completely removed from memory.</p>
 
 <h4 id="you-run-a-bash-script-and-you-want-to-see-its-output-on-your-terminal-and-save-it-to-a-file-at-the-same-time-how-could-you-do-it">You run a bash script and you want to see its output on your terminal and save it to a file at the same time. How could you do it?</h4>
 
+<p>update-client 2&gt;&amp;1 | tee my.log
+2&gt;&amp;1 redirects standard error to standard output, and tee sends its standard input to standard output and the file.</p>
+
 <h4 id="explain-what-echo-1-proc-sys-net-ipv4-ip-forward-does">Explain what echo &ldquo;1&rdquo; &gt; /proc/sys/net/ipv4/ip_forward does.</h4>
+
+<p>By default any modern Linux distributions will have IP Forwarding disabled. This is normally a good idea, as most peoples will not need IP Forwarding, but if we are setting up a Linux router/gateway or maybe a VPN server (pptp or ipsec) or just a plain dial-in server then we will need to enable forwarding. This can be done in several ways that I will present bellow.
+Check if IP Forwarding is enabled
+We have to query the sysctl kernel value net.ipv4.ip_forward to see if forwarding is enabled or not: Using sysctl:
+As with any sysctl kernel parameters we can change the value of net.ipv4.ip_forward on the fly (without rebooting the system):
+sysctl -w net.ipv4.ip_forward=1
+or
+echo 1 &gt; /proc/sys/net/ipv4/ip_forward
+the setting is changed instantly; the result will not be preserved after rebooting the system.</p>
 
 <h4 id="describe-briefly-the-steps-you-need-to-take-in-order-to-create-and-install-a-valid-certificate-for-the-site-https-foo-example-com">Describe briefly the steps you need to take in order to create and install a valid certificate for the site <a href="https://foo.example.com">https://foo.example.com</a>.</h4>
 
+<p>Prior to purchasing a cert, you need to generate a private key, and a CSR file (Certificate Signing Request). You&rsquo;ll be asked for the content of the CSR file when ordering the certificate.
+openssl req -new -newkey rsa:2048 -nodes -keyout example_com.key -out example_com.csr
+This gives you two files:
+example_com.key &ndash; your Private key. You&rsquo;ll need this later to configure ngxinx.
+example_com.csr &ndash; Your CSR file.
+Now, purchase the certificate [1], follow the steps on their site, and you should soon get an email with your PositiveSSL Certificate. It contains a zip file with the following:
+Root CA Certificate - AddTrustExternalCARoot.crt
+Intermediate CA Certificate - COMODORSAAddTrustCA.crt
+Intermediate CA Certificate - COMODORSADomainValidationSecureServerCA.crt
+Your PositiveSSL Certificate - www_example_com.crt (or the subdomain you gave them)
+Install the Commodo SSL cert
+Combine everything for nginx [2]:
+Combine the above crt files into a bundle (the order matters, here):
+cat www_example_com.crt COMODORSADomainValidationSecureServerCA.crt  COMODORSAAddTrustCA.crt AddTrustExternalCARoot.crt &gt; ssl-bundle.crt
+Store the bundle wherever nginx expects to find it:
+mkdir -p /etc/nginx/ssl/example_com/
+mv ssl-bundle.crt /etc/nginx/ssl/example_com/
+Ensure your private key is somewhere nginx can read it, as well.:
+mv example_com.key /etc/nginx/ssl/example_com/
+Make sure your nginx config points to the right cert file and to the private key you generated earlier:
+server {
+    listen 443;
+    ssl on;
+    ssl_certificate /etc/nginx/ssl/example_com/ssl-bundle.crt;
+    ssl_certificate_key /etc/nginx/ssl/example_com/example_com.key;</p>
+
+<pre><code># side note: only use TLS since SSLv2 and SSLv3 have had recent vulnerabilities
+ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+
+# ...
+</code></pre>
+
+<p>}
+Restart nginx.</p>
+
 <h4 id="can-you-have-several-https-virtual-hosts-sharing-the-same-ip">Can you have several HTTPS virtual hosts sharing the same IP?</h4>
+
+<p>You can host multiple SSL certificates on one IP Address using Server Name Indication (SNI).</p>
+
+<p>Although hosting several sites on a single virtual private server is not a challenge with the use of virtual hosts, providing separate SSL certificates for each site traditionally required separate IP addresses. The process has recently been simplified through the use of Server Name Indication (SNI), which sends a site visitor the certificate that matches the requested server name.
+SNI can only be used for serving multiple SSL sites from your web server and is not likely to work at all on other daemons, such as mail servers, etc. There are also a small percentage of older web browsers that may still give certificate errors. Wikipedia has an updated list of software that does and does not support this TLS extension.
+<a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-multiple-ssl-certificates-on-one-ip-with-apache-on-ubuntu-12-04">https://www.digitalocean.com/community/tutorials/how-to-set-up-multiple-ssl-certificates-on-one-ip-with-apache-on-ubuntu-12-04</a></p>
 
 <h4 id="what-is-a-wildcard-certificate">What is a wildcard certificate?</h4>
 
+<p>In computer networking, a wildcard certificate is a public key certificate which can be used with multiple subdomains of a domain. The principal use is for securing web sites with HTTPS, but there are also applications in many other fields. Compared with conventional certificates, a wildcard certificate can be cheaper and more convenient than a certificate for each domain.[1]</p>
+
 <h4 id="which-linux-file-types-do-you-know">Which Linux file types do you know?</h4>
+
+<p>By default Unix have only 3 types of files
+1. Regular file(-)
+2. Directory files(d)
+3. Special files
+    1. Block file(b)
+    2. Character device file&copy;
+    3. Named pipe file or just a pipe file(p)
+    4. Symbolic link file(l)
+    5. Socket file(s)</p>
 
 <h4 id="what-is-the-difference-between-a-process-and-a-thread-and-parent-and-child-processes-after-a-fork-system-call">What is the difference between a process and a thread? And parent and child processes after a fork system call?</h4>
 
+<p>Both processes and threads are independent sequences of execution. The typical difference is that threads (of the same process) run in a shared memory space, while processes run in separate memory spaces.
+I&rsquo;m not sure what &ldquo;hardware&rdquo; vs &ldquo;software&rdquo; threads you might be referring to. Threads are an operating environment feature, rather than a CPU feature (though the CPU typically has operations that make threads efficient).
+Erlang uses the term &ldquo;process&rdquo; because it does not expose a shared-memory multiprogramming model. Calling them &ldquo;threads&rdquo; would imply that they have shared memory.
+The use of fork and exec exemplifies the spirit of UNIX in that it provides a very simple way to start new processes.
+The fork call basically makes a duplicate of the current process, identical in almost every way (not everything is copied over, for example, resource limits in some implementations but the idea is to create as close a copy as possible).
+The new process (child) gets a different process ID (PID) and has the the PID of the old process (parent) as its parent PID (PPID). Because the two processes are now running exactly the same code, they can tell which is which by the return code of fork - the child gets 0, the parent gets the PID of the child. This is all, of course, assuming the fork call works - if not, no child is created and the parent gets an error code.
+The exec call is a way to basically replace the entire current process with a new program. It loads the program into the current process space and runs it from the entry point.
+So, fork and exec are often used in sequence to get a new program running as a child of a current process. Shells typically do this whenever you try to run a program like find - the shell forks, then the child loads the find program into memory, setting up all command line arguments, standard I/O and so forth.
+But they&rsquo;re not required to be used together. It&rsquo;s perfectly acceptable for a program to fork itself without execing if, for example, the program contains both parent and child code (you need to be careful what you do, each implementation may have restrictions). This was used quite a lot (and still is) for daemons which simply listen on a TCP port and fork a copy of themselves to process a specific request while the parent goes back to listening.
+Similarly, programs that know they&rsquo;re finished and just want to run another program don&rsquo;t need to fork, exec and then wait for the child. They can just load the child directly into their process space.
+Some UNIX implementations have an optimized fork which uses what they call copy-on-write. This is a trick to delay the copying of the process space in fork until the program attempts to change something in that space. This is useful for those programs using only fork and not exec in that they don&rsquo;t have to copy an entire process space.
+If the exec is called following fork (and this is what happens mostly), that causes a write to the process space and it is then copied for the child process.
+Note that there is a whole family of exec calls (execl, execle, execve and so on) but exec in context here means any of them.</p>
+
 <h4 id="what-is-the-difference-between-exec-and-fork">What is the difference between exec and fork?</h4>
+
+<p>The use of fork and exec exemplifies the spirit of UNIX in that it provides a very simple way to start new processes.
+The fork call basically makes a duplicate of the current process, identical in almost every way (not everything is copied over, for example, resource limits in some implementations but the idea is to create as close a copy as possible).
+The new process (child) gets a different process ID (PID) and has the the PID of the old process (parent) as its parent PID (PPID). Because the two processes are now running exactly the same code, they can tell which is which by the return code of fork - the child gets 0, the parent gets the PID of the child. This is all, of course, assuming the fork call works - if not, no child is created and the parent gets an error code.
+The exec call is a way to basically replace the entire current process with a new program. It loads the program into the current process space and runs it from the entry point.
+So, fork and exec are often used in sequence to get a new program running as a child of a current process. Shells typically do this whenever you try to run a program like find - the shell forks, then the child loads the find program into memory, setting up all command line arguments, standard I/O and so forth.
+But they&rsquo;re not required to be used together. It&rsquo;s perfectly acceptable for a program to fork itself without execing if, for example, the program contains both parent and child code (you need to be careful what you do, each implementation may have restrictions). This was used quite a lot (and still is) for daemons which simply listen on a TCP port and fork a copy of themselves to process a specific request while the parent goes back to listening.
+Similarly, programs that know they&rsquo;re finished and just want to run another program don&rsquo;t need to fork, exec and then wait for the child. They can just load the child directly into their process space.
+Some UNIX implementations have an optimized fork which uses what they call copy-on-write. This is a trick to delay the copying of the process space in fork until the program attempts to change something in that space. This is useful for those programs using only fork and not exec in that they don&rsquo;t have to copy an entire process space.
+If the exec is called following fork (and this is what happens mostly), that causes a write to the process space and it is then copied for the child process.
+Note that there is a whole family of exec calls (execl, execle, execve and so on) but exec in context here means any of them.</p>
 
 <h4 id="what-is-nohup-used-for">What is &ldquo;nohup&rdquo; used for?</h4>
 
-<h4 id="what-is-the-difference-between-these-two-commands">What is the difference between these two commands?</h4>
+<p>First of all, every time you execute a command, you shell will fork a new process, regardless of whether you run it with &amp; or not. &amp; only means you&rsquo;re running it in the background.
+Note this is not very accurate. Some commands, like cd are shell functions and will usually not fork a new process. type cmd will usually tell you whether cmd is an external command or a shell function. type type tells you that type itself is a shell function.
+nohup is something different. It tells the new process to ignore SIGHUP. It is the signal sent by the kernel when the parent shell is closed.
+To answer your question do the following:
+run emacs &amp; (by default should run in a separate X window).
+on the parent shell, run exit.
+You&rsquo;ll notice that the emacs window is killed, despite running in the background. This is the default behavior and nohup is used precisely to modify that.
+Running a job in the background (with &amp; or bg, I bet other shells have other syntaxes as well) is a shell feature, stemming from the ability of modern systems to multitask. Instead of forking a new shell instance for every program you want to launch, modern shells (bash, zsh, ksh, &hellip;) will have the ability to manage a list of programs (or jobs). Only one of them at a time can be at the foreground, meaning it gets the shell focus. I wish someone could expand more on the differences between a process running in the foreground and one in the background (the main one being acess to stdin/stdout).
+In any case, this does not affect the way the child process reacts to SIGHUP. nohup does.</p>
 
-<p>myvar=hello
-export myvar=hello</p>
+<h4 id="what-is-the-difference-between-these-two-commands-myvar-hello-export-myvar-hello">What is the difference between these two commands? myvar=hello export myvar=hello</h4>
+
+<p>Exported variables are carried into the environment of processes started by the shell that exported them, while non-exported variables are local to the current process only. From the export man page:
+The shell shall give the export attribute to the variables corresponding to the specified names, which shall cause them to be in the environment of subsequently executed commands.
+set outputs the current environment, which includes any local non-exported variables. env is used to launch programs in a new environment, and with no arguments will output what that new environment would be. Since env is creating a new environment, only exported variables are brought through, as is the case for any program launched from that shell. For example, spawning a second shell within the first (I used $$ to represent prompts in the inner shell):</p>
 
 <h4 id="how-many-ntp-servers-would-you-configure-in-your-local-ntp-conf">How many NTP servers would you configure in your local ntp.conf?</h4>
 
+<p>Minimum 4 recomended</p>
+
 <h4 id="what-does-the-column-reach-mean-in-ntpq-p-output">What does the column &lsquo;reach&rsquo; mean in ntpq -p output?</h4>
+
+<p>The asterisk indicates the prefered update node (where first to try to get the time).
+remote - is the address of the time server, with LOCAL(0) indicating the local clock.
+refid - indicated the type of the time server. LOCAL or .LCL. means local, .DCFa. is a DCF77 receiver, .PPS. is a hardware device generating a pulse every second.
+st - is the Stratum, which indicates the accuracy to be expected. Stratum 0 are usually atomic clocks, Stratum 1 might be radio controlled clocks.
+when - is the time to the next update.
+poll - is the count that when has to reach before an update is attempted
+reach - is an octal number that is left-shifted on each update. On a successful update an 1 is shifted in, 0 otherwise.
+delay - is the RTT to the time server
+offset - is the difference between the remote and the local clock</p>
 
 <h4 id="you-need-to-upgrade-kernel-at-100-1000-servers-how-you-would-do-this">You need to upgrade kernel at 100-1000 servers, how you would do this?</h4>
 
+<p>Using Ansible</p>
+
 <h4 id="how-can-you-get-host-channel-id-lun-of-scsi-disk">How can you get Host, Channel, ID, LUN of SCSI disk?</h4>
+
+<p>cat /proc/scsi/scsi</p>
 
 <h4 id="how-can-you-limit-process-memory-usage">How can you limit process memory usage?</h4>
 
+<p>I&rsquo;m not very sure about this, but you could also use cgroups to limit the memory usage. The advantage of cgroups is that you can control processes that are already running. By the way systemd will use cgroups to control the system services.
+On Linux systems with kernel &gt;=2.6.36 and util-linux &gt;=2.21, you can use the prlimit command to set a process resource limits:
+prlimit &ndash;rss=400000 &ndash;pid <pid>
+ulimit -v</p>
+
 <h4 id="what-is-bash-quick-substitution-caret-replace-x-y">What is bash quick substitution/caret replace(^x^y)?</h4>
+
+<p>That particular feature is called quick substitution; its documentation can be found in the Event Designators section of the Bash Manual. You can&rsquo;t do what you want with quick substitution; you&rsquo;ll have to resort to something slightly more verbose:
+!!:gs/foo/bar/</p>
 
 <h4 id="do-you-know-of-any-alternative-shells-if-so-have-you-used-any">Do you know of any alternative shells? If so, have you used any?</h4>
 
+<p>fish, zsh, dash</p>
+
 <h4 id="what-is-a-tarpipe-or-how-would-you-go-about-copying-everything-including-hardlinks-and-special-files-from-one-server-to-another">What is a tarpipe (or, how would you go about copying everything, including hardlinks and special files, from one server to another)?</h4>
+
+<p>GNU cp -a copies recursively preserving as much structure and metadata as possible. Hard links between files in the source directory are included in that. To select hard link preservation specifically without all the other features of -a, use &ndash;preserve=links.
+rsync has a -H or &ndash;hard-links option for this, and has the usual rsync benefits of being able to be stopped and restarted, and to be re-run to efficiently deal with any files that were changed during/after the previous run.
+Create a tar archive in the source directory, send it over a pipe, and unpack it in the destination directory. Tar Pipe</p>
+
+<h1 id="create-src-as-before">create src as before</h1>
+
+<p>(cd src;tar cf - .) | (mkdir dst;cd dst;tar xf -)</p>
 
 <h4 id="how-can-you-tell-if-the-httpd-package-was-already-installed">How can you tell if the httpd package was already installed?</h4>
 
+<p>dpkg &ndash;get-selections | grep apache
+Another approach, to find any running HTTP daemon on the default port would be:
+sudo lsof -nPi | grep &ldquo;:80 (LISTEN)&rdquo;</p>
+
 <h4 id="how-can-you-list-the-contents-of-a-package">How can you list the contents of a package?</h4>
+
+<p>rpm -ql [packageName]
+dpkg &ndash;contents filename.deb</p>
 
 <h4 id="how-can-you-determine-which-package-is-better-openssh-server-5-3p1-118-1-el6-8-x86-64-or-openssh-server-6-6p1-1-el6-x86-64">How can you determine which package is better: openssh-server-5.3p1-118.1.el6_8.x86_64 or openssh-server-6.6p1-1.el6.x86_64 ?</h4>
 
+<p>the last one (bigger version) or just google it</p>
+
 <h4 id="can-you-explain-to-me-the-difference-between-block-based-and-object-based-storage">Can you explain to me the difference between block based, and object based storage?</h4>
+
+<p>Block Storage is persistant storage organized into unstructured &ldquo;blocks&rdquo;, each the same length.  An ordinary disk drive, RAID array, or USB storage key are examples of locally attached &ldquo;block storage&rdquo;.
+Block storage can be either &ldquo;locally attached&rdquo;, or it can be &ldquo;network&rdquo; attached, in a SAN, speaking a network protocols such as iSCSI.
+Block storage devices typically are formatted with a filesystem, such as Linux&rsquo;s ext3 or btrfs, or Microsoft&rsquo;s FAT32 or NTFS. The Linux filesystems such as ext3 implement the POSIX filesystem semantics.
+In OpenStack, block storage is provided by the Nova system working with the Cinder system.  When you start a Nova compute instance, it will probably come with some block storage devices by default, at the very least to hold the read/write partitions of the running OS.  These block storage instances can be &ldquo;ephemeral&rdquo; (the data goes away when the compute instance stops) or &ldquo;persistant&rdquo; (the data is kept, can be used later again after the compute instances stops), depending on the configuration of the OpenStack system you are using.
+A block storage device usually can be attached and in read/write use by only one machine or compute instance at a time.
+Object Storage is persistant storage of &ldquo;objects&rdquo; in a way that is useful for HTTP access and for making guarantees about the safe storage of data.  An object is a stream of bytes, with an associated name, a MIME type, an access control list (ACL), and other HTTP-related and random metadata.  Once an object is created and written, it cannot be changed, only copied or deleted.
+Object Store systems are often configured to make very strong guarantees that the data will not be lost, even in a disaster.  Keeping three copies across two geographically separated datacenters is common.
+Once written, an object can be read by many clients at once.  If you want to &ldquo;fan out&rdquo; data: writing it once, and having it read many times by many machines in the near and far future, object storage can help implement that pattern.
+With some care in the naming of an object, and by pointing the DNS CNAME of the domain name part of a URL at the address of an Object Storage service, the object can be retrieved and displayed by any web browser on the internet. A great deal of the content, especially graphics and icons, that display in your web browser, are actually objects being served out  of Amazon&rsquo;s AWS S3 service.
+In OpenStack, the object storage system is one of the two original projects, and is named Swift.</p>
 
 <h4 id="hard-linux-questions">Hard Linux Questions:</h4>
 
