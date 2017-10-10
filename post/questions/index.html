@@ -75,7 +75,7 @@
 <div class="content container">
   <div class="post">
     <h1></h1>
-    <span class="post-date">Jan 1, 0001 &middot; 52 minute read &middot; <a href="https://bege13mot.github.io/post/questions/#disqus_thread">Comments</a>
+    <span class="post-date">Jan 1, 0001 &middot; 79 minute read &middot; <a href="https://bege13mot.github.io/post/questions/#disqus_thread">Comments</a>
     </span>
     <p>
     
@@ -744,190 +744,652 @@ In OpenStack, the object storage system is one of the two original projects, and
 
 <h4 id="what-is-a-tunnel-and-how-you-can-bypass-a-http-proxy">What is a tunnel and how you can bypass a http proxy?</h4>
 
+<p>A tunnel is a mechanism used to ship a foreign protocol across a network that normally wouldn&rsquo;t support it. Tunneling protocols allow you to use, for example, IP to send another protocol in the &ldquo;data&rdquo; portion of the IP datagram. Most tunneling protocols operate at layer 4, which means they are implemented as a protocol that replaces something like TCP or UDP.
+You can forward a port from your computer to a remote computer, which has the result of tunneling your data over SSH in the process, making it secure. This may not seem useful, after all, why would I want a port on my computer being forwarded to another computer? The answer lies within some clarification. The port forwarding function of SSH works by first listening on a local socket for a connection. When a connection is made, SSH will forward the entire connection onto the remote host and portable.
+For example: &lsquo;ssh -L80:workserver.com:80 user@workdesktop.com&rsquo;
+This command creates an SSH connection to your workdesktop.com computer, but at the same time opens port 80 on your local machine. If you point your web browser at <a href="http://localhost">http://localhost</a>, the connection will actually be forwarded through your SSH connection to your desktop, and sent onto the workserver.com server, port 80.</p>
+
 <h4 id="what-is-the-difference-between-ids-and-ips">What is the difference between IDS and IPS?</h4>
+
+<p>IDS - Intrusion Detection System - A device or application that analyzes whole packets, both header and payload, looking for known events. When a known event is detected a log message is generated detailing the event.
+IPS - Intrusion Prevention System - A device or application that analyzes whole packets, both header and payload, looking for known events. When a known event is detected the packet is rejected.</p>
 
 <h4 id="what-shortcuts-do-you-use-on-a-regular-basis">What shortcuts do you use on a regular basis?</h4>
 
+<p>lot, for example check my dotfiles git <a href="https://github.com/jivoi/dotfiles/blob/master/.aliases">https://github.com/jivoi/dotfiles/blob/master/.aliases</a></p>
+
 <h4 id="what-is-the-linux-standard-base">What is the Linux Standard Base?</h4>
+
+<p>LSB is a project to standardize the software system structure, including the filesystem hierarchy used in the Linux operating system. The LSB is based on the POSIX specification, the Single UNIX Specification (SUS), and several other open standards, but extends them in certain areas.</p>
 
 <h4 id="what-is-an-atomic-operation">What is an atomic operation?</h4>
 
-<p>Your freshly configured http server is not running after a restart, what can you do?</p>
+<p>For example we can say that atomic operation is a an operation during which a process can simultaneously read a location and write it in the same bus operation. This prevents any other process or I/O device from writing or reading memory until the operation is complete. Atomic implies indivisibility and irreducibility, so an atomic operation must be performed entirely or not performed at all.</p>
+
+<h4 id="your-freshly-configured-http-server-is-not-running-after-a-restart-what-can-you-do">Your freshly configured http server is not running after a restart, what can you do?</h4>
+
+<p>If you rebooted server and http server is not running after it, so first you need to check it configuration file and the server error log where you can find the proble why server is not running, and after you can run it manually with init\upstart\systemd script, if you want that server run automatically you need enable autostart for it.
+You can run one of this command:
+$ chkconfig nginx on (for centos\rhel)
+$ update-rc.d nginx enable (for debian\ubuntu)
+$ systemctl enable nginx (for linux with systemd)</p>
 
 <h4 id="what-kind-of-keys-are-in-ssh-authorized-keys-and-what-it-is-this-file-used-for">What kind of keys are in ~/.ssh/authorized_keys and what it is this file used for?</h4>
 
-<p>I&rsquo;ve added my public ssh key into authorized_keys but I&rsquo;m still getting a password prompt, what can be wrong?
-Did you ever create RPM&rsquo;s, DEB&rsquo;s or solaris pkg&rsquo;s?</p>
+<p>This is a public ssh key.
+With public key authentication, the authenticating entity has a public key and a private key. Each key is a large number with special mathematical properties. The private key is kept on the computer you log in from, while the public key is stored on the .ssh/authorized_keys file on all the computers you want to log in to.</p>
+
+<h4 id="i-ve-added-my-public-ssh-key-into-authorized-keys-but-i-m-still-getting-a-password-prompt-what-can-be-wrong">I&rsquo;ve added my public ssh key into authorized_keys but I&rsquo;m still getting a password prompt, what can be wrong?</h4>
+
+<p>Maybe your ~/.ssh/authorized_keys permissions are too open by OpenSSH standards.
+You need to check this and fix with:
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+Maybe remote server is configured to disable public keys, you can check it in /etc/sshd_config configuration file where PubkeyAuthentication option must be set to YES
+Maybe it is something with you local ssh configuration ~/.ssh/config</p>
+
+<h4 id="did-you-ever-create-rpm-s-deb-s-or-solaris-pkg-s">Did you ever create RPM&rsquo;s, DEB&rsquo;s or solaris pkg&rsquo;s?</h4>
+
+<p>For RPM you need to create a spec file</p>
 
 <h4 id="what-does-do-on-your-system">What does :(){ :|:&amp; };: do on your system?</h4>
 
-<p>How do you catch a Linux signal on a script?
-Can you catch a SIGKILL?</p>
+<p>This is a fork bomb using the Bash shell
+In computing, a fork bomb (also called rabbit virus or wabbit[1]) is a denial-of-service attack wherein a process continually replicates itself to deplete available system resources, causing resource starvation and slowing or crashing the system.
+We can rewrite this code in this way:
+bomb() {
+  bomb | bomb &amp;
+};
+bomb
+The fork bomb in this case is a recursive function that runs in the background, thanks to the ampersand operator. This ensures that the child process does not die and keeps forking new copies of the function, consuming system resources.</p>
+
+<h4 id="how-do-you-catch-a-linux-signal-on-a-script">How do you catch a Linux signal on a script?</h4>
+
+<p>There is a trap command that allows you to catch a linux signal and execute a command when a signal is received by your shell script. It works like this:
+$ trap arg signals
+So in real script you can write somethins like this:
+trap &ldquo;rm $TEMP_FILE; exit&rdquo; SIGHUP SIGINT SIGTERM
+Here we have added a trap command that will execute &ldquo;rm $TEMP_FILE&rdquo; if any of the listed signals is received.</p>
+
+<h4 id="can-you-catch-a-sigkill">Can you catch a SIGKILL?</h4>
+
+<p>SIGKILL or signal 9 is one signal that you cannot trap and catch. The linux kernel immediately terminates any process sent this signal and no signal handling is performed. Since it will always terminate a program that is stuck, hung, or otherwise screwed up, it is tempting to think that it&rsquo;s the easy way out when you have to get something to stop and go away.</p>
 
 <h4 id="what-s-happening-when-the-linux-kernel-is-starting-the-oom-killer-and-how-does-it-choose-which-process-to-kill-first">What&rsquo;s happening when the Linux kernel is starting the OOM killer and how does it choose which process to kill first?</h4>
 
-<p>Describe the linux boot process with as much detail as possible, starting from when the system is powered on and ending when you get a prompt.</p>
+<p>Major distribution kernels set the default value of /proc/sys/vm/overcommit_memory to zero, which means that processes can request more memory than is currently free in the system. This is done based on the heuristics that allocated memory is not used immediately, and that processes, over their lifetime, also do not use all of the memory they allocate. Without overcommit, a system will not fully utilize its memory, thus wasting some of it. Overcommiting memory allows the system to use the memory in a more efficient way, but at the risk of OOM situations. Memory-hogging programs can deplete the system&rsquo;s memory, bringing the whole system to a grinding halt. This can lead to a situation, when memory is so low, that even a single page cannot be allocated to a user process, to allow the administrator to kill an appropriate task, or to the kernel to carry out important operations such as freeing memory. In such a situation, the OOM-killer kicks in and identifies the process to be the sacrificial lamb for the benefit of the rest of the system.
+The process to be killed in an out-of-memory situation is selected based on its badness score. The badness score is reflected in /proc/<pid>/oom_score. This value is determined on the basis that the system loses the minimum amount of work done, recovers a large amount of memory, doesn&rsquo;t kill any innocent process eating tons of memory, and kills the minimum number of processes (if possible limited to one). The badness score is computed using the original memory size of the process, its CPU time (utime + stime), the run time (uptime - start time) and its oom_adj value. The more memory the process uses, the higher the score. The longer a process is alive in the system, the smaller the score.
+Any process unlucky enough to be in the swapoff() system call (which removes a swap file from the system) will be selected to be killed first. For the rest, the initial memory size becomes the original badness score of the process. Half of each child&rsquo;s memory size is added to the parent&rsquo;s score if they do not share the same memory. Thus forking servers are the prime candidates to be killed. Having only one &ldquo;hungry&rdquo; child will make the parent less preferable than the child.</p>
+
+<h4 id="describe-the-linux-boot-process-with-as-much-detail-as-possible-starting-from-when-the-system-is-powered-on-and-ending-when-you-get-a-prompt">Describe the linux boot process with as much detail as possible, starting from when the system is powered on and ending when you get a prompt.</h4>
+
+<p>The first step of the boot process is the BIOS (Basic Input Output System).
+The BIOS initializes hardware, including detecting hard drives, USB disks, CD-ROMs, network cards, and any other hardware.
+The BIOS will then go step-by-step through each boot device based on the boot device order it is configured to follow until it finds one it can successfully boot from. In the case of a Linux server, that usually means reading the MBR (master boot record: the first 512 bytes on a hard drive) and loading and executing the boot code inside the MBR to start the boot process.
+After the BIOS initializes the hardware and finds the first device to boot, the boot loader takes over. The following list shows the boot loader depending on the device from a boot starts:
+GRUB : boot from a hard drive
+syslinux : boot from a USB
+isolinux : boot from a CD-ROM
+pxelinux : boot from a network
+Once we select a particular kernel in GRUB, GRUB will load the Linux kernel into RAM and execute it.
+Usually GRUB will also load an initrd (initial RAM disk) along with the kernel. initrd (initial RAM disk) has some crucial configuration files, kernel modules, and programs that the kernel needs in order to find and mount the real root file system.
+The final step is to execute the /sbin/init program, which takes over the rest of the boot process.
+The /sbin/init program is the parent process of every program running on the system. This process always has a PID of 1 and is responsible for starting the rest of the processes that make up a running Linux system.
+Here is the list of how we initialize a NIX OS:
+System V init such as runlevels and /etc/rc?.d directories - the init process reads a configuration file called /etc/inittab to discover its default runlevel. It then enters that runlevel and starts processes that have been configured to run at that runlevel. Linux distros: Debian 6 and earlier\Ubuntu 9.04 and earlier\CentOS 5 and earlier
+Upstart - Upstart was designed not only to address some of the shortcomings of the System V init process, but also to provide a more robust system for managing services.
+One main feature of Upstart is that it is event-driven. Upstart constantly monitors the system for certain events to occur, and when they do, Upstart can be configured to take action based on those events.
+Upstart scripts reside in /etc/init. Linux distros: Ubuntu 9.10 to Ubuntu 14.10, including Ubuntu 14.04
+CentOS 6
+systemd is the init system for the most recent linux distros: Debian 7 and Debian 8\Ubuntu 15.04\CentOS 7</p>
 
 <h4 id="what-s-a-chroot-jail">What&rsquo;s a chroot jail?</h4>
 
-<p>When trying to umount a directory it says it&rsquo;s busy, how to find out which PID holds the directory?</p>
+<p>A chroot jail is a way to isolate a process and its children from the rest of the system. It should only be used for processes that don&rsquo;t run as root, as root users can break out of the jail very easily.
+The idea is that you create a directory tree where you copy or link in all the system files needed for a process to run. You then use the chroot() system call to change the root directory to be at the base of this new tree and start the process running in that chroot&rsquo;d environment. Since it can&rsquo;t actually reference paths outside the modified root, it can&rsquo;t perform operations (read/write etc.) maliciously on those locations.
+On Linux, using a bind mounts is a great way to populate the chroot tree. Using that, you can pull in folders like /lib and /usr/lib while not pulling in /user, for example. Just bind the directory trees you want to directories you create in the jail directory.</p>
+
+<h4 id="when-trying-to-unmount-a-directory-it-says-it-s-busy-how-to-find-out-which-pid-holds-the-directory">When trying to unmount a directory it says it&rsquo;s busy, how to find out which PID holds the directory?</h4>
+
+<p>Look at the lsof command (list open files) &ndash; it can tell you which processes are holding what open. Sometimes it&rsquo;s tricky but often something as simple as sudo lsof | grep (your device name here) could do it for you.</p>
 
 <h4 id="what-s-ld-preload-and-when-it-s-used">What&rsquo;s LD_PRELOAD and when it&rsquo;s used?</h4>
 
-<p>You ran a binary and nothing happened. How would you debug this?</p>
+<p>If you set LD_PRELOAD to the path of a shared object, that file will be loaded before any other library (including the C runtime, libc.so). So to run ls with your special malloc() implementation, do this:</p>
+
+<h4 id="you-ran-a-binary-and-nothing-happened-how-would-you-debug-this">You ran a binary and nothing happened. How would you debug this?</h4>
+
+<p>Check rules, use strace</p>
 
 <h4 id="what-are-cgroups-can-you-specify-a-scenario-where-you-could-use-them">What are cgroups? Can you specify a scenario where you could use them?</h4>
 
-<p>How can you remove/delete a file with file-name consisting of only non-printable/non-type-able characters?
-How can you increase or decrease the priority of a process in Linux?</p>
+<p>cgroups (aka control groups) is a Linux kernel feature to limit, police and account the resource usage for a set of processes. Compared to other approaches like the &lsquo;nice&rsquo; command or /etc/security/limits.conf, cgroups are more flexible as they can operate on (sub)sets of processes (possibly with different system users).
+Control groups can be used in multiple ways:
+By accessing the cgroup filesystem directly.
+Using the cgm client (part of the cgmanager package).
+Via tools like cgcreate, cgexec and cgclassify (part of the libcgroupAUR package).
+the &ldquo;rules engine daemon&rdquo;, to automatically move certain users/groups/commands to groups (/etc/cgrules.conf and /usr/lib/systemd/system/cgconfig.service) (part of the libcgroupAUR package).</p>
+
+<h4 id="how-can-you-remove-delete-a-file-with-file-name-consisting-of-only-non-printable-non-type-able-characters">How can you remove/delete a file with file-name consisting of only non-printable/non-type-able characters?</h4>
+
+<p>The file has a name, but it&rsquo;s made of non-printable characters. If you use ksh93, bash, zsh, mksh or FreeBSD sh, you can try to remove it by specifying its non-printable name. First ensure that the name is right with: ls -ld $&rsquo;\177&rsquo; If it shows the right file, then use rm: rm $&rsquo;\177&rsquo;
+Another (a bit more risky) approach is to use rm -i &ndash; * . With the -i option rm requires confirmation before removing a file, so you can skip all files you want to keep but the one.
+Good luck!</p>
+
+<h4 id="how-can-you-increase-or-decrease-the-priority-of-a-process-in-linux">How can you increase or decrease the priority of a process in Linux?</h4>
+
+<p>In Linux we can set guidelines for the CPU to follow when it is looking at all the tasks it has to do. These guidelines are called niceness or nice value. The Linux niceness scale goes from -20 to 19. The lower the number the more priority that task gets. If the niceness value is high number like 19 the task will be set to the lowest priority and the CPU will process it whenever it gets a chance. The default nice value is zero.
+nice -n [nice value] [command]:
+nice -n 10 apt-get upgrade
+renice 10 -p 21827
+This will increment the priority of the process with an id of 21827 to 10.</p>
 
 <h4 id="what-are-run-levels-in-linux">What are run-levels in Linux?</h4>
 
+<p>A system can be booted into (i.e., started up into) any of several runlevels, each of which is represented by a single digit integer. Each runlevel designates a different system configuration and allows access to a different combination of processes (i.e., instances of executing programs).
+The are differences in the runlevels according to the operating system. Seven runlevels are supported in the standard Linux kernel (i.e., core of the operating system).</p>
+
 <h4 id="expert-linux-questions">Expert Linux Questions:</h4>
 
-<p>A running process gets EAGAIN: Resource temporarily unavailable on reading a socket. How can you close this bad socket/file descriptor without killing the process?</p>
+<h4 id="a-running-process-gets-eagain-resource-temporarily-unavailable-on-reading-a-socket-how-can-you-close-this-bad-socket-file-descriptor-without-killing-the-process">A running process gets EAGAIN: Resource temporarily unavailable on reading a socket. How can you close this bad socket/file descriptor without killing the process?</h4>
+
+<p>man errno | grep  EAGAIN
+EAGAIN is just means &ldquo;there&rsquo;s nothing to read now; try again later&rdquo;.
+EAGAIN basically just means that there was nothing to read at that time but the socket is non-blocking so the function must return. The connection is still good you should just try the read again</p>
 
 <h4 id="networking-questions">Networking Questions:</h4>
 
 <h4 id="what-is-localhost-and-why-would-ping-localhost-fail">What is localhost and why would ping localhost fail?</h4>
 
+<p>A localhost is the standard hostname given to the address assigned to the loopback network interface. Translated into an IP address, a localhost is always designated as 127.0.0.1.
+Ping can fail if loopback interface is down, also it is possible to configure local iptables(firewall) in such a way as to drop all packets received on localhost.
+Also it is possible that icmp_echo is disable with sysctl net.ipv4.icmp_echo_ignore_all=1
+ifconfig lo down</p>
+
 <h4 id="what-is-the-similarity-between-ping-traceroute-how-is-traceroute-able-to-find-the-hops">What is the similarity between &ldquo;ping&rdquo; &amp; &ldquo;traceroute&rdquo; ? How is traceroute able to find the hops.</h4>
+
+<p>Both of this programs can be used to troubleshoot connection problems.
+Traceroute shows you the path that packets take from your local system to a remote host. You see the response time to each step along the way, because each datagram (Unix &ldquo;traceroute&rdquo; uses UDP datagrams by default, but you can also choose between ICMP, TCP rather than ICMP on Windows) has a TTL (time-to-live) that&rsquo;s one hop longer than the previous one.</p>
 
 <h4 id="what-is-the-command-used-to-show-all-open-ports-and-or-socket-connections-on-a-machine">What is the command used to show all open ports and/or socket connections on a machine?</h4>
 
+<p>lsof -i
+netstat -natupx
+ss -lptuxa</p>
+
 <h4 id="is-300-168-0-123-a-valid-ipv4-address">Is 300.168.0.123 a valid IPv4 address?</h4>
+
+<p>No, IPv4 addresses are canonically represented in dot-decimal notation, which consists of four decimal numbers, each ranging from 0 to 255, separated by dots, e.g., 172.16.254.1. Each part represents a group of 8 bits (octet) of the address. So 2 ** 8 = 256(255) is a max number for each octet.</p>
 
 <h4 id="which-ip-ranges-subnets-are-private-or-non-routable-rfc-1918">Which IP ranges/subnets are &ldquo;private&rdquo; or &ldquo;non-routable&rdquo; (RFC 1918)?</h4>
 
+<p>The Internet Assigned Numbers Authority (IANA) has reserved the following three blocks of the IP address space for private internets:
+     10.0.0.0        -   10.255.255.255  (<sup>10</sup>&frasl;<sub>8</sub> prefix)
+     172.16.0.0      -   172.31.255.255  (172.<sup>16</sup>&frasl;<sub>12</sub> prefix)
+     192.168.0.0     -   192.168.255.255 (192.<sup>168</sup>&frasl;<sub>16</sub> prefix)</p>
+
 <h4 id="what-is-a-vlan">What is a VLAN?</h4>
+
+<p>A virtual LAN (VLAN) is any broadcast domain that is partitioned and isolated in a computer network at the data link layer (OSI layer 2).
+To subdivide a network into virtual LANs, one configures a network switch or router. Simpler network devices can only partition per physical port (if at all), in which case each VLAN is connected with a dedicated network cable (and VLAN connectivity is limited by the number of hardware ports available). More sophisticated devices can mark packets through tagging, so that a single interconnect (trunk) may be used to transport data for multiple VLANs. Since VLANs share bandwidth, a VLAN trunk might use link aggregation and/or quality of service prioritization to route data efficiently.</p>
 
 <h4 id="what-is-arp-and-what-is-it-used-for">What is ARP and what is it used for?</h4>
 
+<p>The Address Resolution Protocol (ARP) is a protocol used for resolution of network layer addresses into link layer addresses, a critical function in multiple-access networks. ARP is used for mapping a network address (e.g. an IPv4 address) to a physical address like an Ethernet address (also named a MAC address).
+When we try to ping an IP address on our local network, say 192.168.1.2, our system has to turn the IP address 192.168.1.2 into a MAC address. This involves using ARP to resolve the address, hence its name.</p>
+
 <h4 id="what-is-the-difference-between-tcp-and-udp">What is the difference between TCP and UDP?</h4>
+
+<p>TCP is connection-oriented protocol.
+UDP is connectionless protocol
+TCP provides delivery guarantee
+UDP is unreliable, it doesn&rsquo;t provide any delivery guarantee.
+TCP guarantees order of message
+UDP doesn&rsquo;t provide any ordering or sequencing guarantee
+TCP is slow
+UDP is fast
+TCP has bigger header than UDP</p>
 
 <h4 id="what-is-the-purpose-of-a-default-gateway">What is the purpose of a default gateway?</h4>
 
+<p>A default gateway in computer networking is the node that is assumed to know how to forward packets on to other networks. Typically in a TCP/IP network, nodes such as servers, workstations and network devices each have a defined default route setting, (pointing to the default gateway), defining where to send packets for IP addresses for which they can determine no specific route. The gateway is by definition a router.</p>
+
 <h4 id="what-is-command-used-to-show-the-routing-table-on-a-linux-box">What is command used to show the routing table on a Linux box?</h4>
+
+<p>You can use one of this:
+$ route -n
+$ netstat -rn
+$ ip route list</p>
 
 <h4 id="a-tcp-connection-on-a-network-can-be-uniquely-defined-by-4-things-what-are-those-things">A TCP connection on a network can be uniquely defined by 4 things. What are those things?</h4>
 
+<p>remote-ip-address, remote-port, source-ip-address, source-port</p>
+
 <h4 id="when-a-client-running-a-web-browser-connects-to-a-web-server-what-is-the-source-port-and-what-is-the-destination-port-of-the-connection">When a client running a web browser connects to a web server, what is the source port and what is the destination port of the connection?</h4>
+
+<p>destination port - is 80 for HTTP or 443 for HTTPS
+source port - will be random number from option net.ipv4.ip_local_port_range, by default it will be something like between 32768 and 61000 (around 28K source ports available (for a single destination IP:port))</p>
 
 <h4 id="how-do-you-add-an-ipv6-address-to-a-specific-interface">How do you add an IPv6 address to a specific interface?</h4>
 
+<p>Using ip:
+Usage: /sbin/ip -6 addr add <ipv6address>/<prefixlength> dev <interface>
+Example: /sbin/ip -6 addr add 2001:0db8:0:f101::<sup>1</sup>&frasl;<sub>64</sub> dev eth0
+Using ifconfig:
+Usage: /sbin/ifconfig <interface> inet6 add <ipv6address>/<prefixlength>
+Example: /sbin/ifconfig eth0 inet6 add 2001:0db8:0:f101::<sup>1</sup>&frasl;<sub>64</sub>
+It is temporarily, you will lost this configuration after reboot. To add permanent ipv6 you need to add option to config file, on Fedora, Redhat Enterprise Linux, and clones like Centos add lines to these files:</p>
+
 <h4 id="you-have-added-an-ipv4-and-ipv6-address-to-interface-eth0-a-ping-to-the-v4-address-is-working-but-a-ping-to-the-v6-address-gives-yout-the-response-sendmsg-operation-not-permitted-what-could-be-wrong">You have added an IPv4 and IPv6 address to interface eth0. A ping to the v4 address is working but a ping to the v6 address gives yout the response sendmsg: operation not permitted. What could be wrong?</h4>
+
+<p>This means that your server is not allowed to send ICMP packets. (Internet Control Message Protocol)
+Check firewall rules:
+$ ip6tables -P INPUT ACCEPT
+$ ip6tables -P OUTPUT ACCEPT
+$ ip6tables -P FORWARD ACCEPT</p>
 
 <h4 id="what-is-snat-and-when-should-it-be-used">What is SNAT and when should it be used?</h4>
 
+<p>Source Network Address Translation (SNAT) - changes the source address in IP header of a packet. It may also change the source port in the TCP/UDP headers. The typical usage is to change the a private (rfc1918) address/port into a public address/port for packets leaving your network.</p>
+
 <h4 id="explain-how-could-you-ssh-login-into-a-linux-system-that-drops-all-new-incoming-packets-using-a-ssh-tunnel">Explain how could you ssh login into a Linux system that DROPs all new incoming packets using a SSH tunnel.</h4>
+
+<p>Reverse SSH Tunnel
+Here is the command your friend sitting on remote server side should run on the server :
+ssh -fN -R 7000:localhost:22 username@yourMachine-ipaddress
+So this ssh connection request originating from remote server to your machine will make sure that any ssh connection request for port 7000 on your machine is forwarded to port 22 of remote server.
+Now do an ssh connection request from your machine to your own machine at port 7000:
+ssh username@localhost -p 7000
+Here, though it may seem like you are doing ssh on localhost but your request would be forwarded to remote host. So, you should use your account ‘username’ on remote server and when prompted for password, enter the corresponding password.
+This should clear most of the aspects related to reverse ssh technique. But, there is one catch. The catch is that you have to ask a friend of yours — who is sitting behind the firewall — to create an ssh connection first. This is not feasible every time.</p>
 
 <h4 id="how-do-you-stop-a-ddos-attack">How do you stop a DDoS attack?</h4>
 
+<p>It is very complicated questions.
+Before to do something you need answer a lot of questions.
+Simple way is:
+- Limiting the ammount of concurrent connections from ddos IP address to your Server with firewall rules.
+- Optimize you server configuration options</p>
+
 <h4 id="how-can-you-see-content-of-an-ip-packet">How can you see content of an ip packet?</h4>
 
+<p>You can use tcpdump\tshark to display captured packets in HEX and ASCII
+$ tcpdump -XX -i eth0
+$ tshark -i eth0 -x
+You can write a python\c script for this
+import socket
+s = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_TCP)
+while True:
+  print s.recvfrom(65565)</p>
+
 <h4 id="what-is-ipoac-rfc-1149">What is IPoAC (RFC 1149)?</h4>
+
+<p>In computer networking, IP over Avian Carriers (IPoAC) is a humorously intended proposal to carry Internet Protocol (IP) traffic by birds such as homing pigeons</p>
 
 <h3 id="mysql-questions">MySQL questions:</h3>
 
 <h4 id="how-do-you-create-a-user">How do you create a user?</h4>
 
+<p>mysql -u root -ppassword -hsomehost -e &lsquo;CREATE USER login@&ldquo;ip&rdquo;;&rsquo;</p>
+
 <h4 id="how-do-you-provide-privileges-to-a-user">How do you provide privileges to a user?</h4>
+
+<h1 id="read-only">read only</h1>
+
+<p>GRANT select ON somedb.* TO &lsquo;login&rsquo;@&lsquo;ip&rsquo; IDENTIFIED BY &lsquo;agoodpassword&rsquo;;</p>
+
+<h1 id="all-privileges">all privileges</h1>
+
+<p>GRANT all privileges ON somedb.* TO &lsquo;login&rsquo;@&lsquo;ip&rsquo; IDENTIFIED BY &lsquo;agoodpassword&rsquo;;</p>
 
 <h4 id="what-is-the-difference-between-a-left-and-a-right-join">What is the difference between a &ldquo;left&rdquo; and a &ldquo;right&rdquo; join?</h4>
 
+<p>Table from which you are taking data is &lsquo;LEFT&rsquo;.
+Table you are joining is &lsquo;RIGHT&rsquo;.
+LEFT JOIN: Take all items from left table AND (only) matching items from right table.
+RIGHT JOIN: Take all items from right table AND (only) matching items from left table.
+Most people only use LEFT JOIN since it seems more intuitive</p>
+
 <h4 id="explain-briefly-the-differences-between-innodb-and-myisam">Explain briefly the differences between InnoDB and MyISAM.</h4>
+
+<p>MYISAM:
+- MYISAM supports Table-level Locking
+- MyISAM designed for need of speed
+- MyISAM does not support foreign keys hence we call MySQL with MYISAM is DBMS
+- MyISAM stores its tables, data and indexes in diskspace using separate three different files. (- tablename.FRM, tablename.MYD, tablename.MYI)-
+- MYISAM not supports transaction. You cannot commit and rollback with MYISAM. Once you issue a c- ommand - it’s done.
+- MYISAM supports fulltext search
+You can use MyISAM, if the table is more static with lots of select and less update and delete.</p>
+
+<p>INNODB:
+- InnoDB supports Row-level Locking
+- InnoDB designed for maximum performance when processing high volume of data
+- InnoDB support foreign keys hence we call MySQL with InnoDB is RDBMS
+- InnoDB stores its tables and indexes in a tablespace
+- InnoDB has better crash recovery.
+- InnoDB supports transaction. You can commit and rollback with InnoDB</p>
 
 <h4 id="describe-briefly-the-steps-you-need-to-follow-in-order-to-create-a-simple-master-slave-cluster">Describe briefly the steps you need to follow in order to create a simple master/slave cluster.</h4>
 
+<p>AT Master:
+- enable binlog
+- set server-id=1
+- create user with replication grant
+- create dump with master-data</p>
+
+<p>AT Slave:
+- enable binlog \ relay-log
+- set server-id=2
+- restore dump
+- set master_host \ master_log_file \ maste_log_pos</p>
+
 <h4 id="why-should-you-run-mysql-secure-installation-after-installing-mysql">Why should you run &ldquo;mysql_secure_installation&rdquo; after installing MySQL?</h4>
+
+<p>mysql_secure<em>installation is a script that improve MySQL installation security in the following ways:
+- set a password for root accounts
+- remove root accounts that are accessible from outside the local host
+- remove anonymous-user accounts
+- can remove the test database (which by default can be accessed by all users, even anonymous users), and privileges that permit anyone to access databases with names that start with test</em></p>
 
 <h4 id="how-do-you-check-which-jobs-are-running">How do you check which jobs are running?</h4>
 
+<p>$ mysql -e &ldquo;show full processlist&rdquo;</p>
+
 <h4 id="how-would-you-take-a-backup-of-a-mysql-database">How would you take a backup of a MySQL database?</h4>
+
+<p>mysqldump -u root -p Tutorials &gt; tut_backup.sql
+mysql -u root -p Tutorials &lt; tut_backup.sql - restore</p>
 
 <h3 id="devops-questions">DevOps Questions:</h3>
 
 <h4 id="can-you-describe-your-workflow-when-you-create-a-script">Can you describe your workflow when you create a script?</h4>
 
+<ol>
+<li>Create\check task in tfs\jira</li>
+<li>Analysis task description.</li>
+<li>Analysis current script collection.</li>
+<li>Analysis internet for same job\problem.</li>
+<li>Write and test script prototype in test environment.</li>
+<li>Commit script to git\svn</li>
+<li>Build package\use CMS to deploy script in production.</li>
+<li>Close task in tfs\jira</li>
+</ol>
+
 <h4 id="what-is-git">What is GIT?</h4>
+
+<p>Git is a distributed version control system developed by Linus Torvalds</p>
 
 <h4 id="what-is-a-dynamically-statically-linked-file">What is a dynamically/statically linked file?</h4>
 
+<p>Statically file means that the linker program (ld) after source code compilation adds all librarys and other dependencies directly to executable file
+Dynamically file means that the above step doesn&rsquo;t happen. The operating system&rsquo;s loader needs to find the dependencies code, load it into memory, each time the program is run.</p>
+
 <h4 id="what-does-configure-make-make-install-do">What does &ldquo;./configure &amp;&amp; make &amp;&amp; make install&rdquo; do?</h4>
+
+<p>This commands is need if you what to build software from source code.
+Configure - is a script which is responsible for getting ready to build the software on your specific system. It makes sure all of the dependencies for the rest of the build and install process are available, and finds out whatever it needs to know to use those dependencies.
+Make - is a command  which runs a series of tasks defined in a Makefile to build the finished program from its source code.
+Make install - is a command which will copy the built program, and its libraries and documentation, to the correct locations.</p>
 
 <h4 id="what-is-puppet-chef-ansible-used-for">What is puppet/chef/ansible used for?</h4>
 
+<p>Puppet/Chef/Ansible - are a free software platform for configuring and managing computers.</p>
+
 <h4 id="what-is-nagios-zenoss-newrelic-used-for">What is Nagios/Zenoss/NewRelic used for?</h4>
+
+<p>Monitoring</p>
 
 <h4 id="what-is-jenkins-teamcity-goci-used-for">What is Jenkins/TeamCity/GoCI used for?</h4>
 
+<p>Continuous Integration</p>
+
 <h4 id="what-is-the-difference-between-containers-and-vms">What is the difference between Containers and VMs?</h4>
+
+<p>With containers, these operating systems are isolated (they have their own file systems, processes, libraries including the libc, IP address, etc.) but they are nevertheless sharing the very same kernel. That&rsquo;s the reason why uname -a showed your host kernel version.
+With traditional virtualization, the operating systems have each one their own kernel running. These multiple kernels are not running on top of the real hardware, but on top of a virtualized hardware provided by a piece of software called an hypervisor. This is an extra layer compared to container based virtualization.
+Each kind of virtualization has its strenghts and weaknesses. Containers are more limited in the choice of operating systems, the container one must be supported by the running kernel (e.g.: Solaris zones on Solaris, LXC on Linux, WPAR on AIX) although technically, nothing forbid kernel developers to implement the support for &ldquo;alien&rdquo; userlands (e.g.: lxbrand = Linux zones on Solaris 10 and SmartOS, or more recently Ubuntu runtime on Windows 10) while with hypervisors, the operating system needs only to be supported by the virtual hardware, which allows much heterogeneous configurations (e.g. : Linux 32 bit and 64 bit kernels, *BSDs, Solaris, Windows, Mac OS X, &hellip;)
+The major advantage of containers is they are much lighter, the application performance is essentially the same as what it would be with a true bare metal OS installation. New container instantiation is much faster because there is no extra kernel to boot, and the virtual environment density can be much higher because there are no extra kernels to run.</p>
 
 <h4 id="how-do-you-create-a-new-postgres-user">How do you create a new postgres user?</h4>
 
+<p>psql -c &ldquo;CREATE USER testuser WITH PASSWORD &lsquo;XXXXX&rsquo;;&rdquo;</p>
+
 <h4 id="what-is-a-virtual-ip-address-what-is-a-cluster">What is a virtual IP address? What is a cluster?</h4>
+
+<p>A virtual IP address (VIP or VIPA) is an IP address that doesn&rsquo;t correspond to an actual physical network interface (port). Uses for VIPs include Network Address Translation (especially, One-to-many NAT), fault-tolerance, and mobility.
+Virtual IP addresses are commonly used to enable high availability. A standard failover design uses an active/passive server pair connected by replication and watched by a cluster manager. The active server listens on a virtual IP address; applications use it for connections instead of the normal host IP address. Should the active server fail, the cluster manager promotes the passive server and shifts the floating IP address to the newly promoted host. Application connections break and then reconnect to the VIP again, which points them to the new server.
+Cluster is a set of loosely or tightly connected computers that work together so that, in many respects, they can be viewed as a single system.</p>
 
 <h4 id="how-do-you-print-all-strings-of-printable-characters-present-in-a-file">How do you print all strings of printable characters present in a file?</h4>
 
+<p>Use cmd /usr/bin/strings
+$ strings /path/somefile</p>
+
 <h4 id="how-do-you-find-shared-library-dependencies">How do you find shared library dependencies?</h4>
+
+<p>ldd - print shared library dependencies
+$ ldd /path/somefile
+        linux-vdso.so.1 (0x00007ffcdabac000)
+        libselinux.so.1 =&gt; /lib/x86_64-linux-gnu/libselinux.so.1 (0x00007f1a42081000)</p>
 
 <h4 id="what-is-automake-and-autoconf">What is Automake and Autoconf?</h4>
 
+<p>Automake and Autoconf both are parts of The GNU build system, also known as the Autotools, is a suite of programming tools designed to assist in making source code packages portable to many Unix-like systems.
+Automake - is a programming tool to automate parts of the compilation process. It eases usual compilation problems. For example, it points to needed dependencies. It automatically generates one or more Makefile.in from files called Makefile.am. Each Makefile.am contains, among other things, useful variable definitions for the compiled software, such as compiler and linker flags, dependencies and their versions, etc.
+Autoconf - generate a configuration script from a TEMPLATE-FILE if given, or configure.ac if present, or else configure.in. Output is sent to the standard output if TEM‐PLATE-FILE is given, else into configure.</p>
+
 <h4 id="configure-shows-an-error-that-libfoobar-is-missing-on-your-system-how-could-you-fix-this-what-could-be-wrong">./configure shows an error that libfoobar is missing on your system, how could you fix this, what could be wrong?</h4>
+
+<p>Configure could not find libfoobar in LD_LIBRARY_PATH or libfoobar is not installed on your system.
+You can fix it by installing libfoobar package with package manager or build it from source.
+If libfoobar is already installed just check /etc/ld.so.conf and add right path to libfoobar</p>
 
 <h4 id="what-are-the-advantages-disadvantages-of-script-vs-compiled-program">What are the advantages/disadvantages of script vs compiled program?</h4>
 
+<p>Script program have the advantages of:
+- flexibility to change the script
+- easier to implement (writing good compilers is very hard!!)
+- no need to run a compilation stage: can execute code directly &ldquo;on the fly&rdquo;
+- being more portable.
+Script program have the disadvantages of:
+- much slow than compiled program
+- source code is open
+Compiled program have the advantages of:
+- faster performance by directly using the native code of the target machine
+- opportunity to apply quite powerful optimisations during the compile stage
+- hides the source code from the end user
+Compiled program have the disadvantages of:
+- slow to develop (edit, compile, link and run. The compile/link steps could take serious time).
+- to execute you need to compile a different executable for each type of processor and/or platform that you want your program to run on</p>
+
 <h4 id="what-s-the-relationship-between-continuous-delivery-and-devops">What&rsquo;s the relationship between continuous delivery and DevOps?</h4>
+
+<p>Continuous delivery(CD) is an agile way of working whereby quality products—normally software assets—can be developed, built, tested, and shipped in quick succession.
+DevOps is another way of working whereby developers and system operators work in harmony with little or no organizational barriers between them towards a common goal.</p>
 
 <h4 id="what-are-the-important-aspects-of-a-system-of-continuous-integration-and-deployment">What are the important aspects of a system of continuous integration and deployment?</h4>
 
+<p>Automation\testing are the important aspects of a great development workflow.
+Every task that can be done by a machine should be.
+Automation gives you the time to focus.
+Through testing, you can be sure that the most important steps your customers will take through your system are working, regardless of the changes you make.
+This gives you the confidence to experiment, implement new features, and ship updates quickly.</p>
+
 <h4 id="how-would-you-enable-network-file-sharing-within-aws-that-would-allow-ec2-instances-in-multiple-availability-zones-to-share-data">How would you enable network file sharing within AWS that would allow EC2 instances in multiple availability zones to share data?</h4>
+
+<p>Amazon Elastic File System</p>
 
 <h3 id="fun-questions">Fun Questions:</h3>
 
 <h4 id="a-careless-sysadmin-executes-the-following-command-chmod-444-bin-chmod-what-do-you-do-to-fix-this">A careless sysadmin executes the following command: chmod 444 /bin/chmod - what do you do to fix this?</h4>
 
+<p>Default permission is 755.
+Y can use C\C++\Python\Perl and other language to fix this.
+#!/usr/bin/python
+import os
+os.chmod(&ldquo;/bin/chmod&rdquo;, 0755)</p>
+
 <h4 id="i-ve-lost-my-root-password-what-can-i-do">I&rsquo;ve lost my root password, what can I do?</h4>
+
+<p>Simple boot in sigle mode and change it.
+Change in grub -&gt; init=/bin/bash -&gt; boot -&gt; run $mount -o remount,rw / -&gt; change root password with $ passwd root</p>
 
 <h4 id="i-ve-rebooted-a-remote-server-but-after-10-minutes-i-m-still-not-able-to-ssh-into-it-what-can-be-wrong">I&rsquo;ve rebooted a remote server but after 10 minutes I&rsquo;m still not able to ssh into it, what can be wrong?</h4>
 
+<p>If it does not ping, maybe proble with network\firewall
+If it pings but you can not to connect to it with ssh maybe problem with ssh config\firewall rules
+Bad permission for ssh keys
+Wrong password</p>
+
 <h4 id="if-you-were-stuck-on-a-desert-island-with-only-5-command-line-utilities-which-would-you-choose">If you were stuck on a desert island with only 5 command-line utilities, which would you choose?</h4>
+
+<p>cat, awk, vim, lsof, top
+you do not need computer on a desert island because there is no enegry =)</p>
 
 <h4 id="you-come-across-a-random-computer-and-it-appears-to-be-a-command-console-for-the-universe-what-is-the-first-thing-you-type">You come across a random computer and it appears to be a command console for the universe. What is the first thing you type?</h4>
 
+<p>It cool to live forever =)
+change user &lsquo;mylogin&rsquo; expiration from &lsquo;XXXXX-XX-XX&rsquo; to &lsquo;never&rsquo;
+usermod -e &ldquo;&rdquo; mylogin</p>
+
 <h4 id="tell-me-about-a-creative-way-that-you-ve-used-ssh">Tell me about a creative way that you&rsquo;ve used SSH?</h4>
+
+<p>add to .ssh/config this lines and install tor and you can use ssh with tor.
+Host *.onion
+    ProxyCommand socat - SOCKS4A:localhost:%h:%p,socksport=9050</p>
 
 <h4 id="you-have-deleted-by-error-a-running-script-what-could-you-do-to-restore-it">You have deleted by error a running script, what could you do to restore it?</h4>
 
+<p>While script is running it is not deleted
+Find pid of running script and restore it from procfs
+ls -l /proc/4607/fd/4
+lr-x&mdash;&mdash; 1 juliet juliet 64 Apr  7 03:19
+/proc/4607/fd/4 -&gt; /home/juliet/testing.txt (deleted)
+$ cp /proc/4607/fd/4 testing.txt.bk</p>
+
 <h4 id="what-will-happen-on-19-january-2038">What will happen on 19 January 2038?</h4>
 
+<p>The Year 2038 problem is an issue for computing and data storage situations in which time values are stored or calculated as a signed 32-bit integer, and this number is interpreted as the number of seconds since 00:00:00 UTC on 1 January 1970 (the epoch).[1] Such implementations cannot encode times after 03:14:07 UTC on 19 January 2038, a problem similar to but not entirely analogous to the Y2K problem (also known as the Millennium Bug), in which 2-digit values representing the number of years since 1900 could not encode the year 2000 or later. Most 32-bit Unix-like systems store and manipulate time in this Unix time format, so the year 2038 problem is sometimes referred to as the Unix Millennium Bug by association.</p>
+
 <h4 id="how-to-reboot-server-when-reboot-command-is-not-responding">How to reboot server when reboot command is not responding?</h4>
+
+<p>You should perform a ps aux to see if any of the shutdown scripts are hung waiting for a process to finish. It should look something like this:
+/etc/rc6.d/K##procname
+You can try manually issuing a kill command for that hung script. Strange though, since there&rsquo;s a timeout set on the scripts where it will force a -KILL signal to any leftover process.
+Also, what&rsquo;s the uptime of the server/box? I&rsquo;ve experienced an issue in the past where a box that has an uptime of over a year refuses to shut down. In that case, I&rsquo;ve killed each process manually, run sync several times to flush all data to disk and forced a reboot (power cycle).</p>
 
 <h4 id="demo-time">Demo Time:</h4>
 
 <h4 id="unpack-test-tar-gz-without-man-pages-or-google">Unpack test.tar.gz without man pages or google.</h4>
 
+<p>tar xzvf test.tar.gz</p>
+
 <h4 id="remove-all-pyc-files-from-testdir-recursively">Remove all &ldquo;*.pyc&rdquo; files from testdir recursively?</h4>
+
+<p>$ find ./testdir -type f -name &ldquo;<em>.pyc&rdquo; -ls -delete
+$ find ./testdir -type f -name &ldquo;</em>.pyc&rdquo;|xargs rm -f</p>
 
 <h4 id="search-for-my-konfu-is-the-best-in-all-py-files">Search for &ldquo;my konfu is the best&rdquo; in all *.py files.</h4>
 
+<p>find ./testdir -type f -name &ldquo;*.py&rdquo;|xargs grep &ldquo;my konfu is the best&rdquo;</p>
+
 <h4 id="replace-the-occurrence-of-my-konfu-is-the-best-with-i-m-a-linux-jedi-master-in-all-txt-files">Replace the occurrence of &ldquo;my konfu is the best&rdquo; with &ldquo;I&rsquo;m a linux jedi master&rdquo; in all *.txt files.</h4>
+
+<p>find ./testdir -type f -name &ldquo;*.txt&rdquo;|xargs sed -i &ldquo;s/my konfu is the best/I\&rsquo;m a linux jedi master/&rdquo;</p>
 
 <h4 id="test-if-port-443-on-a-machine-with-ip-address-x-x-x-x-is-reachable">Test if port 443 on a machine with IP address X.X.X.X is reachable.</h4>
 
+<p>$  nc -z -v X.X.X.X 443
+Connection to X.X.X.X 443 port [tcp/https] succeeded!</p>
+
 <h4 id="get-http-myinternal-webserver-local-test-html-via-telnet">Get <a href="http://myinternal.webserver.local/test.html">http://myinternal.webserver.local/test.html</a> via telnet.</h4>
+
+<p>telnet myinternal.webserver.local 80
+GET /test.html HTTP/1.1
+HOST: myinternal.webserver.local
+<ENTER>
+<ENTER></p>
 
 <h4 id="how-to-send-an-email-without-a-mail-client-just-on-the-command-line">How to send an email without a mail client, just on the command line?</h4>
 
-<h4 id="write-a-get-prim-method-in-python-perl-bash-pseudo">Write a get_prim method in python/perl/bash/pseudo.</h4>
+<p>$ telnet localhost smtp
+HELO example.com
+mail from: sender@example.com
+rcpt to: user@example.com
+data
+354 Enter mail, end with &ldquo;.&rdquo; on a line by itself
+Hey
+This is test email only
+Thanks
+.
+quit
+or
+$ mail -s &ldquo;Test Subject&rdquo; user@example.com</p>
+
+<h4 id="write-a-get-primes-method-in-python-perl-bash-pseudo">Write a get_primes method in python/perl/bash/pseudo.</h4>
+
+<p>Sieve of Erastothenes
+import math
+def main():
+    count = 3</p>
+
+<pre><code>while True:
+    isprime = True
+
+    for x in range(2, int(math.sqrt(count) + 1)):
+        if count % x == 0: 
+            isprime = False
+            break
+
+    if isprime:
+        print count
+
+    count += 1
+</code></pre>
+
+<p>To find all the prime numbers less than or equal to a given integer n by Eratosthenes&rsquo; method:
+Create a list of consecutive integers from 2 through n: (2, 3, 4, &hellip;, n).
+Initially, let p equal 2, the smallest prime number.
+Enumerate the multiples of p by counting to n from 2p in increments of p, and mark them in the list (these will be 2p, 3p, 4p, &hellip;; the p itself should not be marked).
+Find the first number greater than p in the list that is not marked. If there was no such number, stop. Otherwise, let p now equal this new number (which is the next prime), and repeat from step 3.
+When the algorithm terminates, the numbers remaining not marked in the list are all the primes below n.
+The main idea here is that every value given to p will be prime, because if it were composite it would be marked as a multiple of some other, smaller prime. Note that some of the numbers may be marked more than once (e.g., 15 will be marked both for 3 and 5).</p>
 
 <h4 id="find-all-files-which-have-been-accessed-within-the-last-30-days">Find all files which have been accessed within the last 30 days.</h4>
 
+<p>$ find /* -type f -atime -30
+&ldquo;-30&rdquo; means that it was accessed &ldquo;less than 30 days ago&rdquo;
+&ldquo;+30&rdquo; means that it was accessed &ldquo;more than 30 days ago&rdquo;</p>
+
 <h4 id="explain-the-following-command-date-ps-ef-awk-print-1-sort-uniq-wc-l-activity-log">Explain the following command (date ; ps -ef | awk &lsquo;{print $1}&rsquo; | sort | uniq | wc -l ) &gt;&gt; Activity.log</h4>
+
+<p>$ date ; ps -ef | awk &lsquo;{print $1}&rsquo; | sort | uniq | wc -l
+Execute date command which print current datetime, then we execute process list command and print only UID column, than with pipe we sort it and print only uniq values, after wc -l is counting it number after all we append this to file Activity.log
+If file we will see something like this:
+Fri Jan 22 15:24:07 UTC 2016
+6</p>
 
 <h4 id="write-a-script-to-list-all-the-differences-between-two-directories">Write a script to list all the differences between two directories.</h4>
 
+<p>#!/bin/sh
+usage=&ldquo;Usage: $0 DIR1 DIR2&rdquo;
+if [ $# -gt 2 ]; then
+       echo $usage;
+       exit 1
+fi
+if [ -z &ldquo;$1&rdquo; ]; then
+        echo $usage;
+fi</p>
+
+<p>if [ -d &ldquo;$1&rdquo; -a -d &ldquo;$2&rdquo; ]; then
+        echo &ldquo;Comparing $1 with $2&hellip;&hellip;..&rdquo;
+        diff -r $1 $2
+fi</p>
+
 <h4 id="in-a-log-file-with-contents-as-time-message-error-no-human-readable-text-display-summary-count-of-specific-error-numbers-that-occurred-every-hour-or-a-specific-hour">In a log file with contents as <TIME> : [MESSAGE] : [ERROR_NO] - Human readable text display summary/count of specific error numbers that occurred every hour or a specific hour.</h4>
+
+<p>$ cat log | awk -F &ldquo;:&rdquo; &lsquo;{print $3}&rsquo;|sort -n |uniq -c
+$ cat log | grep &ldquo;specific hour&rdquo; | awk -F &ldquo;:&rdquo; &lsquo;{print $3}&rsquo;|sort -n |uniq -c</p>
 
   </div>
   <div id="disqus_thread"></div>
