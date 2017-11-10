@@ -6,10 +6,22 @@
     <description>Recent content in Theory on Ivan V</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sun, 16 Apr 2017 10:00:00 +0400</lastBuildDate>
+    <lastBuildDate>Fri, 01 Sep 2017 10:00:00 +0400</lastBuildDate>
     
 	<atom:link href="https://bege13mot.github.io/tags/theory/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>﻿Операционная система UNIX, Андрей Робачевский</title>
+      <link>https://bege13mot.github.io/post/unix-book/</link>
+      <pubDate>Fri, 01 Sep 2017 10:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/unix-book/</guid>
+      <description>Книга о Unix 1997 года. При это не скажешь что она особенно устарело. Описываются базовые, по-прежнему актуальные, вещи - структура файловой системы, типы процессов, сигналов, подсистема управления процессами, сеть. И все это на русском, очень понятно, с объяснениями и разжёвыванием.
+Хороший учебник.
+Заметки:  В UNIX существуют 6 типов файлов:
+ обычный файл каталог специальный файл устройства именованный канал или FIFO символическая связь сокет  Обычно программой называют совокупность файлов, будь то набор исходных текстов, объектных файлов или собственно выполняемый файл.</description>
+    </item>
     
     <item>
       <title>Компьютерные сети. Нисходящий подход, Джеймс Куроуз, Кит Росс</title>

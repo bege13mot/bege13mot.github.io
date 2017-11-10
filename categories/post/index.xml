@@ -6,10 +6,52 @@
     <description>Recent content in Post on Ivan V</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Thu, 04 May 2017 10:00:00 +0400</lastBuildDate>
+    <lastBuildDate>Sat, 28 Oct 2017 10:00:00 +0400</lastBuildDate>
     
 	<atom:link href="https://bege13mot.github.io/categories/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Пандемия: всемирная история смертельных вирусов, Соня Шах</title>
+      <link>https://bege13mot.github.io/post/pandemic/</link>
+      <pubDate>Sat, 28 Oct 2017 10:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/pandemic/</guid>
+      <description>Один из моих недостатков - сравнивание книг с фильмами. В данном случае фильм-катастрофa как нельзя лучше описывает происходящее в книге. Начитается все с истории возникновения холеры, одного и самых смертоносных заболеваний. Затем описывается как холера поражала целые города в 19 веке, и что за ужасные условия были в этих городах. Следом автор быстренько пробегается по проблемам современного здравоохранения - коррупция, медлительности, сфокусированная на европейских болезнях (лекарства от холеры и малярии слишком дешевы).</description>
+    </item>
+    
+    <item>
+      <title>﻿Операционная система UNIX, Андрей Робачевский</title>
+      <link>https://bege13mot.github.io/post/unix-book/</link>
+      <pubDate>Fri, 01 Sep 2017 10:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/unix-book/</guid>
+      <description>Книга о Unix 1997 года. При это не скажешь что она особенно устарело. Описываются базовые, по-прежнему актуальные, вещи - структура файловой системы, типы процессов, сигналов, подсистема управления процессами, сеть. И все это на русском, очень понятно, с объяснениями и разжёвыванием.
+Хороший учебник.
+Заметки:  В UNIX существуют 6 типов файлов:
+ обычный файл каталог специальный файл устройства именованный канал или FIFO символическая связь сокет  Обычно программой называют совокупность файлов, будь то набор исходных текстов, объектных файлов или собственно выполняемый файл.</description>
+    </item>
+    
+    <item>
+      <title>High-Performance Browser Networking, Ilya Grigorik</title>
+      <link>https://bege13mot.github.io/post/high-networking/</link>
+      <pubDate>Fri, 25 Aug 2017 10:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/high-networking/</guid>
+      <description>Не верится, что такая книга может быть бесплатной. Детальный разбор всех нюансов работы с сетью для веб-приложений. Начиная с самых низов и азов. Обязательно буду перечитывать.
+Notes:  “Good developers know how things work. Great developers know why things work.” We all resonate with this adage. We want to be that person who understands and can explain the underpinning of the systems we depend on.
+ All TCP connections begin with a three-way handshake: SYN, SYN ACK, ACK</description>
+    </item>
+    
+    <item>
+      <title>﻿Книга шифров. Тайная история шифров и их расшифровки, Саймон Сингх</title>
+      <link>https://bege13mot.github.io/post/code-book/</link>
+      <pubDate>Wed, 05 Jul 2017 10:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/code-book/</guid>
+      <description>Чудесная книга, пожалуй лучший нон-фикшен, что прочитал в этом году. Рассказана история возникновения и развития криптографии, людей что за ней стояли. Например, только отсюда узнал, что первым &amp;ldquo;энигму&amp;rdquo; взломал поляк Реевский, а не Тьюринг. А основа знаменитого алгоритма RSA придуман после вечеринки.
+Самое обидное, последние главы посвящены ассиметричному шифрованию и приватности частной переписки. А в 1999 году, когда книга и была написана, не было биткойна (2008 год) и Сноудена (2013 год).</description>
+    </item>
     
     <item>
       <title>Переезд на Travis-CI</title>

@@ -6,10 +6,21 @@
     <description>Recent content in Tech on Ivan V</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Thu, 04 May 2017 10:00:00 +0400</lastBuildDate>
+    <lastBuildDate>Fri, 25 Aug 2017 10:00:00 +0400</lastBuildDate>
     
 	<atom:link href="https://bege13mot.github.io/tags/tech/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>High-Performance Browser Networking, Ilya Grigorik</title>
+      <link>https://bege13mot.github.io/post/high-networking/</link>
+      <pubDate>Fri, 25 Aug 2017 10:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/high-networking/</guid>
+      <description>Не верится, что такая книга может быть бесплатной. Детальный разбор всех нюансов работы с сетью для веб-приложений. Начиная с самых низов и азов. Обязательно буду перечитывать.
+Notes:  “Good developers know how things work. Great developers know why things work.” We all resonate with this adage. We want to be that person who understands and can explain the underpinning of the systems we depend on.
+ All TCP connections begin with a three-way handshake: SYN, SYN ACK, ACK</description>
+    </item>
     
     <item>
       <title>Переезд на Travis-CI</title>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>High-Performance Browser Networking, Ilya Grigorik &nbsp; </title>
+
+  
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/poole-overrides.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde-overrides.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde-x.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://bege13mot.github.io/touch-icon-144-precomposed.png">
+  <link href="/icon/fox.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+            
+        <img src="/icon/fox.png" alt="avatar" title="">    
+      
+      <h1></h1>
+      
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/">Ivan V's Blog</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/about/">About</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/post/">Posts</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/tags/">Tags</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/categories/">Categories</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/Bege13mot"><img src="/icon/github.svg" class="fa"></img></a>
+      <a href="https://www.goodreads.com/user/show/5520080-ivan"><img src="/icon/goodreads.svg" class="fa"></img></a>
+      <a href="mailto:bege13mot@gmail.com"><img src="/icon/mail.svg" class="fa"></img></a>
+      <a href="https://ru.linkedin.com/in/voronchihin"><img src="/icon/linkedin.svg" class="fa"></img></a>      
+      <a href="https://bege13mot.github.io/index.xml" type="application/rss+xml"><img src="/icon/rss.svg" class="fa"></img></a>
+      </li>
+    </ul>
+
+    
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1>High-Performance Browser Networking, Ilya Grigorik</h1>
+    <span class="post-date">Aug 25, 2017 &middot; 9 minute read &middot; <a href="https://bege13mot.github.io/post/high-networking/#disqus_thread">Comments</a>
+    </span>
+    <p>
+        
+    <a class="label" href="https://bege13mot.github.io/categories/post">Post</a>
+    
+    
+    Tag:    
+    <a class="label" href="https://bege13mot.github.io/tags/book">book</a><a class="label" href="https://bege13mot.github.io/tags/tech">tech</a>
+    </p>
+    
+
+<p><img src="/img/2017/high-networking.jpg" alt="image" /></p>
+
+<p>Не верится, что такая книга может быть <a href="https://hpbn.co/">бесплатной</a>. Детальный разбор всех нюансов работы с сетью для веб-приложений. Начиная с самых низов и азов. Обязательно буду перечитывать.</p>
+
+<h4 id="notes">Notes:</h4>
+
+<ul>
+<li><p>“Good developers know how things work. Great developers know why things work.” We all resonate with this adage. We want to be that person who understands and can explain the underpinning of the systems we depend on.</p></li>
+
+<li><p>All TCP connections begin with a three-way handshake: SYN, SYN ACK, ACK</p></li>
+
+<li><p>The delay imposed by the three-way handshake makes new TCP connections expensive to create, and is one of the big reasons why connection reuse is a critical optimization for any application running over TCP.</p></li>
+
+<li><p>So why is slow-start an important factor to keep in mind when we are building applications for the browser? Well, HTTP and many other application protocols run over TCP, and no matter the available bandwidth, every TCP connection must go through the slow-start phase—we cannot use the full capacity of the link immediately! Instead, we start with a small congestion window and double it for every roundtrip—i.e., exponential growth.</p></li>
+
+<li><p>In addition to regulating the transmission rate of new connections, TCP also implements a slow-start restart (SSR) mechanism, which resets the congestion window of a connection after it has been idle for a defined period of time. The rationale is simple: the network conditions may have changed while the connection has been idle, and to avoid congestion, the window is reset to a “safe” default.
+Not surprisingly, SSR can have a significant impact on performance of long-lived TCP connections that may idle for bursts of time—e.g., HTTP keepalive connections. As a result, it is recommended to disable SSR on the server.</p></li>
+
+<li><p>As a result, the rate with which a TCP connection can transfer data in modern high-speed networks is often limited by the roundtrip time between the receiver and sender. Further, while bandwidth continues to increase, latency is bounded by the speed of light and is already within a small constant factor of its maximum value. In most cases, latency, not bandwidth, is the bottleneck for TCP—e.g.</p></li>
+
+<li><p>Tuning Server Configuration</p>
+
+<ul>
+<li>As a starting point, prior to tuning any specific values for each buffer and timeout variable in TCP, of which there are dozens, you are much better off simply upgrading your hosts to their latest system versions. TCP best practices and underlying algorithms that govern its performance continue to evolve, and most of these changes are only available only in the latest kernels. In short, keep your servers up to date to ensure the optimal interaction between the sender’s and receiver’s TCP stacks.</li>
+<li>On the surface, upgrading server kernel versions seems like trivial advice. However, in practice, it is often met with significant resistance: many existing servers are tuned for specific kernel versions, and system administrators are reluctant to perform the upgrade. To be fair, every upgrade brings its risks, but to get the best TCP performance, it is also likely the single best investment you can make. With the latest kernel in place, it is good practice to ensure that your server is configured to use the following best practices:
+
+<ul>
+<li>Increasing TCP’s Initial Congestion Window - A larger starting congestion window allows TCP transfers more data in the first roundtrip and significantly accelerates the window growth—an especially critical optimization for bursty and short-lived connections.</li>
+<li>Slow-Start Restart - Disabling slow-start after idle will improve performance of long-lived TCP connections, which transfer data in bursts.</li>
+<li>Window Scaling (RFC 1323) - Enabling window scaling increases the maximum receive window size and allows high-latency connections to achieve better throughput.</li>
+<li>TCP Fast Open - Allows application data to be sent in the initial SYN packet in certain situations. TFO is a new optimization, which requires support both on client and server; investigate if your application can make use of it.</li>
+</ul></li>
+<li>The combination of the preceding settings and the latest kernel will enable the best performance—lower latency and higher throughput—for individual TCP connections.
+Depending on your application, you may also need to tune other TCP settings on the server to optimize for high connection rates, memory consumption, or similar criteria. However, these configuration settings are dependent on the platform, application, and hardware—consult your platform documentation as required.</li>
+</ul></li>
+
+<li><p>Performance Checklist for TCP:</p>
+
+<ul>
+<li>Upgrade server kernel to latest version (Linux: 3.2+).</li>
+<li>Ensure that cwnd size is set to 10.</li>
+<li>Disable slow-start after idle.</li>
+<li>Ensure that window scaling is enabled.</li>
+<li>Eliminate redundant data transfers.</li>
+<li>Compress transferred data.</li>
+<li>Position servers closer to the user to reduce roundtrip times.</li>
+<li>Reuse established TCP connections whenever possible.</li>
+</ul></li>
+
+<li><p>Terminating the connection closer to the user is an optimization that will help decrease latency for your users in all cases, but once again, no bit is faster than a bit not sent—send fewer bits. Enabling TLS session caching and stateless resumption will allow you to eliminate an entire roundtrip for repeat visitors.
+Session identifiers, on which TLS session caching relies, were introduced in SSL 2.0 and have wide support among most clients and servers. However, if you are configuring SSL/TLS on your server, do not assume that session support will be on by default. In fact, it is more common to have it off on most servers by default—but you know better! You should double-check and verify your configuration:</p>
+
+<ul>
+<li>Servers with multiple processes or workers should use a shared session cache.</li>
+<li>Size of the shared session cache should be tuned to your levels of traffic.</li>
+<li>A session timeout period should be provided.</li>
+<li>In a multiserver setup, routing the same client IP, or the same TLS session ID, to the same server is one way to provide good session cache utilization.</li>
+<li>Where “sticky” load balancing is not an option, a shared cache should be used between different servers to provide good session cache utilization.</li>
+<li>Check and monitor your SSL/TLS session cache statistics for best performance.</li>
+<li>Alternatively, if the client and server both support session tickets, then all session data will be stored on the client, and none of these steps are required—much, much simpler! However, because session tickets are a relatively new extension in TLS, not all clients support it. In practice, and for best results, you should enable both: session tickets will be used for clients that support them, and session identifiers as a fallback for older clients. These mechanisms are not exclusive, and they work together well.</li>
+</ul></li>
+
+<li><p>Performance Checklist for TLS:</p>
+
+<ul>
+<li>Get best performance from TCP; see Optimizing for TCP.</li>
+<li>Upgrade TLS libraries to latest release, and (re)build servers against them.</li>
+<li>Enable and configure session caching and stateless resumption</li>
+<li>Monitor your session caching hit rates and adjust configuration accordingly.</li>
+<li>Terminate TLS sessions closer to the user to minimize roundtrip latencies.</li>
+<li>Configure your TLS record size to fit into a single TCP segment.</li>
+<li>Ensure that your certificate chain does not overflow the initial congestion window.</li>
+<li>Remove unnecessary certificates from your chain; minimize the depth.</li>
+<li>Disable TLS compression on your server.</li>
+<li>Configure SNI support on your server.</li>
+<li>Configure OCSP stapling on your server.</li>
+<li>Append HTTP Strict Transport Security header.</li>
+</ul></li>
+
+<li><p>The parsing of the HTML document is what constructs the Document Object Model (DOM). In parallel, there is an oft-forgotten cousin, the CSS Object Model (CSSOM), which is constructed from the specified stylesheet rules and resources. The two are then combined to create the “render tree,” at which point the browser has enough information to perform a layout and paint something to the screen. So far, so good.
+However, this is where we must, unfortunately, introduce our favorite friend and foe: JavaScript. Script execution can issue a synchronous doc.write and block DOM parsing and construction. Similarly, scripts can query for a computed style of any object, which means that JavaScript can also block on CSS. Consequently, the construction of DOM and CSSOM objects is frequently intertwined: DOM construction cannot proceed until JavaScript is executed, and JavaScript execution cannot proceed until CSSOM is available.
+The performance of your application, especially the first load and the “time to render” depends directly on how this dependency graph between markup, stylesheets, and JavaScript is resolved. Incidentally, recall the popular “styles at the top, scripts at the bottom” best practice? Now you know why! Rendering and script execution are blocked on stylesheets; get the CSS down to the user as quickly as you can.</p></li>
+
+<li><p>WebPageTest.org is an open-source project and a free web service that provides a system for testing the performance of web pages from multiple locations around the world: the browser runs within a virtual machine and can be configured and scripted with a variety of connection and browser-oriented settings. Following the test, the results are then available through a web interface, which makes WebPageTest an indispensable power tool in your web performance toolkit.</p></li>
+
+<li><p>There are four techniques employed by most browsers:</p>
+
+<ul>
+<li>Resource pre-fetching and prioritization - Document, CSS, and JavaScript parsers may communicate extra information to the network stack to indicate the relative priority of each resource: blocking resources required for first rendering are given high priority, while low-priority requests may be temporarily held back in a queue.</li>
+<li>DNS pre-resolve -  Likely hostnames are pre-resolved ahead of time to avoid DNS latency on a future HTTP request. A pre-resolve may be triggered through learned navigation history, a user action such as hovering over a link, or other signals on the page.</li>
+<li>TCP pre-connect - Following a DNS resolution, the browser may speculatively open the TCP connection in an anticipation of an HTTP request. If it guesses right, it can eliminate another full roundtrip (TCP handshake) of network latency.</li>
+<li>Page pre-rendering - Some browsers allow you to hint the likely next destination and can pre-render the entire page in a hidden tab, such that it can be instantly swapped in when the user initiates the navigation.</li>
+</ul></li>
+
+<li><p>Similarly, speaking of good reference books, Steve Souders’ High Performance Web Sites offers great advice in the form of 14 rules, half of which are networking optimizations:</p>
+
+<ul>
+<li>Reduce DNS lookups</li>
+<li>Every hostname resolution requires a network roundtrip, imposing latency on the request and blocking the request while the lookup is in progress.</li>
+<li>Make fewer HTTP requests</li>
+<li>No request is faster than a request not made: eliminate unnecessary resources on your pages.</li>
+<li>Use a Content Delivery Network</li>
+<li>Locating the data geographically closer to the client can significantly reduce the network latency of every TCP connection and improve throughput.</li>
+<li>Add an Expires header and configure ETags</li>
+<li>Relevant resources should be cached to avoid re-requesting the same bytes on each and every page. An Expires header can be used to specify the cache lifetime of the object, allowing it to be retrieved directly from the user’s cache and eliminating the HTTP request entirely. ETags and Last-Modified headers provide an efficient cache revalidation mechanism—effectively a fingerprint or a timestamp of the last update.</li>
+<li>Gzip assets</li>
+<li>All text-based assets should be compressed with Gzip when transferred between the client and the server. On average, Gzip will reduce the file size by 60–80%, which makes it one of the simpler (configuration flag on the server) and high-benefit optimizations you can do.</li>
+<li>Avoid HTTP redirects</li>
+<li>HTTP redirects can be extremely costly, especially when they redirect the client to a different hostname, which results in additional DNS lookup, TCP connection latency, and so on.</li>
+</ul></li>
+</ul>
+
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "bege13mot";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_shortname = "bege13mot";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="https://bege13mot.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+  var _gaq=[['_setAccount','UA-73422311-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+
