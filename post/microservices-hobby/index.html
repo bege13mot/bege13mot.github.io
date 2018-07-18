@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Hobby project with microservices &nbsp; </title>
+
+  
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/poole-overrides.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde-overrides.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde-x.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://bege13mot.github.io/touch-icon-144-precomposed.png">
+  <link href="/icon/fox.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+            
+        <img src="/icon/fox.png" alt="avatar" title="">    
+      
+      <h1></h1>
+      
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/">Ivan V's Blog</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/about/">About</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/post/">Posts</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/tags/">Tags</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/categories/">Categories</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/Bege13mot"><img src="/icon/github.svg" class="fa"></img></a>
+      <a href="https://www.goodreads.com/user/show/5520080-ivan"><img src="/icon/goodreads.svg" class="fa"></img></a>
+      <a href="mailto:bege13mot@gmail.com"><img src="/icon/mail.svg" class="fa"></img></a>
+      <a href="https://ru.linkedin.com/in/voronchihin"><img src="/icon/linkedin.svg" class="fa"></img></a>      
+      <a href="https://bege13mot.github.io/index.xml" type="application/rss+xml"><img src="/icon/rss.svg" class="fa"></img></a>
+      </li>
+    </ul>
+
+    
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1>Hobby project with microservices</h1>
+    <span class="post-date">Jul 18, 2018 &middot; 5 minute read &middot; <a href="https://bege13mot.github.io/post/microservices-hobby/#disqus_thread">Comments</a>
+    </span>
+    <p>
+        
+    <a class="label" href="https://bege13mot.github.io/categories/post">Post</a>
+    
+    
+    Tag:    
+    <a class="label" href="https://bege13mot.github.io/tags/tech">tech</a><a class="label" href="https://bege13mot.github.io/tags/it">it</a>
+    </p>
+    
+
+<p>This post inspired by an awesome series of tutorials from <a href="https://ewanvalentine.io/microservices-in-golang-part-1/">Ewan Valentine</a>. He builds a small microservice oriented web application to select an appropriate ship for every consignment. Technology - Golang, PostgreSQL, MongoDB, gRPC, go-micro framework, React, Kubernetes. I followed through this tutorials. But made some additional &ldquo;improvements&rdquo;. You could find it below.</p>
+
+<p><br></p>
+
+<h4 id="general-overview">General Overview:</h4>
+
+<p><img src="/img/2018/microservices.svg" alt="Alt text" /></p>
+
+<ul>
+<li><a href="https://github.com/bege13mot/consignment-service">Consignment Service</a> - &ldquo;main&rdquo; service, connected to <code>user</code>(authentication) and <code>vessel</code>(availabe vessels) services. Responsible for creation and displaying consignments. MongoDB is used.</li>
+<li><a href="https://github.com/bege13mot/ui-service">UI Service</a> - simple React app. It is connected to <code>user</code>(authentication) and <code>consignment</code>(consignment managment) services.</li>
+<li><a href="https://github.com/bege13mot/user-service">User Service</a> - authentication and autorization. It uses PostgreSQL.</li>
+<li><a href="https://github.com/bege13mot/vessel-service">Vessel Service</a> - Serving creation and finding available vesselss. MongoDB is used.</li>
+<li>Infrastructure. Tested locally on <a href="https://github.com/kubernetes/minikube">minikube</a>.
+
+<ul>
+<li><a href="https://github.com/bege13mot/consignment-service/tree/master/db-chart">db-chart</a> - Helm chart for creating MongoDB and PostgreSQL clusters</li>
+<li><a href="https://github.com/bege13mot/consignment-service/tree/master/monitoring-chart">monitoring-chart</a> - Helm chart for creating Prometheus and Grafana</li>
+<li><a href="https://github.com/bege13mot/consignment-service/tree/master/deployment-chart/templates">ingress</a> - Ingress creating for UI and monitoring. Use as:</li>
+</ul></li>
+</ul>
+
+<pre><code>  minikube start
+  minikube addons enable ingress
+  ... helm upgrade ...
+  echo &quot;$(minikube ip) test&quot; | sudo tee -a /etc/hosts
+</code></pre>
+
+<p><br></p>
+
+<h4 id="notes">Notes:</h4>
+
+<ul>
+<li>Originally the author uses a lot of advantages <a href="https://github.com/micro/go-micro">go-micro</a> framework. It is definitely an interesting topic but a little bit out of my scope. It encapsulates the complexity of gRPC ecosystem but I try to do &ldquo;by hand&rdquo; as much work as possible. Also, I have to change Ewan&rsquo;s source code instead of copy it, that is certainly good for education purpose.
+One of this framework substitution is implementing <a href="https://github.com/grpc-ecosystem/grpc-gateway">grpc-gateway</a> - generates a reverse-proxy server which translates a RESTful JSON API into gRPC.  Also, I added a simple swagger output.</li>
+</ul>
+
+<pre><code>httpMux.HandleFunc(&quot;/swagger/&quot;, func(w http.ResponseWriter, r *http.Request) {
+  dir := &quot;./proto/auth&quot;
+  if !strings.HasSuffix(r.URL.Path, &quot;.swagger.json&quot;) {
+    log.Printf(&quot;Swagger Not Found: %s&quot;, r.URL.Path)
+    http.NotFound(w, r)
+    return
+  }
+  log.Printf(&quot;Serving Swagger %s&quot;, r.URL.Path)
+  p := strings.TrimPrefix(r.URL.Path, &quot;/swagger/&quot;)
+  p = path.Join(dir, p)
+  fmt.Println(p)
+  http.ServeFile(w, r, p)
+})
+</code></pre>
+
+<ul>
+<li>I got my hands dirty with <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a>. Testing UI on the local machine requires specifying two different IP (one for user service and one consignment service). Of course, during CORS it won&rsquo;t work. Browser doesn&rsquo;t allow use different addressed. Luckily, <a href="https://github.com/grpc-ecosystem/grpc-gateway">grpc-gateway</a> repository has good documentation that helps to fix it.</li>
+</ul>
+
+<pre><code>// allowCORS allows Cross Origin Resoruce Sharing from any origin.
+// Don't do this without consideration in production systems.
+func allowCORS(h http.Handler) http.Handler {
+    return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+        if origin := r.Header.Get(&quot;Origin&quot;); origin != &quot;&quot; {
+            w.Header().Set(&quot;Access-Control-Allow-Origin&quot;, origin)
+            if r.Method == &quot;OPTIONS&quot; &amp;&amp; r.Header.Get(&quot;Access-Control-Request-Method&quot;) != &quot;&quot; {
+                preflightHandler(w, r)
+                return
+            }
+        }
+        h.ServeHTTP(w, r)
+    })
+}
+
+func preflightHandler(w http.ResponseWriter, r *http.Request) {
+    headers := []string{&quot;Content-Type&quot;, &quot;Accept&quot;, &quot;Authorization&quot;}
+    w.Header().Set(&quot;Access-Control-Allow-Headers&quot;, strings.Join(headers, &quot;,&quot;))
+    methods := []string{&quot;GET&quot;, &quot;HEAD&quot;, &quot;POST&quot;, &quot;PUT&quot;, &quot;DELETE&quot;}
+    w.Header().Set(&quot;Access-Control-Allow-Methods&quot;, strings.Join(methods, &quot;,&quot;))
+    log.Printf(&quot;CORS preflight request for %s \n&quot;, r.URL.Path)
+}
+</code></pre>
+
+<ul>
+<li>Add a simple health check endpoint for Kubernetes.</li>
+</ul>
+
+<pre><code>httpMux := http.NewServeMux()
+
+httpMux.HandleFunc(&quot;/healthz&quot;, func(w http.ResponseWriter, r *http.Request) {
+  if err := db.DB().Ping(); err != nil {
+    http.Error(w, http.StatusText(http.StatusServiceUnavailable), http.StatusServiceUnavailable)
+    return
+  }
+  w.WriteHeader(http.StatusOK)
+})
+</code></pre>
+
+<ul>
+<li>The general goal of this project is education, so I try to figure out how to work with Consul and implement simple service discovery. Of course, this project uses Kubernetes, the so-called Consul is not necessary. But I still implemented registering and retrieving service attributes from Consul.</li>
+</ul>
+
+<pre><code>//Register in Consul
+defer func() {
+  cErr := consul.Agent().ServiceDeregister(serviceID)
+  if cErr != nil {
+    log.Println(&quot;Can't remove service from Consul &quot;, cErr)
+    return
+  }
+  log.Println(&quot;Remove from Consul &quot;, serviceID)
+}()
+
+err = consul.Agent().ServiceRegister(&amp;consulapi.AgentServiceRegistration{
+  ID:      serviceID,
+  Name:    &quot;user-service&quot;,
+  Port:    50054,
+  Address: &quot;host&quot;,
+  Check: &amp;consulapi.AgentServiceCheck{
+    CheckID:  &quot;health_check&quot;,
+    Name:     &quot;User-Service health status&quot;,
+    Interval: &quot;10s&quot;,
+    GRPC:     &quot;host:50054&quot;,
+  },
+})
+
+if err != nil {
+  log.Println(&quot;Couldn't add service to Consul, &quot;, err)
+}
+log.Println(&quot;Add to Consul, &quot;, serviceID)
+
+//Get IP
+ip, err := net.InterfaceAddrs()
+if err != nil {
+  log.Println(&quot;Couldn't get IP address&quot;)
+}
+for _, a := range ip {
+  if ipnet, ok := a.(*net.IPNet); ok &amp;&amp; !ipnet.IP.IsLoopback() {
+    if ipnet.IP.To4() != nil {
+      fmt.Println(&quot;MY IP: &quot;, ipnet.IP)
+    }
+  }
+}
+
+//Get User-service from Consul
+health, _, err := consul.Health().Service(&quot;user-service&quot;, &quot;&quot;, true, nil)
+if err != nil {
+  log.Println(&quot;Cant get live services&quot;)
+}
+
+fmt.Println(&quot;HEALTH: &quot;, len(health))
+for _, item := range health {
+  log.Println(&quot;Service: &quot;, item.Service.ID, item.Service.Address, item.Service.Port)
+
+}
+</code></pre>
+
+<ul>
+<li>Moreover I find out that grpc has in-built support of Consul health checks, but implementation a little bit weird, the package name hase to be <code>grpc_health_v1</code>, otherwise consul could&rsquo; use it.</li>
+</ul>
+
+<pre><code> // Check implements Consul health checking
+ func (srv *service) Check(ctx context.Context, in *pb.HealthCheckRequest) (*pb.HealthCheckResponse, error) {
+     if err := srv.repo.ping(); err != nil {
+         return &amp;pb.HealthCheckResponse{
+             Status: pb.HealthCheckResponse_NOT_SERVING,
+         }, err
+     }
+
+     return &amp;pb.HealthCheckResponse{Status: pb.HealthCheckResponse_SERVING}, nil
+ }
+</code></pre>
+
+<ul>
+<li><p>Added support of <a href="https://github.com/grpc-ecosystem/go-grpc-prometheus">go-grpc-prometheus</a> - allow you to monitor you gRPC methods. It requires adding Prometheus and Grafana to the cluster.</p></li>
+
+<li><p>Other changes were pretty small during the education purpose. Change docker build to more fancy one, and <code>dep</code> package management, adding helm support for more convenient deploy to cluster, logging branch name during build etc.</p></li>
+
+<li><p>In the end, I couldn&rsquo;t find out &ldquo;straight&rdquo; way of autoincrement <code>consignment id</code>. It could be generated on the consignment service side but might lead to collisions in case of multiple instances, that is highly possible for microservices architecture. Instead of it, after every insert,  the<code>id</code> field is updated. It looks not good and if you know a better way please write to me.</p></li>
+</ul>
+
+<pre><code>func (repo *ConsignmentRepository) Create(consignment *pb.Consignment) error {
+
+    repo.collection().Insert(consignment)
+    cons := []test{}
+    repo.collection().Find(bson.M{&quot;id&quot;: &quot;&quot;}).All(&amp;cons)
+
+    for i, v := range cons {
+        fmt.Println(i, v.ID.Hex())
+        consignment.Id = v.ID.Hex()
+        repo.collection().Update(bson.M{&quot;id&quot;: &quot;&quot;}, bson.M{&quot;$set&quot;: bson.M{&quot;id&quot;: v.ID.Hex()}})
+    }
+
+    return nil
+}
+</code></pre>
+
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "bege13mot";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_shortname = "bege13mot";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="https://bege13mot.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+  var _gaq=[['_setAccount','UA-73422311-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+
