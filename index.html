@@ -94,7 +94,7 @@
       
       
 
-<p>This post inspired by an awesome series of tutorials from <a href="https://ewanvalentine.io/microservices-in-golang-part-1/">Ewan Valentine</a>. He builds a small microservice oriented web application to select an appropriate ship for every consignment. Technology - Golang, PostgreSQL, MongoDB, gRPC, go-micro framework, React, Kubernetes. I followed through this tutorials. But made some additional &ldquo;improvements&rdquo;. You could find it below.</p>
+<p>This post was inspired by awesome series of tutorials from <a href="https://ewanvalentine.io/microservices-in-golang-part-1/">Ewan Valentine</a>. He built a small microservice oriented web application to select an appropriate ship for every consignment. Technology - Golang, PostgreSQL, MongoDB, gRPC, go-micro framework, React, Kubernetes. I followed through these tutorials. But made some additional &ldquo;changes&rdquo;. You can find them below.</p>
 
 <p><br></p>
 
@@ -106,7 +106,7 @@
 <li><a href="https://github.com/bege13mot/consignment-service">Consignment Service</a> - &ldquo;main&rdquo; service, connected to <code>user</code>(authentication) and <code>vessel</code>(availabe vessels) services. Responsible for creation and displaying consignments. MongoDB is used.</li>
 <li><a href="https://github.com/bege13mot/ui-service">UI Service</a> - simple React app. It is connected to <code>user</code>(authentication) and <code>consignment</code>(consignment managment) services.</li>
 <li><a href="https://github.com/bege13mot/user-service">User Service</a> - authentication and autorization. It uses PostgreSQL.</li>
-<li><a href="https://github.com/bege13mot/vessel-service">Vessel Service</a> - Serving creation and finding available vesselss. MongoDB is used.</li>
+<li><a href="https://github.com/bege13mot/vessel-service">Vessel Service</a> - serving creation and finding available vesselss. MongoDB is used.</li>
 <li>Infrastructure. Tested locally on <a href="https://github.com/kubernetes/minikube">minikube</a>.
 
 <ul>
@@ -127,7 +127,7 @@
 <h4 id="notes">Notes:</h4>
 
 <ul>
-<li>Originally the author uses a lot of advantages <a href="https://github.com/micro/go-micro">go-micro</a> framework. It is definitely an interesting topic but a little bit out of my scope. It encapsulates the complexity of gRPC ecosystem but I try to do &ldquo;by hand&rdquo; as much work as possible. Also, I have to change Ewan&rsquo;s source code instead of copy it, that is certainly good for education purpose.
+<li>Originally the author uses a lot of advantages <a href="https://github.com/micro/go-micro">go-micro</a> framework. It is definitely an interesting topic but a little bit out of my scope. It encapsulates the complexity of gRPC ecosystem but I try to do &ldquo;by hand&rdquo; as much work as possible. Also, I have to change Ewan&rsquo;s source code instead of copying it, that is certainly good for education purpose.
 One of this framework substitution is implementing <a href="https://github.com/grpc-ecosystem/grpc-gateway">grpc-gateway</a> - generates a reverse-proxy server which translates a RESTful JSON API into gRPC.  Also, I added a simple swagger output.</li>
 </ul>
 
@@ -147,7 +147,7 @@ One of this framework substitution is implementing <a href="https://github.com/g
 </code></pre>
 
 <ul>
-<li>I got my hands dirty with <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a>. Testing UI on the local machine requires specifying two different IP (one for user service and one consignment service). Of course, during CORS it won&rsquo;t work. Browser doesn&rsquo;t allow use different addressed. Luckily, <a href="https://github.com/grpc-ecosystem/grpc-gateway">grpc-gateway</a> repository has good documentation that helps to fix it.</li>
+<li>I got my hands dirty with <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a>. Testing UI on the local machine requires specifying two different IP (one for user service and one consignment service). Of course, during CORS it won&rsquo;t work. The browser doesn&rsquo;t allow using different addresses. Luckily, <a href="https://github.com/grpc-ecosystem/grpc-gateway">grpc-gateway</a> repository has good documentation that helps to fix it.</li>
 </ul>
 
 <pre><code>// allowCORS allows Cross Origin Resoruce Sharing from any origin.
@@ -175,7 +175,7 @@ func preflightHandler(w http.ResponseWriter, r *http.Request) {
 </code></pre>
 
 <ul>
-<li>Add a simple health check endpoint for Kubernetes.</li>
+<li>Added a simple health check endpoint for Kubernetes.</li>
 </ul>
 
 <pre><code>httpMux := http.NewServeMux()
@@ -190,7 +190,7 @@ httpMux.HandleFunc(&quot;/healthz&quot;, func(w http.ResponseWriter, r *http.Req
 </code></pre>
 
 <ul>
-<li>The general goal of this project is education, so I try to figure out how to work with Consul and implement simple service discovery. Of course, this project uses Kubernetes, the so-called Consul is not necessary. But I still implemented registering and retrieving service attributes from Consul.</li>
+<li>The general goal of this project is education, so I try to figure out how to work with Consul and implement simple service discovery. Of course, this project runs on Kubernetes and Consul&rsquo;s service discovery is not necessary. But anyway I implemented registering and retrieving service attributes from Consul.</li>
 </ul>
 
 <pre><code>//Register in Consul
@@ -248,7 +248,7 @@ for _, item := range health {
 </code></pre>
 
 <ul>
-<li>Moreover I find out that grpc has in-built support of Consul health checks, but implementation a little bit weird, the package name hase to be <code>grpc_health_v1</code>, otherwise consul could&rsquo; use it.</li>
+<li>Moreover, I found out that gRPC has in-built support of Consul health checks, but implementation is a little bit weird, the package name has to be <code>grpc_health_v1</code>, otherwise consul could&rsquo;t use it.</li>
 </ul>
 
 <pre><code> // Check implements Consul health checking
@@ -264,11 +264,11 @@ for _, item := range health {
 </code></pre>
 
 <ul>
-<li><p>Added support of <a href="https://github.com/grpc-ecosystem/go-grpc-prometheus">go-grpc-prometheus</a> - allow you to monitor you gRPC methods. It requires adding Prometheus and Grafana to the cluster.</p></li>
+<li><p>Added support of <a href="https://github.com/grpc-ecosystem/go-grpc-prometheus">go-grpc-prometheus</a> - allow you to monitor your gRPC methods. It requires adding Prometheus and Grafana to the cluster.</p></li>
 
-<li><p>Other changes were pretty small during the education purpose. Change docker build to more fancy one, and <code>dep</code> package management, adding helm support for more convenient deploy to cluster, logging branch name during build etc.</p></li>
+<li><p>Other changes were pretty small. I changed Docker build to a fancier one, and <code>dep</code> package management, adding Helm support for more convenient deploy to cluster, logging branch name during build etc.</p></li>
 
-<li><p>In the end, I couldn&rsquo;t find out &ldquo;straight&rdquo; way of autoincrement <code>consignment id</code>. It could be generated on the consignment service side but might lead to collisions in case of multiple instances, that is highly possible for microservices architecture. Instead of it, after every insert,  the<code>id</code> field is updated. It looks not good and if you know a better way please write to me.</p></li>
+<li><p>In the end, I couldn&rsquo;t find out &ldquo;straight&rdquo; way of autoincrement <code>consignment id</code>. It could be generated on the consignment service side but might lead to collisions in case of multiple instances, that is highly possible for microservices architecture. Instead of it, after every insert, the <code>id</code> field is updated. It doesn&rsquo;t look good and if you know a better way I&rsquo;ll be grateful if you let me know.</p></li>
 </ul>
 
 <pre><code>func (repo *ConsignmentRepository) Create(consignment *pb.Consignment) error {

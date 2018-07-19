@@ -17,7 +17,7 @@
       <pubDate>Wed, 18 Jul 2018 10:00:00 +0400</pubDate>
       
       <guid>https://bege13mot.github.io/post/microservices-hobby/</guid>
-      <description>This post inspired by an awesome series of tutorials from Ewan Valentine. He builds a small microservice oriented web application to select an appropriate ship for every consignment. Technology - Golang, PostgreSQL, MongoDB, gRPC, go-micro framework, React, Kubernetes. I followed through this tutorials. But made some additional &amp;ldquo;improvements&amp;rdquo;. You could find it below.
+      <description>This post was inspired by awesome series of tutorials from Ewan Valentine. He built a small microservice oriented web application to select an appropriate ship for every consignment. Technology - Golang, PostgreSQL, MongoDB, gRPC, go-micro framework, React, Kubernetes. I followed through these tutorials. But made some additional &amp;ldquo;changes&amp;rdquo;. You can find them below.
 
 General Overview:  Consignment Service - &amp;ldquo;main&amp;rdquo; service, connected to user(authentication) and vessel(availabe vessels) services. Responsible for creation and displaying consignments.</description>
     </item>
