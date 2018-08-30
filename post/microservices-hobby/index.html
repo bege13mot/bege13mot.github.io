@@ -100,185 +100,177 @@
 <li><a href="https://github.com/bege13mot/ui-service">UI Service</a> - simple React app. It is connected to <code>user</code>(authentication) and <code>consignment</code>(consignment managment) services.</li>
 <li><a href="https://github.com/bege13mot/user-service">User Service</a> - authentication and autorization. It uses PostgreSQL.</li>
 <li><a href="https://github.com/bege13mot/vessel-service">Vessel Service</a> - serving creation and finding available vesselss. MongoDB is used.</li>
-<li>Infrastructure. Tested locally on <a href="https://github.com/kubernetes/minikube">minikube</a>.
+
+<li><p>Infrastructure. Tested locally on <a href="https://github.com/kubernetes/minikube">minikube</a>.</p>
 
 <ul>
 <li><a href="https://github.com/bege13mot/consignment-service/tree/master/db-chart">db-chart</a> - Helm chart for creating MongoDB and PostgreSQL clusters</li>
 <li><a href="https://github.com/bege13mot/consignment-service/tree/master/monitoring-chart">monitoring-chart</a> - Helm chart for creating Prometheus and Grafana</li>
-<li><a href="https://github.com/bege13mot/consignment-service/tree/master/deployment-chart/templates">ingress</a> - Ingress creating for UI and monitoring. Use as:</li>
+
+<li><p><a href="https://github.com/bege13mot/consignment-service/tree/master/deployment-chart/templates">ingress</a> - Ingress creating for UI and monitoring. Use as:</p>
+
+<pre><code>minikube start
+minikube addons enable ingress
+... helm upgrade ...
+echo &quot;$(minikube ip) test&quot; | sudo tee -a /etc/hosts
+</code></pre></li>
 </ul></li>
 </ul>
-
-<pre><code>  minikube start
-  minikube addons enable ingress
-  ... helm upgrade ...
-  echo &quot;$(minikube ip) test&quot; | sudo tee -a /etc/hosts
-</code></pre>
 
 <p><br></p>
 
 <h4 id="notes">Notes:</h4>
 
 <ul>
-<li>Originally the author uses a lot of advantages <a href="https://github.com/micro/go-micro">go-micro</a> framework. It is definitely an interesting topic but a little bit out of my scope. It encapsulates the complexity of gRPC ecosystem but I try to do &ldquo;by hand&rdquo; as much work as possible. Also, I have to change Ewan&rsquo;s source code instead of copying it, that is certainly good for education purpose.
-One of this framework substitution is implementing <a href="https://github.com/grpc-ecosystem/grpc-gateway">grpc-gateway</a> - generates a reverse-proxy server which translates a RESTful JSON API into gRPC.  Also, I added a simple swagger output.</li>
-</ul>
+<li><p>Originally the author uses a lot of advantages <a href="https://github.com/micro/go-micro">go-micro</a> framework. It is definitely an interesting topic but a little bit out of my scope. It encapsulates the complexity of gRPC ecosystem but I try to do &ldquo;by hand&rdquo; as much work as possible. Also, I have to change Ewan&rsquo;s source code instead of copying it, that is certainly good for education purpose.
+One of this framework substitution is implementing <a href="https://github.com/grpc-ecosystem/grpc-gateway">grpc-gateway</a> - generates a reverse-proxy server which translates a RESTful JSON API into gRPC.  Also, I added a simple swagger output.</p>
 
 <pre><code>httpMux.HandleFunc(&quot;/swagger/&quot;, func(w http.ResponseWriter, r *http.Request) {
-  dir := &quot;./proto/auth&quot;
-  if !strings.HasSuffix(r.URL.Path, &quot;.swagger.json&quot;) {
-    log.Printf(&quot;Swagger Not Found: %s&quot;, r.URL.Path)
-    http.NotFound(w, r)
-    return
-  }
-  log.Printf(&quot;Serving Swagger %s&quot;, r.URL.Path)
-  p := strings.TrimPrefix(r.URL.Path, &quot;/swagger/&quot;)
-  p = path.Join(dir, p)
-  fmt.Println(p)
-  http.ServeFile(w, r, p)
+dir := &quot;./proto/auth&quot;
+if !strings.HasSuffix(r.URL.Path, &quot;.swagger.json&quot;) {
+log.Printf(&quot;Swagger Not Found: %s&quot;, r.URL.Path)
+http.NotFound(w, r)
+return
+}
+log.Printf(&quot;Serving Swagger %s&quot;, r.URL.Path)
+p := strings.TrimPrefix(r.URL.Path, &quot;/swagger/&quot;)
+p = path.Join(dir, p)
+fmt.Println(p)
+http.ServeFile(w, r, p)
 })
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>I got my hands dirty with <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a>. Testing UI on the local machine requires specifying two different IP (one for user service and one consignment service). Of course, during CORS it won&rsquo;t work. The browser doesn&rsquo;t allow using different addresses. Luckily, <a href="https://github.com/grpc-ecosystem/grpc-gateway">grpc-gateway</a> repository has good documentation that helps to fix it.</li>
-</ul>
+<li><p>I got my hands dirty with <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a>. Testing UI on the local machine requires specifying two different IP (one for user service and one consignment service). Of course, during CORS it won&rsquo;t work. The browser doesn&rsquo;t allow using different addresses. Luckily, <a href="https://github.com/grpc-ecosystem/grpc-gateway">grpc-gateway</a> repository has good documentation that helps to fix it.</p>
 
 <pre><code>// allowCORS allows Cross Origin Resoruce Sharing from any origin.
 // Don't do this without consideration in production systems.
 func allowCORS(h http.Handler) http.Handler {
-    return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-        if origin := r.Header.Get(&quot;Origin&quot;); origin != &quot;&quot; {
-            w.Header().Set(&quot;Access-Control-Allow-Origin&quot;, origin)
-            if r.Method == &quot;OPTIONS&quot; &amp;&amp; r.Header.Get(&quot;Access-Control-Request-Method&quot;) != &quot;&quot; {
-                preflightHandler(w, r)
-                return
-            }
+return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+    if origin := r.Header.Get(&quot;Origin&quot;); origin != &quot;&quot; {
+        w.Header().Set(&quot;Access-Control-Allow-Origin&quot;, origin)
+        if r.Method == &quot;OPTIONS&quot; &amp;&amp; r.Header.Get(&quot;Access-Control-Request-Method&quot;) != &quot;&quot; {
+            preflightHandler(w, r)
+            return
         }
-        h.ServeHTTP(w, r)
-    })
+    }
+    h.ServeHTTP(w, r)
+})
 }
 
 func preflightHandler(w http.ResponseWriter, r *http.Request) {
-    headers := []string{&quot;Content-Type&quot;, &quot;Accept&quot;, &quot;Authorization&quot;}
-    w.Header().Set(&quot;Access-Control-Allow-Headers&quot;, strings.Join(headers, &quot;,&quot;))
-    methods := []string{&quot;GET&quot;, &quot;HEAD&quot;, &quot;POST&quot;, &quot;PUT&quot;, &quot;DELETE&quot;}
-    w.Header().Set(&quot;Access-Control-Allow-Methods&quot;, strings.Join(methods, &quot;,&quot;))
-    log.Printf(&quot;CORS preflight request for %s \n&quot;, r.URL.Path)
+headers := []string{&quot;Content-Type&quot;, &quot;Accept&quot;, &quot;Authorization&quot;}
+w.Header().Set(&quot;Access-Control-Allow-Headers&quot;, strings.Join(headers, &quot;,&quot;))
+methods := []string{&quot;GET&quot;, &quot;HEAD&quot;, &quot;POST&quot;, &quot;PUT&quot;, &quot;DELETE&quot;}
+w.Header().Set(&quot;Access-Control-Allow-Methods&quot;, strings.Join(methods, &quot;,&quot;))
+log.Printf(&quot;CORS preflight request for %s \n&quot;, r.URL.Path)
 }
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>Added a simple health check endpoint for Kubernetes.</li>
-</ul>
+<li><p>Added a simple health check endpoint for Kubernetes.</p>
 
 <pre><code>httpMux := http.NewServeMux()
 
 httpMux.HandleFunc(&quot;/healthz&quot;, func(w http.ResponseWriter, r *http.Request) {
-  if err := db.DB().Ping(); err != nil {
-    http.Error(w, http.StatusText(http.StatusServiceUnavailable), http.StatusServiceUnavailable)
-    return
-  }
-  w.WriteHeader(http.StatusOK)
+if err := db.DB().Ping(); err != nil {
+http.Error(w, http.StatusText(http.StatusServiceUnavailable), http.StatusServiceUnavailable)
+return
+}
+w.WriteHeader(http.StatusOK)
 })
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>The general goal of this project is education, so I try to figure out how to work with Consul and implement simple service discovery. Of course, this project runs on Kubernetes and Consul&rsquo;s service discovery is not necessary. But anyway I implemented registering and retrieving service attributes from Consul.</li>
-</ul>
+<li><p>The general goal of this project is education, so I try to figure out how to work with Consul and implement simple service discovery. Of course, this project runs on Kubernetes and Consul&rsquo;s service discovery is not necessary. But anyway I implemented registering and retrieving service attributes from Consul.</p>
 
 <pre><code>//Register in Consul
 defer func() {
-  cErr := consul.Agent().ServiceDeregister(serviceID)
-  if cErr != nil {
-    log.Println(&quot;Can't remove service from Consul &quot;, cErr)
-    return
-  }
-  log.Println(&quot;Remove from Consul &quot;, serviceID)
+cErr := consul.Agent().ServiceDeregister(serviceID)
+if cErr != nil {
+log.Println(&quot;Can't remove service from Consul &quot;, cErr)
+return
+}
+log.Println(&quot;Remove from Consul &quot;, serviceID)
 }()
 
 err = consul.Agent().ServiceRegister(&amp;consulapi.AgentServiceRegistration{
-  ID:      serviceID,
-  Name:    &quot;user-service&quot;,
-  Port:    50054,
-  Address: &quot;host&quot;,
-  Check: &amp;consulapi.AgentServiceCheck{
-    CheckID:  &quot;health_check&quot;,
-    Name:     &quot;User-Service health status&quot;,
-    Interval: &quot;10s&quot;,
-    GRPC:     &quot;host:50054&quot;,
-  },
+ID:      serviceID,
+Name:    &quot;user-service&quot;,
+Port:    50054,
+Address: &quot;host&quot;,
+Check: &amp;consulapi.AgentServiceCheck{
+CheckID:  &quot;health_check&quot;,
+Name:     &quot;User-Service health status&quot;,
+Interval: &quot;10s&quot;,
+GRPC:     &quot;host:50054&quot;,
+},
 })
 
 if err != nil {
-  log.Println(&quot;Couldn't add service to Consul, &quot;, err)
+log.Println(&quot;Couldn't add service to Consul, &quot;, err)
 }
 log.Println(&quot;Add to Consul, &quot;, serviceID)
 
 //Get IP
 ip, err := net.InterfaceAddrs()
 if err != nil {
-  log.Println(&quot;Couldn't get IP address&quot;)
+log.Println(&quot;Couldn't get IP address&quot;)
 }
 for _, a := range ip {
-  if ipnet, ok := a.(*net.IPNet); ok &amp;&amp; !ipnet.IP.IsLoopback() {
-    if ipnet.IP.To4() != nil {
-      fmt.Println(&quot;MY IP: &quot;, ipnet.IP)
-    }
-  }
+if ipnet, ok := a.(*net.IPNet); ok &amp;&amp; !ipnet.IP.IsLoopback() {
+if ipnet.IP.To4() != nil {
+  fmt.Println(&quot;MY IP: &quot;, ipnet.IP)
+}
+}
 }
 
 //Get User-service from Consul
 health, _, err := consul.Health().Service(&quot;user-service&quot;, &quot;&quot;, true, nil)
 if err != nil {
-  log.Println(&quot;Cant get live services&quot;)
+log.Println(&quot;Cant get live services&quot;)
 }
 
 fmt.Println(&quot;HEALTH: &quot;, len(health))
 for _, item := range health {
-  log.Println(&quot;Service: &quot;, item.Service.ID, item.Service.Address, item.Service.Port)
+log.Println(&quot;Service: &quot;, item.Service.ID, item.Service.Address, item.Service.Port)
 
 }
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>Moreover, I found out that gRPC has in-built support of Consul health checks, but implementation is a little bit weird, the package name has to be <code>grpc_health_v1</code>, otherwise consul could&rsquo;t use it.</li>
-</ul>
+<li><p>Moreover, I found out that gRPC has in-built support of Consul health checks, but implementation is a little bit weird, the package name has to be <code>grpc_health_v1</code>, otherwise consul could&rsquo;t use it.</p>
 
-<pre><code> // Check implements Consul health checking
- func (srv *service) Check(ctx context.Context, in *pb.HealthCheckRequest) (*pb.HealthCheckResponse, error) {
-     if err := srv.repo.ping(); err != nil {
-         return &amp;pb.HealthCheckResponse{
-             Status: pb.HealthCheckResponse_NOT_SERVING,
-         }, err
-     }
-
-     return &amp;pb.HealthCheckResponse{Status: pb.HealthCheckResponse_SERVING}, nil
+<pre><code>// Check implements Consul health checking
+func (srv *service) Check(ctx context.Context, in *pb.HealthCheckRequest) (*pb.HealthCheckResponse, error) {
+ if err := srv.repo.ping(); err != nil {
+     return &amp;pb.HealthCheckResponse{
+         Status: pb.HealthCheckResponse_NOT_SERVING,
+     }, err
  }
-</code></pre>
 
-<ul>
+ return &amp;pb.HealthCheckResponse{Status: pb.HealthCheckResponse_SERVING}, nil
+}
+</code></pre></li>
+
 <li><p>Added support of <a href="https://github.com/grpc-ecosystem/go-grpc-prometheus">go-grpc-prometheus</a> - allow you to monitor your gRPC methods. It requires adding Prometheus and Grafana to the cluster.</p></li>
 
 <li><p>Other changes were pretty small. I changed Docker build to a fancier one, and <code>dep</code> package management, adding Helm support for more convenient deploy to cluster, logging branch name during build etc.</p></li>
 
-<li><p>In the end, I couldn&rsquo;t find out &ldquo;straight&rdquo; way of autoincrement <code>consignment id</code>. It could be generated on the consignment service side but might lead to collisions in case of multiple instances, that is highly possible for microservices architecture. Instead of it, after every insert, the <code>id</code> field is updated. It doesn&rsquo;t look good and if you know a better way I&rsquo;ll be grateful if you let me know.</p></li>
-</ul>
+<li><p>In the end, I couldn&rsquo;t find out &ldquo;straight&rdquo; way of autoincrement <code>consignment id</code>. It could be generated on the consignment service side but might lead to collisions in case of multiple instances, that is highly possible for microservices architecture. Instead of it, after every insert, the <code>id</code> field is updated. It doesn&rsquo;t look good and if you know a better way I&rsquo;ll be grateful if you let me know.</p>
 
 <pre><code>func (repo *ConsignmentRepository) Create(consignment *pb.Consignment) error {
 
-    repo.collection().Insert(consignment)
-    cons := []test{}
-    repo.collection().Find(bson.M{&quot;id&quot;: &quot;&quot;}).All(&amp;cons)
+repo.collection().Insert(consignment)
+cons := []test{}
+repo.collection().Find(bson.M{&quot;id&quot;: &quot;&quot;}).All(&amp;cons)
 
-    for i, v := range cons {
-        fmt.Println(i, v.ID.Hex())
-        consignment.Id = v.ID.Hex()
-        repo.collection().Update(bson.M{&quot;id&quot;: &quot;&quot;}, bson.M{&quot;$set&quot;: bson.M{&quot;id&quot;: v.ID.Hex()}})
-    }
-
-    return nil
+for i, v := range cons {
+    fmt.Println(i, v.ID.Hex())
+    consignment.Id = v.ID.Hex()
+    repo.collection().Update(bson.M{&quot;id&quot;: &quot;&quot;}, bson.M{&quot;$set&quot;: bson.M{&quot;id&quot;: v.ID.Hex()}})
 }
-</code></pre>
+
+return nil
+}
+</code></pre></li>
+</ul>
 
   </div>
   <div id="disqus_thread"></div>
