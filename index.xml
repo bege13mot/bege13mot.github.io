@@ -6,10 +6,19 @@
     <description>Recent content on Ivan V</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Wed, 18 Jul 2018 10:00:00 +0400</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jul 2019 20:00:00 +0400</lastBuildDate>
     
 	<atom:link href="https://bege13mot.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Grokking the System Design Interview</title>
+      <link>https://bege13mot.github.io/grokking/</link>
+      <pubDate>Mon, 15 Jul 2019 20:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/grokking/</guid>
+      <description>Why System Design Interviews? System Design Interviews: A step by step guide Designing a URL Shortening service like TinyURL Designing Pastebin Designing Instagram Designing Dropbox Designing Facebook Messenger Designing Twitter Designing Youtube or Netflix Designing Typeahead Suggestion Designing an API Rate Limiter Designing Twitter Search Designing a Web Crawler Designing Facebook’s Newsfeed Designing Yelp or Nearby Friends Designing Uber backend Design Ticketmaster (New) System Design Basics  Load Balancing Caching Sharding or Data Partitioning Indexes Proxies Queues Redundancy and Replication SQL vs.</description>
+    </item>
     
     <item>
       <title>Hobby project with microservices</title>
