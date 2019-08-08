@@ -25,6 +25,12 @@
   </url>
   
   <url>
+    <loc>https://bege13mot.github.io/tags/it/</loc>
+    <lastmod>2018-07-18T10:00:00+04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://bege13mot.github.io/categories/post/</loc>
     <lastmod>2018-07-18T10:00:00+04:00</lastmod>
     <priority>0</priority>
@@ -38,12 +44,6 @@
   
   <url>
     <loc>https://bege13mot.github.io/tags/</loc>
-    <lastmod>2018-07-18T10:00:00+04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://bege13mot.github.io/tags/it/</loc>
     <lastmod>2018-07-18T10:00:00+04:00</lastmod>
     <priority>0</priority>
   </url>
@@ -247,11 +247,6 @@
   </url>
   
   <url>
-    <loc>https://bege13mot.github.io/post/effective-engineer/</loc>
-    <lastmod>2016-11-07T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://bege13mot.github.io/tags/career/</loc>
     <lastmod>2016-11-07T10:00:00+04:00</lastmod>
     <priority>0</priority>
@@ -261,6 +256,11 @@
     <loc>https://bege13mot.github.io/tags/engineering/</loc>
     <lastmod>2016-11-07T10:00:00+04:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/post/effective-engineer/</loc>
+    <lastmod>2016-11-07T10:00:00+04:00</lastmod>
   </url>
   
   <url>
@@ -577,14 +577,14 @@
   </url>
   
   <url>
-    <loc>https://bege13mot.github.io/post/how-an-economy-grows-and-why-it-crashes-by-peter/</loc>
-    <lastmod>2015-10-25T15:57:46+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://bege13mot.github.io/tags/economy/</loc>
     <lastmod>2015-10-25T15:57:46+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/post/how-an-economy-grows-and-why-it-crashes-by-peter/</loc>
+    <lastmod>2015-10-25T15:57:46+00:00</lastmod>
   </url>
   
   <url>
