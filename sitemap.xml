@@ -8,62 +8,8 @@
   </url>
   
   <url>
-    <loc>https://bege13mot.github.io/</loc>
-    <lastmod>2019-07-15T20:00:00+04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://bege13mot.github.io/categories/</loc>
-    <lastmod>2018-07-18T10:00:00+04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://bege13mot.github.io/post/microservices-hobby/</loc>
     <lastmod>2018-07-18T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bege13mot.github.io/tags/it/</loc>
-    <lastmod>2018-07-18T10:00:00+04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://bege13mot.github.io/categories/post/</loc>
-    <lastmod>2018-07-18T10:00:00+04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://bege13mot.github.io/post/</loc>
-    <lastmod>2018-07-18T10:00:00+04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://bege13mot.github.io/tags/</loc>
-    <lastmod>2018-07-18T10:00:00+04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://bege13mot.github.io/tags/tech/</loc>
-    <lastmod>2018-07-18T10:00:00+04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://bege13mot.github.io/tags/book/</loc>
-    <lastmod>2017-10-28T10:00:00+04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://bege13mot.github.io/tags/non-fiction/</loc>
-    <lastmod>2017-10-28T10:00:00+04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -74,12 +20,6 @@
   <url>
     <loc>https://bege13mot.github.io/bookmarks/</loc>
     <lastmod>2017-09-20T20:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bege13mot.github.io/tags/theory/</loc>
-    <lastmod>2017-09-01T10:00:00+04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -103,12 +43,6 @@
   </url>
   
   <url>
-    <loc>https://bege13mot.github.io/tags/fiction/</loc>
-    <lastmod>2017-05-01T10:00:00+04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://bege13mot.github.io/post/demonkeeping/</loc>
     <lastmod>2017-05-01T10:00:00+04:00</lastmod>
   </url>
@@ -129,20 +63,8 @@
   </url>
   
   <url>
-    <loc>https://bege13mot.github.io/tags/psychology/</loc>
-    <lastmod>2017-03-21T10:00:00+04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://bege13mot.github.io/post/start-with-no/</loc>
     <lastmod>2017-03-21T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bege13mot.github.io/categories/link/</loc>
-    <lastmod>2017-03-20T10:00:00+04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -221,12 +143,6 @@
   </url>
   
   <url>
-    <loc>https://bege13mot.github.io/tags/film/</loc>
-    <lastmod>2017-01-03T10:00:00+04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://bege13mot.github.io/post/films-2016/</loc>
     <lastmod>2017-01-03T10:00:00+04:00</lastmod>
   </url>
@@ -244,18 +160,6 @@
   <url>
     <loc>https://bege13mot.github.io/post/blindsight/</loc>
     <lastmod>2016-12-01T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bege13mot.github.io/tags/career/</loc>
-    <lastmod>2016-11-07T10:00:00+04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://bege13mot.github.io/tags/engineering/</loc>
-    <lastmod>2016-11-07T10:00:00+04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -304,12 +208,6 @@
   </url>
   
   <url>
-    <loc>https://bege13mot.github.io/tags/management/</loc>
-    <lastmod>2016-08-01T10:00:00+04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://bege13mot.github.io/post/automation-notes/</loc>
     <lastmod>2016-08-01T10:00:00+04:00</lastmod>
   </url>
@@ -345,18 +243,6 @@
   </url>
   
   <url>
-    <loc>https://bege13mot.github.io/tags/biography/</loc>
-    <lastmod>2016-06-21T09:12:22+04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://bege13mot.github.io/tags/business/</loc>
-    <lastmod>2016-06-21T09:12:22+04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://bege13mot.github.io/post/like-anyone-else/</loc>
     <lastmod>2016-06-21T09:12:22+04:00</lastmod>
   </url>
@@ -367,12 +253,6 @@
   </url>
   
   <url>
-    <loc>https://bege13mot.github.io/tags/programming/</loc>
-    <lastmod>2016-06-18T09:12:22+04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://bege13mot.github.io/post/7-databases/</loc>
     <lastmod>2016-06-18T09:12:22+04:00</lastmod>
   </url>
@@ -380,12 +260,6 @@
   <url>
     <loc>https://bege13mot.github.io/post/links-5/</loc>
     <lastmod>2016-05-23T12:07:39+04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bege13mot.github.io/tags/succes-story/</loc>
-    <lastmod>2016-05-18T22:37:54+04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -489,12 +363,6 @@
   </url>
   
   <url>
-    <loc>https://bege13mot.github.io/tags/article/</loc>
-    <lastmod>2016-01-23T11:35:29+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://bege13mot.github.io/post/%D1%87%D1%82%D0%BE-%D1%87%D0%B8%D1%82%D0%B0%D1%82%D1%8C-%D0%B5%D1%81%D0%BB%D0%B8-%D0%B2%D1%8B-%D0%BD%D0%B8%D1%87%D0%B5%D0%B3%D0%BE-%D0%BD%D0%B5-%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%B5%D1%82%D0%B5/</loc>
     <lastmod>2016-01-23T11:35:29+00:00</lastmod>
   </url>
@@ -522,12 +390,6 @@
   <url>
     <loc>https://bege13mot.github.io/post/books-2015/</loc>
     <lastmod>2015-12-31T11:26:10+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bege13mot.github.io/tags/time-management/</loc>
-    <lastmod>2015-12-31T09:49:16+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -561,12 +423,6 @@
   </url>
   
   <url>
-    <loc>https://bege13mot.github.io/tags/travel/</loc>
-    <lastmod>2015-11-25T17:43:23+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://bege13mot.github.io/post/%D1%87%D0%B8%D1%81%D1%82%D1%8B%D0%B9-%D0%BF%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82-%D0%B2-%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%B0%D1%85-%D0%B8%D0%B4%D0%B5%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B2/</loc>
     <lastmod>2015-11-25T17:43:23+00:00</lastmod>
   </url>
@@ -577,20 +433,8 @@
   </url>
   
   <url>
-    <loc>https://bege13mot.github.io/tags/economy/</loc>
-    <lastmod>2015-10-25T15:57:46+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://bege13mot.github.io/post/how-an-economy-grows-and-why-it-crashes-by-peter/</loc>
     <lastmod>2015-10-25T15:57:46+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bege13mot.github.io/tags/writing/</loc>
-    <lastmod>2015-10-25T15:37:41+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -701,12 +545,6 @@
   <url>
     <loc>https://bege13mot.github.io/post/%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-dot-com/</loc>
     <lastmod>2015-06-14T18:33:05+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bege13mot.github.io/tags/biology/</loc>
-    <lastmod>2015-05-27T19:01:36+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -842,12 +680,6 @@
   <url>
     <loc>https://bege13mot.github.io/post/python-koans/</loc>
     <lastmod>2015-02-20T16:24:40+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bege13mot.github.io/tags/for-coworkers/</loc>
-    <lastmod>2015-02-17T19:05:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1198,6 +1030,173 @@
   <url>
     <loc>https://bege13mot.github.io/post/%D1%82%D0%B0%D0%B9%D0%BC-%D0%B4%D1%80%D0%B0%D0%B9%D0%B2-%D0%B3%D0%BB%D0%B5%D0%B1-%D0%B0%D1%80%D1%85%D0%B0%D0%BD%D0%B3%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B9/</loc>
     <lastmod>2014-03-02T10:14:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/tags/article/</loc>
+    <lastmod>2016-01-23T11:35:29+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/tags/biography/</loc>
+    <lastmod>2016-06-21T09:12:22+04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/tags/biology/</loc>
+    <lastmod>2015-05-27T19:01:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/tags/book/</loc>
+    <lastmod>2017-10-28T10:00:00+04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/tags/business/</loc>
+    <lastmod>2016-06-21T09:12:22+04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/tags/career/</loc>
+    <lastmod>2016-11-07T10:00:00+04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/tags/economy/</loc>
+    <lastmod>2015-10-25T15:57:46+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/tags/engineering/</loc>
+    <lastmod>2016-11-07T10:00:00+04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/tags/fiction/</loc>
+    <lastmod>2017-05-01T10:00:00+04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/tags/film/</loc>
+    <lastmod>2017-01-03T10:00:00+04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/tags/for-coworkers/</loc>
+    <lastmod>2015-02-17T19:05:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/tags/it/</loc>
+    <lastmod>2018-07-18T10:00:00+04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/</loc>
+    <lastmod>2019-07-15T20:00:00+04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/categories/link/</loc>
+    <lastmod>2017-03-20T10:00:00+04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/tags/management/</loc>
+    <lastmod>2016-08-01T10:00:00+04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/tags/non-fiction/</loc>
+    <lastmod>2017-10-28T10:00:00+04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/categories/post/</loc>
+    <lastmod>2018-07-18T10:00:00+04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/post/</loc>
+    <lastmod>2018-07-18T10:00:00+04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/tags/programming/</loc>
+    <lastmod>2016-06-18T09:12:22+04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/tags/psychology/</loc>
+    <lastmod>2017-03-21T10:00:00+04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/tags/succes-story/</loc>
+    <lastmod>2016-05-18T22:37:54+04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/tags/</loc>
+    <lastmod>2016-01-23T11:35:29+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/tags/tech/</loc>
+    <lastmod>2018-07-18T10:00:00+04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/tags/theory/</loc>
+    <lastmod>2017-09-01T10:00:00+04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/tags/time-management/</loc>
+    <lastmod>2015-12-31T09:49:16+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/tags/travel/</loc>
+    <lastmod>2015-11-25T17:43:23+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/tags/writing/</loc>
+    <lastmod>2015-10-25T15:37:41+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>
