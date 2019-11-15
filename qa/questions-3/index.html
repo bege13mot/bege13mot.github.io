@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Questions. Part 3 &nbsp; </title>
+
+  
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde-overrides.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde-x.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://bege13mot.github.io/touch-icon-144-precomposed.png">
+  <link href="/icon/fox.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+            
+        <img src="/icon/fox.png" alt="avatar" title="">    
+      
+      <h1></h1>
+      
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/">Ivan V's Blog</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/about/">About</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/post/">Posts</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/tags/">Tags</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/categories/">Categories</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/Bege13mot"><img src="/icon/github.svg" class="fa"></img></a>
+      <a href="https://www.goodreads.com/user/show/5520080-ivan"><img src="/icon/goodreads.svg" class="fa"></img></a>
+      <a href="mailto:bege13mot@gmail.com"><img src="/icon/mail.svg" class="fa"></img></a>
+      <a href="https://ru.linkedin.com/in/voronchihin"><img src="/icon/linkedin.svg" class="fa"></img></a>      
+      <a href="https://bege13mot.github.io/index.xml" type="application/rss+xml"><img src="/icon/rss.svg" class="fa"></img></a>
+      </li>
+    </ul>
+
+    
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1>Questions. Part 3</h1>
+    
+
+<h3 id="miscellaneous">Miscellaneous:</h3>
+
+<p><details>
+<summary><b>What are the default ports used for SMTP,DNS,FTP,DHCP,SSH?</b></summary><br></p>
+
+<ul>
+<li>SMTP - 25</li>
+<li>DNS - 53</li>
+<li>FTP- 20(data transfer), 21(connection established)</li>
+<li>DHCP- 67/UDP(dhcp server) , 68/UDP(dhcp client)</li>
+<li>SSH - 22
+</details></li>
+</ul>
+
+<p><details>
+<summary><b>How to check default route and routing table?</b></summary><br></p>
+
+<ul>
+<li><code>netstat –listen</code></li>
+<li><code>lsof -i</code>
+</details></li>
+</ul>
+
+<p><details>
+<summary><b>Describe branching strategies you have used?</b></summary><br></p>
+
+<ul>
+<li>Feature branching - keeps all of the changes for a particular feature inside of a branch. When the feature is fully tested and validated by automated tests, the branch is then merged into master.</li>
+<li>Task branching - each task is implemented on its own branch with the task key included in the branch name. It is easy to see which code implements which task, just look for the task key in the branch name.</li>
+<li>Release branching - Once the develop branch has acquired enough features for a release, you can clone that branch to form a Release branch. Creating this branch starts the next release cycle, so no new features can be added after this point, only bug fixes, documentation generation, and other release-oriented tasks should go in this branch.
+</details></li>
+</ul>
+
+<p><details>
+<summary><b>What is Git bisect?</b></summary><br></p>
+
+<ul>
+<li><code>git bisect</code> is used to find the commit that introduced a bug by using binary search.</li>
+<li>You use it by first telling it a &ldquo;bad&rdquo; commit that is known to contain the bug, and a &ldquo;good&rdquo; commit that is known to be before the bug was introduced. Then Git bisect picks a commit between those two endpoints and asks you whether the selected commit is &ldquo;good&rdquo; or &ldquo;bad&rdquo;. It continues narrowing down the range until it finds the exact commit that introduced the change.
+</details></li>
+</ul>
+
+<p><details>
+<summary><b>What is Git rebase and how can it be used to resolve conflicts in a feature branch before merge?</b></summary><br></p>
+
+<ul>
+<li><code>git rebase</code> is a command which will merge another branch into the branch where you are currently working, and move all of the local commits that are ahead of the rebased branch to the top of the history on that branch.
+</details></li>
+</ul>
+
+<p><details>
+<summary><b>The OSI Model (Open System Interconnection)</b></summary><br></p>
+
+<ol>
+<li>Application. Прикладной (FTP service)</li>
+<li>Presentation. Представительский  (ASCII)</li>
+<li>Session. Сеансовый (RPC)</li>
+<li>Transport. Транспортный (TCP, UDP)</li>
+<li>Network. Сетевой (IPv4)</li>
+<li>Data-link. Канальный (Ethernet, ARP)</li>
+<li>Physical. Физический (twisted pair)
+</details></li>
+</ol>
+
+<p><details>
+<summary><b>Explanation Local port forwarding <a href="https://habrahabr.ru/post/331348/:">https://habrahabr.ru/post/331348/:</a></b></summary><br></p>
+
+<ul>
+<li>Имеем удаленный сервер «host2» с неким приложением, допустим, PostgreSQL server, которое принимает TCP-соединения на порту 5432. При этом вполне логично, что на этом сервере стоит файрвол, который прямых соединений извне на порт 5432 не разрешает, но при этом есть доступ по SSH (по-умолчанию порт 22, рекомендую его изменить). Требуется подключиться с нашего рабочего места «host1» клиентским приложением к серверу PostgreSQL на «host2».</li>
+<li>Для этого на «host1» в консоли набираем: <code>host1# ssh -L 9999:localhost:5432 host2</code></li>
+<li>Теперь на «host1» мы можем соединяться с PostgreSQL сервером через локальный порт 9999: <code>host1# psql -h localhost -p 9999 -U postgres</code>
+</details></li>
+</ul>
+
+<p><details>
+<summary><b>Explanation Remote port forwarding:</b></summary><br></p>
+
+<ul>
+<li>Но что делать, если, например, «host2» не имеет белого IP-адреса, находится за NAT или вообще все входящие соединения к нему закрыты?</li>
+<li>Теперь нужно устанавливать ssh-соединение в обратном направлении — от «host2» к «host1». Т.е. наша административная рабочая станция будет SSH-сервером и будет доступна по SSH с «host2», а на «host2» нужно будет выполнить подключение SSH-клиентом:</li>
+<li><code>ssh -R 9999:localhost:5432 host1</code>
+</details></li>
+</ul>
+
+<p><details>
+<summary><b>HTTP status codes:</b></summary><br></p>
+
+<ul>
+<li>1xx Informational responses</li>
+<li>2xx Success</li>
+<li>3xx Redirection</li>
+<li>4xx Client errors</li>
+<li>5xx Server errors</li>
+</ul>
+
+<p><details>
+<summary><b>What command is used to check the number of files, disk space and each user’s defined quota?</b></summary><br></p>
+
+<p><code>repquota</code> command is used to check the status of the user’s quota along with the disk space and number of files used.
+This command gives a summary of the user’s quota that how much space and files are left for the user. Each user has a defined quota in Linux. This is done mainly for the security as some users have only limited access to files. This provides a security to the files from unwanted access. The quota can be given to a single user or to a group of users.
+</details></p>
+
+<p><details>
+<summary><b>What is the name and path of the main system log?</b></summary><br></p>
+
+<p>By default, the main system log is ‘/var/log/messages’. This file contains all the messages and the script written by the user. By default, all scripts are saved in this file. This is the standard system log file, which contains messages from all system software, non-kernel boot issues, and messages that go to ‘dmesg’. dmesg is a system file that is written upon system boot.
+</details></p>
+
+<p><details>
+<summary><b>Explain /proc filesystem?</b></summary><br></p>
+
+<p><code>/proc</code> is a virtual file system that provides detailed information about Linux kernel, hardware and running processes. Files under /proc directory named as Virtual files.
+Since <code>/proc</code> contains virtual files, it is called virtual file system. These virtual files have unique qualities. Most of them are listed as zero bytes in size.
+Virtual files such as <code>/proc/interrupts</code>, <code>/proc/meminfo</code>, <code>/proc/mounts</code>, and <code>/proc/partitions</code> provide an up-to-the-moment glimpse of the system’s hardware. Others: <code>/proc/filesystems</code> file and the <code>/proc/sys/</code> directory provide system configuration information and interfaces.
+</details></p>
+
+<p><details>
+<summary><b>Permissions</b></summary><br></p>
+
+<p>4 read, 2 write, 1 execute, total 7, 1 bit - sticky
+</details></p>
+
+  </div>
+</div>
+<script src="https://bege13mot.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+  var _gaq=[['_setAccount','UA-73422311-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>

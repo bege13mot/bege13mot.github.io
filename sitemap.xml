@@ -8,7 +8,7 @@
   </url>
   
   <url>
-    <loc>https://bege13mot.github.io/grokking/</loc>
+    <loc>https://bege13mot.github.io/qa/grokking/</loc>
     <lastmod>2019-07-15T20:00:00+04:00</lastmod>
   </url>
   
@@ -20,6 +20,21 @@
   <url>
     <loc>https://bege13mot.github.io/post/pandemic/</loc>
     <lastmod>2017-10-28T10:00:00+04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/qa/questions-3/</loc>
+    <lastmod>2017-10-14T10:00:00+04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/qa/questions-1/</loc>
+    <lastmod>2017-10-12T10:00:00+04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/qa/questions-2/</loc>
+    <lastmod>2017-10-10T10:00:00+04:00</lastmod>
   </url>
   
   <url>
@@ -1159,6 +1174,12 @@
   <url>
     <loc>https://bege13mot.github.io/tags/psychology/</loc>
     <lastmod>2017-03-21T10:00:00+04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bege13mot.github.io/qa/</loc>
+    <lastmod>2019-07-15T20:00:00+04:00</lastmod>
     <priority>0</priority>
   </url>
   
