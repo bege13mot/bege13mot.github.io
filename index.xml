@@ -12,13 +12,20 @@
     
     
     <item>
-      <title>Preparation</title>
+      <title>Interview Preparation</title>
       <link>https://bege13mot.github.io/interview/</link>
       <pubDate>Tue, 12 Nov 2019 20:00:00 +0400</pubDate>
       
       <guid>https://bege13mot.github.io/interview/</guid>
-      <description>SRE SRE SRE
-Года три назад я считал, кто лучшая инвестиция - это учёба. У меня был в жизни опыт, когда я смог круто изменить свою жизнь подобным образом. Но со временем я обнаружил, что не все подходят к обучению таким же способом: некоторые считают, что можно сначала обучиться на полугодовых курсах, а потом искать работу, где ты будешь использовать полученные навыки. Разумеется, это ошибочная стратегия. Учиться надо тому, чем ты уже начал заниматься, чтобы к моменту обучения у тебя уже были вопросы к учителям и очень мощная мотивация выбраться из тех проблем, в которые ты окунулся.</description>
+      <description>Q&amp;amp;A  test-your-sysadmin-skills - A collection of *nix Sysadmin Test Questions and Answers
+ Вопросы на собеседовании на позицию DevOps-инженера - неплохой список, можно себе по памяти проверить. Потом дополнить
+ What happens when you type google.com into your browser and press enter?
+ What happens when I type kubectl run?
+ system-design-primer - Learn how to design large-scale systems
+   https://bege13mot.github.io/grokking/
+ https://bege13mot.github.io/qa/questions-1
+ https://bege13mot.github.io/qa/questions-2
+ https://bege13mot.</description>
     </item>
     
     <item>
