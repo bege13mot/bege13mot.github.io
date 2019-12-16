@@ -6,10 +6,26 @@
     <description>Recent content in Qas on Ivan V</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Mon, 15 Jul 2019 20:00:00 +0400</lastBuildDate>
+    <lastBuildDate>Tue, 12 Nov 2019 20:00:00 +0400</lastBuildDate>
     
 	<atom:link href="https://bege13mot.github.io/qa/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Interview Preparation</title>
+      <link>https://bege13mot.github.io/qa/interview/</link>
+      <pubDate>Tue, 12 Nov 2019 20:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/qa/interview/</guid>
+      <description>Q&amp;amp;A  test-your-sysadmin-skills - A collection of *nix Sysadmin Test Questions and Answers
+ Вопросы на собеседовании на позицию DevOps-инженера - неплохой список, можно себе по памяти проверить. Потом дополнить
+ What happens when you type google.com into your browser and press enter?
+ What happens when I type kubectl run?
+ system-design-primer - Learn how to design large-scale systems
+   Linux questions
+ Grokking
+  SRE Interview  Preparing the SRE interview</description>
+    </item>
     
     <item>
       <title>Grokking the System Design Interview</title>

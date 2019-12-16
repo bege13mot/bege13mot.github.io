@@ -25,10 +25,10 @@
     
     <item>
       <title>Interview Preparation</title>
-      <link>https://bege13mot.github.io/interview/</link>
+      <link>https://bege13mot.github.io/qa/interview/</link>
       <pubDate>Tue, 12 Nov 2019 20:00:00 +0400</pubDate>
       
-      <guid>https://bege13mot.github.io/interview/</guid>
+      <guid>https://bege13mot.github.io/qa/interview/</guid>
       <description>Q&amp;amp;A  test-your-sysadmin-skills - A collection of *nix Sysadmin Test Questions and Answers
  Вопросы на собеседовании на позицию DevOps-инженера - неплохой список, можно себе по памяти проверить. Потом дополнить
  What happens when you type google.com into your browser and press enter?
@@ -86,7 +86,7 @@ General Questions:  What are the default ports used for SMTP,DNS,FTP,DHCP,SSH?
       <pubDate>Wed, 20 Sep 2017 20:00:00 +0400</pubDate>
       
       <guid>https://bege13mot.github.io/bookmarks/</guid>
-      <description>Git:  Git: наглядная справка Learn Git Branching. Online tutorial 19 Tips For Everyday Git Use Bash Shortcuts to Enhance Your Git Workflow Comparing Git Workflows Oh shit, git!  Tools and Instructions:  lsof and netstat htop Explained Visually Explanation of everything you can see in htop/top on Linux A small handbook about Linux debuggin tools Docker for beginners The Art of Command Line Linux tracing systems &amp;amp; how they fit together Load Average в Linux: разгадка тайны A Comprehensive Guide to Terraform Understanding Nginx HTTP Proxying, Load Balancing, Buffering, and Caching Памятка пользователям SSH The Definitive Guide to Linux System Calls Памятка по virtualenv и изолированным проектам на Python 6 шагов загрузки Linux на пальцах Процессы в Linux Understanding Processes on Linux Учебник.</description>
+      <description>Git:  Learn Git Branching. Online tutorial 19 Tips For Everyday Git Use Comparing Git Workflows Oh shit, git!  Tools and Instructions:  htop Explained Visually Explanation of everything you can see in htop/top on Linux The Art of Command Line Linux tracing systems &amp;amp; how they fit together A small handbook about Linux debuggin tools Load Average в Linux: разгадка тайны A Comprehensive Guide to Terraform Understanding Nginx HTTP Proxying, Load Balancing, Buffering, and Caching Памятка пользователям SSH The Definitive Guide to Linux System Calls Памятка по virtualenv и изолированным проектам на Python 6 шагов загрузки Linux на пальцах Процессы в Linux Understanding Processes on Linux Учебник.</description>
     </item>
     
     <item>
