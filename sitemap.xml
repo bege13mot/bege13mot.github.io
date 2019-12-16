@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://bege13mot.github.io/post/elegant-puzzle/</loc>
+    <lastmod>2019-12-16T10:00:00+04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://bege13mot.github.io/interview/</loc>
     <lastmod>2019-11-12T20:00:00+04:00</lastmod>
   </url>
@@ -23,18 +28,8 @@
   </url>
   
   <url>
-    <loc>https://bege13mot.github.io/qa/questions-3/</loc>
-    <lastmod>2017-10-14T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bege13mot.github.io/qa/questions-1/</loc>
+    <loc>https://bege13mot.github.io/qa/questions/</loc>
     <lastmod>2017-10-12T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bege13mot.github.io/qa/questions-2/</loc>
-    <lastmod>2017-10-10T10:00:00+04:00</lastmod>
   </url>
   
   <url>
@@ -1072,7 +1067,7 @@
   
   <url>
     <loc>https://bege13mot.github.io/tags/book/</loc>
-    <lastmod>2017-10-28T10:00:00+04:00</lastmod>
+    <lastmod>2019-12-16T10:00:00+04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1131,7 +1126,7 @@
   
   <url>
     <loc>https://bege13mot.github.io/</loc>
-    <lastmod>2019-11-12T20:00:00+04:00</lastmod>
+    <lastmod>2019-12-16T10:00:00+04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1143,7 +1138,7 @@
   
   <url>
     <loc>https://bege13mot.github.io/tags/management/</loc>
-    <lastmod>2016-08-01T10:00:00+04:00</lastmod>
+    <lastmod>2019-12-16T10:00:00+04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1155,13 +1150,13 @@
   
   <url>
     <loc>https://bege13mot.github.io/categories/post/</loc>
-    <lastmod>2018-07-18T10:00:00+04:00</lastmod>
+    <lastmod>2019-12-16T10:00:00+04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://bege13mot.github.io/post/</loc>
-    <lastmod>2018-07-18T10:00:00+04:00</lastmod>
+    <lastmod>2019-12-16T10:00:00+04:00</lastmod>
     <priority>0</priority>
   </url>
   

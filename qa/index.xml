@@ -21,36 +21,15 @@
     </item>
     
     <item>
-      <title>Questions. Part 3</title>
-      <link>https://bege13mot.github.io/qa/questions-3/</link>
-      <pubDate>Sat, 14 Oct 2017 10:00:00 +0400</pubDate>
-      
-      <guid>https://bege13mot.github.io/qa/questions-3/</guid>
-      <description>Miscellaneous:  What are the default ports used for SMTP,DNS,FTP,DHCP,SSH?
- SMTP - 25 DNS - 53 FTP- 20(data transfer), 21(connection established) DHCP- 67/UDP(dhcp server) , 68/UDP(dhcp client) SSH - 22    How to check default route and routing table?
- netstat –listen lsof -i    Describe branching strategies you have used?
- Feature branching - keeps all of the changes for a particular feature inside of a branch.</description>
-    </item>
-    
-    <item>
-      <title>Questions. Part 1</title>
-      <link>https://bege13mot.github.io/qa/questions-1/</link>
+      <title>Questions</title>
+      <link>https://bege13mot.github.io/qa/questions/</link>
       <pubDate>Thu, 12 Oct 2017 10:00:00 +0400</pubDate>
       
-      <guid>https://bege13mot.github.io/qa/questions-1/</guid>
+      <guid>https://bege13mot.github.io/qa/questions/</guid>
       <description>Questions from chassing/linux-sysadmin-interview-questions Inspired by collection of Linux SysAdm/DevOps interview questions with my answers
-General Questions:  What function does DNS play on a network?
- The first place your computer looks is its local DNS cache, which stores information that your computer has recently retrieved. If the information is not stored locally, your computer queries (contacts) your ISP’s recursive DNS servers. If the recursive servers don’t have the answer, they query the root nameservers.</description>
-    </item>
-    
-    <item>
-      <title>Questions. Part 2</title>
-      <link>https://bege13mot.github.io/qa/questions-2/</link>
-      <pubDate>Tue, 10 Oct 2017 10:00:00 +0400</pubDate>
-      
-      <guid>https://bege13mot.github.io/qa/questions-2/</guid>
-      <description>Hard Linux Questions:  What is a tunnel and how you can bypass a http proxy?
- A tunnel is a mechanism used to ship a foreign protocol across a network that normally wouldn&amp;rsquo;t support it. Tunneling protocols allow you to use, for example, IP to send another protocol in the &amp;ldquo;data&amp;rdquo; portion of the IP datagram. Most tunneling protocols operate at layer 4 (Transport), which means they are implemented as a protocol that replaces something like TCP or UDP.</description>
+General Questions:  What are the default ports used for SMTP,DNS,FTP,DHCP,SSH?
+ SMTP - 25 DNS - 53 FTP- 20(data transfer), 21(connection established) DHCP- 67/UDP(dhcp server) , 68/UDP(dhcp client) SSH - 22    What function does DNS play on a network?
+ The first place your computer looks is its local DNS cache, which stores information that your computer has recently retrieved.</description>
     </item>
     
   </channel>

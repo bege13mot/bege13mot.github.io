@@ -6,10 +6,22 @@
     <description>Recent content in Posts on Ivan V</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Wed, 18 Jul 2018 10:00:00 +0400</lastBuildDate>
+    <lastBuildDate>Mon, 16 Dec 2019 10:00:00 +0400</lastBuildDate>
     
 	<atom:link href="https://bege13mot.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>An Elegant Puzzle: Systems of Engineering Management by Will Larson</title>
+      <link>https://bege13mot.github.io/post/elegant-puzzle/</link>
+      <pubDate>Mon, 16 Dec 2019 10:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/elegant-puzzle/</guid>
+      <description>Узнал о книге из канала Qetzal&amp;rsquo;я. У него же есть отличная выжимка. Книга хорошая, но очень конкретно заточена на личный опыт - как вырасти вместе с компанией в &amp;ldquo;большого&amp;rdquo; менеджера. Если у вас амбиции поскромнее, имейте ввиду.
+Подборка от него же.
+Книги для менеджеров.
+Есть два устойчивых мифа о менеджерах. Первый про то, что хороший менеджер это призвание, заложенное в человеке изначально. Если ты такой открытый энергичный человек, душа компании, лидер, cамый заметный — тебе это дано.</description>
+    </item>
     
     <item>
       <title>Hobby project with microservices</title>
@@ -32,7 +44,7 @@ General Overview:  Consignment Service - &amp;ldquo;main&amp;rdquo; service, con
     </item>
     
     <item>
-      <title>﻿Операционная система UNIX, Андрей Робачевский</title>
+      <title>Операционная система UNIX, Андрей Робачевский</title>
       <link>https://bege13mot.github.io/post/unix-book/</link>
       <pubDate>Fri, 01 Sep 2017 10:00:00 +0400</pubDate>
       
