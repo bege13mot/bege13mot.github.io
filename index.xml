@@ -81,15 +81,6 @@ General Questions:  What are the default ports used for SMTP,DNS,FTP,DHCP,SSH?
     </item>
     
     <item>
-      <title>Bookmarks</title>
-      <link>https://bege13mot.github.io/bookmarks/</link>
-      <pubDate>Wed, 20 Sep 2017 20:00:00 +0400</pubDate>
-      
-      <guid>https://bege13mot.github.io/bookmarks/</guid>
-      <description>Git:  Learn Git Branching. Online tutorial 19 Tips For Everyday Git Use Comparing Git Workflows Oh shit, git!  Tools and Instructions:  htop Explained Visually Explanation of everything you can see in htop/top on Linux The Art of Command Line Linux tracing systems &amp;amp; how they fit together A small handbook about Linux debuggin tools Load Average в Linux: разгадка тайны A Comprehensive Guide to Terraform Understanding Nginx HTTP Proxying, Load Balancing, Buffering, and Caching Памятка пользователям SSH The Definitive Guide to Linux System Calls Памятка по virtualenv и изолированным проектам на Python 6 шагов загрузки Linux на пальцах Процессы в Linux Understanding Processes on Linux Учебник.</description>
-    </item>
-    
-    <item>
       <title>Операционная система UNIX, Андрей Робачевский</title>
       <link>https://bege13mot.github.io/post/unix-book/</link>
       <pubDate>Fri, 01 Sep 2017 10:00:00 +0400</pubDate>
