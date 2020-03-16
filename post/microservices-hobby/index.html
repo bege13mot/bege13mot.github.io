@@ -84,45 +84,42 @@
     Tag:    
     <a class="label" href="https://bege13mot.github.io/tags/tech">tech</a><a class="label" href="https://bege13mot.github.io/tags/it">it</a>
     </p>
-    
-
-<p>This post was inspired by awesome series of tutorials from <a href="https://ewanvalentine.io/microservices-in-golang-part-1/">Ewan Valentine</a>. He built a small microservice oriented web application to select an appropriate ship for every consignment. Technology - Golang, PostgreSQL, MongoDB, gRPC, go-micro framework, React, Kubernetes. I followed through these tutorials. But made some additional &ldquo;changes&rdquo;. You can find them below.</p>
-
-<p><br></p>
-
+    <p>This post was inspired by awesome series of tutorials from <a href="https://ewanvalentine.io/microservices-in-golang-part-1/">Ewan Valentine</a>. He built a small microservice oriented web application to select an appropriate ship for every consignment. Technology - Golang, PostgreSQL, MongoDB, gRPC, go-micro framework, React, Kubernetes. I followed through these tutorials. But made some additional &ldquo;changes&rdquo;. You can find them below.</p>
+<!-- raw HTML omitted -->
 <h4 id="general-overview">General Overview:</h4>
-
-<p><img src="/img/2018/microservices.svg" alt="Alt text" /></p>
-
+<p><img src="/img/2018/microservices.svg" alt="Alt text"></p>
 <ul>
-<li><a href="https://github.com/bege13mot/consignment-service">Consignment Service</a> - &ldquo;main&rdquo; service, connected to <code>user</code>(authentication) and <code>vessel</code>(availabe vessels) services. Responsible for creation and displaying consignments. MongoDB is used.</li>
-<li><a href="https://github.com/bege13mot/ui-service">UI Service</a> - simple React app. It is connected to <code>user</code>(authentication) and <code>consignment</code>(consignment managment) services.</li>
-<li><a href="https://github.com/bege13mot/user-service">User Service</a> - authentication and autorization. It uses PostgreSQL.</li>
-<li><a href="https://github.com/bege13mot/vessel-service">Vessel Service</a> - serving creation and finding available vesselss. MongoDB is used.</li>
-<li>Infrastructure. Tested locally on <a href="https://github.com/kubernetes/minikube">minikube</a>.
-
+<li>
+<p><a href="https://github.com/bege13mot/consignment-service">Consignment Service</a> - &ldquo;main&rdquo; service, connected to <code>user</code>(authentication) and <code>vessel</code>(availabe vessels) services. Responsible for creation and displaying consignments. MongoDB is used.</p>
+</li>
+<li>
+<p><a href="https://github.com/bege13mot/ui-service">UI Service</a> - simple React app. It is connected to <code>user</code>(authentication) and <code>consignment</code>(consignment managment) services.</p>
+</li>
+<li>
+<p><a href="https://github.com/bege13mot/user-service">User Service</a> - authentication and autorization. It uses PostgreSQL.</p>
+</li>
+<li>
+<p><a href="https://github.com/bege13mot/vessel-service">Vessel Service</a> - serving creation and finding available vesselss. MongoDB is used.</p>
+</li>
+<li>
+<p>Infrastructure. Tested locally on <a href="https://github.com/kubernetes/minikube">minikube</a>.</p>
 <ul>
 <li><a href="https://github.com/bege13mot/consignment-service/tree/master/db-chart">db-chart</a> - Helm chart for creating MongoDB and PostgreSQL clusters</li>
 <li><a href="https://github.com/bege13mot/consignment-service/tree/master/monitoring-chart">monitoring-chart</a> - Helm chart for creating Prometheus and Grafana</li>
 <li><a href="https://github.com/bege13mot/consignment-service/tree/master/deployment-chart/templates">ingress</a> - Ingress creating for UI and monitoring. Use as:</li>
-</ul></li>
 </ul>
-
-<pre><code>  minikube start
-  minikube addons enable ingress
-  ... helm upgrade ...
-  echo &quot;$(minikube ip) test&quot; | sudo tee -a /etc/hosts
-</code></pre>
-
-<p><br></p>
-
+<pre><code>minikube start
+minikube addons enable ingress
+... helm upgrade ...
+echo &quot;$(minikube ip) test&quot; | sudo tee -a /etc/hosts
+</code></pre></li>
+</ul>
+<!-- raw HTML omitted -->
 <h4 id="notes">Notes:</h4>
-
 <ul>
 <li>Originally the author uses a lot of advantages <a href="https://github.com/micro/go-micro">go-micro</a> framework. It is definitely an interesting topic but a little bit out of my scope. It encapsulates the complexity of gRPC ecosystem but I try to do &ldquo;by hand&rdquo; as much work as possible. Also, I have to change Ewan&rsquo;s source code instead of copying it, that is certainly good for education purpose.
 One of this framework substitution is implementing <a href="https://github.com/grpc-ecosystem/grpc-gateway">grpc-gateway</a> - generates a reverse-proxy server which translates a RESTful JSON API into gRPC.  Also, I added a simple swagger output.</li>
 </ul>
-
 <pre><code>httpMux.HandleFunc(&quot;/swagger/&quot;, func(w http.ResponseWriter, r *http.Request) {
   dir := &quot;./proto/auth&quot;
   if !strings.HasSuffix(r.URL.Path, &quot;.swagger.json&quot;) {
@@ -136,12 +133,9 @@ One of this framework substitution is implementing <a href="https://github.com/g
   fmt.Println(p)
   http.ServeFile(w, r, p)
 })
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li>I got my hands dirty with <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a>. Testing UI on the local machine requires specifying two different IP (one for user service and one consignment service). Of course, during CORS it won&rsquo;t work. The browser doesn&rsquo;t allow using different addresses. Luckily, <a href="https://github.com/grpc-ecosystem/grpc-gateway">grpc-gateway</a> repository has good documentation that helps to fix it.</li>
 </ul>
-
 <pre><code>// allowCORS allows Cross Origin Resoruce Sharing from any origin.
 // Don't do this without consideration in production systems.
 func allowCORS(h http.Handler) http.Handler {
@@ -164,12 +158,9 @@ func preflightHandler(w http.ResponseWriter, r *http.Request) {
     w.Header().Set(&quot;Access-Control-Allow-Methods&quot;, strings.Join(methods, &quot;,&quot;))
     log.Printf(&quot;CORS preflight request for %s \n&quot;, r.URL.Path)
 }
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li>Added a simple health check endpoint for Kubernetes.</li>
 </ul>
-
 <pre><code>httpMux := http.NewServeMux()
 
 httpMux.HandleFunc(&quot;/healthz&quot;, func(w http.ResponseWriter, r *http.Request) {
@@ -179,12 +170,9 @@ httpMux.HandleFunc(&quot;/healthz&quot;, func(w http.ResponseWriter, r *http.Req
   }
   w.WriteHeader(http.StatusOK)
 })
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li>The general goal of this project is education, so I try to figure out how to work with Consul and implement simple service discovery. Of course, this project runs on Kubernetes and Consul&rsquo;s service discovery is not necessary. But anyway I implemented registering and retrieving service attributes from Consul.</li>
 </ul>
-
 <pre><code>//Register in Consul
 defer func() {
   cErr := consul.Agent().ServiceDeregister(serviceID)
@@ -237,32 +225,30 @@ for _, item := range health {
   log.Println(&quot;Service: &quot;, item.Service.ID, item.Service.Address, item.Service.Port)
 
 }
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li>Moreover, I found out that gRPC has in-built support of Consul health checks, but implementation is a little bit weird, the package name has to be <code>grpc_health_v1</code>, otherwise consul could&rsquo;t use it.</li>
 </ul>
+<pre><code>// Check implements Consul health checking
+func (srv *service) Check(ctx context.Context, in *pb.HealthCheckRequest) (*pb.HealthCheckResponse, error) {
+    if err := srv.repo.ping(); err != nil {
+        return &amp;pb.HealthCheckResponse{
+            Status: pb.HealthCheckResponse_NOT_SERVING,
+        }, err
+    }
 
-<pre><code> // Check implements Consul health checking
- func (srv *service) Check(ctx context.Context, in *pb.HealthCheckRequest) (*pb.HealthCheckResponse, error) {
-     if err := srv.repo.ping(); err != nil {
-         return &amp;pb.HealthCheckResponse{
-             Status: pb.HealthCheckResponse_NOT_SERVING,
-         }, err
-     }
-
-     return &amp;pb.HealthCheckResponse{Status: pb.HealthCheckResponse_SERVING}, nil
- }
-</code></pre>
-
-<ul>
-<li><p>Added support of <a href="https://github.com/grpc-ecosystem/go-grpc-prometheus">go-grpc-prometheus</a> - allow you to monitor your gRPC methods. It requires adding Prometheus and Grafana to the cluster.</p></li>
-
-<li><p>Other changes were pretty small. I changed Docker build to a fancier one, and <code>dep</code> package management, adding Helm support for more convenient deploy to cluster, logging branch name during build etc.</p></li>
-
-<li><p>In the end, I couldn&rsquo;t find out &ldquo;straight&rdquo; way of autoincrement <code>consignment id</code>. It could be generated on the consignment service side but might lead to collisions in case of multiple instances, that is highly possible for microservices architecture. Instead of it, after every insert, the <code>id</code> field is updated. It doesn&rsquo;t look good and if you know a better way I&rsquo;ll be grateful if you let me know.</p></li>
+    return &amp;pb.HealthCheckResponse{Status: pb.HealthCheckResponse_SERVING}, nil
+}
+</code></pre><ul>
+<li>
+<p>Added support of <a href="https://github.com/grpc-ecosystem/go-grpc-prometheus">go-grpc-prometheus</a> - allow you to monitor your gRPC methods. It requires adding Prometheus and Grafana to the cluster.</p>
+</li>
+<li>
+<p>Other changes were pretty small. I changed Docker build to a fancier one, and <code>dep</code> package management, adding Helm support for more convenient deploy to cluster, logging branch name during build etc.</p>
+</li>
+<li>
+<p>In the end, I couldn&rsquo;t find out &ldquo;straight&rdquo; way of autoincrement <code>consignment id</code>. It could be generated on the consignment service side but might lead to collisions in case of multiple instances, that is highly possible for microservices architecture. Instead of it, after every insert, the <code>id</code> field is updated. It doesn&rsquo;t look good and if you know a better way I&rsquo;ll be grateful if you let me know.</p>
+</li>
 </ul>
-
 <pre><code>func (repo *ConsignmentRepository) Create(consignment *pb.Consignment) error {
 
     repo.collection().Insert(consignment)
@@ -278,7 +264,6 @@ for _, item := range health {
     return nil
 }
 </code></pre>
-
   </div>
   <div id="disqus_thread"></div>
 </div>

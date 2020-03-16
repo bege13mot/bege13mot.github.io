@@ -86,11 +86,8 @@
     </p>
     <p><a href="https://attic-backup.org/">Attic backup</a>
 <a href="https://borgbackup.readthedocs.io/en/stable/">Borg backup</a></p>
-
 <pre><code>borg init --encryption=repokey /path/to/repo
-</code></pre>
-
-<pre><code>#!/bin/sh
+</code></pre><pre><code>#!/bin/sh
 REPOSITORY=/mnt/d/Backup/my-backup.borg
 LOGFILE=/mnt/d/Backup/log.log
 BORG=/mnt/d/Borg/borg
@@ -120,13 +117,10 @@ echotime &quot;BORG PRUNE&quot;
 $BORG prune -v --stats $REPOSITORY --keep-monthly=4
 
 echo
-</code></pre>
-
-<pre><code>D:\Cloud\Cloud.exe
+</code></pre><pre><code>D:\Cloud\Cloud.exe
 timeout 3
 bash -c &quot;/mnt/d/Borg/backup.sh&quot;
 </code></pre>
-
   </div>
   <div id="disqus_thread"></div>
 </div>

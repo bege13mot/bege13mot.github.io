@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Qas on Ivan V</title>
@@ -17,14 +17,12 @@
       <pubDate>Tue, 12 Nov 2019 20:00:00 +0400</pubDate>
       
       <guid>https://bege13mot.github.io/qa/interview/</guid>
-      <description>Q&amp;amp;A  test-your-sysadmin-skills - A collection of *nix Sysadmin Test Questions and Answers
- Вопросы на собеседовании на позицию DevOps-инженера - неплохой список, можно себе по памяти проверить. Потом дополнить
- What happens when you type google.com into your browser and press enter?
- What happens when I type kubectl run?
- system-design-primer - Learn how to design large-scale systems
-   Linux questions
- Grokking
-  SRE Interview  Preparing the SRE interview</description>
+      <description>Q&amp;amp;A   test-your-sysadmin-skills - A collection of *nix Sysadmin Test Questions and Answers
+  Вопросы на собеседовании на позицию DevOps-инженера - неплохой список, можно себе по памяти проверить. Потом дополнить
+  What happens when you type google.com into your browser and press enter?
+  What happens when I type kubectl run?
+  system-design-primer - Learn how to design large-scale systems
+     Linux questions</description>
     </item>
     
     <item>
@@ -37,15 +35,22 @@
     </item>
     
     <item>
+      <title>Bookmarks</title>
+      <link>https://bege13mot.github.io/qa/bookmarks/</link>
+      <pubDate>Wed, 13 Mar 2019 20:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/qa/bookmarks/</guid>
+      <description>Git:  Learn Git Branching. Online tutorial 19 Tips For Everyday Git Use Comparing Git Workflows Oh shit, git!  Tools and Instructions:  htop Explained Visually Explanation of everything you can see in htop/top on Linux The Art of Command Line Linux tracing systems &amp;amp; how they fit together A small handbook about Linux debuggin tools Load Average в Linux: разгадка тайны A Comprehensive Guide to Terraform Understanding Nginx HTTP Proxying, Load Balancing, Buffering, and Caching Памятка пользователям SSH The Definitive Guide to Linux System Calls Памятка по virtualenv и изолированным проектам на Python 6 шагов загрузки Linux на пальцах Процессы в Linux Understanding Processes on Linux Учебник.</description>
+    </item>
+    
+    <item>
       <title>Questions</title>
       <link>https://bege13mot.github.io/qa/questions/</link>
       <pubDate>Thu, 12 Oct 2017 10:00:00 +0400</pubDate>
       
       <guid>https://bege13mot.github.io/qa/questions/</guid>
       <description>Questions from chassing/linux-sysadmin-interview-questions Inspired by collection of Linux SysAdm/DevOps interview questions with my answers
-General Questions:  What are the default ports used for SMTP,DNS,FTP,DHCP,SSH?
- SMTP - 25 DNS - 53 FTP- 20(data transfer), 21(connection established) DHCP- 67/UDP(dhcp server) , 68/UDP(dhcp client) SSH - 22    What function does DNS play on a network?
- The first place your computer looks is its local DNS cache, which stores information that your computer has recently retrieved.</description>
+General Questions:  SMTP - 25 DNS - 53 FTP- 20(data transfer), 21(connection established) DHCP- 67/UDP(dhcp server) , 68/UDP(dhcp client) SSH - 22   The first place your computer looks is its local DNS cache, which stores information that your computer has recently retrieved. If the information is not stored locally, your computer queries (contacts) your ISP’s recursive DNS servers.</description>
     </item>
     
   </channel>

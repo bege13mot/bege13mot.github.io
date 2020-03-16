@@ -74,28 +74,19 @@
 <div class="content container">
   <div class="post">
     <h1>Questions</h1>
-    
-
-<p>Questions from <a href="https://github.com/chassing/linux-sysadmin-interview-questions">chassing/linux-sysadmin-interview-questions</a>
+    <p>Questions from <a href="https://github.com/chassing/linux-sysadmin-interview-questions">chassing/linux-sysadmin-interview-questions</a>
 Inspired by <a href="https://jivoi.github.io/2016/01/22/linux-sysadm-devops-interview-questions/">collection of Linux SysAdm/DevOps interview questions with my answers</a></p>
-
 <h3 id="general-questions">General Questions:</h3>
-
-<p><details>
-<summary><b>What are the default ports used for SMTP,DNS,FTP,DHCP,SSH?</b></summary><br></p>
-
+<!-- raw HTML omitted -->
 <ul>
 <li>SMTP - 25</li>
 <li>DNS - 53</li>
 <li>FTP- 20(data transfer), 21(connection established)</li>
 <li>DHCP- 67/UDP(dhcp server) , 68/UDP(dhcp client)</li>
-<li>SSH - 22
-</details></li>
+<li>SSH - 22</li>
 </ul>
-
-<p><details>
-<summary><b>What function does DNS play on a network?</b></summary><br></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ol>
 <li>The first place your computer looks is its local DNS cache, which stores information that your computer has recently retrieved.</li>
 <li>If the information is not stored locally, your computer queries (contacts) your ISP’s recursive DNS servers.</li>
@@ -103,124 +94,87 @@ Inspired by <a href="https://jivoi.github.io/2016/01/22/linux-sysadm-devops-inte
 <li>The root nameservers will look at the first part of our request, reading from right to left <code>www.dyn.com</code> and direct our query to the Top-Level Domain (TLD) nameservers for .com.</li>
 <li>The TLD nameservers review the next part of our request <code>www.dyn.com</code> and direct our query to the nameservers responsible for this specific domain.</li>
 <li>The recursive server retrieves the A record for <code>dyn.com</code> from the authoritative nameservers and stores the record in its local cache.</li>
-<li>Armed with the answer, recursive server returns the A record back to your computer. Your computer stores the record in its cache, reads the IP address from the record, then passes this information to your browser.
-</details></li>
+<li>Armed with the answer, recursive server returns the A record back to your computer. Your computer stores the record in its cache, reads the IP address from the record, then passes this information to your browser.</li>
 </ol>
-
-<p><details>
-<summary><b>Describe briefly how HTTPS works.</b></summary><br></p>
-
-<p>HTTPS takes the well-known and understood HTTP protocol, and simply layers a SSL/TLS encryption layer on top of it. Servers and clients still speak exactly the same HTTP to each other, but over a secure SSL connection that encrypts and decrypts their requests and responses.
-* We will break the handshake up into 3 main phases - Hello, Certificate Exchange and Key Exchange.
-* Hello - The handshake begins with the client sending a <code>ClientHello</code> message. This contains all the information the server needs in order to connect to the client via SSL, including the various cipher suites and maximum SSL version that it supports. The server responds with a ServerHello, which contains similar information required by the client, including a decision based on the client’s preferences about which cipher suite and version of SSL will be used.
-* Certificate Exchange - Now that contact has been established, the server has to prove its identity to the client. This is achieved using its SSL certificate, which is a very tiny bit like its passport. An SSL certificate contains various pieces of data, including the name of the owner, the property (eg. domain) it is attached to, the certificate’s public key, the digital signature and information about the certificate’s validity dates. The client checks that it either implicitly trusts the certificate, or that it is verified and trusted by one of several Certificate Authorities (CAs) that it also implicitly trusts.
-* Key Exchange - The encryption of the actual message data exchanged by the client and server will be done using a symmetric algorithm, the exact nature of which was already agreed during the Hello phase. A symmetric algorithm uses a single key for both encryption and decryption, in contrast to asymmetric algorithms that require a public/private key pair. Both parties need to agree on this single, symmetric key, a process that is accomplished securely using asymmetric encryption and the server’s public/private keys.
-</details></p>
-
-<p><details>
-<summary><b>What is RAID? What is RAID0, RAID1, RAID5, RAID10?</b></summary><br></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>HTTPS takes the well-known and understood HTTP protocol, and simply layers a SSL/TLS encryption layer on top of it. Servers and clients still speak exactly the same HTTP to each other, but over a secure SSL connection that encrypts and decrypts their requests and responses.</p>
+<ul>
+<li>We will break the handshake up into 3 main phases - Hello, Certificate Exchange and Key Exchange.</li>
+<li>Hello - The handshake begins with the client sending a <code>ClientHello</code> message. This contains all the information the server needs in order to connect to the client via SSL, including the various cipher suites and maximum SSL version that it supports. The server responds with a ServerHello, which contains similar information required by the client, including a decision based on the client’s preferences about which cipher suite and version of SSL will be used.</li>
+<li>Certificate Exchange - Now that contact has been established, the server has to prove its identity to the client. This is achieved using its SSL certificate, which is a very tiny bit like its passport. An SSL certificate contains various pieces of data, including the name of the owner, the property (eg. domain) it is attached to, the certificate’s public key, the digital signature and information about the certificate’s validity dates. The client checks that it either implicitly trusts the certificate, or that it is verified and trusted by one of several Certificate Authorities (CAs) that it also implicitly trusts.</li>
+<li>Key Exchange - The encryption of the actual message data exchanged by the client and server will be done using a symmetric algorithm, the exact nature of which was already agreed during the Hello phase. A symmetric algorithm uses a single key for both encryption and decryption, in contrast to asymmetric algorithms that require a public/private key pair. Both parties need to agree on this single, symmetric key, a process that is accomplished securely using asymmetric encryption and the server’s public/private keys.</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ol>
 <li>RAID 0 - Minimum 2 disks, Striping, No redundancy (no mirror, no parity), Excellent performance</li>
 <li>RAID 1 - Minimum 2 disks, Excellent redundancy (as blocks are mirrored), Good performance (no striping, no parity)</li>
 <li>RAID 5 - Minimum 3 disks, Good redundancy (distributed parity), Good performance (as blocks are striped)</li>
-<li>RAID 10 - Minimum 4 disks, Also known as RAID 1+0, Excellent redundancy (as blocks are mirrored), Excellent performance (as blocks are striped)
-</details></li>
+<li>RAID 10 - Minimum 4 disks, Also known as RAID 1+0, Excellent redundancy (as blocks are mirrored), Excellent performance (as blocks are striped)</li>
 </ol>
-
-<p><details>
-<summary><b>HTTP status codes</b></summary><br></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ul>
 <li>1xx Informational responses</li>
 <li>2xx Success</li>
 <li>3xx Redirection</li>
 <li>4xx Client errors</li>
-<li>5xx Server errors
-</details></li>
+<li>5xx Server errors</li>
 </ul>
-
-<hr />
-
+<!-- raw HTML omitted -->
+<hr>
 <h3 id="simple-linux-questions">Simple Linux Questions:</h3>
-
-<p><details>
-<summary><b>What is the name and the UID of the administrator user?</b></summary><br></p>
-
-<p>root UID 0, can check by <code>id root</code>
-</details></p>
-
-<p><details>
-<summary><b>Execute combine multiple shell commands in one line.</b></summary><br></p>
-
+<!-- raw HTML omitted -->
+<p>root UID 0, can check by <code>id root</code></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>If you want to execute each command only if the previous one succeeded, then combine them using the <code>&amp;&amp;</code> operator:
-If you want to execute all commands regardless of whether the previous ones failed or not, separate them with semicolons.
-</details></p>
-
-<p><details>
-<summary><b>Which command will show you free/used memory? Does free memory exist on Linux?</b></summary><br></p>
-
+If you want to execute all commands regardless of whether the previous ones failed or not, separate them with semicolons.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ul>
 <li><code>free -m, cat /proc/meminfo, vmstat, top, htop</code></li>
-<li>Linux is borrowing unused memory for disk caching. Both you and Linux agree that memory taken by applications is &ldquo;used&rdquo;, while memory that isn&rsquo;t used for anything is &ldquo;free&rdquo;. To see how much ram your applications could use without swapping, run <code>free -m</code> and look at the &ldquo;available&rdquo; column.
-</details></li>
+<li>Linux is borrowing unused memory for disk caching. Both you and Linux agree that memory taken by applications is &ldquo;used&rdquo;, while memory that isn&rsquo;t used for anything is &ldquo;free&rdquo;. To see how much ram your applications could use without swapping, run <code>free -m</code> and look at the &ldquo;available&rdquo; column.</li>
 </ul>
-
-<p><details>
-<summary><b>What commands do you know that can be used to check DNS records?</b></summary><br></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ul>
 <li><code>host example.com</code></li>
 <li><code>nslookup example.com</code></li>
-<li><code>dig example.com</code>
-</details></li>
+<li><code>dig example.com</code></li>
 </ul>
-
-<p><details>
-<summary><b>What does the permission 750 on a file/directory mean?</b></summary><br></p>
-
-<p>Owner can read\write\execute this file, also members of group can read and execute, other users can do nothing with it.<br />
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Owner can read\write\execute this file, also members of group can read and execute, other users can do nothing with it.<br>
 Owner can read\write\execute(see file list of directory) this directory, also members of group can read and list, other users can do nothing with it.</p>
-
-<p>4 - read, 2 - write, 1 - execute, total - 7, 1 bit - sticky<br />
-</details></p>
-
-<p><details>
-<summary><b>How to redirect STDOUT and STDERR in bash? (&gt; /dev/null 2&gt;&amp;1)</b></summary><br></p>
-
-<p>There are always three default files open, stdin (the keyboard), stdout (the screen), and stderr (error messages output to the screen). These, and any other open files, can be redirected. Redirection simply means capturing output from a file, command, program, script, or even code block within a script and sending it as input to another file, command, program, or script.
-</details></p>
-
-<p><details>
-<summary><b>Explain the three load averages and what do they indicate. What command can be used to view the load averages?</b></summary><br></p>
-
+<p>4 - read, 2 - write, 1 - execute, total - 7, 1 bit - sticky</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>There are always three default files open, stdin (the keyboard), stdout (the screen), and stderr (error messages output to the screen). These, and any other open files, can be redirected. Redirection simply means capturing output from a file, command, program, script, or even code block within a script and sending it as input to another file, command, program, or script.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ul>
-<li><code>top</code></li>
-<li><code>cat /proc/loadavg</code> - The three numbers after load average represent the 1, 5, 15-minute load averages on the machine. A system load average is equal to the average number of processes in a runnable or uninterruptible state. Runnable processes are either currently using the CPU or waiting to do so, and uninterruptible processes are waiting for I/O.
-</details></li>
+<li><code>top </code></li>
+<li><code>cat /proc/loadavg</code> - The three numbers after load average represent the 1, 5, 15-minute load averages on the machine. A system load average is equal to the average number of processes in a runnable or uninterruptible state. Runnable processes are either currently using the CPU or waiting to do so, and uninterruptible processes are waiting for I/O.</li>
 </ul>
-
-<p><details>
-<summary><b>Walk me through the steps you&rsquo;d take to troubleshoot a 404 error on a web application you administer.</b></summary><br></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ul>
 <li>The 404 status code, or a Not Found error, means that the user is able to communicate with the server but it is unable to locate the requested file or resource.</li>
+</ul>
+<ol>
 <li>Does the link that directed the user to your server resource have a typographical error in it?</li>
 <li>Did the user type in the wrong URL?</li>
 <li>Does the file exist in the correct location on the server? Was the resource was moved or deleted on the server?</li>
 <li>Does the server configuration have the correct document root location?</li>
 <li>Does the user that owns the web server worker process have privileges to traverse to the directory that the requested file is in?</li>
-<li>Is the resource being accessed a symbolic link? If so, ensure the web server is configured to follow symbolic links
-</details></li>
-</ul>
-
-<hr />
-
+<li>Is the resource being accessed a symbolic link? If so, ensure the web server is configured to follow symbolic links</li>
+</ol>
+<!-- raw HTML omitted -->
+<hr>
 <h3 id="linux-processes">Linux Processes:</h3>
-
-<p><details>
-<summary><b>Describe the linux boot process with as much detail as possible, starting from when the system is powered on and ending when you get a prompt.</b></summary><br></p>
-
+<!-- raw HTML omitted -->
 <ol>
 <li>BIOS (Basic Input Output System) - initializes hardware, then go step-by-step through each boot device based on the boot device order it is configured to follow until it finds one it can successfully boot from. POST(Power On Self Test)</li>
 <li>MBR or GPT - (master boot record: the first 512 bytes on a hard drive) and loading and executing the boot code inside the MBR to start the boot process.</li>
@@ -228,7 +182,6 @@ Owner can read\write\execute(see file list of directory) this directory, also me
 <li>Kernel. Usually GRUB will also load an initrd (initial RAM disk) along with the kernel.</li>
 <li><code>initrd</code> (initial RAM disk) - has some crucial configuration files, kernel modules, and programs that the kernel needs in order to find and mount the real root file system.</li>
 <li>Init and Runlevel programs. The final step is to execute the <code>/sbin/init</code> program, which takes over the rest of the boot process. The <code>/sbin/init</code> program is the parent process of every program running on the system. This process always has a PID of 1 and is responsible for starting the rest of the processes that make up a running Linux system. Looks at the <code>/etc/inittab</code> file to decide the Linux run level.
-
 <ul>
 <li>0 – halt</li>
 <li>1 – Single user mode</li>
@@ -236,107 +189,74 @@ Owner can read\write\execute(see file list of directory) this directory, also me
 <li>3 – Full multiuser mode</li>
 <li>4 – unused</li>
 <li>5 – X11</li>
-<li>6 – reboot
-</details></li>
-</ul></li>
+<li>6 – reboot</li>
+</ul>
+</li>
 </ol>
-
-<p><details>
-<summary><b>What does <code>&amp; disown</code> after a command do?</b></summary><br></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ul>
 <li><code>&amp;</code> puts the job in the background, that is, makes it block on attempting to read input, and makes the shell not wait for its completion.</li>
 <li><code>disown</code> removes the process from the shell&rsquo;s job control, but it still leaves it connected to the terminal. One of the results is that the shell won&rsquo;t send it a SIGHUP. Obviously, it can only be applied to background jobs, because you cannot enter it when a foreground job is running.</li>
-<li><code>nohup</code> - tells the new process to ignore SIGHUP. It is the signal sent by the kernel when the parent shell is closed.
-</details></li>
+<li><code>nohup</code> - tells the new process to ignore SIGHUP. It is the signal sent by the kernel when the parent shell is closed.</li>
 </ul>
-
-<p><details>
-<summary><b>SIGHUP, SIGINT, SIGKILL, and SIGTERM POSIX signals. Explain.</b></summary><br></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ul>
 <li><code>SIGHUP</code> - is sent to a process when its controlling terminal is closed. It was originally designed to notify the process of a serial line drop (a hangup). Many daemons will reload their configuration files and reopen their logfiles instead of exiting when receiving this signal.</li>
 <li><code>SIGINT</code> - is sent to a process by its controlling terminal when a user wishes to interrupt the process. This is typically initiated by pressing <code>Ctrl+C</code>, but on some systems, the &ldquo;delete&rdquo; character or &ldquo;break&rdquo; key can be used.</li>
 <li><code>SIGKILL</code> - is sent to a process to cause it to terminate immediately (kill). In contrast to <code>SIGTERM</code> and <code>SIGINT</code>, this signal cannot be caught or ignored, and the receiving process cannot perform any clean-up upon receiving this signal.</li>
-<li><code>SIGTERM</code> - is sent to a process to request its termination. Unlike the <code>SIGKILL</code> signal, it can be caught and interpreted or ignored by the process. This allows the process to perform nice termination releasing resources and saving state if appropriate. <code>SIGINT</code> is nearly identical to <code>SIGTERM</code>.
-</details></li>
+<li><code>SIGTERM</code> - is sent to a process to request its termination. Unlike the <code>SIGKILL</code> signal, it can be caught and interpreted or ignored by the process. This allows the process to perform nice termination releasing resources and saving state if appropriate. <code>SIGINT</code> is nearly identical to <code>SIGTERM</code>.</li>
 </ul>
-
-<p><details>
-<summary><b>What if <code>kill -9</code> does not work? Describe exceptions for which the use of SIGKILL is insufficient.</b></summary><br></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p><code>kill -9</code> (<code>SIGKILL</code>) always works, provided you have the permission to kill the process. Basically either the process must be started by you and not be setuid or setgid, or you must be root. There is one exception: even root cannot send a fatal signal to PID 1 (the init process).</p>
-
 <p>However <code>kill -9</code> is not guaranteed to work immediately. All signals, including <code>SIGKILL</code>, are delivered asynchronously: the kernel may take its time to deliver them. Usually, delivering a signal takes at most a few microseconds, just the time it takes for the target to get a time slice. However, if the target has blocked the signal, the signal will be queued until the target unblocks it.</p>
-
 <p>Normally, processes cannot block <code>SIGKILL</code>. But kernel code can, and processes execute kernel code when they call system calls.</p>
-
 <p>A process blocked in a system call is in uninterruptible sleep. The <code>ps</code> or <code>top</code> command will (on most unices) show it in state <code>D</code>.</p>
-
-<p>To remove a <code>D</code> State Process, since it is uninterruptible, only a machine reboot can solve the problem in case its not automatically handled by the system.
-</details></p>
-
-<p><details>
-<summary><b>Explain briefly each one of the process states.</b></summary><br></p>
-
+<p>To remove a <code>D</code> State Process, since it is uninterruptible, only a machine reboot can solve the problem in case its not automatically handled by the system.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ul>
 <li>R - running or runnable (on run queue)</li>
 <li>D - uninterruptible sleep (usually IO)</li>
 <li>S - interruptible sleep (waiting for an event to complete)</li>
 <li>Z - defunct/zombie, terminated but not reaped by its parent</li>
-<li>T - stopped, either by a job control signal or because it is being traced
-</details></li>
+<li>T - stopped, either by a job control signal or because it is being traced</li>
 </ul>
-
-<p><details>
-<summary><b>What happens to a child process that dies and has no parent process to wait for it and what’s bad about this?</b></summary><br></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>Zombie processes don’t use up any system resources. However, each zombie process retains its process ID (PID). Linux systems have a finite number of process IDs – 32767 by default on 32-bit systems. If zombies are accumulating at a very quick rate – for example, if improperly programmed server software is creating zombie processes under load — the entire pool of available PIDs will eventually become assigned to zombie processes, preventing other processes from launching.
-One way is by sending the SIGCHLD signal to the parent process. This signal tells the parent process to execute the wait() system call and clean up its zombie children. Send the signal with the kill command, replacing pid in the command below with the parent process’s PID:  <code>kill -s SIGCHLD pid</code>
-</details></p>
-
-<p><details>
-<summary><b>What is the difference between a process and a thread? And parent and child processes after a fork system call?</b></summary><br></p>
-
+One way is by sending the SIGCHLD signal to the parent process. This signal tells the parent process to execute the wait() system call and clean up its zombie children. Send the signal with the kill command, replacing pid in the command below with the parent process’s PID:  <code>kill -s SIGCHLD pid</code></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ul>
 <li>Both processes and threads are independent sequences of execution. The typical difference is that threads (of the same process) run in a shared memory space, while processes run in separate memory spaces.</li>
 <li>A thread is a lightweight process. Each process has a separate stack, text, data and heap. Threads have their own stack, but share text, data and heap with the process. Text is the actual program itself, data is the input to the program and heap is the memory which stores files, locks, sockets.</li>
 <li>The fork call basically makes a duplicate of the current process, identical in almost every way (not everything is copied over, for example, resource limits in some implementations but the idea is to create as close a copy as possible).
-The new process (child) gets a different process ID (PID) and has the the PID of the old process (parent) as its parent PID (PPID). Because the two processes are now running exactly the same code, they can tell which is which by the return code of fork - the child gets 0, the parent gets the PID of the child.
-</details></li>
+The new process (child) gets a different process ID (PID) and has the the PID of the old process (parent) as its parent PID (PPID). Because the two processes are now running exactly the same code, they can tell which is which by the return code of fork - the child gets 0, the parent gets the PID of the child.</li>
 </ul>
-
-<p><details>
-<summary><b>What is the difference between exec and fork?</b></summary><br></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ul>
 <li>The fork call basically makes a duplicate of the current process, identical in almost every way (not everything is copied over, for example, resource limits in some implementations but the idea is to create as close a copy as possible).
 The new process (child) gets a different process ID (PID) and has the the PID of the old process (parent) as its parent PID (PPID). Because the two processes are now running exactly the same code, they can tell which is which by the return code of fork - the child gets 0, the parent gets the PID of the child.</li>
 <li>The exec call is a way to basically replace the entire current process with a new program. It loads the program into the current process space and runs it from the entry point.</li>
-<li>So, fork and exec are often used in sequence to get a new program running as a child of a current process. Shells typically do this whenever you try to run a program like find - the shell forks, then the child loads the find program into memory, setting up all command line arguments, standard I/O and so forth.
-</details></li>
+<li>So, fork and exec are often used in sequence to get a new program running as a child of a current process. Shells typically do this whenever you try to run a program like find - the shell forks, then the child loads the find program into memory, setting up all command line arguments, standard I/O and so forth.</li>
 </ul>
-
-<p><details>
-<summary><b>How do you catch a Linux signal on a script?</b></summary><br></p>
-
-<p>There is a trap command that allows you to catch a linux signal and execute a command when a signal is received by your shell script. It works like this: <code>trap arg signals</code>
-* Example: <code>trap &quot;rm $TEMP_FILE; exit&quot; SIGHUP SIGINT SIGTERM</code>
-</details></p>
-
-<hr />
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>There is a trap command that allows you to catch a linux signal and execute a command when a signal is received by your shell script. It works like this: <code>trap arg signals</code></p>
+<ul>
+<li>Example: <code>trap &quot;rm $TEMP_FILE; exit&quot; SIGHUP SIGINT SIGTERM</code></li>
+</ul>
+<!-- raw HTML omitted -->
+<hr>
 <h3 id="medium-linux-questions">Medium Linux Questions:</h3>
-
-<p><details>
-<summary><b>Load averages are above 30 on a server with 24 cores but CPU shows around 70 percent idle. One of the common causes of this condition is? How to debug and fixed?</b></summary><br></p>
-
+<!-- raw HTML omitted -->
 <p>Requests which involve disk I/O can be slowed greatly if cpu(s) needs to wait on the disk to read or write data. I/O Wait, is the percentage of time the CPU has to wait on disk.</p>
-
 <p>Lets looks at how we can confirm if disk I/O is slowing down application performance by using a few terminal command line tools (<code>top</code>, <code>atop</code> and <code>iotop</code>).</p>
-
 <p>Example of debug:</p>
-
 <ul>
 <li>answering whether or not I/O is causing system slowness</li>
 <li>finding which disk is being written to</li>
@@ -346,228 +266,156 @@ The new process (child) gets a different process ID (PID) and has the the PID of
 <li>do you see your copy process put in <strong>D</strong> state waiting for I/O work to be done by pdflush?</li>
 <li>do you see heavy synchronous write activity on your disks?</li>
 </ul>
-
 <p>also:</p>
-
 <ul>
 <li>using <code>top</code> command - load averages and wa (wait time)</li>
 <li>using <code>atop</code> command to monitor DSK (disk) I/O stats</li>
 <li>using <code>iotop</code> command for real-time insight on disk read/writes</li>
 </ul>
-
 <p>For improvement performance:</p>
-
 <ul>
 <li>check drive array configuration</li>
 <li>check disk queuing algorithms and tuning them</li>
 <li>tuning general block I/O parameters</li>
 <li>tuning virtual memory management to improve I/O performance</li>
-<li>check and tuning mount options and filesystem params (also responsible for cache)
-</details></li>
+<li>check and tuning mount options and filesystem params (also responsible for cache)</li>
 </ul>
-
-<p><details>
-<summary><b>Swap usage too high. What are the reasons for this and how to resolve swapping problems?</b></summary><br></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p><code>Swap</code> space is a restricted amount of physical memory that is allocated for use by the operating system when available memory has been fully utilized. It is memory management that involves swapping sections of memory to and from physical storage.</p>
-
 <p>If the system needs more memory resources and the RAM is full, inactive pages in memory are moved to the swap space. While swap space can help machines with a small amount of RAM, it should not be considered a replacement for more RAM. <code>Swap</code> space is located on hard drives, which have a slower access time than physical memory.</p>
-
 <p>Workload increases your RAM demand. You are running a workload that requires more memory. Usage of the entire swap indicates that. Also, changing <code>swappiness</code> to <code>1</code> might not be a wise decision. Setting <code>swappiness</code> to <code>1</code> does not indicate that swapping will not be done. It just indicates how aggressive kernel will be in respect of swapping, it does not eliminate swapping. Swapping will happen if needs to be done.</p>
-
 <ul>
-<li><p><code>Increasing the size of the swap space</code> - firstly, you&rsquo;d have increased disk use. If your disks aren&rsquo;t fast enough to keep up, then your system might end up thrashing, and you&rsquo;d experience slowdowns as data is swapped in and out of memory. This would result in a bottleneck.</p></li>
-
-<li><p><code>Adding more RAM</code> - the real solution is to add more memory. There&rsquo;s no substitute for RAM, and if you have enough memory, you&rsquo;ll swap less.
-</details></p></li>
+<li>
+<p><code>Increasing the size of the swap space</code> - firstly, you&rsquo;d have increased disk use. If your disks aren&rsquo;t fast enough to keep up, then your system might end up thrashing, and you&rsquo;d experience slowdowns as data is swapped in and out of memory. This would result in a bottleneck.</p>
+</li>
+<li>
+<p><code>Adding more RAM</code> - the real solution is to add more memory. There&rsquo;s no substitute for RAM, and if you have enough memory, you&rsquo;ll swap less.</p>
+</li>
 </ul>
-
-<p><details>
-<summary><b>What is the sticky bit?</b></summary><br></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ul>
-<li><code>sudo chmod +t /tmp</code> - A sticky bit is a permission bit that is set on a directory that allows only the owner of the file within that directory or the root user to delete or rename the file. No other user has the needed privileges to delete the file created by some other user.
-</details></li>
+<li><code>sudo chmod +t /tmp</code> - A sticky bit is a permission bit that is set on a directory that allows only the owner of the file within that directory or the root user to delete or rename the file. No other user has the needed privileges to delete the file created by some other user.</li>
 </ul>
-
-<p><details>
-<summary><b>What does the immutable bit do to a file?</b></summary><br></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ul>
-<li><code>chattr +i file</code> - A file with an immutable attribute can not be:Modified,Deleted,Renamed,No soft or hard link created by anyone including root user.
-</details></li>
+<li><code>chattr +i file</code> - A file with an immutable attribute can not be:Modified,Deleted,Renamed,No soft or hard link created by anyone including root user.</li>
 </ul>
-
-<p><details>
-<summary><b>What is the difference between hardlinks and symlinks? What happens when you remove the source to a symlink/hardlink?</b></summary><br></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ul>
 <li>A hardlink isn&rsquo;t a pointer to a file, it&rsquo;s a directory entry (a file) pointing to the same inode. Even if you change the name of the other file, a hardlink still points to the file. Once a hard link has been made the link is to the inode. deleting renaming or moving the original file will not affect the hard link as it links to the underlying inode. Any changes to the data on the inode is reflected in all files that refer to that inode. If you replace the other file with a new version (by copying it), a hardlink will not point to the new file.</li>
 <li>On the other hand, a symlink is actually pointing to another path (a file name); it resolves the name of the file each time you access it through the symlink. If you move the file, the symlink will not follow. If you replace the file with another one, keeping the name, the symlink will point to the new file.</li>
 </ul>
-
-<p>Note: Hard links are only valid within the same file system. Symbolic links can span file systems as they are simply the name of another file.
-</details></p>
-
-<p><details>
-<summary><b>What is an inode and what fields are stored in an inode?</b></summary><br></p>
-
+<p>Note: Hard links are only valid within the same file system. Symbolic links can span file systems as they are simply the name of another file.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>A Unix file is stored in two different parts of the disk - the data blocks and the inodes.</p>
-
 <ul>
 <li>inode is a &ldquo;database&rdquo; of all file information that tells about file structure. The inode of each file uses a pointer to point to the specific file, directory or object. The pointer is a unique number which usually is referred to as the inode number.</li>
-<li>An inode is a data structure in Unix that contains metadata about a file. Some of the items contained in an inode are: mode, owner (UID, GID), size, atime, ctime, mtime, acl’s,link count, blocks list of where the data is
-</details></li>
+<li>An inode is a data structure in Unix that contains metadata about a file. Some of the items contained in an inode are: mode, owner (UID, GID), size, atime, ctime, mtime, acl’s,link count, blocks list of where the data is</li>
 </ul>
-
-<p><details>
-<summary><b>Describe a scenario when you get a &ldquo;filesystem is full&rdquo; error, but &lsquo;df&rsquo; shows there is free space.</b></summary><br></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ul>
-<li>The filesystem can run out of inodes, <code>df -i</code> will show that. The inode is a data structure in a Unix-style file system that describes a filesystem object such as a file or a directory.
-</details></li>
+<li>The filesystem can run out of inodes, <code>df -i</code> will show that. The inode is a data structure in a Unix-style file system that describes a filesystem object such as a file or a directory.</li>
 </ul>
-
-<p><details>
-<summary><b>In what circumstance can <code>df</code> and <code>du</code> disagree on available disk space? How do you solve it?</b></summary><br></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p><code>du</code> checks usage of directories, but <code>df</code> checks free&rsquo;d inodes, and files can be held open and take space after they&rsquo;re deleted.</p>
-
 <p><strong>Solution 1</strong></p>
-
 <p>Check for files on located under mount points. Frequently if you mount a directory (say a sambafs) onto a filesystem that already had a file or directories under it, you lose the ability to see those files, but they&rsquo;re still consuming space on the underlying disk.</p>
-
 <p>I&rsquo;ve had file copies while in single user mode dump files into directories that I couldn&rsquo;t see except in single usermode (due to other directory systems being mounted on top of them).</p>
-
 <p><strong>Solution 2</strong></p>
-
 <p>On the other hand <code>df -h</code> and <code>du -sh</code> could mismatched by about 50% of the hard disk size. This was caused by e.g. Apache (httpd) keeping large log files in memory which had been deleted from disk.</p>
-
 <p>This was tracked down by running <code>lsof | grep &quot;/var&quot; | grep deleted</code> where <code>/var</code> was the partition I needed to clean up.</p>
-
-<p>The situation was then resolved by restarting Apache (<code>service httpd restart</code>) and cleared of disk space, by allowing the locks on deleted files to be cleared.
-</details></p>
-
-<p><details>
-<summary><b>What is SSH port forwarding?</b></summary><br></p>
-
+<p>The situation was then resolved by restarting Apache (<code>service httpd restart</code>) and cleared of disk space, by allowing the locks on deleted files to be cleared.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ul>
 <li>SH port forwarding - a mechanism in SSH for tunneling application ports from the client machine to the server machine, or vice versa.</li>
 <li>Imagine you’re on a private network which doesn’t allow connections to a specific server. Let’s say you’re at work and imgur.com is being blocked. To get around this we can create a tunnel through a server which isn’t on our network and thus can access Imgur: <code>ssh -L 9000:imgur.com:80 user@example.com</code></li>
-<li>The key here is <code>-L</code> which says we’re doing local port forwarding. Then it says we’re forwarding our local port 9000 to imgur.com:80, which is the default port for HTTP. Now open your browser and go to <a href="http://localhost:9000">http://localhost:9000</a>.</li>
-<li>You need to have another computer, which is publicly accessible and have SSH access to it. It can be any server on the internet, as long as you can connect to it. We’ll tell SSH to make a tunnel that opens up a new port on the server, and connects it to a local port on your machine: <code>ssh -R 9000:localhost:3000 user@example.com</code>
-</details></li>
+<li>The key here is <code>-L</code> which says we’re doing local port forwarding. Then it says we’re forwarding our local port 9000 to imgur.com:80, which is the default port for HTTP. Now open your browser and go to http://localhost:9000.</li>
+<li>You need to have another computer, which is publicly accessible and have SSH access to it. It can be any server on the internet, as long as you can connect to it. We’ll tell SSH to make a tunnel that opens up a new port on the server, and connects it to a local port on your machine: <code>ssh -R 9000:localhost:3000 user@example.com</code></li>
 </ul>
-
-<p><details>
-<summary><b>What is an A record, an NS record, a PTR record, a CNAME record, an MX record?</b></summary><br></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ul>
 <li>A record - Returns a 32-bit IPv4 address</li>
 <li>NS record - Delegates a DNS zone to use the given authoritative name servers. Name server record</li>
 <li>PTR record - Pointer to a canonical name. Unlike a CNAME, DNS processing stops and just the name is returned. The most common use is for implementing reverse DNS lookups. Pointer record</li>
 <li>CNAME record - Alias of one name to another: the DNS lookup will continue by retrying the lookup with the new name.</li>
-<li>MX record - Maps a domain name to a list of message transfer agents for that domain. Mail exchange record
-</details></li>
+<li>MX record - Maps a domain name to a list of message transfer agents for that domain. Mail exchange record</li>
 </ul>
-
-<p><details>
-<summary><b>Can you have several HTTPS virtual hosts sharing the same IP?</b></summary><br></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ul>
 <li>Although hosting several sites on a single virtual private server is not a challenge with the use of virtual hosts, providing separate SSL certificates for each site traditionally required separate IP addresses. The process has recently been simplified through the use of Server Name Indication (SNI), which sends a site visitor the certificate that matches the requested server name.
-SNI can only be used for serving multiple SSL sites from your web server and is not likely to work at all on other daemons, such as mail servers, etc.
-</details></li>
+SNI can only be used for serving multiple SSL sites from your web server and is not likely to work at all on other daemons, such as mail servers, etc.</li>
 </ul>
-
-<p><details>
-<summary><b>Which Linux file types do you know?</b></summary><br></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ol>
 <li>Regular file(-)</li>
 <li>Directory files(d)</li>
 <li>Special files
-
 <ol>
 <li>Block file(b)</li>
-<li>Character device file&copy;</li>
+<li>Character device file(c)</li>
 <li>Named pipe file or just a pipe file(p)</li>
 <li>Symbolic link file(l)</li>
-<li>Socket file(s)
-</details></li>
-</ol></li>
+<li>Socket file(s)</li>
 </ol>
-
-<p><details>
-<summary><b>How can you limit process memory usage?</b></summary><br></p>
-
+</li>
+</ol>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ul>
 <li>I&rsquo;m not very sure about this, but you could also use cgroups to limit the memory usage. The advantage of cgroups is that you can control processes that are already running. By the way systemd will use cgroups to control the system services.</li>
-<li><code>ulimit -v</code>
-</details></li>
+<li><code>ulimit -v</code></li>
 </ul>
-
-<p><details>
-<summary><b>How can you increase or decrease the priority of a process in Linux?</b></summary><br></p>
-
-<p>The Linux niceness scale goes from -20 to 19. The lower the number the more priority that task gets.
-* <code>nice -n [nice value] [command]:</code>
-* <code>renice 10 -p 21827</code>
-</details></p>
-
-<hr />
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>The Linux niceness scale goes from -20 to 19. The lower the number the more priority that task gets.</p>
+<ul>
+<li><code>nice -n [nice value] [command]:</code></li>
+<li><code>renice 10 -p 21827</code></li>
+</ul>
+<!-- raw HTML omitted -->
+<hr>
 <h3 id="hard-linux-questions">Hard Linux Questions:</h3>
-
-<p><details>
-<summary><b>Your freshly configured http server is not running after a restart, what can you do?</b></summary><br></p>
-
-<p>If you rebooted server and http server is not running after it, so first you need to check it configuration file and the server error log where you can find the proble why server is not running, and after you can run it manually with <code>init\upstart\systemd</code> script, if you want that server run automatically you need enable autostart for it - <code>systemctl enable nginx</code> (for linux with systemd)
-</details></p>
-
-<p><details>
-<summary><b>I&rsquo;ve added my public ssh key into authorized_keys but I&rsquo;m still getting a password prompt, what can be wrong?</b></summary><br></p>
-
+<!-- raw HTML omitted -->
+<p>If you rebooted server and http server is not running after it, so first you need to check it configuration file and the server error log where you can find the proble why server is not running, and after you can run it manually with <code>init\upstart\systemd</code> script, if you want that server run automatically you need enable autostart for it - <code>systemctl enable nginx</code> (for linux with systemd)</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ul>
 <li>Maybe your ~/.ssh/authorized_keys permissions are too open by OpenSSH standards. You need to check this and fix with:
-
 <ul>
 <li><code>chmod 700 ~/.ssh</code></li>
 <li><code>chmod 600 ~/.ssh/authorized_keys</code></li>
-</ul></li>
-<li>Maybe remote server is configured to disable public keys, you can check it in /etc/sshd_config configuration file where PubkeyAuthentication option must be set to YES</li>
-<li>Maybe it is something with you local ssh configuration ~/.ssh/config
-</details></li>
 </ul>
-
-<p><details>
-<summary><b>What does <code>:(){ :|:&amp; };:</code> do on your system?</b></summary><br></p>
-
-<p>This is a fork bomb using the Bash shell. In computing, a fork bomb (also called rabbit virus or wabbit) is a denial-of-service attack wherein a process continually replicates itself to deplete available system resources, causing resource starvation and slowing or crashing the system.
-</details></p>
-
-<p><details>
-<summary><b>What&rsquo;s happening when the Linux kernel is starting the OOM killer and how does it choose which process to kill first?</b></summary><br></p>
-
+</li>
+<li>Maybe remote server is configured to disable public keys, you can check it in /etc/sshd_config configuration file where PubkeyAuthentication option must be set to YES</li>
+<li>Maybe it is something with you local ssh configuration ~/.ssh/config</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>This is a fork bomb using the Bash shell. In computing, a fork bomb (also called rabbit virus or wabbit) is a denial-of-service attack wherein a process continually replicates itself to deplete available system resources, causing resource starvation and slowing or crashing the system.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ul>
 <li>The process to be killed in an out-of-memory situation is selected based on its badness score. The badness score is reflected in <code>/proc/&lt;pid&gt;/oom_score</code>. This value is determined on the basis that the system loses the minimum amount of work done, recovers a large amount of memory, doesn&rsquo;t kill any innocent process eating tons of memory, and kills the minimum number of processes (if possible limited to one).</li>
-<li>The badness score is computed using the original memory size of the process, its CPU time (utime + stime), the run time (uptime - start time) and its oom_adj value. The more memory the process uses, the higher the score. The longer a process is alive in the system, the smaller the score.
-</details></li>
+<li>The badness score is computed using the original memory size of the process, its CPU time (utime + stime), the run time (uptime - start time) and its oom_adj value. The more memory the process uses, the higher the score. The longer a process is alive in the system, the smaller the score.</li>
 </ul>
-
-<p><details>
-<summary><b>What is the main advantage of using <code>chroot</code>? When and  why do we use it? What is the purpose of the mount dev, proc, sys in a chroot environment?</b></summary><br></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>An advantage of having a chroot environment is the file-system is totally isolated from the physical host. <code>chroot</code> has a separate file-system inside the file-system, the difference is its uses a newly created root(/) as its root directory.</p>
-
 <p>A chroot jail is a way to isolate a process and its children from the rest of the system. It should only be used for processes that don&rsquo;t run as root, as root users can break out of the jail very easily.</p>
-
 <p>The idea is that you create a directory tree where you copy or link in all the system files needed for a process to run. You then use the <code>chroot()</code> system call to change the root directory to be at the base of this new tree and start the process running in that chroot&rsquo;d environment. Since it can&rsquo;t actually reference paths outside the modified root, it can&rsquo;t perform operations (read/write etc.) maliciously on those locations.</p>
-
 <p>On Linux, using a bind mounts is a great way to populate the chroot tree. Using that, you can pull in folders like <code>/lib</code> and <code>/usr/lib</code> while not pulling in <code>/usr</code>, for example. Just bind the directory trees you want to directories you create in the jail directory.</p>
-
 <p>Chroot environment is useful for:</p>
-
 <ul>
 <li>reinstall bootloader</li>
 <li>reset a forgotten password</li>
@@ -577,385 +425,237 @@ SNI can only be used for serving multiple SSL sites from your web server and is 
 <li>reinstall packages using your package manager</li>
 <li>whatever</li>
 </ul>
-
-<p>When working in a chrooted environment, there is a few special file systems that needs to be mounted so all programs behave properly.
-</details></p>
-
-<p><details>
-<summary><b>How to find out the dynamic libraries executables loads when run?</b></summary><br></p>
-
-<p>You can do this with <code>ldd</code> command:
-</details></p>
-
-<p><details>
-<summary><b>The program returns the error of the missing library. How to provide dynamically linkable libraries?</b></summary><br></p>
-
+<p>When working in a chrooted environment, there is a few special file systems that needs to be mounted so all programs behave properly.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>You can do this with <code>ldd</code> command:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>Environment variable <code>LD_LIBRARY_PATH</code> is a colon-separated set of directories where libraries should be searched for first, before the standard set of directories; this is useful when debugging a new library or using a nonstandard library for special purposes.</p>
-
-<p>The best way to use <code>LD_LIBRARY_PATH</code> is to set it on the command line or script immediately before executing the program. This way the new <code>LD_LIBRARY_PATH</code> isolated from the rest of your system.
-</details></p>
-
-<p><details>
-<summary><b>What are cgroups? Can you specify a scenario where you could use them?</b></summary><br></p>
-
+<p>The best way to use <code>LD_LIBRARY_PATH</code> is to set it on the command line or script immediately before executing the program. This way the new <code>LD_LIBRARY_PATH</code> isolated from the rest of your system.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ul>
 <li>cgroups (aka control groups) - Linux kernel feature that limits, accounts for, and isolates the resource usage (CPU, memory, disk I/O, network, etc.) of a collection of processes. Compared to other approaches like the <code>nice</code> command or <code>/etc/security/limits.conf</code>, cgroups are more flexible as they can operate on (sub)sets of processes (possibly with different system users). Example: <code>/sys/fs/cgroup</code></li>
 <li>Cgroups provides:
-
 <ul>
 <li>Resource limiting – groups can be set to not exceed a configured memory limit, which also includes the file system cache</li>
 <li>Prioritization – some groups may get a larger share of CPU utilization or disk I/O throughput</li>
 <li>Accounting – measures a group&rsquo;s resource usage, which may be used, for example, for billing purposes</li>
-<li>Control – freezing groups of processes, their checkpointing and restarting
-</details></li>
-</ul></li>
+<li>Control – freezing groups of processes, their checkpointing and restarting</li>
 </ul>
-
-<p><details>
-<summary><b>How can you remove/delete a file with file-name consisting of only non-printable/non-type-able characters?</b></summary><br></p>
-
-<p>A bit more risky approach is to use <code>rm -i -- *</code>. With the <code>-i</code> option <code>rm</code> requires confirmation before removing a file, so you can skip all files you want to keep but the one.
-</details></p>
-
-<hr />
-
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>A bit more risky approach is to use <code>rm -i -- *</code>. With the <code>-i</code> option <code>rm</code> requires confirmation before removing a file, so you can skip all files you want to keep but the one.</p>
+<!-- raw HTML omitted -->
+<hr>
 <h3 id="networking-questions">Networking Questions:</h3>
-
-<p><details>
-<summary><b>What is localhost and why would ping localhost fail?</b></summary><br></p>
-
+<!-- raw HTML omitted -->
 <ul>
 <li>localhost - the standard hostname given to the address assigned to the loopback network interface. Translated into an IP address, a localhost is always designated as 127.0.0.1.
-Ping can fail if loopback interface is down, also it is possible to configure local iptables(firewall) in such a way as to drop all packets received on localhost.
-</details></li>
+Ping can fail if loopback interface is down, also it is possible to configure local iptables(firewall) in such a way as to drop all packets received on localhost.</li>
 </ul>
-
-<p><details>
-<summary><b>What is the similarity between &ldquo;ping&rdquo; &amp; &ldquo;traceroute&rdquo; ? How is traceroute able to find the hops.</b></summary><br></p>
-
-<p>Both of this programs can be used to troubleshoot connection problems.
-* Traceroute - shows you the path that packets take from your local system to a remote host. You see the response time to each step along the way, because each datagram has a TTL (time-to-live) that&rsquo;s one hop longer than the previous one.
-</details></p>
-
-<p><details>
-<summary><b>What is the command used to show all open ports and/or socket connections on a machine?</b></summary><br></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Both of this programs can be used to troubleshoot connection problems.</p>
+<ul>
+<li>Traceroute - shows you the path that packets take from your local system to a remote host. You see the response time to each step along the way, because each datagram has a TTL (time-to-live) that&rsquo;s one hop longer than the previous one.</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ul>
 <li><code>lsof -i</code></li>
-<li><code>netstat -natupx</code>
-</details></li>
+<li><code>netstat -natupx</code></li>
 </ul>
-
-<p><details>
-<summary><b>Which IP ranges/subnets are &ldquo;private&rdquo; or &ldquo;non-routable&rdquo; (RFC 1918)?</b></summary><br></p>
-
-<p>The Internet Assigned Numbers Authority (IANA) has reserved the following three blocks of the IP address space for private internets:
-* 10.0.0.0        -   10.255.255.255  (<sup>10</sup>&frasl;<sub>8</sub> prefix)
-* 172.16.0.0      -   172.31.255.255  (172.<sup>16</sup>&frasl;<sub>12</sub> prefix)
-* 192.168.0.0     -   192.168.255.255 (192.<sup>168</sup>&frasl;<sub>16</sub> prefix)
-</details></p>
-
-<p><details>
-<summary><b>What is a VLAN?</b></summary><br></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>The Internet Assigned Numbers Authority (IANA) has reserved the following three blocks of the IP address space for private internets:</p>
+<ul>
+<li>10.0.0.0        -   10.255.255.255  (10/8 prefix)</li>
+<li>172.16.0.0      -   172.31.255.255  (172.16/12 prefix)</li>
+<li>192.168.0.0     -   192.168.255.255 (192.168/16 prefix)</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>A virtual LAN (VLAN) is any broadcast domain that is partitioned and isolated in a computer network at the data link layer (OSI layer 2).
-To subdivide a network into virtual LANs, one configures a network switch or router. Simpler network devices can only partition per physical port (if at all), in which case each VLAN is connected with a dedicated network cable (and VLAN connectivity is limited by the number of hardware ports available).
-</details></p>
-
-<p><details>
-<summary><b>What is the difference between a VLAN and a subnet? Do you need a VLAN to setup a subnet?</b></summary><br></p>
-
+To subdivide a network into virtual LANs, one configures a network switch or router. Simpler network devices can only partition per physical port (if at all), in which case each VLAN is connected with a dedicated network cable (and VLAN connectivity is limited by the number of hardware ports available).</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p><code>VLANs</code> and <code>subnets</code> solve different problems. <code>VLANs</code> work at Layer 2, thereby altering broadcast domains (for instance). Whereas <code>subnets</code> are Layer 3 in the current context.</p>
-
 <p><strong>Subnet</strong> - is a range of IP addresses determined by part of an address (often called the network address) and a subnet mask (netmask). For example, <code>192.168.10.0/24</code>.</p>
-
-<p><code>VLAN</code> - a good way to think of this is &ldquo;switch partitioning.&rdquo; Let&rsquo;s say you have an 8 port switch that is VLAN-able. You can assign 4 ports to one <code>VLAN</code> (say <code>VLAN 1</code>) and 4 ports to another <code>VLAN</code> (say <code>VLAN 2</code>). <code>VLAN 1</code> won&rsquo;t see any of <code>VLAN 2's</code> traffic and vice versa, logically, you now have two separate switches. Normally on a switch, if the switch hasn&rsquo;t seen a MAC address it will &ldquo;flood&rdquo; the traffic to all other ports. <code>VLANs</code> prevent this.
-</details></p>
-
-<p><details>
-<summary><b>What is ARP and what is it used for?</b></summary><br></p>
-
+<p><code>VLAN</code> - a good way to think of this is &ldquo;switch partitioning.&rdquo; Let&rsquo;s say you have an 8 port switch that is VLAN-able. You can assign 4 ports to one <code>VLAN</code> (say <code>VLAN 1</code>) and 4 ports to another <code>VLAN</code> (say <code>VLAN 2</code>). <code>VLAN 1</code> won&rsquo;t see any of <code>VLAN 2's</code> traffic and vice versa, logically, you now have two separate switches. Normally on a switch, if the switch hasn&rsquo;t seen a MAC address it will &ldquo;flood&rdquo; the traffic to all other ports. <code>VLANs</code> prevent this.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>The Address Resolution Protocol (ARP) is a protocol used for resolution of network layer addresses into link layer addresses. ARP is used for mapping a network address (e.g. an IPv4 address) to a physical address like an Ethernet address (also named a MAC address).
-When we try to ping an IP address on our local network, say 192.168.1.2, our system has to turn the IP address 192.168.1.2 into a MAC address. This involves using ARP to resolve the address, hence its name.
-</details></p>
-
-<p><details>
-<summary><b>What is the purpose of a default gateway?</b></summary><br></p>
-
-<p>A default gateway in computer networking is the node that is assumed to know how to forward packets on to other networks. The gateway is by definition a router.
-</details></p>
-
-<p><details>
-<summary><b>What is command used to show the routing table on a Linux box?</b></summary><br></p>
-
+When we try to ping an IP address on our local network, say 192.168.1.2, our system has to turn the IP address 192.168.1.2 into a MAC address. This involves using ARP to resolve the address, hence its name.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>A default gateway in computer networking is the node that is assumed to know how to forward packets on to other networks. The gateway is by definition a router.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ul>
 <li><code>route -n</code></li>
 <li><code>netstat -rn</code></li>
-<li><code>ip route list</code>
-</details></li>
+<li><code>ip route list</code></li>
 </ul>
-
-<p><details>
-<summary><b>A TCP connection on a network can be uniquely defined by 4 things. What are those things?</b></summary><br></p>
-
-<p>remote-ip-address, remote-port, source-ip-address, source-port
-</details></p>
-
-<p><details>
-<summary><b>When a client running a web browser connects to a web server, what is the source port and what is the destination port of the connection?</b></summary><br></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>remote-ip-address, remote-port, source-ip-address, source-port</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ul>
 <li>destination port - is 80 for HTTP or 443 for HTTPS</li>
-<li>source port - will be random number from option net.ipv4.ip_local_port_range, by default it will be something like between 32768 and 61000
-</details></li>
+<li>source port - will be random number from option net.ipv4.ip_local_port_range, by default it will be something like between 32768 and 61000</li>
 </ul>
-
-<p><details>
-<summary><b>How can you see content of an ip packet?</b></summary><br></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ul>
 <li><code>tcpdump -XX -i eth0</code></li>
-<li><code>tshark -i eth0 -x</code>
-</details></li>
+<li><code>tshark -i eth0 -x</code></li>
 </ul>
-
-<p><details>
-<summary><b>The OSI Model (Open System Interconnection)</b></summary><br></p>
-
-<ol>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<ol start="7">
 <li>Application. (FTP service)</li>
 <li>Presentation. (ASCII)</li>
 <li>Session. (RPC)</li>
 <li>Transport. (TCP, UDP)</li>
 <li>Network. (IPv4)</li>
 <li>Data-link. (Ethernet, ARP)</li>
-<li>Physical. (twisted pair)
-</details></li>
+<li>Physical. (twisted pair)</li>
 </ol>
-
-<hr />
-
+<!-- raw HTML omitted -->
+<hr>
 <h3 id="db-questions">DB questions:</h3>
-
-<p><details>
-<summary><b>Explain briefly the differences between InnoDB and MyISAM.</b></summary><br></p>
-
+<!-- raw HTML omitted -->
 <p>MYISAM.You can use MyISAM, if the table is more static with lots of select and less update and delete.</p>
-
 <ul>
 <li>MYISAM supports Table-level Locking</li>
 <li>MyISAM designed for need of speed</li>
 <li>MYISAM not supports transaction. You cannot commit and rollback with MYISAM. Once you issue a c- ommand - it’s done.</li>
 <li>MYISAM supports fulltext search</li>
 </ul>
-
 <p>INNODB:</p>
-
 <ul>
 <li>InnoDB supports Row-level Locking</li>
 <li>InnoDB designed for maximum performance when processing high volume of data</li>
 <li>InnoDB has better crash recovery.</li>
-<li>InnoDB supports transaction. You can commit and rollback with InnoDB
-</details></li>
+<li>InnoDB supports transaction. You can commit and rollback with InnoDB</li>
 </ul>
-
-<hr />
-
+<!-- raw HTML omitted -->
+<hr>
 <h3 id="devops-questions">DevOps Questions:</h3>
-
-<p><details>
-<summary><b>What is the difference between Containers and VMs?</b></summary><br></p>
-
+<!-- raw HTML omitted -->
 <p>With containers, these operating systems are isolated (they have their own file systems, processes, libraries including the libc, IP address, etc.) but they are nevertheless sharing the very same kernel. That&rsquo;s the reason why uname -a showed your host kernel version.
-With traditional virtualization, the operating systems have each one their own kernel running. These multiple kernels are not running on top of the real hardware, but on top of a virtualized hardware provided by a piece of software called an hypervisor. This is an extra layer compared to container based virtualization.
-</details></p>
-
-<p><details>
-<summary><b>What is a virtual IP address? What is a cluster?</b></summary><br></p>
-
+With traditional virtualization, the operating systems have each one their own kernel running. These multiple kernels are not running on top of the real hardware, but on top of a virtualized hardware provided by a piece of software called an hypervisor. This is an extra layer compared to container based virtualization.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>A virtual IP address (VIP or VIPA) - an IP address that doesn&rsquo;t correspond to an actual physical network interface (port). Uses for VIPs include Network Address Translation (especially, One-to-many NAT), fault-tolerance, and mobility.
-Virtual IP addresses are commonly used to enable high availability. A standard failover design uses an active/passive server pair connected by replication and watched by a cluster manager. The active server listens on a virtual IP address; applications use it for connections instead of the normal host IP address. Should the active server fail, the cluster manager promotes the passive server and shifts the floating IP address to the newly promoted host. Application connections break and then reconnect to the VIP again, which points them to the new server. Cluster - a set of loosely or tightly connected computers that work together so that, in many respects, they can be viewed as a single system.
-</details></p>
-
-<p><details>
-<summary><b>What is Git rebase and how can it be used to resolve conflicts in a feature branch before merge?</b></summary><br></p>
-
+Virtual IP addresses are commonly used to enable high availability. A standard failover design uses an active/passive server pair connected by replication and watched by a cluster manager. The active server listens on a virtual IP address; applications use it for connections instead of the normal host IP address. Should the active server fail, the cluster manager promotes the passive server and shifts the floating IP address to the newly promoted host. Application connections break and then reconnect to the VIP again, which points them to the new server. Cluster - a set of loosely or tightly connected computers that work together so that, in many respects, they can be viewed as a single system.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ul>
-<li><code>git rebase</code> is a command which will merge another branch into the branch where you are currently working, and move all of the local commits that are ahead of the rebased branch to the top of the history on that branch.
-</details></li>
+<li><code>git rebase</code> is a command which will merge another branch into the branch where you are currently working, and move all of the local commits that are ahead of the rebased branch to the top of the history on that branch.</li>
 </ul>
-
-<hr />
-
+<!-- raw HTML omitted -->
+<hr>
 <h3 id="fun-questions">Fun Questions:</h3>
-
-<p><details>
-<summary><b>A careless sysadmin executes the following command: chmod 444 /bin/chmod - what do you do to fix this?</b></summary><br></p>
-
+<!-- raw HTML omitted -->
 <p>Default permission is 755. You can use C\C++\Python\Perl and other language to fix this.</p>
-
 <pre><code>#!/usr/bin/python
 import os
 os.chmod(&quot;/bin/chmod&quot;, 0755)
-</code></pre>
-
-<h1 id="1">1:</h1>
-
+</code></pre><h1 id="1">1:</h1>
 <pre><code>cp /bin/ls chmod.01
 cp /bin/chmod chmod.01
 ./chmod.01 700 file
-</code></pre>
-
-<h1 id="2">2:</h1>
-
-<p><code>/bin/busybox chmod 0700 /bin/chmod</code>
-</details></p>
-
-<p><details>
-<summary><b>I&rsquo;ve rebooted a remote server but after 10 minutes I&rsquo;m still not able to ssh into it, what can be wrong?</b></summary><br></p>
-
+</code></pre><h1 id="2">2:</h1>
+<p><code>/bin/busybox chmod 0700 /bin/chmod</code></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ol>
 <li>If it does not ping, maybe proble with network\firewall</li>
 <li>If it pings but you can not to connect to it with ssh maybe problem with ssh config\firewall rules</li>
 <li>Bad permission for ssh keys</li>
-<li>Wrong password
-</details></li>
+<li>Wrong password</li>
 </ol>
-
-<p><details>
-<summary><b>You have deleted by error a running script, what could you do to restore it?</b></summary><br></p>
-
-<p>While script is running it is not deleted. Find pid of running script and restore it from procfs
-* <code>ls -l /proc/4607/fd/4</code> -&gt; <code>/proc/4607/fd/4 -&gt; /home/juliet/testing.txt (deleted)</code> -&gt; <code>cp /proc/4607/fd/4 testing.txt.bk</code>
-</details></p>
-
-<p><details>
-<summary><b>What will happen on 19 January 2038?</b></summary><br></p>
-
-<p>The Year 2038 problem is an issue for computing and data storage situations in which time values are stored or calculated as a signed 32-bit integer, and this number is interpreted as the number of seconds since 00:00:00 UTC on 1 January 1970 (the epoch).
-</details></p>
-
-<p><details>
-<summary><b>How to reboot server when reboot command is not responding?</b></summary><br></p>
-
-<p>You should perform a <code>ps aux</code> to see if any of the shutdown scripts are hung waiting for a process to finish. It should look something like this: <code>/etc/rc6.d/K##procname</code>. You can try manually issuing a kill command for that hung script.
-<details></p>
-
-<p><details>
-<summary><b>Every command fails with <code>command not found</code> How to trace the source of the error and resolve it?</b></summary><br></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>While script is running it is not deleted. Find pid of running script and restore it from procfs</p>
+<ul>
+<li><code>ls -l /proc/4607/fd/4</code> -&gt; <code>/proc/4607/fd/4 -&gt; /home/juliet/testing.txt (deleted)</code> -&gt; <code>cp /proc/4607/fd/4 testing.txt.bk</code></li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>The Year 2038 problem is an issue for computing and data storage situations in which time values are stored or calculated as a signed 32-bit integer, and this number is interpreted as the number of seconds since 00:00:00 UTC on 1 January 1970 (the epoch).</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>You should perform a <code>ps aux</code> to see if any of the shutdown scripts are hung waiting for a process to finish. It should look something like this: <code>/etc/rc6.d/K##procname</code>. You can try manually issuing a kill command for that hung script.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>It looks that at one point or another are overwriting the default <code>PATH</code> environment variable. The type of errors you have, indicates that <code>PATH</code> does not contain e.g. <code>/bin</code>, where the commands (including bash) reside.</p>
-
 <p>One way to begin debugging your bash script or command would be to start a subshell with the <code>-x</code> option:</p>
-
-<pre><code class="language-bash">bash --login -x
-</code></pre>
-
-<p>This will show you every command, and its arguments, which is executed when starting that shell.</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bash --login -x
+</code></pre></div><p>This will show you every command, and its arguments, which is executed when starting that shell.</p>
 <p>If you run this:</p>
-
-<pre><code class="language-bash">PATH=/bin:/sbin:/usr/bin:/usr/sbin
-</code></pre>
-
-<p></details></p>
-
-<p><details>
-<summary><b>How to exit without saving shell history?</b></summary><br>
-* <code>kill -9 $$</code>
-</details></p>
-
-<p><details>
-<summary><b>How to kills a process that is locking a file?</b></summary><br></p>
-
-<pre><code class="language-bash">fuser -k filename
-</code></pre>
-
-<p></details></p>
-
-<hr />
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">PATH<span style="color:#f92672">=</span>/bin:/sbin:/usr/bin:/usr/sbin
+</code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">fuser -k filename
+</code></pre></div><!-- raw HTML omitted -->
+<hr>
 <h3 id="demo-time">Demo Time:</h3>
-
-<p><details>
-<summary><b>Test if port 443 on a machine with IP address X.X.X.X is reachable.</b></summary><br></p>
-
-<p><code>nc -z -v X.X.X.X 443</code>
-</details></p>
-
-<p><details>
-<summary><b>Explain the following command <code>(date ; ps -ef | awk '{print $1}' | sort | uniq | wc -l ) &gt;&gt; Activity.log</code></b></summary><br></p>
-
-<p>Execute date command which print current datetime, then we execute process list command and print only UID column, than with pipe we sort it and print only uniq values, after <code>wc -l</code> is counting it number after all we append this to file Activity.log. Example <code>Fri Jan 22 15:24:07 UTC 2016  6</code>
-</details></p>
-
-<p><details>
-<summary><b>In a log file with contents as <TIME> : [MESSAGE] : [ERROR_NO] - Human readable text display summary/count of specific error numbers that occurred every hour or a specific hour.</b></summary><br></p>
-
+<!-- raw HTML omitted -->
+<p><code>nc -z -v X.X.X.X 443</code></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Execute date command which print current datetime, then we execute process list command and print only UID column, than with pipe we sort it and print only uniq values, after <code>wc -l</code> is counting it number after all we append this to file Activity.log. Example <code>Fri Jan 22 15:24:07 UTC 2016  6</code></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ul>
 <li><code>cat log | awk -F &quot;:&quot; '{print $3}'|sort -n |uniq -c</code></li>
-<li><code>cat log | grep &quot;specific hour&quot; | awk -F &quot;:&quot; '{print $3}'|sort -n |uniq -c</code>
-</details></li>
+<li><code>cat log | grep &quot;specific hour&quot; | awk -F &quot;:&quot; '{print $3}'|sort -n |uniq -c</code></li>
 </ul>
-
-<hr />
-
+<!-- raw HTML omitted -->
+<hr>
 <h3 id="miscellaneous">Miscellaneous:</h3>
-
-<p><details>
-<summary><b>Explain /proc filesystem?</b></summary><br></p>
-
+<!-- raw HTML omitted -->
 <p><code>/proc</code> is a virtual file system that provides detailed information about Linux kernel, hardware and running processes. Files under /proc directory named as Virtual files.
 Since <code>/proc</code> contains virtual files, it is called virtual file system. These virtual files have unique qualities. Most of them are listed as zero bytes in size.
-Virtual files such as <code>/proc/interrupts</code>, <code>/proc/meminfo</code>, <code>/proc/mounts</code>, and <code>/proc/partitions</code> provide an up-to-the-moment glimpse of the system’s hardware. Others: <code>/proc/filesystems</code> file and the <code>/proc/sys/</code> directory provide system configuration information and interfaces.
-</details></p>
-
-<p><details>
-<summary><b>Why do we use <code>sudo su -</code> and not just <code>sudo su</code>?</b></summary><br></p>
-
+Virtual files such as <code>/proc/interrupts</code>, <code>/proc/meminfo</code>, <code>/proc/mounts</code>, and <code>/proc/partitions</code> provide an up-to-the-moment glimpse of the system’s hardware. Others: <code>/proc/filesystems</code> file and the <code>/proc/sys/</code> directory provide system configuration information and interfaces.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ul>
 <li><code>sudo</code> is in most modern Linux distributions where (but not always) the root user is disabled and has no password set. Therefore you cannot switch to the root user with <code>su</code> (you can try). You have to call <code>sudo</code> with root privileges: <code>sudo su</code>.</li>
 <li><code>su</code> just switches the user, providing a normal shell with an environment nearly the same as with the old user.</li>
-<li><code>su -</code> invokes a login shell after switching the user. A login shell resets most environment variables, providing a clean base.
-</details></li>
+<li><code>su -</code> invokes a login shell after switching the user. A login shell resets most environment variables, providing a clean base.</li>
 </ul>
-
-<p><details>
-<summary><b>When your server is booting up some errors appears on the console. How to examine boot messages and where are they stored?</b></summary><br></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>Your console has two types of messages:</p>
-
 <ul>
 <li><strong>generated by the kernel</strong> (via printk)</li>
 <li><strong>generated by userspace</strong> (usually your init system)</li>
 </ul>
-
 <p>Kernel messages are always stored in the <strong>kmsg</strong> buffer, visible via <code>dmesg</code> command. They&rsquo;re also often copied to your <strong>syslog</strong>. This also applies to userspace messages written to <code>/dev/kmsg</code>, but those are fairly rare.</p>
-
 <p>Meanwhile, when userspace writes its fancy boot status text to <code>/dev/console</code> or <code>/dev/tty1</code>, it&rsquo;s not stored anywhere at all. It just goes to the screen and that&rsquo;s it.</p>
-
 <p><code>dmesg</code> is used to review boot messages contained in the kernel ring buffer. A ring buffer is a buffer of fixed size for which any new data added to it overwrites the oldest data in it.</p>
-
 <p>It shows operations once the boot process has completed, such as command line options passed to the kernel; hardware components detected, events when a new USB device is added, or errors like NIC (Network Interface Card) failure and the drivers report no link activity detected on the network and so much more.</p>
-
 <p>If system logging is done via the journal component you should use <code>journalctl</code>. It shows messages include kernel and boot messages; messages from syslog or various services.</p>
-
 <p>Boot issues/errors calls for a system administrator to look into certain important files in conjunction with particular commands (handled differently by different versions of Linux):</p>
-
 <ul>
 <li><code>/var/log/boot.log</code> - system boot log, it contains all that unfolded during the system boot</li>
 <li><code>/var/log/messages</code> - stores global system messages, including the messages that are logged during system boot</li>
-<li><code>/var/log/dmesg</code> - contains kernel ring buffer information
-</details></li>
+<li><code>/var/log/dmesg</code> - contains kernel ring buffer information</li>
 </ul>
-
-<p><details>
-<summary><b>You should rewrite POST with payload to an external API but the POST requests loose the parameters passed on the URL. How to fix this problem (e.g. in Nginx) and what are the reasons for this behavior?</b></summary><br></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>The issue is that external redirects will never resend <code>POST</code> data. This is written into the HTTP spec (check the <code>3xx</code> section). Any client that does do this is violating the spec.</p>
-
-<p><code>POST</code> data is passed in the body of the request, which gets dropped if you do a standard redirect.
-</details></p>
+<p><code>POST</code> data is passed in the body of the request, which gets dropped if you do a standard redirect.</p>
+<!-- raw HTML omitted -->
 
   </div>
 </div>

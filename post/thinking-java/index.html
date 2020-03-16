@@ -84,60 +84,65 @@
     Tag:    
     <a class="label" href="https://bege13mot.github.io/tags/book">book</a><a class="label" href="https://bege13mot.github.io/tags/it">it</a><a class="label" href="https://bege13mot.github.io/tags/tech">tech</a>
     </p>
-    
-
-<p><img src="/img/2017/thinking-java.jpg" alt="image" /></p>
-
+    <p><img src="/img/2017/thinking-java.jpg" alt="image"></p>
 <p>Как же долго я читал эту книгу, года три, не меньше. Разные заходы, на разных языках. И наконец дочитал.</p>
-
 <p>Поэтому это обычная рецензия с краткими заметками. Множество людей уже до меня ее прочитали, разобрали и законспектировали. Оставлю маленькое напоминание о том, как сложно это было. Надо бы повторить.</p>
-
 <h4 id="заметки">Заметки:</h4>
-
 <ul>
-<li><p>finalize()  - вызывается только в процессе garbage collection. Т.е может так и не быть вызванным. Его полезно использовать например для обьектов, что открывают файлы - перед уничтожением обьекта файл должен быть закрыт.</p></li>
-
-<li><p>A package contains a group of classes, organized together under a single namespace.</p></li>
-
-<li><p>When you compile a .java file, you get an output file for each class in the .java file. Each
+<li>
+<p>finalize()  - вызывается только в процессе garbage collection. Т.е может так и не быть вызванным. Его полезно использовать например для обьектов, что открывают файлы - перед уничтожением обьекта файл должен быть закрыт.</p>
+</li>
+<li>
+<p>A package contains a group of classes, organized together under a single namespace.</p>
+</li>
+<li>
+<p>When you compile a .java file, you get an output file for each class in the .java file. Each
 output file has the name of a class in the .java file, but with an extension of .class. Thus you
-can end up with quite a few .class files from a small number of .java files.</p></li>
-
-<li><p>The private keyword means that no one can access that member except the class that
+can end up with quite a few .class files from a small number of .java files.</p>
+</li>
+<li>
+<p>The private keyword means that no one can access that member except the class that
 contains that member, inside methods of that class. Other classes in the same package cannot
-access private members, so it’s as if you’re even insulating the class against yourself.</p></li>
-
-<li><p>The trick is to use the classes without soiling the existing code. In this chapter you’ll see two
+access private members, so it’s as if you’re even insulating the class against yourself.</p>
+</li>
+<li>
+<p>The trick is to use the classes without soiling the existing code. In this chapter you’ll see two
 ways to accomplish this. The first is quite straightforward: you simply create objects of your
 existing class inside the new class. This is called composition, because the new class is
 composed of objects of existing classes. You’re simply reusing the functionality of the code,
-not its form.</p></li>
-
-<li><p>The second approach is more subtle. It creates a new class as a type of an existing class. You
+not its form.</p>
+</li>
+<li>
+<p>The second approach is more subtle. It creates a new class as a type of an existing class. You
 literally take the form of the existing class and add code to it without modifying the existing
 class. This technique is called inheritance, and the compiler does most of the work.
 Inheritance is one of the cornerstones of object-oriented programming, and has additional
-implications that will be explored in the Polymorphism chapter.</p></li>
-
-<li><p>A third relationship, which is not directly supported by Java, is called delegation. This is
+implications that will be explored in the Polymorphism chapter.</p>
+</li>
+<li>
+<p>A third relationship, which is not directly supported by Java, is called delegation. This is
 midway between inheritance and composition, because you place a member object in the
 class you’re building (like composition), but at the same time you expose all the methods
-from the member object in your new class (like inheritance)</p></li>
-
-<li><p>Wouldn’t it be much nicer if you could just write a single method that takes the base class as
+from the member object in your new class (like inheritance)</p>
+</li>
+<li>
+<p>Wouldn’t it be much nicer if you could just write a single method that takes the base class as
 its argument, and not any of the specific derived classes? That is, wouldn’t it be nice if you
 could forget that there are derived classes, and write your code to talk only to the base class?
 That’s exactly what polymorphism allows you to do. However, most programmers who come
 from a procedural programming background have a bit of trouble with the way
-polymorphism works.</p></li>
-
-<li><p>Once you learn about polymorphism, you can begin to think that everything happens
+polymorphism works.</p>
+</li>
+<li>
+<p>Once you learn about polymorphism, you can begin to think that everything happens
 polymorphically. However, only ordinary method calls can be polymorphic. For example, if
-you access a field directly, that access will be resolved at compile time</p></li>
-
-<li><p>If a method is static, it doesn’t behave polymorphically. Static methods are associated with the class, and not the individual objects.</p></li>
-
-<li><p>Each inner class can independently inherit from an implementation. Thus, the inner
+you access a field directly, that access will be resolved at compile time</p>
+</li>
+<li>
+<p>If a method is static, it doesn’t behave polymorphically. Static methods are associated with the class, and not the individual objects.</p>
+</li>
+<li>
+<p>Each inner class can independently inherit from an implementation. Thus, the inner
 class is not limited by whether the outer class is already inheriting from an
 implementation.
 Without the ability that inner classes provide to inherit—in effect—from more than one
@@ -145,11 +150,11 @@ concrete or abstract class, some design and programming problems would be intrac
 So one way to look at the inner class is as the rest of the solution of the multiple-inheritance
 problem. Interfaces solve part of the problem, but inner classes effectively allow &ldquo;multiple
 implementation inheritance.&rdquo; That is, inner classes effectively allow you to inherit from more
-than one non-interface.</p></li>
-
-<li><p>The Java container library takes the idea of &ldquo;holding your objects&rdquo; and divides it into two
+than one non-interface.</p>
+</li>
+<li>
+<p>The Java container library takes the idea of &ldquo;holding your objects&rdquo; and divides it into two
 distinct concepts, expressed as the basic interfaces of the library:</p>
-
 <ul>
 <li>Collection: a sequence of individual elements with one or more rules applied to
 them. A List must hold the elements in the way that they were inserted, a Set cannot
@@ -162,31 +167,33 @@ associates numbers to objects. A map allows you to look up an object using anoth
 object. It’s also called an associative array, because it associates objects with other
 objects, or a dictionary, because you look up a value object using a key object just like
 you look up a definition using a word. Maps are powerful programming tools.</li>
-</ul></li>
-
-<li><p>There are two types of List:</p>
-
+</ul>
+</li>
+<li>
+<p>There are two types of List:</p>
 <ul>
 <li>The basic ArrayList, which excels at randomly accessing elements, but is slower
 when inserting and removing elements in the middle of a List.</li>
 <li>The LinkedList, which provides optimal sequential access, with inexpensive
 insertions and deletions from the middle of the List. A LinkedList is relatively slow
 for random access, but it has a larger feature set than the ArrayList.</li>
-</ul></li>
-
-<li><p>One solution is what I call the Adapter Method idiom. The &ldquo;Adapter&rdquo; part comes from design
+</ul>
+</li>
+<li>
+<p>One solution is what I call the Adapter Method idiom. The &ldquo;Adapter&rdquo; part comes from design
 patterns, because you must provide a particular interface to satisfy the foreach statement.
 When you have one interface and you need another one, writing an adapter solves the
 problem. Here, I want to add the ability to produce a reverse iterator to the default forward
 iterator, so I can’t override. Instead, I add a method that produces an Iterable object which
 can then be used in the foreach statement. As you see here, this allows us to provide multiple
-ways to use foreach:</p></li>
-
-<li><p>Exception handling, two methods -  Termination vs. resumption</p></li>
-
-<li><p>Exception guidelines
+ways to use foreach:</p>
+</li>
+<li>
+<p>Exception handling, two methods -  Termination vs. resumption</p>
+</li>
+<li>
+<p>Exception guidelines
 Use exceptions to:</p>
-
 <ol>
 <li>Handle problems at the appropriate level. (Avoid catching exceptions unless you know
 what to do with them.)</li>
@@ -203,7 +210,8 @@ context.</li>
 and annoying to use.)</li>
 <li>Make your library and program safer. (This is a short-term investment for debugging,
 and a long-term investment for application robustness.)</li>
-</ol></li>
+</ol>
+</li>
 </ul>
 
   </div>

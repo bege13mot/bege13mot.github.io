@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tech on Ivan V</title>
+    <title>tech on Ivan V</title>
     <link>https://bege13mot.github.io/tags/tech/</link>
-    <description>Recent content in Tech on Ivan V</description>
+    <description>Recent content in tech on Ivan V</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
     <lastBuildDate>Wed, 18 Jul 2018 10:00:00 +0400</lastBuildDate>
@@ -18,8 +18,7 @@
       
       <guid>https://bege13mot.github.io/post/microservices-hobby/</guid>
       <description>This post was inspired by awesome series of tutorials from Ewan Valentine. He built a small microservice oriented web application to select an appropriate ship for every consignment. Technology - Golang, PostgreSQL, MongoDB, gRPC, go-micro framework, React, Kubernetes. I followed through these tutorials. But made some additional &amp;ldquo;changes&amp;rdquo;. You can find them below.
-
-General Overview:  Consignment Service - &amp;ldquo;main&amp;rdquo; service, connected to user(authentication) and vessel(availabe vessels) services. Responsible for creation and displaying consignments.</description>
+General Overview:   Consignment Service - &amp;ldquo;main&amp;rdquo; service, connected to user(authentication) and vessel(availabe vessels) services. Responsible for creation and displaying consignments.</description>
     </item>
     
     <item>
@@ -29,8 +28,8 @@ General Overview:  Consignment Service - &amp;ldquo;main&amp;rdquo; service, con
       
       <guid>https://bege13mot.github.io/post/high-networking/</guid>
       <description>Не верится, что такая книга может быть бесплатной. Детальный разбор всех нюансов работы с сетью для веб-приложений. Начиная с самых низов и азов. Обязательно буду перечитывать.
-Notes:  “Good developers know how things work. Great developers know why things work.” We all resonate with this adage. We want to be that person who understands and can explain the underpinning of the systems we depend on.
- All TCP connections begin with a three-way handshake: SYN, SYN ACK, ACK</description>
+Notes:   “Good developers know how things work. Great developers know why things work.” We all resonate with this adage. We want to be that person who understands and can explain the underpinning of the systems we depend on.
+  All TCP connections begin with a three-way handshake: SYN, SYN ACK, ACK</description>
     </item>
     
     <item>
@@ -52,7 +51,7 @@ box: debian build: steps: - script: name: install git code: | apt-get update &am
       <guid>https://bege13mot.github.io/post/thinking-java/</guid>
       <description>Как же долго я читал эту книгу, года три, не меньше. Разные заходы, на разных языках. И наконец дочитал.
 Поэтому это обычная рецензия с краткими заметками. Множество людей уже до меня ее прочитали, разобрали и законспектировали. Оставлю маленькое напоминание о том, как сложно это было. Надо бы повторить.
-Заметки:  finalize() - вызывается только в процессе garbage collection. Т.е может так и не быть вызванным. Его полезно использовать например для обьектов, что открывают файлы - перед уничтожением обьекта файл должен быть закрыт.</description>
+Заметки:   finalize() - вызывается только в процессе garbage collection. Т.е может так и не быть вызванным. Его полезно использовать например для обьектов, что открывают файлы - перед уничтожением обьекта файл должен быть закрыт.</description>
     </item>
     
     <item>
@@ -61,9 +60,9 @@ box: debian build: steps: - script: name: install git code: | apt-get update &am
       <pubDate>Tue, 28 Feb 2017 10:00:00 +0400</pubDate>
       
       <guid>https://bege13mot.github.io/post/legacy-code/</guid>
-      <description> Честно говоря, этот пост пиша ради двух ссылок на краткие конспекты. Книга прочитана, но этого очевидно мало. Нужна практика, перечитывание и так далее. А рецензию на её уже и без меня много раз писали.
-Заметки:  Краткий конспект на английском
- И на русском
+      <description>Честно говоря, этот пост пиша ради двух ссылок на краткие конспекты. Книга прочитана, но этого очевидно мало. Нужна практика, перечитывание и так далее. А рецензию на её уже и без меня много раз писали.
+Заметки:   Краткий конспект на английском
+  И на русском
   </description>
     </item>
     
@@ -95,7 +94,7 @@ box: debian build: steps: - script: name: install git code: | apt-get update &am
       
       <guid>https://bege13mot.github.io/post/google-sre/</guid>
       <description>Хорошая и полезная книга. Главы про мониторинг и инциденты буду перечитывать, и не один раз. Но есть и проблемы, как и у прошлой книги &amp;ldquo;How Google Tests Software&amp;rdquo;. Несколько глав воспринимаются как откровенная реклама - смотрите какие крутые у нас системы (ни одной из них нет в свободном доступе), как здорово мы все автоматизируем (без конкретных примеров) и т.д. А может быть мне просто завидно.
-Тем не менее, книга стоящая.</description>
+Тем не менее, книга стоящая. Кстати, теперь доступна и онлайн Site Reliability Engineering.</description>
     </item>
     
     <item>
@@ -105,7 +104,7 @@ box: debian build: steps: - script: name: install git code: | apt-get update &am
       
       <guid>https://bege13mot.github.io/post/backup/</guid>
       <description>Attic backup Borg backup
-borg init --encryption=repokey /path/to/repo  #!/bin/sh REPOSITORY=/mnt/d/Backup/my-backup.borg LOGFILE=/mnt/d/Backup/log.log BORG=/mnt/d/Borg/borg export BORG_PASSPHRASE=PASSPHRASE exec &amp;gt;&amp;gt; $LOGFILE 2&amp;gt;&amp;amp;1 #List all archives: borg list /path/to/repo #Restore archive: borg extract /path/to/repo::Monday #simple function that just prints the time and the info you pass to it echotime () { echo &amp;quot;$1 `date +%Y-%m-%d--%H:%M:%S`&amp;quot; } echotime &amp;quot;BORG CREATE&amp;quot; $BORG create -v --stats -C zlib,6	\ $REPOSITORY::backup-`date +%Y-%m-%d`\ /mnt/d/Books/ \ /mnt/d/Source/	\ /mnt/d/Photo/ # --exclude /home/*/.</description>
+borg init --encryption=repokey /path/to/repo #!/bin/sh REPOSITORY=/mnt/d/Backup/my-backup.borg LOGFILE=/mnt/d/Backup/log.log BORG=/mnt/d/Borg/borg export BORG_PASSPHRASE=PASSPHRASE exec &amp;gt;&amp;gt; $LOGFILE 2&amp;gt;&amp;amp;1 #List all archives: borg list /path/to/repo #Restore archive: borg extract /path/to/repo::Monday #simple function that just prints the time and the info you pass to it echotime () { echo &amp;quot;$1 `date +%Y-%m-%d--%H:%M:%S`&amp;quot; } echotime &amp;quot;BORG CREATE&amp;quot; $BORG create -v --stats -C zlib,6	\ $REPOSITORY::backup-`date +%Y-%m-%d`\ /mnt/d/Books/ \ /mnt/d/Source/	\ /mnt/d/Photo/ # --exclude /home/*/.</description>
     </item>
     
     <item>

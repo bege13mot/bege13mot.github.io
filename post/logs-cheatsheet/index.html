@@ -84,23 +84,16 @@
     Tag:    
     <a class="label" href="https://bege13mot.github.io/tags/tech">tech</a><a class="label" href="https://bege13mot.github.io/tags/it">it</a>
     </p>
-    
-
-<p>Прошло уже два года со времен прошлой статьи <a href="https://bege13mot.github.io/post/powershell-for-testers/">powershell для тестировщиков</a> по парсингу логов. Теперь больше работаю с Linux серверами и можно переписать статью.</p>
-
+    <p>Прошло уже два года со времен прошлой статьи <a href="https://bege13mot.github.io/post/powershell-for-testers/">powershell для тестировщиков</a> по парсингу логов. Теперь больше работаю с Linux серверами и можно переписать статью.</p>
 <p>Основная цель - собрать наиболее часто используемые команды и &ldquo;хитрые техники&rdquo; для повседневной работы уитилит <em>grep, find, sed, awk</em>. И так, приступим.</p>
-
 <h3 id="поиск-по-логам">Поиск по логам:</h3>
-
 <ul>
 <li><em>find</em> - поиск файлов по имени</li>
 <li><em>grep</em> - поиск текста в файле</li>
 <li><em>sort</em> - сортировка</li>
 <li><em>uniq</em> - фильтрация</li>
 </ul>
-
 <h4 id="find-и-grep">Find и Grep:</h4>
-
 <pre><code># Поиск по pattern в file. Для архивов удобно использовать zgrep
 # Ключи: r - рекурсивный поиск, E - поддержка регулярных выражений (egrep), o - выводит только совпадений, v - все кроме указанного(invert-match), H - имя файла
 grep -rEovH pattern file
@@ -110,10 +103,7 @@ find . -path './web*/somethin/test.log*
 
 # Найти все файлы, без учета регистра и искать в них pattern с перенаправлением ошибок
 find . -type f -iname '*.log*' 2&gt;/dev/null -exec grep -H 'pattern' {} \;
-</code></pre>
-
-<h4 id="sort-и-uniq">Sort и Uniq:</h4>
-
+</code></pre><h4 id="sort-и-uniq">Sort и Uniq:</h4>
 <pre><code># Найдем общие строки между двумя файлам
 sort file1 file2 | uniq -d
 
@@ -122,45 +112,30 @@ sort file1 file2 | uniq -d
 # uniq -ci - удаляем подсчитываем и удаляем дубликаты, i - без учета регистра
 # sort -rn - сортируем по числу появлений, по убыванию
 grep -oh 'pattern \[.*\]' test.log* | sort | uniq -ci | sort -rn
-</code></pre>
-
-<h4 id="примеры-из-практики">Примеры из практики:</h4>
-
+</code></pre><h4 id="примеры-из-практики">Примеры из практики:</h4>
 <p>Часто возникает необходимость найти какое-то событие, узнать номер &ldquo;thread&rdquo; и дальше посмотреть всю историю. В этом поможет конструкция ниже:</p>
-
 <pre><code>grep &quot;`grep 'pattern' test.log | grep -oh &quot;\w\{0,\}.n11&quot;`&quot; test.log.
 
 # Усложним ситуацию. Нам надо найти когда для пользователей в рамках одного &quot;thread&quot; случилось два события. Oдин из способов это сделать:
 find . -path './2017-05-*/test.log*' | while read path; do zgrep &quot;`zgrep 'TEST_EVENT 1'  $path | awk '{print $4}'`&quot; $path | grep -H 'TEST_EVENT 1' -B 2 -A 2 | grep '&quot;TEST_EVENT 2&quot;'; done  
-</code></pre>
-
-<p>Кстати, здесь используется отображение строк до совпадения и после совпадения - <code>grep 'TEST_EVENT 1' -B 2 -A 2</code>, а также цикл по найденным файлам - <code>while read path; do zgrep 'pattern' $path; done</code></p>
-
+</code></pre><p>Кстати, здесь используется отображение строк до совпадения и после совпадения - <code>grep 'TEST_EVENT 1' -B 2 -A 2</code>, а также цикл по найденным файлам - <code>while read path; do zgrep 'pattern' $path; done</code></p>
 <p>При поиске регулярных выражений по маске <code>'(pattern1|pattern2)'</code> <em>grep</em> выводит результат в двух разных строках. Решить эту проблему нам поможет <em>Perl</em>.</p>
-
 <pre><code># Две строки для каждого совпадения
 find . -path './test*/test.log*' -exec zgrep -H 'login/email' {} \; | grep '\[received\]' | egrep -o '(.+\.gz|\w+-\w+-\w+ \d\d:\d\d:\d\d|&quot;email&quot;:&quot;.+@.+\.\w+&quot;)'
 
 # Одна строка
 # Ключи -n - выполнение кода, -e - задает код, -l - обработка окончаний строк
 find . -path './test*/test.log*' -exec zgrep -H 'login/email' {} \; | grep '\[received\]' | perl -lne 'print /(.+\.gz|\w+-\w+-\w+ \d\d:\d\d:\d\d|&quot;email&quot;:&quot;.+@.+\.\w+&quot;)/g'
-</code></pre>
-
-<p>Полезные ссылки:</p>
-
+</code></pre><p>Полезные ссылки:</p>
 <ul>
 <li><a href="https://explainshell.com">Explain Shell</a></li>
 <li><a href="https://myopsblog.wordpress.com/2016/03/28/linux-command-prompt-educational-table/">Linux Shell cheatsheet</a></li>
 <li><a href="http://eax.me/regular-expr/">Памятка по регулярным выражениям</a></li>
 <li><a href="https://habrahabr.ru/post/70610/">Однострочные программы на Perl</a></li>
 </ul>
-
 <h3 id="sed">Sed:</h3>
-
 <p><em>Sed</em> - потоковый текстовый редактор</p>
-
 <h4 id="синтаксис">Синтаксис:</h4>
-
 <pre><code># Печатать строки где есть pattern
 sed -n ‘/pattern/p’ file
 
@@ -169,10 +144,7 @@ sed -i ‘/^$/d’ file – remove all blank lines from file
 
 # Заменить word1 на word2, word3 на word4
 sed ‘s/word1/word2/g; s/word3/word4/g’ file– replacement with multiple patterns in file
-</code></pre>
-
-<h4 id="примеры-из-практики-1">Примеры из практики:</h4>
-
+</code></pre><h4 id="примеры-из-практики-1">Примеры из практики:</h4>
 <pre><code># Заменить одно значение переменной на другое
 find -type f -name &quot;test.*&quot; -exec sed -i 's/MaxSize=[0-9][0-9][0-9]/MaxSize=384/' {} \;\
 
@@ -184,23 +156,16 @@ cat /opt/local/etc/squid/squid.conf | sed '/ *#/d; /^ *$/d'
 
 # Используем регулярные выражения в find. Без sed не работают
 find ./_filestorage/ -regextype sed -regex &quot;.*/[a-f0-9\-]\{36\}\.\(jpg\|JPG\|png\|PNG\|gif\|GIF\)&quot;
-</code></pre>
-
-<p>Полезные ссылки:</p>
-
+</code></pre><p>Полезные ссылки:</p>
 <ul>
 <li><a href="http://www.funtoo.org/Sed_by_Example,_Part_1">Sed by Example</a></li>
 <li><a href="https://www.opennet.ru/docs/RUS/bash_scripting_guide/a14586.html">Маленький учебник по Sed и Awk</a></li>
 </ul>
-
 <h3 id="awk">Awk:</h3>
-
 <ul>
 <li><em>Awk</em> - язык обработки текстовой информации</li>
 </ul>
-
 <h4 id="синтаксис-1">Синтаксис:</h4>
-
 <pre><code># F - разделитель 
 # NF - число полей в текущей записи (number of fields)
 # NR - номер текущей записи (record number)
@@ -223,21 +188,14 @@ awk ‘NR&gt;3’ file– print everything aftчисло полей в теку�
 
 # Частота использования IP
 awk '{ array[$2]++ } END {for (ip in array) print array[ip],ip}' access.log
-</code></pre>
-
-<h4 id="примеры-из-практики-2">Примеры из практики:</h4>
-
+</code></pre><h4 id="примеры-из-практики-2">Примеры из практики:</h4>
 <p>Необходимо посчитать разницу между получением и отменой офера, для этого использовалась функция <em>mktime</em> для работы с временем.</p>
-
 <pre><code>zgrep -E &quot;(Quotation:.+ - notification for .+ cancelled|Quotation:.+ - offer is sent to .+)&quot; ./test/offers.log.gz | awk ' {print ($14 == &quot;&quot; ? $1 &quot; &quot; $2 &quot; &quot; $7 &quot; &quot; $12 : $1 &quot; &quot; $2 &quot; &quot; $7 &quot; &quot; $14) };' | awk '{gsub(&quot;-&quot;, &quot; &quot;, $1); gsub(/,[0-9][0-9][0-9]/, &quot;&quot;, $2); gsub(&quot;:&quot;, &quot; &quot;, $2); print mktime($1 &quot; &quot; $2) &quot; &quot; $3 &quot; &quot; $4;}' | awk '{
 if (array[$3]==&quot;&quot;&amp;&amp;q==&quot;&quot;||(array[$3]==&quot;&quot; &amp;&amp; q==$2)) {array[$3]=$1;q=$2}
 else if (array[$3]!=&quot;&quot; &amp;&amp; q==$2) {array[$3]=$1-array[$3];}
 else {for (i in array) {if (array[i]!=&quot;&quot;) print q, i, array[i];}; delete array;array[$3]=$1;q=$2;}
 } END{for (i in array) print q, i, array[i];}'
-</code></pre>
-
-<p>Полезные ссылки:</p>
-
+</code></pre><p>Полезные ссылки:</p>
 <ul>
 <li><a href="http://www.funtoo.org/Awk_by_Example,_Part_1">Awk by Example</a></li>
 <li><a href="http://lib.ru/MAN/DEMOS210/awk.txt">Язык обработки структурированных текстов AWK</a></li>
