@@ -17,12 +17,7 @@
       <pubDate>Tue, 12 Nov 2019 20:00:00 +0400</pubDate>
       
       <guid>https://bege13mot.github.io/qa/interview/</guid>
-      <description>Q&amp;amp;A   test-your-sysadmin-skills - A collection of *nix Sysadmin Test Questions and Answers
-  Вопросы на собеседовании на позицию DevOps-инженера - неплохой список, можно себе по памяти проверить. Потом дополнить
-  What happens when you type google.com into your browser and press enter?
-  What happens when I type kubectl run?
-  system-design-primer - Learn how to design large-scale systems
-     Linux questions</description>
+      <description>Interview  A complete computer science study plan to become a software engineer What happens when you type google.com into your browser and press enter? Job at Google in 6 months recipe Как я проходила собеседования в Яндекс: мой непростой, но успешный опыт Practice Programming for interview Awesome Interview Questions Collection of *nix Sysadmin Test Questions and Answers Another coding interview preparation guide Salary Negotiation: Make More Money, Be More Valued О чем думать на NALSD собеседовании  Q&amp;amp;A   Вопросы на собеседовании на позицию DevOps-инженера которые задавал я</description>
     </item>
     
     <item>
@@ -40,7 +35,7 @@
       <pubDate>Wed, 13 Mar 2019 20:00:00 +0400</pubDate>
       
       <guid>https://bege13mot.github.io/qa/bookmarks/</guid>
-      <description>Git:  Learn Git Branching. Online tutorial 19 Tips For Everyday Git Use Comparing Git Workflows Oh shit, git!  Tools and Instructions:  htop Explained Visually Explanation of everything you can see in htop/top on Linux The Art of Command Line Linux tracing systems &amp;amp; how they fit together A small handbook about Linux debuggin tools Load Average в Linux: разгадка тайны A Comprehensive Guide to Terraform Understanding Nginx HTTP Proxying, Load Balancing, Buffering, and Caching Памятка пользователям SSH The Definitive Guide to Linux System Calls Памятка по virtualenv и изолированным проектам на Python 6 шагов загрузки Linux на пальцах Процессы в Linux Understanding Processes on Linux Учебник.</description>
+      <description>Tools and Instructions:  htop Explained Visually Explanation of everything you can see in htop/top on Linux Linux tracing systems &amp;amp; how they fit together How I use Wireshark A small handbook about Linux debuggin tools 6 шагов загрузки Linux на пальцах Процессы в Linux Understanding Processes on Linux Учебник. Язык обработки структурированных текстов AWK In defence of swap: common misconceptions Linux Performance Analysis in 60,000 Milliseconds My First 5 Minutes On A Server; Or, Essential Security for Linux Servers OpenSSL Essentials: Working with SSL Certificates, Private Keys and CSRs Debugging Software Deployments with strace  Courses  Математика и Python для анализа данных AWS Certified SysOps Administrator Express Course Гарвардский курс CS50 на русском.</description>
     </item>
     
     <item>
