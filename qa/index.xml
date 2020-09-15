@@ -6,11 +6,7 @@
     <description>Recent content in Qas on Ivan V</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Tue, 12 Nov 2019 20:00:00 +0400</lastBuildDate>
-    
-	<atom:link href="https://bege13mot.github.io/qa/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 12 Nov 2019 20:00:00 +0400</lastBuildDate><atom:link href="https://bege13mot.github.io/qa/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Interview Preparation</title>
       <link>https://bege13mot.github.io/qa/interview/</link>
@@ -45,7 +41,9 @@
       
       <guid>https://bege13mot.github.io/qa/questions/</guid>
       <description>Questions from chassing/linux-sysadmin-interview-questions Inspired by collection of Linux SysAdm/DevOps interview questions with my answers
-General Questions:  SMTP - 25 DNS - 53 FTP- 20(data transfer), 21(connection established) DHCP- 67/UDP(dhcp server) , 68/UDP(dhcp client) SSH - 22   The first place your computer looks is its local DNS cache, which stores information that your computer has recently retrieved. If the information is not stored locally, your computer queries (contacts) your ISP’s recursive DNS servers.</description>
+General Questions:  What are the default ports used for SMTP,DNS,FTP,DHCP,SSH?
+ SMTP - 25 DNS - 53 FTP- 20(data transfer), 21(connection established) DHCP- 67/UDP(dhcp server) , 68/UDP(dhcp client) SSH - 22    What function does DNS play on a network?
+ The first place your computer looks is its local DNS cache, which stores information that your computer has recently retrieved.</description>
     </item>
     
   </channel>

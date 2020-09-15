@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.67.1" />
+	<meta name="generator" content="Hugo 0.75.0" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -145,7 +145,7 @@
 <p>Сам по себе сервер Apache надежен и достаточно защищен. Наибольшей угрозой безопасности сервера является пользовательский код, исполняемый сервером – как правило, речь идет о программах CGI (Common Gateway Interface) и SSI (Server Side Includes).</p>
 </li>
 <li>
-<p>Злоумышленники часто оставляют после себя файлы или сценарии, позволяющие им повторно войти в систему либо получить полномочия администратора. Используйте команду <code>ls -a | grep </code>^`.` для поиска файлов с именами, начинающимися с точки (.). Злоумышленникам особенно нравятся такие имена, как .mail, .xx, &hellip; (три точки), .. (точка, точка, пробел) или же ..^G (точка, точка, <!-- raw HTML omitted -->+<!-- raw HTML omitted -->).
+<p>Злоумышленники часто оставляют после себя файлы или сценарии, позволяющие им повторно войти в систему либо получить полномочия администратора. Используйте команду <code>ls -a | grep </code>^`.` для поиска файлов с именами, начинающимися с точки (.). Злоумышленникам особенно нравятся такие имена, как .mail, .xx, &hellip; (три точки), .. (точка, точка, пробел) или же ..^G (точка, точка, <Ctrl>+<G>).
 Если найден файл с таким или подобным именем, вероятен взлом. (Помните, что в каждом каталоге, за исключением корневого, существует один каталог с именем . и один каталог с именем &hellip;) Изучите содержимое всех подозрительных файлов и следуйте обычной процедуре доклада информации о происшествии.</p>
 </li>
 <li>
@@ -711,228 +711,37 @@ bash -c &quot;/mnt/d/Borg/backup.sh&quot;
     </div>
     
     
-
 <ul class="pagination">
-    
-    <li class="page-item">
-        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-    </li>
-    
-    <li class="page-item">
+  <li class="page-item">
+    <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+  </li>
+  <li class="page-item">
     <a href="/page/2/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-    </li>
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/">1</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item active"><a class="page-link" href="/page/3/">3</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/4/">4</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/21/">21</a></li>
-    
-    
-    <li class="page-item">
+  </li>
+  <li class="page-item">
+    <a class="page-link" href="/">1</a>
+  </li>
+  <li class="page-item">
+    <a class="page-link" href="/page/2/">2</a>
+  </li>
+  <li class="page-item active">
+    <a class="page-link" href="/page/3/">3</a>
+  </li>
+  <li class="page-item">
+    <a class="page-link" href="/page/4/">4</a>
+  </li>
+  <li class="page-item disabled">
+    <span aria-hidden="true">&nbsp;&hellip;&nbsp;</span>
+  </li>
+  <li class="page-item">
+    <a class="page-link" href="/page/21/">21</a>
+  </li>
+  <li class="page-item">
     <a href="/page/4/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-        <a href="/page/21/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-    </li>
-    
+  </li>
+  <li class="page-item">
+    <a href="/page/21/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+  </li>
 </ul>
 
 
