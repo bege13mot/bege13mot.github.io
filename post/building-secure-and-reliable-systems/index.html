@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Building Secure and Reliable Systems, Heather Adkins &nbsp; </title>
+
+  
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde-overrides.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde-x.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://bege13mot.github.io/touch-icon-144-precomposed.png">
+  <link href="/icon/fox.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+        <a href="https://bege13mot.github.io/">
+        <img src="/icon/fox.png" alt="avatar" title="">
+        </a>
+      
+      <h1></h1>
+      
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/">Home</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/tags/">Tags</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/categories/">Categories</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/about/">About</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/Bege13mot"><img src="/icon/github.svg" class="fa"></img></a>
+      <a href="https://www.goodreads.com/user/show/5520080-ivan"><img src="/icon/goodreads.svg" class="fa"></img></a>
+      <a href="mailto:bege13mot@gmail.com"><img src="/icon/mail.svg" class="fa"></img></a>
+      <a href="https://ru.linkedin.com/in/voronchihin"><img src="/icon/linkedin.svg" class="fa"></img></a>      
+      <a href="https://bege13mot.github.io/index.xml" type="application/rss+xml"><img src="/icon/rss.svg" class="fa"></img></a>
+      </li>
+    </ul>
+
+    
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1>Building Secure and Reliable Systems, Heather Adkins</h1>
+    <span class="post-date">Feb 20, 2020 &middot; 3 minute read &middot; <a href="https://bege13mot.github.io/post/building-secure-and-reliable-systems/#disqus_thread">Comments</a>
+    </span>
+    <p>
+        
+    <a class="label" href="https://bege13mot.github.io/categories/post">Post</a>
+    
+    
+    Tag:    
+    <a class="label" href="https://bege13mot.github.io/tags/book">book</a><a class="label" href="https://bege13mot.github.io/tags/theory">theory</a><a class="label" href="https://bege13mot.github.io/tags/it">it</a>
+    </p>
+    <p><img src="/img/2020/building-secure-and-reliable-systems.jpg" alt="image"></p>
+<p>Крутая книга, как и прошлые две. Как и раньше, используемые практики, в основном, применимы для достаточно больших компаний. В общем, отличный пример &ldquo;как надо&rdquo;. Читаешь и грустишь.</p>
+<h4 id="заметки">Заметки:</h4>
+<ul>
+<li>
+<p>quote an SRE maxim — hope is not a strategy.</p>
+</li>
+<li>
+<p>The shared infrastructure is a natural place to provide shared defenses. Edge routers can throttle high-bandwidth attacks, protecting the backbone network. Network load balancers can throttle packet-flooding attacks to protect the application load balancers. Application load balancers can throttle application-specific attacks before the traffic reaches service frontends. Layering defenses tends to be cost-effective, since you only need to capacity-plan inner layers for styles of DoS attacks that can breach the defenses of outer layers.</p>
+</li>
+<li>
+<p>Providing a highly secure, reliable, and consistent software supply chain will likely require you to make many changes — from scripting your build steps, to implementing build provenance, to implementing configuration-as-code. Coordinating all of those changes may be difficult. Bugs or missing functionality in these controls can also pose a significant risk to engineering productivity. In the worst-case scenario, an error in these controls can potentially cause an outage for your service. You may be more successful if you focus on securing one particular aspect of the supply chain at a time.</p>
+</li>
+<li>
+<p>Consider the very rare issue of memory corruption by bit flip. A modern error-correcting memory module has a less than 1% chance per year of encountering an uncorrectable bit flip that can crash a system. An engineer debugging an unexpected crash probably won’t think, “I bet this was caused by an extremely unlikely electrical malfunction in the memory chips!” However, at very large scale, these rarities become certainties. A hypothetical cloud service utilizing 25,000 machines might use memory across 400,000 RAM chips. Given the odds of a 0.1% yearly risk of uncorrectable errors per chip, the scale of the service could lead to 400 occurrences annually. People running the cloud service will likely observe a memory failure every day.</p>
+</li>
+<li>
+<p>One system we worked on, used for phone support, allowed administrators to impersonate a user and to view the UI from their perspective. As a debugger, this system was wonderful; you could clearly and quickly reproduce a user’s problem. However, this type of system provides possibilities for abuse. Debugging endpoints — from impersonation to raw database access — need to be secured.</p>
+</li>
+<li>
+<p>For many incidents, debugging unusual system behavior need not require access to user data. For example, when diagnosing TCP traffic problems, the speed and quality of bytes on the wire is often enough to diagnose issues. Encrypting data in transit can protect it from any possible attempt by third parties to observe it. This has the fortunate side effect of allowing more engineers access to packet dumps when needed. However, one possible mistake is to treat metadata as nonsensitive. A malicious actor can still learn a lot about a user from metadata by tracking correlated access patterns — for instance, by noting the same user accessing a divorce lawyer and a dating site in the same session. You should carefully assess the risks from treating metadata as nonsensitive.</p>
+</li>
+<li>
+<p>Many excellent books cover the topic of communications thoroughly. For a deeper understanding of communications, we recommend Nick Morgan’s Can You Hear Me? (Harvard Business Review Press, 2018) and Alan Alda’s If I Understood You, Would I Have This Look on My Face?</p>
+</li>
+</ul>
+
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "bege13mot";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_shortname = "bege13mot";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="https://bege13mot.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+  var _gaq=[['_setAccount','UA-73422311-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+

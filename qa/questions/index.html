@@ -35,23 +35,23 @@
 <div class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
-            
-        <img src="/icon/fox.png" alt="avatar" title="">    
+      
+        <a href="https://bege13mot.github.io/">
+        <img src="/icon/fox.png" alt="avatar" title="">
+        </a>
       
       <h1></h1>
       
     </div>
 
     <ul class="sidebar-nav">
-      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/">Ivan V's Blog</a></li>
-      
-      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/about/">About</a></li>
-      
-      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/post/">Posts</a></li>
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/">Home</a></li>
       
       <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/tags/">Tags</a></li>
       
       <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/categories/">Categories</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/about/">About</a></li>
       
     </ul>
 
@@ -127,6 +127,11 @@ Inspired by <a href="https://jivoi.github.io/2016/01/22/linux-sysadm-devops-inte
 <li>4xx Client errors</li>
 <li>5xx Server errors</li>
 </ul>
+</details>
+<details>
+<summary><b>What happens when you type google.com into your browser and press enter?</b></summary><br>
+<p><img src="/img/grokking/what-happens-when.jpg" alt="image"></p>
+<p><a href="https://github.com/alex/what-happens-when">What happens when you type google.com into your browser and press enter</a></p>
 </details>
 <hr>
 <h3 id="simple-linux-questions">Simple Linux Questions:</h3>
@@ -622,6 +627,53 @@ Virtual IP addresses are commonly used to enable high availability. A standard f
 <li><code>git rebase</code> is a command which will merge another branch into the branch where you are currently working, and move all of the local commits that are ahead of the rebased branch to the top of the history on that branch.</li>
 </ul>
 </details>
+<details>
+<summary><b>What is the difference between Git Fetch and Pull?</b></summary><br>
+<ul>
+<li><code>git fetch</code> really only downloads new data from a remote repository - but it doesn&rsquo;t integrate any of this new data into your working files.</li>
+<li><code>git pull</code>, in contrast, is used with a different goal in mind: to update your current HEAD branch with the latest changes from the remote server. This means that pull not only downloads new data; it also directly integrates it into your current working copy files. It can be described as executing two commands:
+<ul>
+<li><code>git fetch</code></li>
+<li><code>git merge</code></li>
+</ul>
+</li>
+</ul>
+</details>
+<details>
+<summary><b>What is the difference between Git Merge and Rebase?</b></summary><br>
+<p>Merge preserves history whereas rebase rewrites it.</p>
+<ul>
+<li>When you <code>rebase</code> your branch onto their branch, you tell Git to make it look as though you checked out their branch cleanly, then did all your work starting from there. That makes a clean, conceptually simple package of changes that someone can review. You can repeat this process again when there are new changes on their branch, and you will always end up with a clean set of changes &ldquo;on the tip&rdquo; of their branch.</li>
+<li>When you <code>merge</code> their branch into your branch, you tie the two branch histories together at this point. If you do this again later with more changes, you begin to create an interleaved thread of histories: some of their changes, some of my changes, some of their changes. Some people find this messy or undesirable.</li>
+</ul>
+</details>
+<details>
+<summary><b>What is git cherry-pick?</b></summary><br>
+<p><code>git cherry-pick</code> is a command which choose a commit from one branch and apply it onto another.</p>
+</details>
+<details>
+<summary><b>What is RED/USE and Golden Signal ?</b></summary><br>
+<p><code>The Four Golden Signals</code> are a series of metrics defined by Google Site Reliability Engineering that are considered the most important when monitoring a user-centric system:</p>
+<ul>
+<li><code>Latency</code>: The time it takes to service a request;</li>
+<li><code>Traffic</code>: A measure of how much demand is being placed on the system;</li>
+<li><code>Errors</code>: The rate of requests that fails;</li>
+<li><code>Saturation</code>: How “full” our service is, basically how close we are to exhausting system resources;</li>
+</ul>
+<p>We don’t use exactly those 4 metrics but we choose to work with two different methods using a subset of metrics generated from these four, depending on what we are monitoring: for HTTP Metrics we use the RED Method while we use the USE Method for Infrastructure.</p>
+<p>The <code>RED</code> method is a subset of <code>The Four Golden Signals</code> that’s focused on micro-service architectures and which includes these metrics:</p>
+<ul>
+<li><code>Rate</code>: the number of requests our service is serving per second;</li>
+<li><code>Error</code>: the number of failed requests per second;</li>
+<li><code>Duration</code>: the amount of time it takes to process a request;</li>
+</ul>
+<p>The <code>USE</code> Method is more focused on infrastructure monitoring where you have the keep the physical resources under control and is based on just three parameters:</p>
+<ul>
+<li><code>Utilization</code>: the proportion of the resource that is used, so 100% utilization means no more work can be accepted;</li>
+<li><code>Saturation</code>: the degree to which the resource has extra work which it can’t service, often queued;</li>
+<li><code>Errors</code>: the count of error events;</li>
+</ul>
+</details>
 <hr>
 <h3 id="fun-questions">Fun Questions:</h3>
 <details>
@@ -660,7 +712,7 @@ cp /bin/chmod chmod.01
 <details>
 <summary><b>How to reboot server when reboot command is not responding?</b></summary><br>
 <p>You should perform a <code>ps aux</code> to see if any of the shutdown scripts are hung waiting for a process to finish. It should look something like this: <code>/etc/rc6.d/K##procname</code>. You can try manually issuing a kill command for that hung script.</p>
-<details>
+</details>
 <details>
 <summary><b>Every command fails with `command not found` How to trace the source of the error and resolve it?</b></summary><br>
 <p>It looks that at one point or another are overwriting the default <code>PATH</code> environment variable. The type of errors you have, indicates that <code>PATH</code> does not contain e.g. <code>/bin</code>, where the commands (including bash) reside.</p>
@@ -672,7 +724,7 @@ cp /bin/chmod chmod.01
 </code></pre></div></details>
 <details>
 <summary><b>How to exit without saving shell history?</b></summary><br>
-* `kill -9 $$`
+<p><code>kill -9 $$</code></p>
 </details>
 <details>
 <summary><b>How to kills a process that is locking a file?</b></summary><br>

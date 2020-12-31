@@ -1,12 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>theory on Ivan V</title>
+    <title>theory on Ivan</title>
     <link>https://bege13mot.github.io/tags/theory/</link>
-    <description>Recent content in theory on Ivan V</description>
+    <description>Recent content in theory on Ivan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Fri, 01 Sep 2017 10:00:00 +0400</lastBuildDate><atom:link href="https://bege13mot.github.io/tags/theory/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Jun 2020 10:00:00 +0400</lastBuildDate><atom:link href="https://bege13mot.github.io/tags/theory/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Database Internals, Alex Petrov</title>
+      <link>https://bege13mot.github.io/post/database-internals/</link>
+      <pubDate>Wed, 10 Jun 2020 10:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/database-internals/</guid>
+      <description>Детальное, но без больших подробностей (это искупается большим числом ссылок и рекомендаций для дальнейшего изучения) описание структур и алгоритмов для современных систем.
+Заметки:   Column-oriented stores are a good fit for analytical workloads that compute aggregates, such as finding trends, computing average values, etc. Processing complex aggregates can be used in cases when logical records have multiple fields, but some of them (in this case, price quotes) have different importance and are often consumed together.</description>
+    </item>
+    
+    <item>
+      <title>Building Secure and Reliable Systems, Heather Adkins</title>
+      <link>https://bege13mot.github.io/post/building-secure-and-reliable-systems/</link>
+      <pubDate>Thu, 20 Feb 2020 10:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/building-secure-and-reliable-systems/</guid>
+      <description>Крутая книга, как и прошлые две. Как и раньше, используемые практики, в основном, применимы для достаточно больших компаний. В общем, отличный пример &amp;ldquo;как надо&amp;rdquo;. Читаешь и грустишь.
+Заметки:   quote an SRE maxim — hope is not a strategy.
+  The shared infrastructure is a natural place to provide shared defenses. Edge routers can throttle high-bandwidth attacks, protecting the backbone network. Network load balancers can throttle packet-flooding attacks to protect the application load balancers.</description>
+    </item>
+    
     <item>
       <title>Операционная система UNIX, Андрей Робачевский</title>
       <link>https://bege13mot.github.io/post/unix-book/</link>

@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>business on Ivan V</title>
+    <title>business on Ivan</title>
     <link>https://bege13mot.github.io/tags/business/</link>
-    <description>Recent content in business on Ivan V</description>
+    <description>Recent content in business on Ivan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Tue, 21 Jun 2016 09:12:22 +0400</lastBuildDate><atom:link href="https://bege13mot.github.io/tags/business/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Dec 2020 10:00:00 +0400</lastBuildDate><atom:link href="https://bege13mot.github.io/tags/business/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Большая четверка, Скотт Гэллоуэй</title>
+      <link>https://bege13mot.github.io/post/the-four/</link>
+      <pubDate>Sun, 20 Dec 2020 10:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/the-four/</guid>
+      <description>Книга, можно так сказать, про четырех всадников апокалипсиса. Досталось всем - Facebook и Google убивают журналистику, Amazon подмял весь ритейл, Apple наживается на покупателях, продавая железо с очень большой наценкой. А нам со всем этим жить.
+Заметки:   Знакомьтесь! Ретейлер, который не платит налог с продаж, бесчеловечно обращается с сотрудниками, уничтожает сотни тысяч рабочих мест и тем не менее считается примером инновационного подхода в бизнесе. Компьютерная компания, которая отказывается раскрывать государственным органам информацию о подготовке террористического акта в стране и пользуется полной поддержкой фанатов, относящихся к ней с почти религиозным благоговением.</description>
+    </item>
+    
     <item>
       <title>Я такой как все, Олег Тиньков</title>
       <link>https://bege13mot.github.io/post/like-anyone-else/</link>

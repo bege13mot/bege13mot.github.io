@@ -1,12 +1,44 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>management on Ivan V</title>
+    <title>management on Ivan</title>
     <link>https://bege13mot.github.io/tags/management/</link>
-    <description>Recent content in management on Ivan V</description>
+    <description>Recent content in management on Ivan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Mon, 16 Dec 2019 10:00:00 +0400</lastBuildDate><atom:link href="https://bege13mot.github.io/tags/management/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 20 Aug 2020 10:00:00 +0400</lastBuildDate><atom:link href="https://bege13mot.github.io/tags/management/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Managing Humans, Michael Mayberry</title>
+      <link>https://bege13mot.github.io/post/managing-humans/</link>
+      <pubDate>Thu, 20 Aug 2020 10:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/managing-humans/</guid>
+      <description>Заметки о нелегкой работе менеджера от автора отличной книги &amp;ldquo;Being Geek&amp;rdquo;. Все также с юмором.
+Заметки:   The Rands Test: 11 Possible Points
+ Do you have a one-on-one? Do you have a team meeting? Do you have status reports? Can you say no to your boss? Can you explain the strategy of the company to a stranger? Can you explain the current state of business? Does the guy/gal in charge regularly stand up in front of everyone and tell you what he/she is thinking?</description>
+    </item>
+    
+    <item>
+      <title>The Making of a Manager, Julie Zhuo</title>
+      <link>https://bege13mot.github.io/post/making-a-manager/</link>
+      <pubDate>Fri, 10 Jul 2020 10:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/making-a-manager/</guid>
+      <description>Коротка и полезная книга о начале карьеры менеджера. Последняя часть, про быстро растущую команду, не самая необходимая. А остальные просто отличные.
+Заметки:   THE THREE THINGS MANAGERS THINK ABOUT ALL DAY
+  I’ve come to think of the multitude of tasks that fill up a manager’s day as sorting neatly into three buckets: purpose, people, and process.
+  The purpose is the outcome your team is trying to accomplish, otherwise known as the why.</description>
+    </item>
+    
+    <item>
+      <title>The Unicorn Project, Gene Kim</title>
+      <link>https://bege13mot.github.io/post/unicorn-project/</link>
+      <pubDate>Fri, 10 Apr 2020 10:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/unicorn-project/</guid>
+      <description>Двойственное впечатление. Формально все хорошо - бизнес роман об инженере что перешла на &amp;ldquo;провальный&amp;rdquo; проект, но не растерялась и привнесла новые технологии, подходы и вместе с командой единомышленников они вместе пришли к успеху. Но есть стойкое чувство как отрабатывается текущая повестка. Гендерное равенство - есть, польза open source - тоже есть, функциональное программирование - присутствует, вовлечённость инженеров в бизнес, work-life баланс и т.д. - добавлено. Все собрали, смешали, запекли, а первая книга, The Phoenix Project, помнится повеселее была.</description>
+    </item>
+    
     <item>
       <title>An Elegant Puzzle: Systems of Engineering Management by Will Larson</title>
       <link>https://bege13mot.github.io/post/elegant-puzzle/</link>

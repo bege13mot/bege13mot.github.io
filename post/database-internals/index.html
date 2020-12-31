@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Database Internals, Alex Petrov &nbsp; </title>
+
+  
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde-overrides.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde-x.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://bege13mot.github.io/touch-icon-144-precomposed.png">
+  <link href="/icon/fox.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+        <a href="https://bege13mot.github.io/">
+        <img src="/icon/fox.png" alt="avatar" title="">
+        </a>
+      
+      <h1></h1>
+      
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/">Home</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/tags/">Tags</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/categories/">Categories</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/about/">About</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/Bege13mot"><img src="/icon/github.svg" class="fa"></img></a>
+      <a href="https://www.goodreads.com/user/show/5520080-ivan"><img src="/icon/goodreads.svg" class="fa"></img></a>
+      <a href="mailto:bege13mot@gmail.com"><img src="/icon/mail.svg" class="fa"></img></a>
+      <a href="https://ru.linkedin.com/in/voronchihin"><img src="/icon/linkedin.svg" class="fa"></img></a>      
+      <a href="https://bege13mot.github.io/index.xml" type="application/rss+xml"><img src="/icon/rss.svg" class="fa"></img></a>
+      </li>
+    </ul>
+
+    
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1>Database Internals, Alex Petrov</h1>
+    <span class="post-date">Jun 10, 2020 &middot; 12 minute read &middot; <a href="https://bege13mot.github.io/post/database-internals/#disqus_thread">Comments</a>
+    </span>
+    <p>
+        
+    <a class="label" href="https://bege13mot.github.io/categories/post">Post</a>
+    
+    
+    Tag:    
+    <a class="label" href="https://bege13mot.github.io/tags/book">book</a><a class="label" href="https://bege13mot.github.io/tags/theory">theory</a><a class="label" href="https://bege13mot.github.io/tags/it">it</a>
+    </p>
+    <p><img src="/img/2020/database-internals.jpg" alt="image"></p>
+<p>Детальное, но без больших подробностей (это искупается большим числом ссылок и рекомендаций для дальнейшего изучения) описание структур и алгоритмов для современных систем.</p>
+<h4 id="заметки">Заметки:</h4>
+<ul>
+<li>
+<p>Column-oriented stores are a good fit for analytical workloads that compute aggregates, such as finding trends, computing average values, etc. Processing complex aggregates can be used in cases when logical records have multiple fields, but some of them (in this case, price quotes) have different importance and are often consumed together.</p>
+</li>
+<li>
+<p>To decide whether to use a column- or a row-oriented store, you need to understand your access patterns. If the read data is consumed in records (i.e., most or all of the columns are requested) and the workload consists mostly of point queries and range scans, the row-oriented approach is likely to yield better results. If scans span many rows, or compute aggregate over a subset of columns, it is worth considering a column-oriented approach.</p>
+</li>
+<li>
+<p>Column-oriented databases should not be mixed up with wide column stores, such as BigTable or HBase, where data is represented as a multidimensional map, columns are grouped into column families (usually storing data of the same type), and inside each column family, data is stored row-wise. This layout is best for storing data retrieved by a key or a sequence of keys.</p>
+</li>
+<li>
+<p>Data files (sometimes called primary files) can be implemented as index-organized tables (IOT), heap-organized tables (heap files), or hash-organized tables (hashed files).</p>
+</li>
+<li>
+<p>Records in heap files are not required to follow any particular order, and most of the time they are placed in a write order. This way, no additional work or file reorganization is required when new pages are appended. Heap files require additional index structures, pointing to the locations where data records are stored, to make them searchable.</p>
+</li>
+<li>
+<p>In hashed files, records are stored in buckets, and the hash value of the key determines which bucket a record belongs to. Records in the bucket can be stored in append order or sorted by key to improve lookup speed.</p>
+</li>
+<li>
+<p>Index-organized tables (IOTs) store data records in the index itself. Since records are stored in key order, range scans in IOTs can be implemented by sequentially scanning its contents.</p>
+</li>
+<li>
+<p>Storing data records in the index allows us to reduce the number of disk seeks by at least one, since after traversing the index and locating the searched key, we do not have to address a separate file to find the associated data record.</p>
+</li>
+<li>
+<p>If the order of data records follows the search key order, this index is called clustered (also known as clustering). Data records in the clustered case are usually stored in the same file or in a clustered file, where the key order is preserved. If the data is stored in a separate file, and its order does not follow the key order, the index is called nonclustered (sometimes called unclustered).</p>
+</li>
+<li>
+<p>In this chapter, we started with a motivation to create specialized structures for on-disk storage. Binary search trees might have similar complexity characteristics, but still fall short of being suitable for disk because of low fanout and a large number of relocations and pointer updates caused by balancing. B-Trees solve both problems by increasing the number of items stored in each node (high fanout) and less frequent balancing operations. After that, we discussed internal B-Tree structure and outlines of algorithms for lookup, insert, and delete operations. Split and merge operations help to restructure the tree to keep it balanced while adding and removing elements. We keep the tree depth to a minimum and add items to the existing nodes while there’s still some free space in them</p>
+</li>
+<li>
+<p>A write-ahead log (WAL for short, also known as a commit log) is an append-only auxiliary disk-resident structure used for crash and transaction recovery. The page cache allows buffering changes to page contents in memory. Until the cached contents are flushed back to disk, the only disk-resident copy preserving the operation history is stored in the WAL. Many database systems use append-only write-ahead logs; for example, PostgreSQL and MySQL.</p>
+</li>
+<li>
+<p>Concurrency control is a set of techniques for handling interactions between concurrently executing transactions. These techniques can be roughly grouped into the following categories:</p>
+<ul>
+<li>
+<p>Optimistic concurrency control (OCC).
+Allows transactions to execute concurrent read and write operations, and determines whether or not the result of the combined execution is serializable. In other words, transactions do not block each other, maintain histories of their operations, and check these histories for possible conflicts before commit. If execution results in a conflict, one of the conflicting transactions is aborted.</p>
+</li>
+<li>
+<p>Multiversion concurrency control (MVCC).
+Guarantees a consistent view of the database at some point in the past identified by the timestamp by allowing multiple timestamped versions of the record to be present. MVCC can be implemented using validation techniques, allowing only one of the updating or committing transactions to win, as well as with lockless techniques such as timestamp ordering, or lock-based ones, such as two-phase locking.</p>
+</li>
+<li>
+<p>Pessimistic (also known as conservative) concurrency control (PCC).
+There are both lock-based and nonlocking conservative methods, which differ in how they manage and grant access to shared resources. Lock-based approaches require transactions to maintain locks on database records to prevent other transactions from modifying locked records and assessing records that are being modified until the transaction releases its locks. Nonlocking approaches maintain read and write operation lists and restrict execution, depending on the schedule of unfinished transactions. Pessimistic schedules can result in a deadlock when multiple transactions wait for each other to release a lock in order to proceed.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>The SQL standard [MELTON06] refers to and describes read anomalies that can occur during execution of concurrent transactions: dirty, nonrepeatable, and phantom reads.</p>
+<ul>
+<li>
+<p>A <em>dirty read</em> is a situation in which a transaction can read uncommitted changes from other transactions. For example, transaction T1 updates a user record with a new value for the address field, and transaction T2 reads the updated address before T1 commits. Transaction T1 aborts and rolls back its execution results. However, T2 has already been able to read this value, so it has accessed the value that has never been committed.</p>
+</li>
+<li>
+<p>A <em>nonrepeatable read</em> (sometimes called a fuzzy read) is a situation in which a transaction queries the same row twice and gets different results. For example, this can happen even if transaction T1 reads a row, then transaction T2 modifies it and commits this change. If T1 requests the same row again before finishing its execution, the result will differ from the previous run.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>If we use range reads during the transaction (i.e., read not a single data record, but a range of records), we might see phantom records. A phantom read is when a transaction queries the same set of rows twice and receives different results. It is similar to a nonrepeatable read, but holds for range queries.</p>
+</li>
+<li>
+<p>There are also write anomalies with similar semantics: lost update, dirty write, and write skew.</p>
+<ul>
+<li>
+<p>A <em>lost update</em> occurs when transactions T1 and T2 both attempt to update the value of V. T1 and T2 read the value of V. T1 updates V and commts, and T2 updates V after that and commits as well. Since the transactions are not aware about each other’s existence, if both of them are allowed to commit, the results of T1 will be overwritten by the results of T2, and the update from T1 will be lost.</p>
+</li>
+<li>
+<p>A <em>dirty write</em> is a situation in which one of the transactions takes an uncommitted value (i.e., dirty read), modifies it, and saves it. In other words, when transaction results are based on the values that have never been committed.</p>
+</li>
+<li>
+<p>A <em>write skew</em> occurs when each individual transaction respects the required invariants, but their combination does not satisfy these invariants. For example, transactions T1 and T2 modify values of two accounts A1 and A2. A1 starts with 100$ and A2 starts with 150$. The account value is allowed to be negative, as long as the sum of the two accounts is nonnegative: A1 + A2 &gt;= 0. T1 and T2 each attempt to withdraw 200$ from A1 and A2, respectively. Since at the time these transactions start A1 + A2 = 250$, 250$ is available in total. Both transactions assume they’re preserving the invariant and are allowed to commit. After the commit, A1 has -100$ and A2 has -50$, which clearly violates the requirement to keep a sum of the accounts positive [FEKETE04].</p>
+</li>
+</ul>
+</li>
+<li>
+<p>The lowest (in other words, weakest) isolation level is read uncommitted. Under this isolation level, the transactional system allows one transaction to observe uncommitted changes of other concurrent transactions. In other words, dirty reads are allowed.</p>
+</li>
+<li>
+<p>We can avoid some of the anomalies. For example, we can make sure that any read performed by the specific transaction can only read already committed changes. However, it is not guaranteed that if the transaction attempts to read the same data record once again at a later stage, it will see the same value. If there was a committed modification between two reads, two queries in the same transaction would yield different results. In other words, dirty reads are not permitted, but phantom and nonrepeatable reads are. This isolation level is called read committed. If we further disallow nonrepeatable reads, we get a repeatable read isolation level.</p>
+</li>
+<li>
+<p>The strongest isolation level is serializability. As we already discussed in “Serializability”, it guarantees that transaction outcomes will appear in some order as if transactions were executed serially (i.e., without overlapping in time). Disallowing concurrent execution would have a substantial negative impact on the database performance. Transactions can get reordered, as long as their internal invariants hold and can be executed concurrently, but their outcomes have to appear in some serial order.</p>
+</li>
+<li>
+<p>Transactions that do not have dependencies can be executed in any order since their results are fully independent. Unlike linearizability (which we discuss in the context of distributed systems; see “Linearizability”), serializability is a property of multiple operations executed in arbitrary order. It does not imply or attempt to impose any particular order on executing transactions. Isolation in ACID terms means serializability [BAILIS14a]. Unfortunately, implementing serializability requires coordination. In other words, transactions executing concurrently have to coordinate to preserve invariants and impose a serial order on conflicting executions [BAILIS14b].</p>
+</li>
+<li>
+<p>Some databases use snapshot isolation. Under snapshot isolation, a transaction can observe the state changes performed by all transactions that were committed by the time it has started. Each transaction takes a snapshot of data and executes queries against it. This snapshot cannot change during transaction execution. The transaction commits only if the values it has modified did not change while it was executing. Otherwise, it is aborted and rolled back.</p>
+</li>
+<li>
+<p>If two transactions attempt to modify the same value, only one of them is allowed to commit. This precludes a lost update anomaly. For example, transactions T1 and T2 both attempt to modify V. They read the current value of V from the snapshot that contains changes from all transactions that were committed before they started. Whichever transaction attempts to commit first, will commit, and the other one will have to abort. The failed transactions will retry instead of overwriting the value.</p>
+</li>
+<li>
+<p>A write skew anomaly is possible under snapshot isolation, since if two transactions read from local state, modify independent records, and preserve local invariants, they both are allowed to commit [FEKETE04]. We discuss snapshot isolation in more detail in the context of distributed transactions in “Distributed Transactions with Percolator”.</p>
+</li>
+<li>
+<p>As do other books and papers on the subject, we use B-Trees as a typical example of mutable structure and Log-Structured Merge Trees (LSM Trees) as an example of an immutable structure. Immutable LSM Trees use append-only storage and merge reconciliation, and B-Trees locate data records on disk and update pages at their original offsets in the file.</p>
+</li>
+<li>
+<p>Since files are immutable, insert, update, and delete operations do not need to locate data records on disk, which significantly improves write performance and throughput. Instead, duplicate contents are allowed, and conflicts are resolved during the read time. LSM Trees are particularly useful for applications where writes are far more common than reads, which is often the case in modern data-intensive systems, given ever-growing amounts of data and ingest rates.</p>
+</li>
+<li>
+<p>In other words, a Bloom filter can be used to tell if the key might be in the table or is definitely not in the table. Files for which a Bloom filter returns a negative match are skipped during the query. The rest of the files are accessed to find out if the data record is actually present. Using Bloom filters associated with disk-resident tables helps to significantly reduce the number of tables accessed during a read.</p>
+</li>
+<li>
+<p>We often use the terms concurrent and parallel computing interchangeably, but these concepts have a slight semantic difference. When two sequences of steps execute concurrently, both of them are in progress, but only one of them is executed at any moment. If two sequences execute in parallel, their steps can be executed simultaneously. Concurrent operations overlap in time, while parallel operations are executed by multiple processors</p>
+</li>
+<li>
+<p>To protect a system from propagating failures and treat failure scenarios gracefully, circuit breakers can be used. In electrical engineering, circuit breakers protect expensive and hard-to-replace parts from overload or short circuit by interrupting the current flow. In software development, circuit breakers monitor failures and allow fallback mechanisms that can protect the system by steering away from the failing service, giving it some time to recover, and handling failing calls gracefully.</p>
+</li>
+<li>
+<p>Two-phase commit (2PC) is usually discussed in the context of database transactions. 2PC executes in two phases. During the first phase, the decided value is distributed, and votes are collected. During the second phase, nodes just flip the switch, making the results of the first phase visible. 2PC assumes the presence of a leader (or coordinator) that holds the state, collects votes, and is a primary point of reference for the agreement round.</p>
+</li>
+<li>
+<p>Paxos Algorithm The Paxos algorithm can be generally split into two phases: voting (or propose phase) and replication. During the voting phase, proposers compete to establish their leadership. During replication, the proposer distributes the value to the acceptors.</p>
+</li>
+</ul>
+
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "bege13mot";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_shortname = "bege13mot";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="https://bege13mot.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+  var _gaq=[['_setAccount','UA-73422311-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+

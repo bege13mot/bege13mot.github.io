@@ -1,25 +1,52 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Ivan V</title>
+    <title>Tags on Ivan</title>
     <link>https://bege13mot.github.io/tags/</link>
-    <description>Recent content in Tags on Ivan V</description>
+    <description>Recent content in Tags on Ivan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Mon, 16 Dec 2019 10:00:00 +0400</lastBuildDate><atom:link href="https://bege13mot.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Dec 2020 10:00:00 +0400</lastBuildDate><atom:link href="https://bege13mot.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>book</title>
       <link>https://bege13mot.github.io/tags/book/</link>
-      <pubDate>Mon, 16 Dec 2019 10:00:00 +0400</pubDate>
+      <pubDate>Sun, 20 Dec 2020 10:00:00 +0400</pubDate>
       
       <guid>https://bege13mot.github.io/tags/book/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>business</title>
+      <link>https://bege13mot.github.io/tags/business/</link>
+      <pubDate>Sun, 20 Dec 2020 10:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/tags/business/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>non-fiction</title>
+      <link>https://bege13mot.github.io/tags/non-fiction/</link>
+      <pubDate>Sun, 20 Dec 2020 10:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/tags/non-fiction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>economy</title>
+      <link>https://bege13mot.github.io/tags/economy/</link>
+      <pubDate>Tue, 20 Oct 2020 10:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/tags/economy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>management</title>
       <link>https://bege13mot.github.io/tags/management/</link>
-      <pubDate>Mon, 16 Dec 2019 10:00:00 +0400</pubDate>
+      <pubDate>Thu, 20 Aug 2020 10:00:00 +0400</pubDate>
       
       <guid>https://bege13mot.github.io/tags/management/</guid>
       <description></description>
@@ -28,9 +55,27 @@
     <item>
       <title>it</title>
       <link>https://bege13mot.github.io/tags/it/</link>
-      <pubDate>Wed, 18 Jul 2018 10:00:00 +0400</pubDate>
+      <pubDate>Wed, 10 Jun 2020 10:00:00 +0400</pubDate>
       
       <guid>https://bege13mot.github.io/tags/it/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>theory</title>
+      <link>https://bege13mot.github.io/tags/theory/</link>
+      <pubDate>Wed, 10 Jun 2020 10:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/tags/theory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>psychology</title>
+      <link>https://bege13mot.github.io/tags/psychology/</link>
+      <pubDate>Sun, 10 May 2020 10:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/tags/psychology/</guid>
       <description></description>
     </item>
     
@@ -44,38 +89,11 @@
     </item>
     
     <item>
-      <title>non-fiction</title>
-      <link>https://bege13mot.github.io/tags/non-fiction/</link>
-      <pubDate>Sat, 28 Oct 2017 10:00:00 +0400</pubDate>
-      
-      <guid>https://bege13mot.github.io/tags/non-fiction/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>theory</title>
-      <link>https://bege13mot.github.io/tags/theory/</link>
-      <pubDate>Fri, 01 Sep 2017 10:00:00 +0400</pubDate>
-      
-      <guid>https://bege13mot.github.io/tags/theory/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>fiction</title>
       <link>https://bege13mot.github.io/tags/fiction/</link>
       <pubDate>Mon, 01 May 2017 10:00:00 +0400</pubDate>
       
       <guid>https://bege13mot.github.io/tags/fiction/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>psychology</title>
-      <link>https://bege13mot.github.io/tags/psychology/</link>
-      <pubDate>Tue, 21 Mar 2017 10:00:00 +0400</pubDate>
-      
-      <guid>https://bege13mot.github.io/tags/psychology/</guid>
       <description></description>
     </item>
     
@@ -112,15 +130,6 @@
       <pubDate>Tue, 21 Jun 2016 09:12:22 +0400</pubDate>
       
       <guid>https://bege13mot.github.io/tags/biography/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>business</title>
-      <link>https://bege13mot.github.io/tags/business/</link>
-      <pubDate>Tue, 21 Jun 2016 09:12:22 +0400</pubDate>
-      
-      <guid>https://bege13mot.github.io/tags/business/</guid>
       <description></description>
     </item>
     
@@ -166,15 +175,6 @@
       <pubDate>Wed, 25 Nov 2015 17:43:23 +0000</pubDate>
       
       <guid>https://bege13mot.github.io/tags/travel/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>economy</title>
-      <link>https://bege13mot.github.io/tags/economy/</link>
-      <pubDate>Sun, 25 Oct 2015 15:57:46 +0000</pubDate>
-      
-      <guid>https://bege13mot.github.io/tags/economy/</guid>
       <description></description>
     </item>
     

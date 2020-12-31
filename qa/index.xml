@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Qas on Ivan V</title>
+    <title>Qas on Ivan</title>
     <link>https://bege13mot.github.io/qa/</link>
-    <description>Recent content in Qas on Ivan V</description>
+    <description>Recent content in Qas on Ivan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
     <lastBuildDate>Tue, 12 Nov 2019 20:00:00 +0400</lastBuildDate><atom:link href="https://bege13mot.github.io/qa/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,14 @@
       <pubDate>Tue, 12 Nov 2019 20:00:00 +0400</pubDate>
       
       <guid>https://bege13mot.github.io/qa/interview/</guid>
-      <description>Interview  A complete computer science study plan to become a software engineer What happens when you type google.com into your browser and press enter? Job at Google in 6 months recipe Как я проходила собеседования в Яндекс: мой непростой, но успешный опыт Practice Programming for interview Awesome Interview Questions Collection of *nix Sysadmin Test Questions and Answers Another coding interview preparation guide Salary Negotiation: Make More Money, Be More Valued О чем думать на NALSD собеседовании  Q&amp;amp;A   Вопросы на собеседовании на позицию DevOps-инженера которые задавал я</description>
+      <description>Interview   A complete computer science study plan to become a software engineer
+  Job at Google in 6 months recipe
+  Как я проходила собеседования в Яндекс: мой непростой, но успешный опыт
+  Practice Programming for interview
+  Awesome Interview Questions
+  Collection of *nix Sysadmin Test Questions and Answers
+  Another coding interview preparation guide
+  Salary Negotiation: Make More Money, Be More Valued</description>
     </item>
     
     <item>

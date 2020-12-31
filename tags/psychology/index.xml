@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>psychology on Ivan V</title>
+    <title>psychology on Ivan</title>
     <link>https://bege13mot.github.io/tags/psychology/</link>
-    <description>Recent content in psychology on Ivan V</description>
+    <description>Recent content in psychology on Ivan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Tue, 21 Mar 2017 10:00:00 +0400</lastBuildDate><atom:link href="https://bege13mot.github.io/tags/psychology/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 May 2020 10:00:00 +0400</lastBuildDate><atom:link href="https://bege13mot.github.io/tags/psychology/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Селфи, Уилл Сторр</title>
+      <link>https://bege13mot.github.io/post/selfie/</link>
+      <pubDate>Sun, 10 May 2020 10:00:00 +0400</pubDate>
+      
+      <guid>https://bege13mot.github.io/post/selfie/</guid>
+      <description>Очень интересный авторский обзор истории становления &amp;ldquo;я&amp;rdquo; - как мы относимся к себе, на что, как мы думаем, способны и достойны. И жанр интересный - не то нон-фикшен, не то селф-хелп.
+Все здорово, но не много не хватает объективности, очень чувствуется &amp;ldquo;авторность&amp;rdquo; в интерпретации фактов.
+Заметки:   Если все вышеперечисленное верно, это приводит нас к тревожному выводу. Представьте на секунду такую модель функционирования человека: вы зомби, ваше поведение автоматическое, иногда хаотичное, и единственная причина, по которой вам кажется, будто бы вы контролируете свое поведение, — лживый голос в вашей голове, объясняющий вам, кто вы есть.</description>
+    </item>
+    
     <item>
       <title>Сначала скажите &#39;НЕТ&#39;. Секреты профессиональных переговорщиков, Джим Кэмп</title>
       <link>https://bege13mot.github.io/post/start-with-no/</link>
