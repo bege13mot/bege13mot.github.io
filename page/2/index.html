@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.75.0" />
+	<meta name="generator" content="Hugo 0.121.1">
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -567,10 +567,10 @@ version of your software.</p>
 <li><a href="https://github.com/bege13mot/consignment-service/tree/master/monitoring-chart">monitoring-chart</a> - Helm chart for creating Prometheus and Grafana</li>
 <li><a href="https://github.com/bege13mot/consignment-service/tree/master/deployment-chart/templates">ingress</a> - Ingress creating for UI and monitoring. Use as:</li>
 </ul>
-<pre><code>minikube start
+<pre tabindex="0"><code>minikube start
 minikube addons enable ingress
 ... helm upgrade ...
-echo &quot;$(minikube ip) test&quot; | sudo tee -a /etc/hosts
+echo &#34;$(minikube ip) test&#34; | sudo tee -a /etc/hosts
 </code></pre></li>
 </ul>
 <br>
@@ -579,15 +579,15 @@ echo &quot;$(minikube ip) test&quot; | sudo tee -a /etc/hosts
 <li>Originally the author uses a lot of advantages <a href="https://github.com/micro/go-micro">go-micro</a> framework. It is definitely an interesting topic but a little bit out of my scope. It encapsulates the complexity of gRPC ecosystem but I try to do &ldquo;by hand&rdquo; as much work as possible. Also, I have to change Ewan&rsquo;s source code instead of copying it, that is certainly good for education purpose.
 One of this framework substitution is implementing <a href="https://github.com/grpc-ecosystem/grpc-gateway">grpc-gateway</a> - generates a reverse-proxy server which translates a RESTful JSON API into gRPC.  Also, I added a simple swagger output.</li>
 </ul>
-<pre><code>httpMux.HandleFunc(&quot;/swagger/&quot;, func(w http.ResponseWriter, r *http.Request) {
-  dir := &quot;./proto/auth&quot;
-  if !strings.HasSuffix(r.URL.Path, &quot;.swagger.json&quot;) {
-    log.Printf(&quot;Swagger Not Found: %s&quot;, r.URL.Path)
+<pre tabindex="0"><code>httpMux.HandleFunc(&#34;/swagger/&#34;, func(w http.ResponseWriter, r *http.Request) {
+  dir := &#34;./proto/auth&#34;
+  if !strings.HasSuffix(r.URL.Path, &#34;.swagger.json&#34;) {
+    log.Printf(&#34;Swagger Not Found: %s&#34;, r.URL.Path)
     http.NotFound(w, r)
     return
   }
-  log.Printf(&quot;Serving Swagger %s&quot;, r.URL.Path)
-  p := strings.TrimPrefix(r.URL.Path, &quot;/swagger/&quot;)
+  log.Printf(&#34;Serving Swagger %s&#34;, r.URL.Path)
+  p := strings.TrimPrefix(r.URL.Path, &#34;/swagger/&#34;)
   p = path.Join(dir, p)
   fmt.Println(p)
   http.ServeFile(w, r, p)
@@ -595,13 +595,13 @@ One of this framework substitution is implementing <a href="https://github.com/g
 </code></pre><ul>
 <li>I got my hands dirty with <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a>. Testing UI on the local machine requires specifying two different IP (one for user service and one consignment service). Of course, during CORS it won&rsquo;t work. The browser doesn&rsquo;t allow using different addresses. Luckily, <a href="https://github.com/grpc-ecosystem/grpc-gateway">grpc-gateway</a> repository has good documentation that helps to fix it.</li>
 </ul>
-<pre><code>// allowCORS allows Cross Origin Resoruce Sharing from any origin.
-// Don't do this without consideration in production systems.
+<pre tabindex="0"><code>// allowCORS allows Cross Origin Resoruce Sharing from any origin.
+// Don&#39;t do this without consideration in production systems.
 func allowCORS(h http.Handler) http.Handler {
     return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-        if origin := r.Header.Get(&quot;Origin&quot;); origin != &quot;&quot; {
-            w.Header().Set(&quot;Access-Control-Allow-Origin&quot;, origin)
-            if r.Method == &quot;OPTIONS&quot; &amp;&amp; r.Header.Get(&quot;Access-Control-Request-Method&quot;) != &quot;&quot; {
+        if origin := r.Header.Get(&#34;Origin&#34;); origin != &#34;&#34; {
+            w.Header().Set(&#34;Access-Control-Allow-Origin&#34;, origin)
+            if r.Method == &#34;OPTIONS&#34; &amp;&amp; r.Header.Get(&#34;Access-Control-Request-Method&#34;) != &#34;&#34; {
                 preflightHandler(w, r)
                 return
             }
@@ -611,18 +611,18 @@ func allowCORS(h http.Handler) http.Handler {
 }
 
 func preflightHandler(w http.ResponseWriter, r *http.Request) {
-    headers := []string{&quot;Content-Type&quot;, &quot;Accept&quot;, &quot;Authorization&quot;}
-    w.Header().Set(&quot;Access-Control-Allow-Headers&quot;, strings.Join(headers, &quot;,&quot;))
-    methods := []string{&quot;GET&quot;, &quot;HEAD&quot;, &quot;POST&quot;, &quot;PUT&quot;, &quot;DELETE&quot;}
-    w.Header().Set(&quot;Access-Control-Allow-Methods&quot;, strings.Join(methods, &quot;,&quot;))
-    log.Printf(&quot;CORS preflight request for %s \n&quot;, r.URL.Path)
+    headers := []string{&#34;Content-Type&#34;, &#34;Accept&#34;, &#34;Authorization&#34;}
+    w.Header().Set(&#34;Access-Control-Allow-Headers&#34;, strings.Join(headers, &#34;,&#34;))
+    methods := []string{&#34;GET&#34;, &#34;HEAD&#34;, &#34;POST&#34;, &#34;PUT&#34;, &#34;DELETE&#34;}
+    w.Header().Set(&#34;Access-Control-Allow-Methods&#34;, strings.Join(methods, &#34;,&#34;))
+    log.Printf(&#34;CORS preflight request for %s \n&#34;, r.URL.Path)
 }
 </code></pre><ul>
 <li>Added a simple health check endpoint for Kubernetes.</li>
 </ul>
-<pre><code>httpMux := http.NewServeMux()
+<pre tabindex="0"><code>httpMux := http.NewServeMux()
 
-httpMux.HandleFunc(&quot;/healthz&quot;, func(w http.ResponseWriter, r *http.Request) {
+httpMux.HandleFunc(&#34;/healthz&#34;, func(w http.ResponseWriter, r *http.Request) {
   if err := db.DB().Ping(); err != nil {
     http.Error(w, http.StatusText(http.StatusServiceUnavailable), http.StatusServiceUnavailable)
     return
@@ -632,62 +632,62 @@ httpMux.HandleFunc(&quot;/healthz&quot;, func(w http.ResponseWriter, r *http.Req
 </code></pre><ul>
 <li>The general goal of this project is education, so I try to figure out how to work with Consul and implement simple service discovery. Of course, this project runs on Kubernetes and Consul&rsquo;s service discovery is not necessary. But anyway I implemented registering and retrieving service attributes from Consul.</li>
 </ul>
-<pre><code>//Register in Consul
+<pre tabindex="0"><code>//Register in Consul
 defer func() {
   cErr := consul.Agent().ServiceDeregister(serviceID)
   if cErr != nil {
-    log.Println(&quot;Can't remove service from Consul &quot;, cErr)
+    log.Println(&#34;Can&#39;t remove service from Consul &#34;, cErr)
     return
   }
-  log.Println(&quot;Remove from Consul &quot;, serviceID)
+  log.Println(&#34;Remove from Consul &#34;, serviceID)
 }()
 
 err = consul.Agent().ServiceRegister(&amp;consulapi.AgentServiceRegistration{
   ID:      serviceID,
-  Name:    &quot;user-service&quot;,
+  Name:    &#34;user-service&#34;,
   Port:    50054,
-  Address: &quot;host&quot;,
+  Address: &#34;host&#34;,
   Check: &amp;consulapi.AgentServiceCheck{
-    CheckID:  &quot;health_check&quot;,
-    Name:     &quot;User-Service health status&quot;,
-    Interval: &quot;10s&quot;,
-    GRPC:     &quot;host:50054&quot;,
+    CheckID:  &#34;health_check&#34;,
+    Name:     &#34;User-Service health status&#34;,
+    Interval: &#34;10s&#34;,
+    GRPC:     &#34;host:50054&#34;,
   },
 })
 
 if err != nil {
-  log.Println(&quot;Couldn't add service to Consul, &quot;, err)
+  log.Println(&#34;Couldn&#39;t add service to Consul, &#34;, err)
 }
-log.Println(&quot;Add to Consul, &quot;, serviceID)
+log.Println(&#34;Add to Consul, &#34;, serviceID)
 
 //Get IP
 ip, err := net.InterfaceAddrs()
 if err != nil {
-  log.Println(&quot;Couldn't get IP address&quot;)
+  log.Println(&#34;Couldn&#39;t get IP address&#34;)
 }
 for _, a := range ip {
   if ipnet, ok := a.(*net.IPNet); ok &amp;&amp; !ipnet.IP.IsLoopback() {
     if ipnet.IP.To4() != nil {
-      fmt.Println(&quot;MY IP: &quot;, ipnet.IP)
+      fmt.Println(&#34;MY IP: &#34;, ipnet.IP)
     }
   }
 }
 
 //Get User-service from Consul
-health, _, err := consul.Health().Service(&quot;user-service&quot;, &quot;&quot;, true, nil)
+health, _, err := consul.Health().Service(&#34;user-service&#34;, &#34;&#34;, true, nil)
 if err != nil {
-  log.Println(&quot;Cant get live services&quot;)
+  log.Println(&#34;Cant get live services&#34;)
 }
 
-fmt.Println(&quot;HEALTH: &quot;, len(health))
+fmt.Println(&#34;HEALTH: &#34;, len(health))
 for _, item := range health {
-  log.Println(&quot;Service: &quot;, item.Service.ID, item.Service.Address, item.Service.Port)
+  log.Println(&#34;Service: &#34;, item.Service.ID, item.Service.Address, item.Service.Port)
 
 }
 </code></pre><ul>
 <li>Moreover, I found out that gRPC has in-built support of Consul health checks, but implementation is a little bit weird, the package name has to be <code>grpc_health_v1</code>, otherwise consul could&rsquo;t use it.</li>
 </ul>
-<pre><code>// Check implements Consul health checking
+<pre tabindex="0"><code>// Check implements Consul health checking
 func (srv *service) Check(ctx context.Context, in *pb.HealthCheckRequest) (*pb.HealthCheckResponse, error) {
     if err := srv.repo.ping(); err != nil {
         return &amp;pb.HealthCheckResponse{
@@ -708,16 +708,16 @@ func (srv *service) Check(ctx context.Context, in *pb.HealthCheckRequest) (*pb.H
 <p>In the end, I couldn&rsquo;t find out &ldquo;straight&rdquo; way of autoincrement <code>consignment id</code>. It could be generated on the consignment service side but might lead to collisions in case of multiple instances, that is highly possible for microservices architecture. Instead of it, after every insert, the <code>id</code> field is updated. It doesn&rsquo;t look good and if you know a better way I&rsquo;ll be grateful if you let me know.</p>
 </li>
 </ul>
-<pre><code>func (repo *ConsignmentRepository) Create(consignment *pb.Consignment) error {
+<pre tabindex="0"><code>func (repo *ConsignmentRepository) Create(consignment *pb.Consignment) error {
 
     repo.collection().Insert(consignment)
     cons := []test{}
-    repo.collection().Find(bson.M{&quot;id&quot;: &quot;&quot;}).All(&amp;cons)
+    repo.collection().Find(bson.M{&#34;id&#34;: &#34;&#34;}).All(&amp;cons)
 
     for i, v := range cons {
         fmt.Println(i, v.ID.Hex())
         consignment.Id = v.ID.Hex()
-        repo.collection().Update(bson.M{&quot;id&quot;: &quot;&quot;}, bson.M{&quot;$set&quot;: bson.M{&quot;id&quot;: v.ID.Hex()}})
+        repo.collection().Update(bson.M{&#34;id&#34;: &#34;&#34;}, bson.M{&#34;$set&#34;: bson.M{&#34;id&#34;: v.ID.Hex()}})
     }
 
     return nil
@@ -868,37 +868,35 @@ func (srv *service) Check(ctx context.Context, in *pb.HealthCheckRequest) (*pb.H
     </div>
     
     
-<ul class="pagination">
-  <li class="page-item">
-    <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-  </li>
-  <li class="page-item">
-    <a href="/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-  </li>
-  <li class="page-item">
-    <a class="page-link" href="/">1</a>
-  </li>
-  <li class="page-item active">
-    <a class="page-link" href="/page/2/">2</a>
-  </li>
-  <li class="page-item">
-    <a class="page-link" href="/page/3/">3</a>
-  </li>
-  <li class="page-item disabled">
-    <span aria-hidden="true">&nbsp;&hellip;&nbsp;</span>
-  </li>
-  <li class="page-item">
-    <a class="page-link" href="/page/22/">22</a>
-  </li>
-  <li class="page-item">
-    <a href="/page/3/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-  </li>
-  <li class="page-item">
-    <a href="/page/22/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-  </li>
-</ul>
-
-
+    <ul class="pagination pagination-default">
+      <li class="page-item">
+        <a href="/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/" aria-label="Page 1" class="page-link" role="button">1</a>
+      </li>
+      <li class="page-item active">
+        <a aria-current="page" aria-label="Page 2" class="page-link" role="button">2</a>
+      </li>
+      <li class="page-item">
+        <a href="/page/3/" aria-label="Page 3" class="page-link" role="button">3</a>
+      </li>
+      <li class="page-item">
+        <a href="/page/4/" aria-label="Page 4" class="page-link" role="button">4</a>
+      </li>
+      <li class="page-item">
+        <a href="/page/5/" aria-label="Page 5" class="page-link" role="button">5</a>
+      </li>
+      <li class="page-item">
+        <a href="/page/3/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/page/22/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      </li>
+    </ul>
   </div>
 </div>
 

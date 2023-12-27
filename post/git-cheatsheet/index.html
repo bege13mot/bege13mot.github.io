@@ -86,7 +86,7 @@
     </p>
     <p>Графические шпаргалки: <a href="http://files.zeroturnaround.com/pdf/zt_git_cheat_sheet.pdf">раз</a> и <a href="https://raw.githubusercontent.com/hbons/git-cheat-sheet/master/preview.png">два</a></p>
 <h4 id="шпаргалка">Шпаргалка:</h4>
-<pre><code>git init project-name
+<pre tabindex="0"><code>git init project-name
 
 git add text.txt
 
@@ -94,7 +94,7 @@ git rm text.txt
 
 git status
 
-git commit -a -m &quot;Commit description&quot;
+git commit -a -m &#34;Commit description&#34;
 
 git push origin master
 
@@ -115,7 +115,7 @@ git merge some_branch
 git log --stat --graph
 
 #Улучшение для log
-git config --global alias.grog 'log --graph --abbrev-commit --decorate --all --format=format:&quot;%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)&quot;'
+git config --global alias.grog &#39;log --graph --abbrev-commit --decorate --all --format=format:&#34;%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)&#34;&#39;
 
 #Изменения, сделанные в заданном коммите:
 git show d8578edf8458ce06fbc5bb76a58c5ca4a58c5ca4
@@ -130,27 +130,27 @@ git reset --hard d8578edf8458ce06fbc5bb76a58c5ca4a58c5ca4
 git revert d8578edf8458ce06fbc5bb76a58c5ca4a58c5ca4
 
 #Просмотр изменений (суммарных, а не всех по очереди, как в «git log»):
-git diff # подробности см в &quot;git diff --help&quot;
+git diff # подробности см в &#34;git diff --help&#34;
 
-#&quot;Упаковка&quot; репозитория для увеличения скорости работы с ним:
+#&#34;Упаковка&#34; репозитория для увеличения скорости работы с ним:
 git gc
 
 #Добавляем ключ на github
-ssh-keygen -t rsa -b 4096 -C &quot;test@test.com&quot;
+ssh-keygen -t rsa -b 4096 -C &#34;test@test.com&#34;
 vim /home/test/.ssh/id_rsa.pub
 ssh -T git@github.com
 </code></pre><h4 id="частые-проблемы">Частые проблемы:</h4>
 <p>Закоммитил и тут же понял, что нужно внести небольшие изменения:</p>
-<pre><code># внесите изменения 
+<pre tabindex="0"><code># внесите изменения 
 git add . 
 git commit --amend 
 # следуйте подсказкам, чтобы изменить или оставить прежний комментарий
 # теперь последний коммит содержит наше изменение!
 </code></pre><p>Нужно изменить комментарий к последнему коммиту:</p>
-<pre><code>git commit --amend 
+<pre tabindex="0"><code>git commit --amend 
 # следуйте подсказкам, чтобы изменить комментарий
 </code></pre><p>Закоммитил что-то в master, а оно должно быть в новой ветке:</p>
-<pre><code># создайте новую ветку из текущего состояния master
+<pre tabindex="0"><code># создайте новую ветку из текущего состояния master
 git checkout -b имя-новой-ветки 
 # удаляем коммит из ветки master
 git checkout master 
@@ -158,7 +158,7 @@ git reset HEAD~ --hard
 git checkout имя-новой-ветки
 # ваш коммит теперь живет в новой ветке
 </code></pre><p>Cлучайно закоммитил не в ту ветку:</p>
-<pre><code># откатываем последний коммит, но не удаляем изменения
+<pre tabindex="0"><code># откатываем последний коммит, но не удаляем изменения
 git reset HEAD~ --soft 
 git add . 
 git stash 
@@ -166,18 +166,18 @@ git stash
 git checkout имя-верной-ветки 
 git stash pop 
 git add . 
-git commit -m &quot;тут ваш комментарий&quot; 
+git commit -m &#34;тут ваш комментарий&#34; 
 # теперь изменения в нужной ветке
 </code></pre><p>Запускаю diff, но ничего не происходит?</p>
-<pre><code>git diff --staged
+<pre tabindex="0"><code>git diff --staged
 </code></pre><p>Вернуть fork к изначальному состоянию</p>
-<pre><code>git remote add upstream /url/to/original/repo
+<pre tabindex="0"><code>git remote add upstream /url/to/original/repo
 git fetch upstream
 git checkout master
 git reset --hard upstream/master  
 git push origin master --force
 </code></pre><p>Сделать первый PR</p>
-<pre><code>git clone /url/to/fork/repo
+<pre tabindex="0"><code>git clone /url/to/fork/repo
 git remote add upstream /url/to/original/repo
 git checkout master
 git pull upstream master

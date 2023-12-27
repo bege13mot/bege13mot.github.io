@@ -94,38 +94,38 @@
 <li><em>uniq</em> - фильтрация</li>
 </ul>
 <h4 id="find-и-grep">Find и Grep:</h4>
-<pre><code># Поиск по pattern в file. Для архивов удобно использовать zgrep
+<pre tabindex="0"><code># Поиск по pattern в file. Для архивов удобно использовать zgrep
 # Ключи: r - рекурсивный поиск, E - поддержка регулярных выражений (egrep), o - выводит только совпадений, v - все кроме указанного(invert-match), H - имя файла
 grep -rEovH pattern file
 
 # Найти файлы в директория
-find . -path './web*/somethin/test.log*
+find . -path &#39;./web*/somethin/test.log*
 
 # Найти все файлы, без учета регистра и искать в них pattern с перенаправлением ошибок
-find . -type f -iname '*.log*' 2&gt;/dev/null -exec grep -H 'pattern' {} \;
+find . -type f -iname &#39;*.log*&#39; 2&gt;/dev/null -exec grep -H &#39;pattern&#39; {} \;
 </code></pre><h4 id="sort-и-uniq">Sort и Uniq:</h4>
-<pre><code># Найдем общие строки между двумя файлам
+<pre tabindex="0"><code># Найдем общие строки между двумя файлам
 sort file1 file2 | uniq -d
 
 # Найдем частоту события pattern. 
 # sort - сортируем (конкеретно в этом случае не обязательно)
 # uniq -ci - удаляем подсчитываем и удаляем дубликаты, i - без учета регистра
 # sort -rn - сортируем по числу появлений, по убыванию
-grep -oh 'pattern \[.*\]' test.log* | sort | uniq -ci | sort -rn
+grep -oh &#39;pattern \[.*\]&#39; test.log* | sort | uniq -ci | sort -rn
 </code></pre><h4 id="примеры-из-практики">Примеры из практики:</h4>
 <p>Часто возникает необходимость найти какое-то событие, узнать номер &ldquo;thread&rdquo; и дальше посмотреть всю историю. В этом поможет конструкция ниже:</p>
-<pre><code>grep &quot;`grep 'pattern' test.log | grep -oh &quot;\w\{0,\}.n11&quot;`&quot; test.log.
+<pre tabindex="0"><code>grep &#34;`grep &#39;pattern&#39; test.log | grep -oh &#34;\w\{0,\}.n11&#34;`&#34; test.log.
 
-# Усложним ситуацию. Нам надо найти когда для пользователей в рамках одного &quot;thread&quot; случилось два события. Oдин из способов это сделать:
-find . -path './2017-05-*/test.log*' | while read path; do zgrep &quot;`zgrep 'TEST_EVENT 1'  $path | awk '{print $4}'`&quot; $path | grep -H 'TEST_EVENT 1' -B 2 -A 2 | grep '&quot;TEST_EVENT 2&quot;'; done  
+# Усложним ситуацию. Нам надо найти когда для пользователей в рамках одного &#34;thread&#34; случилось два события. Oдин из способов это сделать:
+find . -path &#39;./2017-05-*/test.log*&#39; | while read path; do zgrep &#34;`zgrep &#39;TEST_EVENT 1&#39;  $path | awk &#39;{print $4}&#39;`&#34; $path | grep -H &#39;TEST_EVENT 1&#39; -B 2 -A 2 | grep &#39;&#34;TEST_EVENT 2&#34;&#39;; done  
 </code></pre><p>Кстати, здесь используется отображение строк до совпадения и после совпадения - <code>grep 'TEST_EVENT 1' -B 2 -A 2</code>, а также цикл по найденным файлам - <code>while read path; do zgrep 'pattern' $path; done</code></p>
 <p>При поиске регулярных выражений по маске <code>'(pattern1|pattern2)'</code> <em>grep</em> выводит результат в двух разных строках. Решить эту проблему нам поможет <em>Perl</em>.</p>
-<pre><code># Две строки для каждого совпадения
-find . -path './test*/test.log*' -exec zgrep -H 'login/email' {} \; | grep '\[received\]' | egrep -o '(.+\.gz|\w+-\w+-\w+ \d\d:\d\d:\d\d|&quot;email&quot;:&quot;.+@.+\.\w+&quot;)'
+<pre tabindex="0"><code># Две строки для каждого совпадения
+find . -path &#39;./test*/test.log*&#39; -exec zgrep -H &#39;login/email&#39; {} \; | grep &#39;\[received\]&#39; | egrep -o &#39;(.+\.gz|\w+-\w+-\w+ \d\d:\d\d:\d\d|&#34;email&#34;:&#34;.+@.+\.\w+&#34;)&#39;
 
 # Одна строка
 # Ключи -n - выполнение кода, -e - задает код, -l - обработка окончаний строк
-find . -path './test*/test.log*' -exec zgrep -H 'login/email' {} \; | grep '\[received\]' | perl -lne 'print /(.+\.gz|\w+-\w+-\w+ \d\d:\d\d:\d\d|&quot;email&quot;:&quot;.+@.+\.\w+&quot;)/g'
+find . -path &#39;./test*/test.log*&#39; -exec zgrep -H &#39;login/email&#39; {} \; | grep &#39;\[received\]&#39; | perl -lne &#39;print /(.+\.gz|\w+-\w+-\w+ \d\d:\d\d:\d\d|&#34;email&#34;:&#34;.+@.+\.\w+&#34;)/g&#39;
 </code></pre><p>Полезные ссылки:</p>
 <ul>
 <li><a href="https://explainshell.com">Explain Shell</a></li>
@@ -136,7 +136,7 @@ find . -path './test*/test.log*' -exec zgrep -H 'login/email' {} \; | grep '\[re
 <h3 id="sed">Sed:</h3>
 <p><em>Sed</em> - потоковый текстовый редактор</p>
 <h4 id="синтаксис">Синтаксис:</h4>
-<pre><code># Печатать строки где есть pattern
+<pre tabindex="0"><code># Печатать строки где есть pattern
 sed -n ‘/pattern/p’ file
 
 # Удалить все пустые строки
@@ -145,17 +145,17 @@ sed -i ‘/^$/d’ file – remove all blank lines from file
 # Заменить word1 на word2, word3 на word4
 sed ‘s/word1/word2/g; s/word3/word4/g’ file– replacement with multiple patterns in file
 </code></pre><h4 id="примеры-из-практики-1">Примеры из практики:</h4>
-<pre><code># Заменить одно значение переменной на другое
-find -type f -name &quot;test.*&quot; -exec sed -i 's/MaxSize=[0-9][0-9][0-9]/MaxSize=384/' {} \;\
+<pre tabindex="0"><code># Заменить одно значение переменной на другое
+find -type f -name &#34;test.*&#34; -exec sed -i &#39;s/MaxSize=[0-9][0-9][0-9]/MaxSize=384/&#39; {} \;\
 
 # Рекурсивная замена по всем вхождениям
 find /home/user/ -type f | xargs sed -i  ‘s/a.example.com/b.example.com/g’ – recursively substitute each mattern match in files located on /home/user
 
 # Убираем из вывода все коменты и пустые строки.
-cat /opt/local/etc/squid/squid.conf | sed '/ *#/d; /^ *$/d'
+cat /opt/local/etc/squid/squid.conf | sed &#39;/ *#/d; /^ *$/d&#39;
 
 # Используем регулярные выражения в find. Без sed не работают
-find ./_filestorage/ -regextype sed -regex &quot;.*/[a-f0-9\-]\{36\}\.\(jpg\|JPG\|png\|PNG\|gif\|GIF\)&quot;
+find ./_filestorage/ -regextype sed -regex &#34;.*/[a-f0-9\-]\{36\}\.\(jpg\|JPG\|png\|PNG\|gif\|GIF\)&#34;
 </code></pre><p>Полезные ссылки:</p>
 <ul>
 <li><a href="http://www.funtoo.org/Sed_by_Example,_Part_1">Sed by Example</a></li>
@@ -166,7 +166,7 @@ find ./_filestorage/ -regextype sed -regex &quot;.*/[a-f0-9\-]\{36\}\.\(jpg\|JPG
 <li><em>Awk</em> - язык обработки текстовой информации</li>
 </ul>
 <h4 id="синтаксис-1">Синтаксис:</h4>
-<pre><code># F - разделитель 
+<pre tabindex="0"><code># F - разделитель 
 # NF - число полей в текущей записи (number of fields)
 # NR - номер текущей записи (record number)
 # FNR - номер записи для текущего файла
@@ -187,14 +187,14 @@ awk ‘{avg+=$2}END{print avg/NR}’ file
 awk ‘NR&gt;3’ file– print everything aftчисло полей в текущей записи the 3rd line
 
 # Частота использования IP
-awk '{ array[$2]++ } END {for (ip in array) print array[ip],ip}' access.log
+awk &#39;{ array[$2]++ } END {for (ip in array) print array[ip],ip}&#39; access.log
 </code></pre><h4 id="примеры-из-практики-2">Примеры из практики:</h4>
 <p>Необходимо посчитать разницу между получением и отменой офера, для этого использовалась функция <em>mktime</em> для работы с временем.</p>
-<pre><code>zgrep -E &quot;(Quotation:.+ - notification for .+ cancelled|Quotation:.+ - offer is sent to .+)&quot; ./test/offers.log.gz | awk ' {print ($14 == &quot;&quot; ? $1 &quot; &quot; $2 &quot; &quot; $7 &quot; &quot; $12 : $1 &quot; &quot; $2 &quot; &quot; $7 &quot; &quot; $14) };' | awk '{gsub(&quot;-&quot;, &quot; &quot;, $1); gsub(/,[0-9][0-9][0-9]/, &quot;&quot;, $2); gsub(&quot;:&quot;, &quot; &quot;, $2); print mktime($1 &quot; &quot; $2) &quot; &quot; $3 &quot; &quot; $4;}' | awk '{
-if (array[$3]==&quot;&quot;&amp;&amp;q==&quot;&quot;||(array[$3]==&quot;&quot; &amp;&amp; q==$2)) {array[$3]=$1;q=$2}
-else if (array[$3]!=&quot;&quot; &amp;&amp; q==$2) {array[$3]=$1-array[$3];}
-else {for (i in array) {if (array[i]!=&quot;&quot;) print q, i, array[i];}; delete array;array[$3]=$1;q=$2;}
-} END{for (i in array) print q, i, array[i];}'
+<pre tabindex="0"><code>zgrep -E &#34;(Quotation:.+ - notification for .+ cancelled|Quotation:.+ - offer is sent to .+)&#34; ./test/offers.log.gz | awk &#39; {print ($14 == &#34;&#34; ? $1 &#34; &#34; $2 &#34; &#34; $7 &#34; &#34; $12 : $1 &#34; &#34; $2 &#34; &#34; $7 &#34; &#34; $14) };&#39; | awk &#39;{gsub(&#34;-&#34;, &#34; &#34;, $1); gsub(/,[0-9][0-9][0-9]/, &#34;&#34;, $2); gsub(&#34;:&#34;, &#34; &#34;, $2); print mktime($1 &#34; &#34; $2) &#34; &#34; $3 &#34; &#34; $4;}&#39; | awk &#39;{
+if (array[$3]==&#34;&#34;&amp;&amp;q==&#34;&#34;||(array[$3]==&#34;&#34; &amp;&amp; q==$2)) {array[$3]=$1;q=$2}
+else if (array[$3]!=&#34;&#34; &amp;&amp; q==$2) {array[$3]=$1-array[$3];}
+else {for (i in array) {if (array[i]!=&#34;&#34;) print q, i, array[i];}; delete array;array[$3]=$1;q=$2;}
+} END{for (i in array) print q, i, array[i];}&#39;
 </code></pre><p>Полезные ссылки:</p>
 <ul>
 <li><a href="http://www.funtoo.org/Awk_by_Example,_Part_1">Awk by Example</a></li>

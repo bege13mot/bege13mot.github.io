@@ -86,8 +86,8 @@
     </p>
     <p><a href="https://attic-backup.org/">Attic backup</a>
 <a href="https://borgbackup.readthedocs.io/en/stable/">Borg backup</a></p>
-<pre><code>borg init --encryption=repokey /path/to/repo
-</code></pre><pre><code>#!/bin/sh
+<pre tabindex="0"><code>borg init --encryption=repokey /path/to/repo
+</code></pre><pre tabindex="0"><code>#!/bin/sh
 REPOSITORY=/mnt/d/Backup/my-backup.borg
 LOGFILE=/mnt/d/Backup/log.log
 BORG=/mnt/d/Borg/borg
@@ -100,10 +100,10 @@ exec &gt;&gt; $LOGFILE 2&gt;&amp;1
 
 #simple function that just prints the time and the info you pass to it
 echotime () {
-  echo &quot;$1 `date +%Y-%m-%d--%H:%M:%S`&quot;
+  echo &#34;$1 `date +%Y-%m-%d--%H:%M:%S`&#34;
 }
 
-echotime &quot;BORG CREATE&quot;
+echotime &#34;BORG CREATE&#34;
 
 $BORG create -v --stats -C zlib,6	\
     $REPOSITORY::backup-`date +%Y-%m-%d`\
@@ -112,14 +112,14 @@ $BORG create -v --stats -C zlib,6	\
     /mnt/d/Photo/
 #    --exclude /home/*/.cache
 
-echotime &quot;BORG PRUNE&quot;
+echotime &#34;BORG PRUNE&#34;
 
 $BORG prune -v --stats $REPOSITORY --keep-monthly=4
 
 echo
-</code></pre><pre><code>D:\Cloud\Cloud.exe
+</code></pre><pre tabindex="0"><code>D:\Cloud\Cloud.exe
 timeout 3
-bash -c &quot;/mnt/d/Borg/backup.sh&quot;
+bash -c &#34;/mnt/d/Borg/backup.sh&#34;
 </code></pre>
   </div>
   <div id="disqus_thread"></div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.75.0" />
+	<meta name="generator" content="Hugo 0.121.1">
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -147,7 +147,7 @@
       
       <p>Графические шпаргалки: <a href="http://files.zeroturnaround.com/pdf/zt_git_cheat_sheet.pdf">раз</a> и <a href="https://raw.githubusercontent.com/hbons/git-cheat-sheet/master/preview.png">два</a></p>
 <h4 id="шпаргалка">Шпаргалка:</h4>
-<pre><code>git init project-name
+<pre tabindex="0"><code>git init project-name
 
 git add text.txt
 
@@ -155,7 +155,7 @@ git rm text.txt
 
 git status
 
-git commit -a -m &quot;Commit description&quot;
+git commit -a -m &#34;Commit description&#34;
 
 git push origin master
 
@@ -176,7 +176,7 @@ git merge some_branch
 git log --stat --graph
 
 #Улучшение для log
-git config --global alias.grog 'log --graph --abbrev-commit --decorate --all --format=format:&quot;%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)&quot;'
+git config --global alias.grog &#39;log --graph --abbrev-commit --decorate --all --format=format:&#34;%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)&#34;&#39;
 
 #Изменения, сделанные в заданном коммите:
 git show d8578edf8458ce06fbc5bb76a58c5ca4a58c5ca4
@@ -191,27 +191,27 @@ git reset --hard d8578edf8458ce06fbc5bb76a58c5ca4a58c5ca4
 git revert d8578edf8458ce06fbc5bb76a58c5ca4a58c5ca4
 
 #Просмотр изменений (суммарных, а не всех по очереди, как в «git log»):
-git diff # подробности см в &quot;git diff --help&quot;
+git diff # подробности см в &#34;git diff --help&#34;
 
-#&quot;Упаковка&quot; репозитория для увеличения скорости работы с ним:
+#&#34;Упаковка&#34; репозитория для увеличения скорости работы с ним:
 git gc
 
 #Добавляем ключ на github
-ssh-keygen -t rsa -b 4096 -C &quot;test@test.com&quot;
+ssh-keygen -t rsa -b 4096 -C &#34;test@test.com&#34;
 vim /home/test/.ssh/id_rsa.pub
 ssh -T git@github.com
 </code></pre><h4 id="частые-проблемы">Частые проблемы:</h4>
 <p>Закоммитил и тут же понял, что нужно внести небольшие изменения:</p>
-<pre><code># внесите изменения 
+<pre tabindex="0"><code># внесите изменения 
 git add . 
 git commit --amend 
 # следуйте подсказкам, чтобы изменить или оставить прежний комментарий
 # теперь последний коммит содержит наше изменение!
 </code></pre><p>Нужно изменить комментарий к последнему коммиту:</p>
-<pre><code>git commit --amend 
+<pre tabindex="0"><code>git commit --amend 
 # следуйте подсказкам, чтобы изменить комментарий
 </code></pre><p>Закоммитил что-то в master, а оно должно быть в новой ветке:</p>
-<pre><code># создайте новую ветку из текущего состояния master
+<pre tabindex="0"><code># создайте новую ветку из текущего состояния master
 git checkout -b имя-новой-ветки 
 # удаляем коммит из ветки master
 git checkout master 
@@ -219,7 +219,7 @@ git reset HEAD~ --hard
 git checkout имя-новой-ветки
 # ваш коммит теперь живет в новой ветке
 </code></pre><p>Cлучайно закоммитил не в ту ветку:</p>
-<pre><code># откатываем последний коммит, но не удаляем изменения
+<pre tabindex="0"><code># откатываем последний коммит, но не удаляем изменения
 git reset HEAD~ --soft 
 git add . 
 git stash 
@@ -227,18 +227,18 @@ git stash
 git checkout имя-верной-ветки 
 git stash pop 
 git add . 
-git commit -m &quot;тут ваш комментарий&quot; 
+git commit -m &#34;тут ваш комментарий&#34; 
 # теперь изменения в нужной ветке
 </code></pre><p>Запускаю diff, но ничего не происходит?</p>
-<pre><code>git diff --staged
+<pre tabindex="0"><code>git diff --staged
 </code></pre><p>Вернуть fork к изначальному состоянию</p>
-<pre><code>git remote add upstream /url/to/original/repo
+<pre tabindex="0"><code>git remote add upstream /url/to/original/repo
 git fetch upstream
 git checkout master
 git reset --hard upstream/master  
 git push origin master --force
 </code></pre><p>Сделать первый PR</p>
-<pre><code>git clone /url/to/fork/repo
+<pre tabindex="0"><code>git clone /url/to/fork/repo
 git remote add upstream /url/to/original/repo
 git checkout master
 git pull upstream master
@@ -294,38 +294,38 @@ git push -u origin feature/add
 <li><em>uniq</em> - фильтрация</li>
 </ul>
 <h4 id="find-и-grep">Find и Grep:</h4>
-<pre><code># Поиск по pattern в file. Для архивов удобно использовать zgrep
+<pre tabindex="0"><code># Поиск по pattern в file. Для архивов удобно использовать zgrep
 # Ключи: r - рекурсивный поиск, E - поддержка регулярных выражений (egrep), o - выводит только совпадений, v - все кроме указанного(invert-match), H - имя файла
 grep -rEovH pattern file
 
 # Найти файлы в директория
-find . -path './web*/somethin/test.log*
+find . -path &#39;./web*/somethin/test.log*
 
 # Найти все файлы, без учета регистра и искать в них pattern с перенаправлением ошибок
-find . -type f -iname '*.log*' 2&gt;/dev/null -exec grep -H 'pattern' {} \;
+find . -type f -iname &#39;*.log*&#39; 2&gt;/dev/null -exec grep -H &#39;pattern&#39; {} \;
 </code></pre><h4 id="sort-и-uniq">Sort и Uniq:</h4>
-<pre><code># Найдем общие строки между двумя файлам
+<pre tabindex="0"><code># Найдем общие строки между двумя файлам
 sort file1 file2 | uniq -d
 
 # Найдем частоту события pattern. 
 # sort - сортируем (конкеретно в этом случае не обязательно)
 # uniq -ci - удаляем подсчитываем и удаляем дубликаты, i - без учета регистра
 # sort -rn - сортируем по числу появлений, по убыванию
-grep -oh 'pattern \[.*\]' test.log* | sort | uniq -ci | sort -rn
+grep -oh &#39;pattern \[.*\]&#39; test.log* | sort | uniq -ci | sort -rn
 </code></pre><h4 id="примеры-из-практики">Примеры из практики:</h4>
 <p>Часто возникает необходимость найти какое-то событие, узнать номер &ldquo;thread&rdquo; и дальше посмотреть всю историю. В этом поможет конструкция ниже:</p>
-<pre><code>grep &quot;`grep 'pattern' test.log | grep -oh &quot;\w\{0,\}.n11&quot;`&quot; test.log.
+<pre tabindex="0"><code>grep &#34;`grep &#39;pattern&#39; test.log | grep -oh &#34;\w\{0,\}.n11&#34;`&#34; test.log.
 
-# Усложним ситуацию. Нам надо найти когда для пользователей в рамках одного &quot;thread&quot; случилось два события. Oдин из способов это сделать:
-find . -path './2017-05-*/test.log*' | while read path; do zgrep &quot;`zgrep 'TEST_EVENT 1'  $path | awk '{print $4}'`&quot; $path | grep -H 'TEST_EVENT 1' -B 2 -A 2 | grep '&quot;TEST_EVENT 2&quot;'; done  
+# Усложним ситуацию. Нам надо найти когда для пользователей в рамках одного &#34;thread&#34; случилось два события. Oдин из способов это сделать:
+find . -path &#39;./2017-05-*/test.log*&#39; | while read path; do zgrep &#34;`zgrep &#39;TEST_EVENT 1&#39;  $path | awk &#39;{print $4}&#39;`&#34; $path | grep -H &#39;TEST_EVENT 1&#39; -B 2 -A 2 | grep &#39;&#34;TEST_EVENT 2&#34;&#39;; done  
 </code></pre><p>Кстати, здесь используется отображение строк до совпадения и после совпадения - <code>grep 'TEST_EVENT 1' -B 2 -A 2</code>, а также цикл по найденным файлам - <code>while read path; do zgrep 'pattern' $path; done</code></p>
 <p>При поиске регулярных выражений по маске <code>'(pattern1|pattern2)'</code> <em>grep</em> выводит результат в двух разных строках. Решить эту проблему нам поможет <em>Perl</em>.</p>
-<pre><code># Две строки для каждого совпадения
-find . -path './test*/test.log*' -exec zgrep -H 'login/email' {} \; | grep '\[received\]' | egrep -o '(.+\.gz|\w+-\w+-\w+ \d\d:\d\d:\d\d|&quot;email&quot;:&quot;.+@.+\.\w+&quot;)'
+<pre tabindex="0"><code># Две строки для каждого совпадения
+find . -path &#39;./test*/test.log*&#39; -exec zgrep -H &#39;login/email&#39; {} \; | grep &#39;\[received\]&#39; | egrep -o &#39;(.+\.gz|\w+-\w+-\w+ \d\d:\d\d:\d\d|&#34;email&#34;:&#34;.+@.+\.\w+&#34;)&#39;
 
 # Одна строка
 # Ключи -n - выполнение кода, -e - задает код, -l - обработка окончаний строк
-find . -path './test*/test.log*' -exec zgrep -H 'login/email' {} \; | grep '\[received\]' | perl -lne 'print /(.+\.gz|\w+-\w+-\w+ \d\d:\d\d:\d\d|&quot;email&quot;:&quot;.+@.+\.\w+&quot;)/g'
+find . -path &#39;./test*/test.log*&#39; -exec zgrep -H &#39;login/email&#39; {} \; | grep &#39;\[received\]&#39; | perl -lne &#39;print /(.+\.gz|\w+-\w+-\w+ \d\d:\d\d:\d\d|&#34;email&#34;:&#34;.+@.+\.\w+&#34;)/g&#39;
 </code></pre><p>Полезные ссылки:</p>
 <ul>
 <li><a href="https://explainshell.com">Explain Shell</a></li>
@@ -336,7 +336,7 @@ find . -path './test*/test.log*' -exec zgrep -H 'login/email' {} \; | grep '\[re
 <h3 id="sed">Sed:</h3>
 <p><em>Sed</em> - потоковый текстовый редактор</p>
 <h4 id="синтаксис">Синтаксис:</h4>
-<pre><code># Печатать строки где есть pattern
+<pre tabindex="0"><code># Печатать строки где есть pattern
 sed -n ‘/pattern/p’ file
 
 # Удалить все пустые строки
@@ -345,17 +345,17 @@ sed -i ‘/^$/d’ file – remove all blank lines from file
 # Заменить word1 на word2, word3 на word4
 sed ‘s/word1/word2/g; s/word3/word4/g’ file– replacement with multiple patterns in file
 </code></pre><h4 id="примеры-из-практики-1">Примеры из практики:</h4>
-<pre><code># Заменить одно значение переменной на другое
-find -type f -name &quot;test.*&quot; -exec sed -i 's/MaxSize=[0-9][0-9][0-9]/MaxSize=384/' {} \;\
+<pre tabindex="0"><code># Заменить одно значение переменной на другое
+find -type f -name &#34;test.*&#34; -exec sed -i &#39;s/MaxSize=[0-9][0-9][0-9]/MaxSize=384/&#39; {} \;\
 
 # Рекурсивная замена по всем вхождениям
 find /home/user/ -type f | xargs sed -i  ‘s/a.example.com/b.example.com/g’ – recursively substitute each mattern match in files located on /home/user
 
 # Убираем из вывода все коменты и пустые строки.
-cat /opt/local/etc/squid/squid.conf | sed '/ *#/d; /^ *$/d'
+cat /opt/local/etc/squid/squid.conf | sed &#39;/ *#/d; /^ *$/d&#39;
 
 # Используем регулярные выражения в find. Без sed не работают
-find ./_filestorage/ -regextype sed -regex &quot;.*/[a-f0-9\-]\{36\}\.\(jpg\|JPG\|png\|PNG\|gif\|GIF\)&quot;
+find ./_filestorage/ -regextype sed -regex &#34;.*/[a-f0-9\-]\{36\}\.\(jpg\|JPG\|png\|PNG\|gif\|GIF\)&#34;
 </code></pre><p>Полезные ссылки:</p>
 <ul>
 <li><a href="http://www.funtoo.org/Sed_by_Example,_Part_1">Sed by Example</a></li>
@@ -366,7 +366,7 @@ find ./_filestorage/ -regextype sed -regex &quot;.*/[a-f0-9\-]\{36\}\.\(jpg\|JPG
 <li><em>Awk</em> - язык обработки текстовой информации</li>
 </ul>
 <h4 id="синтаксис-1">Синтаксис:</h4>
-<pre><code># F - разделитель 
+<pre tabindex="0"><code># F - разделитель 
 # NF - число полей в текущей записи (number of fields)
 # NR - номер текущей записи (record number)
 # FNR - номер записи для текущего файла
@@ -387,14 +387,14 @@ awk ‘{avg+=$2}END{print avg/NR}’ file
 awk ‘NR&gt;3’ file– print everything aftчисло полей в текущей записи the 3rd line
 
 # Частота использования IP
-awk '{ array[$2]++ } END {for (ip in array) print array[ip],ip}' access.log
+awk &#39;{ array[$2]++ } END {for (ip in array) print array[ip],ip}&#39; access.log
 </code></pre><h4 id="примеры-из-практики-2">Примеры из практики:</h4>
 <p>Необходимо посчитать разницу между получением и отменой офера, для этого использовалась функция <em>mktime</em> для работы с временем.</p>
-<pre><code>zgrep -E &quot;(Quotation:.+ - notification for .+ cancelled|Quotation:.+ - offer is sent to .+)&quot; ./test/offers.log.gz | awk ' {print ($14 == &quot;&quot; ? $1 &quot; &quot; $2 &quot; &quot; $7 &quot; &quot; $12 : $1 &quot; &quot; $2 &quot; &quot; $7 &quot; &quot; $14) };' | awk '{gsub(&quot;-&quot;, &quot; &quot;, $1); gsub(/,[0-9][0-9][0-9]/, &quot;&quot;, $2); gsub(&quot;:&quot;, &quot; &quot;, $2); print mktime($1 &quot; &quot; $2) &quot; &quot; $3 &quot; &quot; $4;}' | awk '{
-if (array[$3]==&quot;&quot;&amp;&amp;q==&quot;&quot;||(array[$3]==&quot;&quot; &amp;&amp; q==$2)) {array[$3]=$1;q=$2}
-else if (array[$3]!=&quot;&quot; &amp;&amp; q==$2) {array[$3]=$1-array[$3];}
-else {for (i in array) {if (array[i]!=&quot;&quot;) print q, i, array[i];}; delete array;array[$3]=$1;q=$2;}
-} END{for (i in array) print q, i, array[i];}'
+<pre tabindex="0"><code>zgrep -E &#34;(Quotation:.+ - notification for .+ cancelled|Quotation:.+ - offer is sent to .+)&#34; ./test/offers.log.gz | awk &#39; {print ($14 == &#34;&#34; ? $1 &#34; &#34; $2 &#34; &#34; $7 &#34; &#34; $12 : $1 &#34; &#34; $2 &#34; &#34; $7 &#34; &#34; $14) };&#39; | awk &#39;{gsub(&#34;-&#34;, &#34; &#34;, $1); gsub(/,[0-9][0-9][0-9]/, &#34;&#34;, $2); gsub(&#34;:&#34;, &#34; &#34;, $2); print mktime($1 &#34; &#34; $2) &#34; &#34; $3 &#34; &#34; $4;}&#39; | awk &#39;{
+if (array[$3]==&#34;&#34;&amp;&amp;q==&#34;&#34;||(array[$3]==&#34;&#34; &amp;&amp; q==$2)) {array[$3]=$1;q=$2}
+else if (array[$3]!=&#34;&#34; &amp;&amp; q==$2) {array[$3]=$1-array[$3];}
+else {for (i in array) {if (array[i]!=&#34;&#34;) print q, i, array[i];}; delete array;array[$3]=$1;q=$2;}
+} END{for (i in array) print q, i, array[i];}&#39;
 </code></pre><p>Полезные ссылки:</p>
 <ul>
 <li><a href="http://www.funtoo.org/Awk_by_Example,_Part_1">Awk by Example</a></li>
@@ -814,43 +814,35 @@ FORWARD Трафик, исходящий от внешней системы и �
     </div>
     
     
-<ul class="pagination">
-  <li class="page-item">
-    <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-  </li>
-  <li class="page-item">
-    <a href="/page/3/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-  </li>
-  <li class="page-item">
-    <a class="page-link" href="/">1</a>
-  </li>
-  <li class="page-item">
-    <a class="page-link" href="/page/2/">2</a>
-  </li>
-  <li class="page-item">
-    <a class="page-link" href="/page/3/">3</a>
-  </li>
-  <li class="page-item active">
-    <a class="page-link" href="/page/4/">4</a>
-  </li>
-  <li class="page-item">
-    <a class="page-link" href="/page/5/">5</a>
-  </li>
-  <li class="page-item disabled">
-    <span aria-hidden="true">&nbsp;&hellip;&nbsp;</span>
-  </li>
-  <li class="page-item">
-    <a class="page-link" href="/page/22/">22</a>
-  </li>
-  <li class="page-item">
-    <a href="/page/5/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-  </li>
-  <li class="page-item">
-    <a href="/page/22/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-  </li>
-</ul>
-
-
+    <ul class="pagination pagination-default">
+      <li class="page-item">
+        <a href="/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/page/3/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/page/2/" aria-label="Page 2" class="page-link" role="button">2</a>
+      </li>
+      <li class="page-item">
+        <a href="/page/3/" aria-label="Page 3" class="page-link" role="button">3</a>
+      </li>
+      <li class="page-item active">
+        <a aria-current="page" aria-label="Page 4" class="page-link" role="button">4</a>
+      </li>
+      <li class="page-item">
+        <a href="/page/5/" aria-label="Page 5" class="page-link" role="button">5</a>
+      </li>
+      <li class="page-item">
+        <a href="/page/6/" aria-label="Page 6" class="page-link" role="button">6</a>
+      </li>
+      <li class="page-item">
+        <a href="/page/5/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/page/22/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      </li>
+    </ul>
   </div>
 </div>
 

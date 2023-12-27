@@ -86,7 +86,7 @@
     </p>
     <p>Когда я только переехал на Hugo, встал вопрос об автоматизации обновления сайта. Не стал ничего выдумывать и просто следовал рекомендациям на офицальном сайте <a href="https://gohugo.io/tutorials/automated-deployments/">gohugo.io</a> и настроил <a href="https://app.wercker.com/">Wercker</a>. Все отлично работало.</p>
 <p>Но однажды сборка сломалась - оказалось в образе <em>debian</em> перестал работать <em>wget</em>. Пришлось немного поправить настройки. В итоге получилось следующее (определенно избыточно):</p>
-<pre><code>box: debian
+<pre tabindex="0"><code>box: debian
 build:
   steps:
     - script:
@@ -111,28 +111,28 @@ deploy:
 </code></pre><p>Время шло, Wercker исправно работал. Но тут его купил Oracle, о чем красноречиво напоминала красная плашка на всех страницах. Может быть, ничего страшного и не случится, но на всякий случай надо подготовить запасной вариант.</p>
 <p>Блог хостится на Github, и первая CI, что приходит на ум, конечно <a href="https://travis-ci.org">Travis</a>. Благо и инструкций для этого есть немало. Я использовал <a href="http://www.tutysara.net/posts/2016/09/27/automating-hugo-blog-deployment-to-github-pages-using-travis-ci/">вот эту</a>.</p>
 <p>Единственное что, немного доработал <em>deploy.sh</em>, чтобы деплоить только если есть изменения. Иначе даже при добавлении черновика блог будет пересобираться. За основу взял <a href="https://gist.github.com/domenic/ec8b0fc8ab45f39403dd">статью</a>. Итоговый результат:</p>
-<pre><code># !/bin/bash
+<pre tabindex="0"><code># !/bin/bash
 set -e # Exit with nonzero exit code if anything fails
 
-SOURCE_BRANCH=&quot;master&quot;
+SOURCE_BRANCH=&#34;master&#34;
 
-# Pull requests and commits to other branches shouldn't try to deploy, just build to verify
-if [ &quot;$TRAVIS_PULL_REQUEST&quot; != &quot;false&quot; -o &quot;$TRAVIS_BRANCH&quot; != &quot;$SOURCE_BRANCH&quot; ]; then
-    echo &quot;Skipping deploy; just doing a build.&quot;    
+# Pull requests and commits to other branches shouldn&#39;t try to deploy, just build to verify
+if [ &#34;$TRAVIS_PULL_REQUEST&#34; != &#34;false&#34; -o &#34;$TRAVIS_BRANCH&#34; != &#34;$SOURCE_BRANCH&#34; ]; then
+    echo &#34;Skipping deploy; just doing a build.&#34;    
     exit 0
 fi
 
 # Save some useful information
-REPO=&quot;bege13mot.github.io&quot;
-GH_REPO=&quot;github.com/bege13mot/$REPO.git&quot;
+REPO=&#34;bege13mot.github.io&#34;
+GH_REPO=&#34;github.com/bege13mot/$REPO.git&#34;
 #SHA=`git rev-parse --verify HEAD`
-EMAIL=&quot;bege13mot@gmail.com&quot;
+EMAIL=&#34;bege13mot@gmail.com&#34;
 
 # Build the project.
-hugo # if using a theme, replace by 'hugo -t &lt;yourtheme&gt;'
+hugo # if using a theme, replace by &#39;hugo -t &lt;yourtheme&gt;&#39;
 
 # Clone the existing gh-pages for this repo into out/
-git clone --depth=1 &quot;https://$GH_REPO&quot; out
+git clone --depth=1 &#34;https://$GH_REPO&#34; out
 
 # Clean out existing contents
 rm -rf out/**/* || exit 0
@@ -140,26 +140,26 @@ rm -rf out/**/* || exit 0
 # copy files to commit
 cp -R public/* out
 
-# Now let's go have some fun with the cloned repo
+# Now let&#39;s go have some fun with the cloned repo
 cd out
 git remote
-git config user.name &quot;Travis CI&quot;
-git config user.email &quot;$EMAIL&quot;
+git config user.name &#34;Travis CI&#34;
+git config user.email &#34;$EMAIL&#34;
 
 # If there are no changes to the compiled out (e.g. this is a README update) then just bail.
 git status
 if git diff-index --quiet HEAD --; then
-    echo &quot;No changes to the output on this push; exiting.&quot;
+    echo &#34;No changes to the output on this push; exiting.&#34;
     exit 0
 fi
 
-# Commit the &quot;changes&quot;, i.e. the new version.
+# Commit the &#34;changes&#34;, i.e. the new version.
 # The delta will show diffs between new and old versions.
 git add -A .
-git commit -m &quot;Deploy to GitHub Pages&quot;
+git commit -m &#34;Deploy to GitHub Pages&#34;
 
-# Now that we're all set up, we can push.
-git push &quot;https://$GH_TOKEN@$GH_REPO&quot; $SOURCE_BRANCH
+# Now that we&#39;re all set up, we can push.
+git push &#34;https://$GH_TOKEN@$GH_REPO&#34; $SOURCE_BRANCH
 </code></pre><p>Переезд на более &ldquo;стабильный&rdquo; (как минимум более известный и проверенный) CI успешно состоялся. Заодно и процесс деплоя упростился после отказа от сторонних скриптов.</p>
 
   </div>

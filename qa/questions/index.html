@@ -679,11 +679,11 @@ Virtual IP addresses are commonly used to enable high availability. A standard f
 <details>
 <summary><b>A careless sysadmin executes the following command: chmod 444 /bin/chmod - what do you do to fix this?</b></summary><br>
 <p>Default permission is 755. You can use C\C++\Python\Perl and other language to fix this.</p>
-<pre><code>#!/usr/bin/python
+<pre tabindex="0"><code>#!/usr/bin/python
 import os
-os.chmod(&quot;/bin/chmod&quot;, 0755)
+os.chmod(&#34;/bin/chmod&#34;, 0755)
 </code></pre><h1 id="1">1:</h1>
-<pre><code>cp /bin/ls chmod.01
+<pre tabindex="0"><code>cp /bin/ls chmod.01
 cp /bin/chmod chmod.01
 ./chmod.01 700 file
 </code></pre><h1 id="2">2:</h1>
@@ -717,19 +717,19 @@ cp /bin/chmod chmod.01
 <summary><b>Every command fails with `command not found` How to trace the source of the error and resolve it?</b></summary><br>
 <p>It looks that at one point or another are overwriting the default <code>PATH</code> environment variable. The type of errors you have, indicates that <code>PATH</code> does not contain e.g. <code>/bin</code>, where the commands (including bash) reside.</p>
 <p>One way to begin debugging your bash script or command would be to start a subshell with the <code>-x</code> option:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bash --login -x
-</code></pre></div><p>This will show you every command, and its arguments, which is executed when starting that shell.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bash --login -x
+</span></span></code></pre></div><p>This will show you every command, and its arguments, which is executed when starting that shell.</p>
 <p>If you run this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">PATH<span style="color:#f92672">=</span>/bin:/sbin:/usr/bin:/usr/sbin
-</code></pre></div></details>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>PATH<span style="color:#f92672">=</span>/bin:/sbin:/usr/bin:/usr/sbin
+</span></span></code></pre></div></details>
 <details>
 <summary><b>How to exit without saving shell history?</b></summary><br>
 <p><code>kill -9 $$</code></p>
 </details>
 <details>
 <summary><b>How to kills a process that is locking a file?</b></summary><br>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">fuser -k filename
-</code></pre></div></details>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fuser -k filename
+</span></span></code></pre></div></details>
 <hr>
 <h3 id="demo-time">Demo Time:</h3>
 <details>

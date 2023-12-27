@@ -1,1275 +1,776 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
+    <loc>https://bege13mot.github.io/qa/advices/</loc>
+    <lastmod>2023-12-14T10:00:00+04:00</lastmod>
+  </url><url>
+    <loc>https://bege13mot.github.io/</loc>
+    <lastmod>2023-12-14T10:00:00+04:00</lastmod>
+  </url><url>
+    <loc>https://bege13mot.github.io/qa/</loc>
+    <lastmod>2023-12-14T10:00:00+04:00</lastmod>
+  </url><url>
+    <loc>https://bege13mot.github.io/qa/others/</loc>
+    <lastmod>2023-12-10T10:00:00+04:00</lastmod>
+  </url><url>
+    <loc>https://bege13mot.github.io/qa/interview/</loc>
+    <lastmod>2023-11-12T20:00:00+04:00</lastmod>
+  </url><url>
+    <loc>https://bege13mot.github.io/qa/go-questions/</loc>
+    <lastmod>2023-04-10T10:00:00+04:00</lastmod>
+  </url><url>
     <loc>https://bege13mot.github.io/tags/book/</loc>
     <lastmod>2020-12-20T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/tags/business/</loc>
     <lastmod>2020-12-20T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/categories/</loc>
     <lastmod>2020-12-20T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bege13mot.github.io/</loc>
-    <lastmod>2020-12-20T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/tags/non-fiction/</loc>
     <lastmod>2020-12-20T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/categories/post/</loc>
     <lastmod>2020-12-20T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/</loc>
     <lastmod>2020-12-20T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/tags/</loc>
     <lastmod>2020-12-20T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/the-four/</loc>
     <lastmod>2020-12-20T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/big-picture/</loc>
     <lastmod>2020-11-01T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/tags/economy/</loc>
     <lastmod>2020-10-20T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/capital-21/</loc>
     <lastmod>2020-10-20T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/debt-5000/</loc>
     <lastmod>2020-09-15T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/tags/management/</loc>
     <lastmod>2020-08-20T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/managing-humans/</loc>
     <lastmod>2020-08-20T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/homo-deus/</loc>
     <lastmod>2020-08-15T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/making-a-manager/</loc>
     <lastmod>2020-07-10T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/database-internals/</loc>
     <lastmod>2020-06-10T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/tags/it/</loc>
     <lastmod>2020-06-10T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/tags/theory/</loc>
     <lastmod>2020-06-10T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/culture-map/</loc>
     <lastmod>2020-05-20T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/tags/psychology/</loc>
     <lastmod>2020-05-10T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/selfie/</loc>
     <lastmod>2020-05-10T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/dengy-bez-durakov/</loc>
     <lastmod>2020-04-25T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/ai-superpowers/</loc>
     <lastmod>2020-04-20T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/unicorn-project/</loc>
     <lastmod>2020-04-10T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/hulinomika/</loc>
     <lastmod>2020-03-10T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/building-secure-and-reliable-systems/</loc>
     <lastmod>2020-02-20T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/kubernetes_up_and_running/</loc>
     <lastmod>2020-02-10T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/elegant-puzzle/</loc>
     <lastmod>2019-12-16T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bege13mot.github.io/qa/interview/</loc>
-    <lastmod>2019-11-12T20:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bege13mot.github.io/qa/</loc>
-    <lastmod>2019-11-12T20:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/qa/grokking/</loc>
     <lastmod>2019-07-15T20:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/qa/bookmarks/</loc>
     <lastmod>2019-03-13T20:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/microservices-hobby/</loc>
     <lastmod>2018-07-18T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/tags/tech/</loc>
     <lastmod>2018-07-18T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/pandemic/</loc>
     <lastmod>2017-10-28T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/qa/questions/</loc>
     <lastmod>2017-10-12T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/unix-book/</loc>
     <lastmod>2017-09-01T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/high-networking/</loc>
     <lastmod>2017-08-25T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/code-book/</loc>
     <lastmod>2017-07-05T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/travis-ci/</loc>
     <lastmod>2017-05-04T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/tags/fiction/</loc>
     <lastmod>2017-05-01T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/demonkeeping/</loc>
     <lastmod>2017-05-01T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/thinking-java/</loc>
     <lastmod>2017-04-29T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/lust-lizard/</loc>
     <lastmod>2017-04-23T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/top-down-approach/</loc>
     <lastmod>2017-04-16T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/start-with-no/</loc>
     <lastmod>2017-03-21T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/categories/link/</loc>
     <lastmod>2017-03-20T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/links-10/</loc>
     <lastmod>2017-03-20T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/habits-of-happy-brain/</loc>
     <lastmod>2017-03-10T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/echopraxia/</loc>
     <lastmod>2017-03-01T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/legacy-code/</loc>
     <lastmod>2017-02-28T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/git-cheatsheet/</loc>
     <lastmod>2017-02-20T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/logs-cheatsheet/</loc>
     <lastmod>2017-02-19T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/arthur-george/</loc>
     <lastmod>2017-02-10T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/links-9/</loc>
     <lastmod>2017-02-05T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/tcp-ip-hunt/</loc>
     <lastmod>2017-02-01T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/pyshi-sokrashyai/</loc>
     <lastmod>2017-01-30T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/google-sre/</loc>
     <lastmod>2017-01-28T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/network-administration-limoncelli/</loc>
     <lastmod>2017-01-24T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/startup-of-you/</loc>
     <lastmod>2017-01-20T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/bitva-za-runet/</loc>
     <lastmod>2017-01-14T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/backup/</loc>
     <lastmod>2017-01-04T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/tags/film/</loc>
     <lastmod>2017-01-03T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/films-2016/</loc>
     <lastmod>2017-01-03T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/books-2016/</loc>
     <lastmod>2017-01-03T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/jack-glass/</loc>
     <lastmod>2017-01-03T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/blindsight/</loc>
     <lastmod>2016-12-01T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/tags/career/</loc>
     <lastmod>2016-11-07T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/tags/engineering/</loc>
     <lastmod>2016-11-07T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/effective-engineer/</loc>
     <lastmod>2016-11-07T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/links-8/</loc>
     <lastmod>2016-11-06T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/good-manners/</loc>
     <lastmod>2016-11-05T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/docker/</loc>
     <lastmod>2016-10-30T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/play-brain/</loc>
     <lastmod>2016-10-26T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/switch/</loc>
     <lastmod>2016-10-20T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/spousonomics/</loc>
     <lastmod>2016-10-01T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/master-switch/</loc>
     <lastmod>2016-09-20T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/vsya-kremleavskya-rat/</loc>
     <lastmod>2016-09-10T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/automation-notes/</loc>
     <lastmod>2016-08-01T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/sweet-tooth/</loc>
     <lastmod>2016-07-24T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/naked-statistics/</loc>
     <lastmod>2016-07-18T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/disappearing-spoon/</loc>
     <lastmod>2016-07-08T09:12:22+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/great-pursuit/</loc>
     <lastmod>2016-07-06T09:12:22+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/links-7/</loc>
     <lastmod>2016-07-04T10:00:00+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/kak-stat-sundi/</loc>
     <lastmod>2016-06-22T09:12:22+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/tags/biography/</loc>
     <lastmod>2016-06-21T09:12:22+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/like-anyone-else/</loc>
     <lastmod>2016-06-21T09:12:22+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/links-6/</loc>
     <lastmod>2016-06-20T12:07:39+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/tags/programming/</loc>
     <lastmod>2016-06-18T09:12:22+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/7-databases/</loc>
     <lastmod>2016-06-18T09:12:22+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/links-5/</loc>
     <lastmod>2016-05-23T12:07:39+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/tags/succes-story/</loc>
     <lastmod>2016-05-18T22:37:54+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/strange-girl/</loc>
     <lastmod>2016-05-18T22:37:54+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/yellow-kings/</loc>
     <lastmod>2016-05-15T22:37:54+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/links-4/</loc>
     <lastmod>2016-05-06T12:07:39+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/think-like-a-freak/</loc>
     <lastmod>2016-04-18T22:37:54+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/data-structures-laforte/</loc>
     <lastmod>2016-04-16T17:01:04+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/links-3/</loc>
     <lastmod>2016-03-31T23:07:39+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/penumbra-book-store/</loc>
     <lastmod>2016-03-20T15:20:59+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/v-internete-kto-to-neprav/</loc>
     <lastmod>2016-03-12T12:50:35+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/distibuted-system-for-fun/</loc>
     <lastmod>2016-03-01T09:09:02+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/links-2/</loc>
     <lastmod>2016-02-29T08:26:13+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/ansible-for-devops/</loc>
     <lastmod>2016-02-25T22:19:14+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/links-1/</loc>
     <lastmod>2016-02-15T23:34:11+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/phules-compay/</loc>
     <lastmod>2016-02-10T23:34:18+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/business-like-a-game/</loc>
     <lastmod>2016-02-09T23:32:22+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/how-to-change-blog-2/</loc>
     <lastmod>2016-02-01T14:41:26+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/about/</loc>
     <lastmod>2016-01-30T16:42:18+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/how-to-change-blog-1/</loc>
     <lastmod>2016-01-30T01:08:50+04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%B4%D1%83%D0%BC%D0%B0%D0%B9-%D0%BA%D0%B0%D0%BA-%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA/</loc>
     <lastmod>2016-01-26T18:50:26+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BF%D1%83%D1%82%D0%B5%D1%88%D0%B5%D1%81%D1%82%D0%B2%D0%B8%D0%B5-%D0%B5%D0%B4%D1%8B/</loc>
     <lastmod>2016-01-26T18:48:50+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BE%D1%82%D1%8A%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%81%D1%82-%D0%BB%D0%B0%D0%B9%D1%84%D1%85%D0%B0%D0%BA%D0%B8%D0%BD%D0%B3/</loc>
     <lastmod>2016-01-26T18:48:29+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/tags/article/</loc>
     <lastmod>2016-01-23T11:35:29+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D1%87%D1%82%D0%BE-%D1%87%D0%B8%D1%82%D0%B0%D1%82%D1%8C-%D0%B5%D1%81%D0%BB%D0%B8-%D0%B2%D1%8B-%D0%BD%D0%B8%D1%87%D0%B5%D0%B3%D0%BE-%D0%BD%D0%B5-%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%B5%D1%82%D0%B5/</loc>
     <lastmod>2016-01-23T11:35:29+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D1%81%D0%BA%D0%BE%D1%80%D0%BE%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE%D0%BC%D0%B5%D1%88%D0%B0%D0%BB%D0%BE-%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%BD%D0%B8%D1%8E-%D0%BF%D1%80%D0%BE%D1%87/</loc>
     <lastmod>2016-01-18T19:40:04+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%B2%D1%81%D1%8E-%D0%B6%D0%B8%D0%B7%D0%BD%D1%8C-%D1%8F-%D0%B4%D0%B5%D0%BB%D0%B0%D0%BB-%D1%82%D0%BE-%D1%87%D1%82%D0%BE-%D0%B2%D0%B5%D0%BB%D0%B5%D0%BB%D0%BE-%D1%81%D0%B5%D1%80%D0%B4%D1%86%D0%B5-%D0%B8/</loc>
     <lastmod>2016-01-12T20:05:35+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%80%D0%BD%D1%8B%D0%B5-%D1%87%D0%B0%D1%81%D1%82%D0%B8%D1%86%D1%8B-%D0%BD%D0%B0-%D0%BF%D0%B0%D0%BB%D1%8C%D1%86%D0%B0%D1%85/</loc>
     <lastmod>2016-01-12T20:02:42+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BA%D0%B8%D0%BD%D0%BE-%D0%B8%D1%82%D0%BE%D0%B3%D0%B8-2015/</loc>
     <lastmod>2015-12-31T12:16:56+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/books-2015/</loc>
     <lastmod>2015-12-31T11:26:10+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/tags/time-management/</loc>
     <lastmod>2015-12-31T09:49:16+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D1%82%D0%B0%D0%B9%D0%BC-%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%BC%D0%B5%D0%BD%D1%82-%D0%B4%D0%BB%D1%8F-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%BD%D1%8B%D1%85/</loc>
     <lastmod>2015-12-31T09:49:16+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/scrum-%D0%B4%D0%B6%D0%B5%D1%84%D1%84-%D1%81%D0%B0%D0%B7%D0%B5%D1%80%D0%BB%D0%B5%D0%BD%D0%B4/</loc>
     <lastmod>2015-12-31T06:36:42+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/hakobyanh-dark/</loc>
     <lastmod>2015-12-08T19:25:48+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BD%D0%B5-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%B9%D1%82%D0%B5-%D1%81-%D0%BC%D1%83%D0%B4%D0%B0%D0%BA%D0%B0%D0%BC%D0%B8-%D1%80%D0%BE%D0%B1%D0%B5%D1%80%D1%82-%D1%81%D0%B0%D1%82%D1%82%D0%BE%D0%BD/</loc>
     <lastmod>2015-11-29T18:45:29+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%B2%D1%81%D1%91-%D0%BE%D1%82%D0%BD%D0%BE%D1%81%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE/</loc>
     <lastmod>2015-11-26T19:14:11+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D1%82%D0%B5%D0%BE%D1%80%D0%B8%D1%8F-%D0%B8%D0%B3%D1%80-%D0%B0%D0%B2%D0%B8%D0%BD%D0%B0%D1%88-%D0%BA-%D0%B4%D0%B8%D0%BA%D1%81%D0%B8%D1%82/</loc>
     <lastmod>2015-11-26T18:56:04+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/tags/travel/</loc>
     <lastmod>2015-11-25T17:43:23+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D1%87%D0%B8%D1%81%D1%82%D1%8B%D0%B9-%D0%BF%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82-%D0%B2-%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%B0%D1%85-%D0%B8%D0%B4%D0%B5%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B2/</loc>
     <lastmod>2015-11-25T17:43:23+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/postgressql/</loc>
     <lastmod>2015-10-25T17:14:05+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/how-an-economy-grows-and-why-it-crashes-by-peter/</loc>
     <lastmod>2015-10-25T15:57:46+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/tags/writing/</loc>
     <lastmod>2015-10-25T15:37:41+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BA%D0%B0%D0%BA-%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C-%D1%82%D0%B0%D0%BA-%D1%87%D1%82%D0%BE%D0%B1%D1%8B-%D0%B2%D0%B0%D0%BC-%D0%B4%D0%BE%D0%B2%D0%B5%D1%80%D1%8F%D0%BB%D0%B8-%D0%BA%D0%B5%D0%BD%D0%BD/</loc>
     <lastmod>2015-10-25T15:37:41+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BD%D0%B0-%D0%BA%D0%BE%D0%B3%D0%BE-%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F/</loc>
     <lastmod>2015-10-11T18:49:41+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BC%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0-%D0%B8%D0%B3%D1%80%D1%8B-%D1%80%D0%BE%D0%B1%D0%B5%D1%80%D1%82-%D0%B3%D1%80%D0%B8%D0%BD/</loc>
     <lastmod>2015-10-06T17:22:21+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%BE-%D0%B4%D0%B5%D0%BB%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE-%D0%BF%D0%B8%D1%81%D1%8C%D0%BC%D0%B0-%D1%81%D0%B0%D1%88%D0%B0-%D0%BA%D0%B0%D1%80%D0%B5%D0%BF/</loc>
     <lastmod>2015-09-27T09:44:34+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BA%D0%BE%D1%80%D0%BF%D0%BE%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D0%B3%D0%B5%D0%BD%D0%B8%D0%B5%D0%B2-%D1%8D%D0%B4-%D0%BA%D1%8D%D1%82%D0%BC%D0%B5%D0%BB%D0%BB-%D0%B8-%D1%8D%D0%BC%D0%BC%D0%B8-%D1%83%D0%BE/</loc>
     <lastmod>2015-09-22T13:22:20+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/the-ten-most-important-books/</loc>
     <lastmod>2015-09-22T04:48:08+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/web-operations-by-john-allspaw/</loc>
     <lastmod>2015-09-10T15:36:54+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%B0%D0%BC%D0%B5%D1%80%D0%B8%D0%BA%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B5-%D0%B1%D0%BE%D0%B3%D0%B8-%D0%BD%D0%B8%D0%BB-%D0%B3%D0%B5%D0%B9%D0%BC%D0%B0%D0%BD/</loc>
     <lastmod>2015-09-10T15:03:16+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/the-prime-russian-m%D0%B0gazine-is-building-a-bookshelf/</loc>
     <lastmod>2015-08-27T19:17:06+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/unix-%D0%B8-linux-%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/</loc>
     <lastmod>2015-08-25T14:39:23+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/citizenfour/</loc>
     <lastmod>2015-08-25T13:58:28+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/the-unwritten-laws-of-engineering-by-w-j-king/</loc>
     <lastmod>2015-08-24T19:35:15+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/podcast/</loc>
     <lastmod>2015-08-24T18:54:23+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%B0%D1%82%D0%BB%D0%B0%D0%BD%D1%82-%D1%80%D0%B0%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB-%D0%BF%D0%BB%D0%B5%D1%87%D0%B8-%D0%B0%D0%B9%D0%BD-%D1%80%D1%8D%D0%BD%D0%B4/</loc>
     <lastmod>2015-08-10T19:24:26+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%B1%D0%B5%D0%B7-%D1%82%D0%BE%D1%80%D0%BC%D0%BE%D0%B7%D0%BE%D0%B2-%D0%B4%D0%B6%D0%B5%D1%80%D0%B5%D0%BC%D0%B8-%D0%BA%D0%BB%D0%B0%D1%80%D0%BA%D1%81%D0%BE%D0%BD/</loc>
     <lastmod>2015-06-29T18:00:52+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D1%81%D0%BE%D0%B2%D0%B5%D1%80%D1%88%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9-%D0%BA%D0%BE%D0%B4-%D1%81%D1%82%D0%B8%D0%B2-%D0%BC%D0%B0%D0%BA%D0%BA%D0%BE%D0%BD%D0%BD%D0%B5%D0%BB%D0%BB/</loc>
     <lastmod>2015-06-26T16:29:49+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%B3%D0%B0%D1%80%D1%80%D0%B8-%D0%BF%D0%BE%D1%82%D1%82%D0%B5%D1%80-%D0%B8-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B-%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE/</loc>
     <lastmod>2015-06-26T16:28:12+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/the-phoenix-project-a-novel-about-it-by-gene-kim/</loc>
     <lastmod>2015-06-26T16:22:13+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D1%82%D1%8B-%D0%BD%D0%B5-%D0%BC%D1%83%D0%B4%D0%B0%D0%BA/</loc>
     <lastmod>2015-06-25T19:16:06+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D1%8B-%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-%D0%BF%D0%BE-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B5/</loc>
     <lastmod>2015-06-14T18:59:10+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D1%81%D0%BE%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B5-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-%D1%8D%D0%BD/</loc>
     <lastmod>2015-06-14T18:46:11+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-dot-com/</loc>
     <lastmod>2015-06-14T18:33:05+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/tags/biology/</loc>
     <lastmod>2015-05-27T19:01:36+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/n-1/</loc>
     <lastmod>2015-05-27T19:01:36+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/what-ive-learned-after-10-years-of-quantifying/</loc>
     <lastmod>2015-05-05T14:42:16+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D0%B9-%D0%BC%D0%BD%D0%B5-%D0%BA%D0%B0%D1%80%D0%B0%D0%BA%D1%83%D1%80%D0%B8/</loc>
     <lastmod>2015-05-05T13:35:53+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%B7%D0%BE%D0%BB%D0%BE%D1%82%D0%BE%D0%B9-%D0%B1%D0%B0%D1%82%D0%BE%D0%BD-%D0%B2%D0%B5%D1%80%D1%88%D0%B8%D0%BD%D0%B0-%D0%BE%D1%82%D0%B5%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3/</loc>
     <lastmod>2015-05-01T20:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BC%D0%B0%D0%BA%D1%81-%D1%87%D0%B5%D1%80%D0%B5%D0%BF%D0%B8%D1%86%D0%B0/</loc>
     <lastmod>2015-04-28T04:46:29+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D1%8B%D0%B5-%D1%81%D0%B5%D1%82%D0%B8-%D1%8D%D0%BD%D0%B4%D1%80%D1%8E-%D1%82%D0%B0%D0%BD%D0%B5%D0%BD%D0%B1%D0%B0%D1%83%D0%BC/</loc>
     <lastmod>2015-04-24T19:34:39+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BF%D1%80%D0%BE%D0%B2%D0%B8%D0%BD%D1%86%D0%B8%D1%8F-%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D0%B9-%D1%81%D0%B0%D0%BC-%D0%BA%D0%B0%D0%BA-%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C-%D0%BA%D0%BD%D0%B8%D0%B6%D0%BD/</loc>
     <lastmod>2015-04-17T20:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BC%D0%BE%D1%8F-%D0%B6%D0%B8%D0%B7%D0%BD%D1%8C-%D0%BC%D0%BE%D0%B8-%D0%B4%D0%BE%D1%81%D1%82%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B3%D0%B5%D0%BD%D1%80%D0%B8-%D1%84%D0%BE%D1%80%D0%B4/</loc>
     <lastmod>2015-04-16T18:24:20+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D1%8D%D1%82%D0%B8%D0%BA%D0%B5%D1%82-%D0%B4%D0%BB%D1%8F-%D1%85%D0%B0%D0%BC%D0%BE%D0%B2/</loc>
     <lastmod>2015-04-15T18:46:30+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%B0%D1%82%D1%8B%D0%B2%D0%B0%D0%B5%D0%BC-%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D1%83%D0%B5%D0%BC-%D0%BD%D0%B0%D0%B1%D0%BB%D1%8E%D0%B4%D0%B0%D0%B5%D0%BC-%D0%BD/</loc>
     <lastmod>2015-04-15T13:49:47+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-%D0%B3%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D0%B8%D1%8F-%D0%B1%D0%B0%D0%BA%D1%83%D0%BD%D0%BE%D0%B2%D0%B0-%D0%BE-%D0%BB%D1%8E%D0%B4%D1%8F%D1%85/</loc>
     <lastmod>2015-04-07T18:03:07+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BD%D0%B5-%D0%B3%D0%BE%D0%BD%D0%B8%D1%82%D0%B5%D1%81%D1%8C-%D0%B7%D0%B0-%D0%BC%D0%B5%D1%87%D1%82%D0%BE%D0%B9/</loc>
     <lastmod>2015-04-07T17:59:43+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D1%81%D0%BF%D1%80%D0%B0%D1%88%D0%B8%D0%B2%D0%B0%D0%B9%D1%82%D0%B5-%D0%B8-%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%8F%D1%82-%D0%B2%D0%B0%D0%BC-%D0%BA%D0%B0%D0%BA-%D0%BF%D1%80%D0%B8%D0%B2%D1%8B%D1%87%D0%BA/</loc>
     <lastmod>2015-04-02T20:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/soft-skills-by-john-z-sonmez/</loc>
     <lastmod>2015-04-02T18:23:18+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BA%D1%80%D0%B0%D1%82%D0%BA%D0%B0%D1%8F-%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F-%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%B8-%D1%81%D1%82%D0%B8%D0%B2%D0%B5%D0%BD-%D1%85%D0%BE%D0%BA%D0%B8%D0%BD/</loc>
     <lastmod>2015-04-02T13:45:07+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BB%D0%B8%D1%85%D0%BE%D1%80%D0%B0%D0%B4%D0%BA%D0%B0-%D1%83%D0%B4%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%B8%D0%B9-%D0%BA%D1%82%D0%BE-%D0%BF%D1%80%D0%B8%D0%B4%D1%83%D0%BC%D0%B0%D0%BB/</loc>
     <lastmod>2015-03-22T16:46:38+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/learn-git-branching/</loc>
     <lastmod>2015-03-18T04:40:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/powershell-for-testers/</loc>
     <lastmod>2015-03-16T04:00:29+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BA%D0%B0%D1%80%D1%8C%D0%B5%D1%80%D0%B0-%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%D0%B0-%D0%BB%D0%B8-%D1%8F%D0%BA%D0%BE%D0%BA%D0%BA%D0%B0/</loc>
     <lastmod>2015-03-15T17:08:57+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D0%B8-%D1%8F%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D0%B0/</loc>
     <lastmod>2015-03-09T07:54:34+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-%D0%B1%D0%B0%D0%B7-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D0%BA%D1%80%D0%B8%D1%81%D1%82%D0%BE%D1%84/</loc>
     <lastmod>2015-03-06T08:11:06+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%B3%D1%91%D0%B4%D0%B5%D0%BB%D1%8C-%D1%8D%D1%88%D0%B5%D1%80-%D0%B1%D0%B0%D1%85-%D1%8D%D1%82%D0%B0-%D0%B1%D0%B5%D1%81%D0%BA%D0%BE%D0%BD%D0%B5%D1%87%D0%BD%D0%B0%D1%8F/</loc>
     <lastmod>2015-02-25T18:14:55+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/machine-learning-is-fun/</loc>
     <lastmod>2015-02-25T17:51:16+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/10-%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D1%8B%D1%85-%D0%B8%D0%B3%D1%80-%D0%B2-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B8/</loc>
     <lastmod>2015-02-24T17:43:37+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BF%D0%BE%D1%87%D0%B5%D0%BC%D1%83-%D0%BA%D0%B8%D1%82%D0%B0%D0%B9-%D1%8D%D1%82%D0%BE-%D0%BD%D0%B5-%D1%8D%D0%BA%D0%BE%D0%BD%D0%BE%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5-%D1%87%D1%83%D0%B4/</loc>
     <lastmod>2015-02-23T04:31:30+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%B3%D0%B5%D0%BD%D0%BE%D0%BC-%D0%BC%D1%8D%D1%82%D1%82-%D1%80%D0%B8%D0%B4%D0%BB%D0%B8/</loc>
     <lastmod>2015-02-21T17:40:15+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/python-koans/</loc>
     <lastmod>2015-02-20T16:24:40+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/tags/for-coworkers/</loc>
     <lastmod>2015-02-17T19:05:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-%D0%BE-%D0%BA%D1%80%D0%B8%D0%B7%D0%B8%D1%81%D0%B5-%D0%BE%D1%81%D0%BC%D1%8B%D1%81%D0%BB%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B2%D0%B7%D1%80%D0%BE%D1%81%D0%BB/</loc>
     <lastmod>2015-02-17T19:05:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/eloquent-javascript-by-marijn-haverbeke/</loc>
     <lastmod>2015-02-17T17:34:17+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BA%D0%B0%D1%80%D1%8C%D0%B5%D1%80%D0%B0-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%81%D1%82%D0%B0-%D0%B3-%D0%BB%D0%B0%D0%BA%D0%BC%D0%B0%D0%BD-%D0%BC%D0%B0%D0%BA%D0%B4%D0%B0%D1%83/</loc>
     <lastmod>2015-02-02T19:03:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BF%D0%B0%D1%82%D1%82%D0%B5%D1%80%D0%BD%D1%8B-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D1%8D%D1%80%D0%B8%D0%BA-%D0%B8-%D1%8D%D0%BB%D0%B8%D0%B7%D0%B0/</loc>
     <lastmod>2015-01-31T08:25:40+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BE-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%B5-%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F/</loc>
     <lastmod>2015-01-27T19:02:31+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D1%87%D1%82%D0%BE-%D0%BD%D0%B0%D1%88%D0%B0-%D0%B6%D0%B8%D0%B7%D0%BD%D1%8C-10-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D0%BE%D0%B2-%D1%82%D0%BE%D0%B3%D0%BE-%D0%B7%D0%B0%D1%87%D0%B5%D0%BC/</loc>
     <lastmod>2015-01-22T19:11:26+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/to-fall-in-love-with-anyone-do-this/</loc>
     <lastmod>2015-01-22T19:09:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%B7%D0%B2%D0%B5%D1%80%D0%B8%D0%BD%D1%8B%D0%B9-%D0%BE%D1%81%D0%BA%D0%B0%D0%BB/</loc>
     <lastmod>2015-01-22T19:04:56+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%B8%D0%B4%D0%B5%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D0%B3%D0%BE%D1%81%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%B0-%D1%81%D0%B8%D0%BD%D0%B3%D0%B0%D0%BF%D1%83%D1%80%D0%B0/</loc>
     <lastmod>2015-01-10T20:24:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D1%81%D0%B8%D0%BD%D0%B3%D0%B0%D0%BF%D1%83%D1%80%D1%81%D0%BA%D0%B0%D1%8F-%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F-%D0%B8%D0%B7-%D1%82%D1%80%D0%B5%D1%82%D1%8C%D0%B5%D0%B3%D0%BE-%D0%BC%D0%B8%D1%80/</loc>
     <lastmod>2015-01-08T10:43:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BF%D0%BB%D0%BE%D1%85%D0%BE-%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D0%BD%D0%BE-%D0%B2-%D0%BA%D0%B8%D1%82%D0%B0%D0%B5-%D0%BF%D0%BE%D0%BB-%D0%BC%D0%B8%D0%B4%D0%BB%D0%B5%D1%80/</loc>
     <lastmod>2015-01-08T09:32:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BA%D0%BD%D0%B8%D0%B6%D0%BD%D1%8B%D0%B5-%D0%B8%D1%82%D0%BE%D0%B3%D0%B8-2014/</loc>
     <lastmod>2015-01-08T08:52:12+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/films-2014/</loc>
     <lastmod>2015-01-08T08:17:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D0%BA%D0%B0-%D0%B6%D0%B0%D0%BD%D1%80%D0%B0-11-%D0%BA%D0%BD%D0%B8%D0%B3-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D0%BF%D0%BE%D0%BF%D0%B0%D0%B4%D1%83%D1%82-%D0%B2/</loc>
     <lastmod>2014-12-29T20:05:13+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/non-fiction-books-everyone-should-read/</loc>
     <lastmod>2014-12-29T20:04:32+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%B8%D0%BC%D0%BC%D0%B8%D0%B3%D1%80%D0%B0%D0%BD%D1%82%D1%8B-%D0%B2-%D1%82%D0%BE%D1%80%D0%BE%D0%BD%D1%82%D0%BE/</loc>
     <lastmod>2014-12-18T17:28:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D1%80%D0%B8%D1%87%D0%B0%D1%80%D0%B4-%D0%B1%D1%80%D1%8D%D0%BD%D1%81%D0%BE%D0%BD-%D0%BA-%D1%87%D0%B5%D1%80%D1%82%D1%83-%D0%B2%D1%81%D1%91/</loc>
     <lastmod>2014-12-13T11:30:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BC%D1%83%D0%B7%D0%B0-%D0%B8-%D1%87%D1%83%D0%B4%D0%BE%D0%B2%D0%B8%D1%89%D0%B5-%D1%8F%D0%BD%D0%B0-%D1%84%D1%80%D0%B0%D0%BD%D0%BA/</loc>
     <lastmod>2014-11-20T17:11:36+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D1%81%D1%82%D0%B5%D0%BB%D0%BB%D0%B0%D1%80-%D0%BD%D0%B5-%D1%81%D0%B0%D0%BC%D1%8B%D0%B9-%D0%BB%D1%83%D1%87%D1%88%D0%B8%D0%B9-%D1%84%D0%B8%D0%BB%D1%8C%D0%BC-%D0%BA%D1%80/</loc>
     <lastmod>2014-11-19T19:10:01+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%B7%D0%B2%D0%B5%D0%B7%D0%B4%D0%BD%D0%B0%D1%8F-%D0%BF%D1%8B%D0%BB%D1%8C-%D0%B2-%D0%B3%D0%BB%D0%B0%D0%B7%D0%B0-%D0%BC%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D0%BD%D0%B8%D1%81%D0%BB%D0%B0/</loc>
     <lastmod>2014-11-10T18:03:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BA%D0%B0%D0%BA-%D0%BF%D0%B0%D1%81%D1%82%D0%B8-%D0%BA%D0%BE%D1%82%D0%BE%D0%B2-%D0%B4%D0%B6-%D1%85%D0%B0%D0%BD%D0%BA-%D1%80%D0%B5%D0%B9%D0%BD%D0%B2%D0%BE%D1%82%D0%B5%D1%80/</loc>
     <lastmod>2014-11-04T19:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BE%D0%B4%D0%BD%D0%BE%D1%8D%D1%82%D0%B0%D0%B6%D0%BD%D0%B0%D1%8F-%D0%B0%D0%BC%D0%B5%D1%80%D0%B8%D0%BA%D0%B0-%D0%B8%D0%BB%D1%8C%D1%84-%D0%B8-%D0%BF%D0%B5%D1%82%D1%80%D0%BE%D0%B2/</loc>
     <lastmod>2014-10-28T19:29:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%B8%D1%81%D1%87%D0%B5%D0%B7%D0%BD%D1%83%D0%B2%D1%88%D0%B0%D1%8F-%D0%B3%D0%B8%D0%BB%D0%BB%D0%B8%D0%B0%D0%BD-%D1%84%D0%BB%D0%B8%D0%BD%D0%BD/</loc>
     <lastmod>2014-10-26T18:36:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BA%D0%B0%D0%BA-%D0%BD%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C-%D0%BA%D0%BD%D0%B8%D0%B3%D1%83-%D0%B0%D1%81%D1%8F-%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D1%86%D0%B5%D0%B2%D0%B0-%D0%BE-%D0%BF%D0%BE%D0%BF/</loc>
     <lastmod>2014-10-19T18:56:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D0%BD%D0%BE%D0%BC%D0%B8%D0%BA%D0%BE%D0%BD-%D0%BD%D0%B8%D0%BB-%D1%81%D1%82%D0%B8%D0%B2%D0%B5%D0%BD%D1%81%D0%BE%D0%BD/</loc>
     <lastmod>2014-10-12T19:30:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%B0%D0%B2%D1%82%D0%BE%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F-%D1%8E%D1%80%D0%B8%D0%B9-%D0%B3%D0%B5%D0%B9%D0%BA%D0%BE/</loc>
     <lastmod>2014-09-23T19:27:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BA%D0%BE%D0%B4-%D1%82%D0%B0%D0%B9%D0%BD%D1%8B%D0%B9-%D1%8F%D0%B7%D1%8B%D0%BA-%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B8-%D1%87%D0%B0%D1%80%D0%BB%D1%8C%D0%B7-%D0%BF%D0%B5/</loc>
     <lastmod>2014-09-22T19:44:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BA%D1%80%D0%B0%D1%82%D0%BA%D0%B8%D0%B9-%D0%BE%D1%82%D1%87%D0%B5%D1%82-%D0%BE-%D0%BF%D0%BE%D0%B5%D0%B7%D0%B4%D0%BA%D0%B5-%D0%B2-%D0%BF%D1%80%D0%B0%D0%B3%D1%83-%D1%87%D0%B0%D1%81%D1%82%D1%8C-2/</loc>
     <lastmod>2014-09-08T19:04:18+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BA%D1%80%D0%B0%D1%82%D0%BA%D0%B8%D0%B9-%D0%BE%D1%82%D1%87%D0%B5%D1%82-%D0%BE-%D0%BF%D0%BE%D0%B5%D0%B7%D0%B4%D0%BA%D0%B5-%D0%B2-%D0%BF%D1%80%D0%B0%D0%B3%D1%83-%D1%87%D0%B0%D1%81%D1%82%D1%8C-1/</loc>
     <lastmod>2014-09-08T19:01:03+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/how-to-read-more-a-lot-more/</loc>
     <lastmod>2014-08-31T17:22:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BE%D1%82-%D1%85%D0%BE%D1%80%D0%BE%D1%88%D0%B5%D0%B3%D0%BE-%D0%BA-%D0%B2%D0%B5%D0%BB%D0%B8%D0%BA%D0%BE%D0%BC%D1%83-%D0%B4%D0%B6%D0%B8%D0%BC-%D0%BA%D0%BE%D0%BB%D0%BB%D0%B8%D0%BD%D0%B7/</loc>
     <lastmod>2014-08-29T07:53:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D1%8B%D0%B5-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B4%D0%B6%D0%B5%D1%84%D1%84%D1%80%D0%B8-%D1%84%D1%80%D0%B8%D0%B4%D0%BB/</loc>
     <lastmod>2014-08-29T06:35:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D1%83%D1%81%D1%82%D1%80%D0%B8%D1%86%D1%8B-%D0%B8-%D1%80%D0%B5%D0%BF%D0%B0-%D0%BA%D0%B0%D0%BA-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B8%D1%82%D1%81%D1%8F-%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D0%B0/</loc>
     <lastmod>2014-08-18T07:59:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D1%8F%D0%BD%D0%B4%D0%B5%D0%BA%D1%81-%D0%BA%D0%BD%D0%B8%D0%B3%D0%B0-%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D1%81%D0%BE%D0%BA%D0%BE%D0%BB%D0%BE%D0%B2-%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D1%87/</loc>
     <lastmod>2014-07-29T18:01:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D1%8B-%D1%81%D1%82%D0%BE%D0%B8%D0%BA%D0%BE%D0%B2-9-%D1%81%D0%BF%D0%BE%D1%81%D0%BE%D0%B1%D0%BE%D0%B2-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82/</loc>
     <lastmod>2014-07-24T19:30:35+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%B8-%D0%B1%D0%BE%D1%82%D0%B0%D0%BD%D0%B8%D0%BA%D0%B8-%D0%B4%D0%B5%D0%BB%D0%B0%D1%8E%D1%82-%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81-%D0%BC%D0%B0%D0%BA%D1%81%D0%B8%D0%BC-%D0%BA%D0%BE%D1%82%D0%B8%D0%BD/</loc>
     <lastmod>2014-07-23T19:20:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%B5%D1%89%D0%B5-%D0%BE%D0%B4%D0%B8%D0%BD-%D1%80%D0%B0%D0%B7-%D0%BF%D1%80%D0%BE-%D0%BD%D0%B8%D0%BC%D1%84%D0%BE%D0%BC%D0%B0%D0%BD%D0%BA%D1%83/</loc>
     <lastmod>2014-07-23T18:05:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BD%D0%B8%D0%BC%D1%84%D0%BE%D0%BC%D0%B0%D0%BD%D0%BA%D0%B0-%D0%BB%D0%B0%D1%80%D1%81-%D1%84%D0%BE%D0%BD-%D1%82%D1%80%D0%B8%D0%B5%D1%80/</loc>
     <lastmod>2014-07-12T20:04:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D1%80%D1%83%D0%B6%D1%8C%D1%8F-%D0%BC%D0%B8%D0%BA%D1%80%D0%BE%D0%B1%D1%8B-%D0%B8-%D1%81%D1%82%D0%B0%D0%BB%D1%8C-%D0%B4%D0%B6%D0%B0%D1%80%D0%B5%D0%B4-%D0%B4%D0%B0%D0%B9%D0%BC%D0%BE%D0%BD%D0%B4/</loc>
     <lastmod>2014-07-07T19:02:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/effective-programming-vs-joel-on-software/</loc>
     <lastmod>2014-06-16T17:17:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/automate-this/</loc>
     <lastmod>2014-06-16T16:29:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BA%D0%B0%D1%80%D1%82%D0%BE%D1%87%D0%BD%D1%8B%D0%B9-%D0%B4%D0%BE%D0%BC%D0%B8%D0%BA/</loc>
     <lastmod>2014-06-11T18:15:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D1%84%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84%D1%8B-%D0%BE%D1%82-%D0%BC%D0%B8%D1%80%D0%B0-%D1%81%D0%B5%D0%B3%D0%BE-%D1%80%D0%BE%D0%B1%D0%B5%D1%80%D1%82-%D1%85%D0%B0%D0%B9%D0%BB%D0%B1%D1%80%D0%BE%D0%BD/</loc>
     <lastmod>2014-05-28T18:54:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D1%82%D1%8B%D1%81%D1%8F%D1%87%D0%B0-%D1%81%D0%BF%D0%BE%D1%81%D0%BE%D0%B1%D0%BE%D0%B2-%D1%83%D0%BB%D1%83%D1%87%D1%88%D0%B8%D1%82%D1%8C-%D0%B6%D0%B8%D0%B7%D0%BD%D1%8C-%D0%BA%D0%B0%D0%BA-%D0%BF%D0%BE/</loc>
     <lastmod>2014-05-28T17:26:31+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BA%D1%82%D0%BE-%D0%B1%D1%8B-%D0%BC%D0%BE%D0%B3-%D0%BF%D0%BE%D0%B4%D1%83%D0%BC%D0%B0%D1%82%D1%8C/</loc>
     <lastmod>2014-05-21T18:09:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%B3%D0%BE%D1%80%D0%BE%D0%B4-%D0%B8-%D1%80%D0%BE%D0%BC%D0%B0%D0%BD/</loc>
     <lastmod>2014-05-15T18:45:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE-%D0%BE-%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B5/</loc>
     <lastmod>2014-05-15T17:55:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%B0%D0%BD%D0%B3%D0%BB%D0%B8%D1%8F-%D0%B0%D0%BD%D0%B3%D0%BB%D0%B8%D1%8F/</loc>
     <lastmod>2014-04-24T19:15:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%B2%D0%B5%D1%87%D0%BD%D1%8B%D0%B9-%D0%B3%D0%BE%D1%80%D0%BE%D0%B4/</loc>
     <lastmod>2014-04-17T19:40:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BA%D0%B0%D0%BA-%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C-%D1%85%D0%BE%D1%80%D0%BE%D1%88%D0%BE-%D1%83%D0%B8%D0%BB%D1%8C%D1%8F%D0%BC-%D0%B7%D0%B8%D0%BD%D1%81%D0%B5%D1%80/</loc>
     <lastmod>2014-04-14T17:17:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D1%81%D1%82%D0%BE%D0%B9-%D0%BA%D1%82%D0%BE-%D0%B2%D0%B5%D0%B4%D0%B5%D1%82-%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D0%BA%D0%BE%D0%B2/</loc>
     <lastmod>2014-03-20T10:06:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/being-geek-michael-lopp/</loc>
     <lastmod>2014-03-19T19:42:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%B0%D0%BD%D1%82%D0%B8%D1%85%D1%80%D1%83%D0%BF%D0%BA%D0%BE%D1%81%D1%82%D1%8C-%D0%BD%D0%B0%D1%81%D1%81%D0%B8%D0%BC-%D1%82%D0%B0%D0%BB%D0%B5%D0%B1/</loc>
     <lastmod>2014-03-18T10:06:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BE%D0%B4%D0%BD%D0%BE%D0%BC%D0%B8%D0%BD%D1%83%D1%82%D0%BD%D1%8B%D0%B9-%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80-%D0%BA%D0%B5%D0%BD%D0%BD%D0%B5%D1%82-%D0%B1%D0%BB%D0%B0%D0%BD%D1%88%D0%B0/</loc>
     <lastmod>2014-03-17T10:07:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/joel-on-software-%D0%B4%D0%B6%D0%BE%D1%8D%D0%BB-%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D1%81%D0%BA%D0%B8/</loc>
     <lastmod>2014-03-16T10:08:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D1%8D%D0%BA%D0%BE%D0%BD%D0%BE%D0%BC%D0%B8%D0%BA%D0%B0-%D0%B2%D1%81%D0%B5%D0%B3%D0%BE-%D0%BA%D0%B0%D0%BA-%D0%B8%D0%BD%D1%81%D1%82%D0%B8%D1%82%D1%83%D1%82%D1%8B-%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5/</loc>
     <lastmod>2014-03-16T10:07:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BD%D0%B5-%D1%80%D1%8B%D1%87%D0%B8%D1%82%D0%B5-%D0%BD%D0%B0-%D1%81%D0%BE%D0%B1%D0%B0%D0%BA%D1%83-%D0%BA%D0%B0%D1%80%D0%B5%D0%BD-%D0%BF%D1%80%D0%B0%D0%B9%D0%BE%D1%80/</loc>
     <lastmod>2014-03-15T10:08:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D1%80%D1%83%D1%81%D1%81%D0%BA%D0%B0%D1%8F-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B0-%D0%BF%D1%80%D0%BE%D1%85%D0%BE%D1%80%D0%BE%D0%B2/</loc>
     <lastmod>2014-03-14T10:09:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/traffic-why-we-drive-the-way-we-do-tom/</loc>
     <lastmod>2014-03-13T10:09:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9-%D1%84%D0%B0%D0%BA%D1%82%D0%BE%D1%80-%D1%82%D0%BE%D0%BC-%D0%B4%D0%B5%D0%BC%D0%B0%D1%80%D0%BA%D0%BE/</loc>
     <lastmod>2014-03-12T10:09:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BC%D0%B8%D1%84%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9-%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%BE-%D0%BC%D0%B5%D1%81%D1%8F%D1%86-%D0%B1%D1%80%D1%83%D0%BA%D1%81/</loc>
     <lastmod>2014-03-11T10:10:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D1%8F-%D1%81%D0%BB%D1%8B%D1%88%D1%83-%D0%B2%D0%B0%D1%81-%D0%BD%D0%B0%D1%81%D0%BA%D0%B2%D0%BE%D0%B7%D1%8C-%D0%BC%D0%B0%D1%80%D0%BA-%D0%B3%D0%BE%D1%83%D0%BB%D1%81%D1%82%D0%BE%D0%BD/</loc>
     <lastmod>2014-03-10T10:10:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D1%86%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D0%B6%D0%B8%D0%B7%D0%BD%D1%8C-%D0%BB%D0%B5%D1%81-%D1%85%D0%B8%D1%8E%D1%82/</loc>
     <lastmod>2014-03-09T10:11:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/deadline-%D1%82%D0%BE%D0%BD%D0%B8-%D0%B4%D0%B5-%D0%BC%D0%B0%D1%80%D0%BA%D0%BE/</loc>
     <lastmod>2014-03-08T10:11:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BD%D0%B5%D1%81%D0%BE%D0%B2%D0%B5%D1%80%D1%88%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9-%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA-%D0%B3%D0%B0%D1%80%D1%80%D0%B8-%D0%BC%D0%B0%D1%80%D0%BA%D1%83%D1%81/</loc>
     <lastmod>2014-03-07T10:12:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/power-of-habit-charles-duhigg/</loc>
     <lastmod>2014-03-06T10:12:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/timothy-ferriss/</loc>
     <lastmod>2014-03-05T10:13:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%B0%D0%B3%D1%80%D0%B5%D1%81%D1%81%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BD%D1%80%D0%B0%D0%B4-%D0%BB%D0%BE%D1%80%D0%B5%D0%BD%D1%86/</loc>
     <lastmod>2014-03-04T10:13:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D0%BF%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F-%D0%B2%D0%BB%D0%B8%D1%8F%D0%BD%D0%B8%D1%8F-%D1%80%D0%BE%D0%B1%D0%B5%D1%80%D1%82-%D1%87%D0%B0%D0%BB%D0%B4%D0%B8%D0%BD%D0%B8/</loc>
     <lastmod>2014-03-03T10:13:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://bege13mot.github.io/post/%D1%82%D0%B0%D0%B9%D0%BC-%D0%B4%D1%80%D0%B0%D0%B9%D0%B2-%D0%B3%D0%BB%D0%B5%D0%B1-%D0%B0%D1%80%D1%85%D0%B0%D0%BD%D0%B3%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B9/</loc>
     <lastmod>2014-03-02T10:14:00+00:00</lastmod>
   </url>
-  
 </urlset>

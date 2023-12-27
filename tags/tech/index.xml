@@ -6,193 +6,133 @@
     <description>Recent content in tech on Ivan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Wed, 18 Jul 2018 10:00:00 +0400</lastBuildDate><atom:link href="https://bege13mot.github.io/tags/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Jul 2018 10:00:00 +0400</lastBuildDate>
+    <atom:link href="https://bege13mot.github.io/tags/tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hobby project with microservices</title>
       <link>https://bege13mot.github.io/post/microservices-hobby/</link>
       <pubDate>Wed, 18 Jul 2018 10:00:00 +0400</pubDate>
-      
       <guid>https://bege13mot.github.io/post/microservices-hobby/</guid>
-      <description>This post was inspired by awesome series of tutorials from Ewan Valentine. He built a small microservice oriented web application to select an appropriate ship for every consignment. Technology - Golang, PostgreSQL, MongoDB, gRPC, go-micro framework, React, Kubernetes. I followed through these tutorials. But made some additional &amp;ldquo;changes&amp;rdquo;. You can find them below.
-General Overview:   Consignment Service - &amp;ldquo;main&amp;rdquo; service, connected to user(authentication) and vessel(availabe vessels) services. Responsible for creation and displaying consignments.</description>
+      <description>This post was inspired by awesome series of tutorials from Ewan Valentine. He built a small microservice oriented web application to select an appropriate ship for every consignment. Technology - Golang, PostgreSQL, MongoDB, gRPC, go-micro framework, React, Kubernetes. I followed through these tutorials. But made some additional &amp;ldquo;changes&amp;rdquo;. You can find them below.&#xA;General Overview: Consignment Service - &amp;ldquo;main&amp;rdquo; service, connected to user(authentication) and vessel(availabe vessels) services. Responsible for creation and displaying consignments.</description>
     </item>
-    
     <item>
       <title>High-Performance Browser Networking, Ilya Grigorik</title>
       <link>https://bege13mot.github.io/post/high-networking/</link>
       <pubDate>Fri, 25 Aug 2017 10:00:00 +0400</pubDate>
-      
       <guid>https://bege13mot.github.io/post/high-networking/</guid>
-      <description>Не верится, что такая книга может быть бесплатной. Детальный разбор всех нюансов работы с сетью для веб-приложений. Начиная с самых низов и азов. Обязательно буду перечитывать.
-Notes:   “Good developers know how things work. Great developers know why things work.” We all resonate with this adage. We want to be that person who understands and can explain the underpinning of the systems we depend on.
-  All TCP connections begin with a three-way handshake: SYN, SYN ACK, ACK</description>
+      <description>Не верится, что такая книга может быть бесплатной. Детальный разбор всех нюансов работы с сетью для веб-приложений. Начиная с самых низов и азов. Обязательно буду перечитывать.&#xA;Notes: “Good developers know how things work. Great developers know why things work.” We all resonate with this adage. We want to be that person who understands and can explain the underpinning of the systems we depend on.&#xA;All TCP connections begin with a three-way handshake: SYN, SYN ACK, ACK</description>
     </item>
-    
     <item>
       <title>Переезд на Travis-CI</title>
       <link>https://bege13mot.github.io/post/travis-ci/</link>
       <pubDate>Thu, 04 May 2017 10:00:00 +0400</pubDate>
-      
       <guid>https://bege13mot.github.io/post/travis-ci/</guid>
-      <description>Когда я только переехал на Hugo, встал вопрос об автоматизации обновления сайта. Не стал ничего выдумывать и просто следовал рекомендациям на офицальном сайте gohugo.io и настроил Wercker. Все отлично работало.
-Но однажды сборка сломалась - оказалось в образе debian перестал работать wget. Пришлось немного поправить настройки. В итоге получилось следующее (определенно избыточно):
-box: debian build: steps: - script: name: install git code: | apt-get update &amp;amp;&amp;amp; apt-get install git -y - script: name: initialize git submodules code: | git submodule update --init --recursive - arjen/hugo-build@1.</description>
+      <description>Когда я только переехал на Hugo, встал вопрос об автоматизации обновления сайта. Не стал ничего выдумывать и просто следовал рекомендациям на офицальном сайте gohugo.io и настроил Wercker. Все отлично работало.&#xA;Но однажды сборка сломалась - оказалось в образе debian перестал работать wget. Пришлось немного поправить настройки. В итоге получилось следующее (определенно избыточно):&#xA;box: debian build: steps: - script: name: install git code: | apt-get update &amp;amp;&amp;amp; apt-get install git -y - script: name: initialize git submodules code: | git submodule update --init --recursive - arjen/hugo-build@1.</description>
     </item>
-    
     <item>
       <title>Thinking in Java by Bruce Eckel</title>
       <link>https://bege13mot.github.io/post/thinking-java/</link>
       <pubDate>Sat, 29 Apr 2017 10:00:00 +0400</pubDate>
-      
       <guid>https://bege13mot.github.io/post/thinking-java/</guid>
-      <description>Как же долго я читал эту книгу, года три, не меньше. Разные заходы, на разных языках. И наконец дочитал.
-Поэтому это обычная рецензия с краткими заметками. Множество людей уже до меня ее прочитали, разобрали и законспектировали. Оставлю маленькое напоминание о том, как сложно это было. Надо бы повторить.
-Заметки:   finalize() - вызывается только в процессе garbage collection. Т.е может так и не быть вызванным. Его полезно использовать например для обьектов, что открывают файлы - перед уничтожением обьекта файл должен быть закрыт.</description>
+      <description>Как же долго я читал эту книгу, года три, не меньше. Разные заходы, на разных языках. И наконец дочитал.&#xA;Поэтому это обычная рецензия с краткими заметками. Множество людей уже до меня ее прочитали, разобрали и законспектировали. Оставлю маленькое напоминание о том, как сложно это было. Надо бы повторить.&#xA;Заметки: finalize() - вызывается только в процессе garbage collection. Т.е может так и не быть вызванным. Его полезно использовать например для обьектов, что открывают файлы - перед уничтожением обьекта файл должен быть закрыт.</description>
     </item>
-    
     <item>
       <title>Эффективная работа с унаследованным кодом, Майкл Физерс</title>
       <link>https://bege13mot.github.io/post/legacy-code/</link>
       <pubDate>Tue, 28 Feb 2017 10:00:00 +0400</pubDate>
-      
       <guid>https://bege13mot.github.io/post/legacy-code/</guid>
-      <description>Честно говоря, этот пост пиша ради двух ссылок на краткие конспекты. Книга прочитана, но этого очевидно мало. Нужна практика, перечитывание и так далее. А рецензию на её уже и без меня много раз писали.
-Заметки:   Краткий конспект на английском
-  И на русском
-  </description>
+      <description>Честно говоря, этот пост пиша ради двух ссылок на краткие конспекты. Книга прочитана, но этого очевидно мало. Нужна практика, перечитывание и так далее. А рецензию на её уже и без меня много раз писали.&#xA;Заметки: Краткий конспект на английском&#xA;И на русском</description>
     </item>
-    
     <item>
       <title>Шпаргалки по Git</title>
       <link>https://bege13mot.github.io/post/git-cheatsheet/</link>
       <pubDate>Mon, 20 Feb 2017 10:00:00 +0400</pubDate>
-      
       <guid>https://bege13mot.github.io/post/git-cheatsheet/</guid>
-      <description>Графические шпаргалки: раз и два
-Шпаргалка: git init project-name git add text.txt git rm text.txt git status git commit -a -m &amp;quot;Commit description&amp;quot; git push origin master # Скачать все ветки с origin, но не мерджить их в локальный репозиторий git fetch origin git branch some_branch # Начать работать с веткой some_branch (уже существующей) git checkout -b some_branch origin/some_branch #Просмотреть все существующие ветви git branch -a # | grep something git merge some_branch #История с именами файлов и псевдографическим изображением бранчей: git log --stat --graph #Улучшение для log git config --global alias.</description>
+      <description>Графические шпаргалки: раз и два&#xA;Шпаргалка: git init project-name git add text.txt git rm text.txt git status git commit -a -m &amp;#34;Commit description&amp;#34; git push origin master # Скачать все ветки с origin, но не мерджить их в локальный репозиторий git fetch origin git branch some_branch # Начать работать с веткой some_branch (уже существующей) git checkout -b some_branch origin/some_branch #Просмотреть все существующие ветви git branch -a # | grep something git merge some_branch #История с именами файлов и псевдографическим изображением бранчей: git log --stat --graph #Улучшение для log git config --global alias.</description>
     </item>
-    
     <item>
       <title>Шпаргалки по логам</title>
       <link>https://bege13mot.github.io/post/logs-cheatsheet/</link>
       <pubDate>Sun, 19 Feb 2017 10:00:00 +0400</pubDate>
-      
       <guid>https://bege13mot.github.io/post/logs-cheatsheet/</guid>
-      <description>Прошло уже два года со времен прошлой статьи powershell для тестировщиков по парсингу логов. Теперь больше работаю с Linux серверами и можно переписать статью.
-Основная цель - собрать наиболее часто используемые команды и &amp;ldquo;хитрые техники&amp;rdquo; для повседневной работы уитилит grep, find, sed, awk. И так, приступим.
-Поиск по логам:  find - поиск файлов по имени grep - поиск текста в файле sort - сортировка uniq - фильтрация  Find и Grep: # Поиск по pattern в file.</description>
+      <description>Прошло уже два года со времен прошлой статьи powershell для тестировщиков по парсингу логов. Теперь больше работаю с Linux серверами и можно переписать статью.&#xA;Основная цель - собрать наиболее часто используемые команды и &amp;ldquo;хитрые техники&amp;rdquo; для повседневной работы уитилит grep, find, sed, awk. И так, приступим.&#xA;Поиск по логам: find - поиск файлов по имени grep - поиск текста в файле sort - сортировка uniq - фильтрация Find и Grep: # Поиск по pattern в file.</description>
     </item>
-    
     <item>
       <title>Site Reliability Engineering by Betsy Beyer</title>
       <link>https://bege13mot.github.io/post/google-sre/</link>
       <pubDate>Sat, 28 Jan 2017 10:00:00 +0400</pubDate>
-      
       <guid>https://bege13mot.github.io/post/google-sre/</guid>
-      <description>Хорошая и полезная книга. Главы про мониторинг и инциденты буду перечитывать, и не один раз. Но есть и проблемы, как и у прошлой книги &amp;ldquo;How Google Tests Software&amp;rdquo;. Несколько глав воспринимаются как откровенная реклама - смотрите какие крутые у нас системы (ни одной из них нет в свободном доступе), как здорово мы все автоматизируем (без конкретных примеров) и т.д. А может быть мне просто завидно.
-Тем не менее, книга стоящая. Кстати, теперь доступна и онлайн Site Reliability Engineering.</description>
+      <description>Хорошая и полезная книга. Главы про мониторинг и инциденты буду перечитывать, и не один раз. Но есть и проблемы, как и у прошлой книги &amp;ldquo;How Google Tests Software&amp;rdquo;. Несколько глав воспринимаются как откровенная реклама - смотрите какие крутые у нас системы (ни одной из них нет в свободном доступе), как здорово мы все автоматизируем (без конкретных примеров) и т.д. А может быть мне просто завидно.&#xA;Тем не менее, книга стоящая.</description>
     </item>
-    
     <item>
       <title>Backup</title>
       <link>https://bege13mot.github.io/post/backup/</link>
       <pubDate>Wed, 04 Jan 2017 10:00:00 +0400</pubDate>
-      
       <guid>https://bege13mot.github.io/post/backup/</guid>
-      <description>Attic backup Borg backup
-borg init --encryption=repokey /path/to/repo #!/bin/sh REPOSITORY=/mnt/d/Backup/my-backup.borg LOGFILE=/mnt/d/Backup/log.log BORG=/mnt/d/Borg/borg export BORG_PASSPHRASE=PASSPHRASE exec &amp;gt;&amp;gt; $LOGFILE 2&amp;gt;&amp;amp;1 #List all archives: borg list /path/to/repo #Restore archive: borg extract /path/to/repo::Monday #simple function that just prints the time and the info you pass to it echotime () { echo &amp;quot;$1 `date +%Y-%m-%d--%H:%M:%S`&amp;quot; } echotime &amp;quot;BORG CREATE&amp;quot; $BORG create -v --stats -C zlib,6	\ $REPOSITORY::backup-`date +%Y-%m-%d`\ /mnt/d/Books/ \ /mnt/d/Source/	\ /mnt/d/Photo/ # --exclude /home/*/.</description>
+      <description>Attic backup Borg backup&#xA;borg init --encryption=repokey /path/to/repo #!/bin/sh REPOSITORY=/mnt/d/Backup/my-backup.borg LOGFILE=/mnt/d/Backup/log.log BORG=/mnt/d/Borg/borg export BORG_PASSPHRASE=PASSPHRASE exec &amp;gt;&amp;gt; $LOGFILE 2&amp;gt;&amp;amp;1 #List all archives: borg list /path/to/repo #Restore archive: borg extract /path/to/repo::Monday #simple function that just prints the time and the info you pass to it echotime () { echo &amp;#34;$1 `date +%Y-%m-%d--%H:%M:%S`&amp;#34; } echotime &amp;#34;BORG CREATE&amp;#34; $BORG create -v --stats -C zlib,6&#x9;\ $REPOSITORY::backup-`date +%Y-%m-%d`\ /mnt/d/Books/ \ /mnt/d/Source/&#x9;\ /mnt/d/Photo/ # --exclude /home/*/.</description>
     </item>
-    
     <item>
       <title>Docker</title>
       <link>https://bege13mot.github.io/post/docker/</link>
       <pubDate>Sun, 30 Oct 2016 10:00:00 +0400</pubDate>
-      
       <guid>https://bege13mot.github.io/post/docker/</guid>
-      <description>Что-то давно не писал в блог, пора исправляться. Про докер слышал давно и много, а тут как раз был релиз на Windows. Надо пробовать.
-Немного теории: докер это - система управления приложений в среде виртуализации на уровне операционной системы. Зачем это нужно? Свои приложения можно запускать в любом месте и везде будет одинаковое окружение. А поскольку это не полноценная виртуализация, то работает все намного быстрее. Более подробно можно прочитать в этом замечательном руководстве, есть и перевод на хабре.</description>
+      <description>Что-то давно не писал в блог, пора исправляться. Про докер слышал давно и много, а тут как раз был релиз на Windows. Надо пробовать.&#xA;Немного теории: докер это - система управления приложений в среде виртуализации на уровне операционной системы. Зачем это нужно? Свои приложения можно запускать в любом месте и везде будет одинаковое окружение. А поскольку это не полноценная виртуализация, то работает все намного быстрее. Более подробно можно прочитать в этом замечательном руководстве, есть и перевод на хабре.</description>
     </item>
-    
     <item>
       <title>Семь баз данных за семь недель, Эрик Редмонд</title>
       <link>https://bege13mot.github.io/post/7-databases/</link>
       <pubDate>Sat, 18 Jun 2016 09:12:22 +0400</pubDate>
-      
       <guid>https://bege13mot.github.io/post/7-databases/</guid>
-      <description>Скажу сразу, без введения - отличная книга. Берется семь баз данных (PostgreSQL, Riak, HBase, MongoDB, CouchDB, Neo4J, Redis), все разных типов, и на примерах рассматривается работа с ними. Да, примеры простенькие, но вполне себе работающие и полезные. Попутно дается немного теории - CAP теорема, векторные часы, виды индексов, расстояние Левенштейна для нечеткого поиска, фильтр Блума.
-Плюс, написана книга доступно и с юмором. Например, каждую базу данных сравнивают со своим инструментом. PostgreSQL - молоток, MongoDB - профессиональная электродрель, Riak - арматура, а Redis - машинное масло.</description>
+      <description>Скажу сразу, без введения - отличная книга. Берется семь баз данных (PostgreSQL, Riak, HBase, MongoDB, CouchDB, Neo4J, Redis), все разных типов, и на примерах рассматривается работа с ними. Да, примеры простенькие, но вполне себе работающие и полезные. Попутно дается немного теории - CAP теорема, векторные часы, виды индексов, расстояние Левенштейна для нечеткого поиска, фильтр Блума.&#xA;Плюс, написана книга доступно и с юмором. Например, каждую базу данных сравнивают со своим инструментом.</description>
     </item>
-    
     <item>
       <title>Переезд на Hugo. Часть 2</title>
       <link>https://bege13mot.github.io/post/how-to-change-blog-2/</link>
       <pubDate>Mon, 01 Feb 2016 14:41:26 +0400</pubDate>
-      
       <guid>https://bege13mot.github.io/post/how-to-change-blog-2/</guid>
       <description>Продолжим мою эпопею. Старый блог сконвертировал, где он будет хоститься выбрал (Github Pages). Осталось самое сложное - выбрать оформление. Иду на официальный сайт тем и долго выбираю по душе. Изначально мне понравился Pixyll, но после краткого опроса читателей (в лице девушки и коллег) выяснилось, что читать такой блог не удобно, слишком уж минималистично. Ну ладно, берем общепризнанную тему Hyde и настраиваем её под свои нужды. Как к ней прикрутить теги и категории можно подсмотреть здесь.</description>
     </item>
-    
     <item>
       <title>Переезд на Hugo. Часть 1</title>
       <link>https://bege13mot.github.io/post/how-to-change-blog-1/</link>
       <pubDate>Sat, 30 Jan 2016 01:08:50 +0400</pubDate>
-      
       <guid>https://bege13mot.github.io/post/how-to-change-blog-1/</guid>
       <description>Начну с небольшой предыстории. Примерно год назад я переехал на линукс и, раз уж я пустился во все тяжкие, давай думаю перееду на какой-нибудь другой блог, а то Tumblr это как-то слишком просто. Где гики ведут блог? Немного поисков, и вот он ответ. Статические генераторы сайтов. Пишем посты в текстовых файлах формата markdown, затем с помощью генератора преобразуем их в html странички - вот и готов блог. Сказано-сделано, развернул Octopress, сконвертировал блог, вроде можно пользоваться.</description>
     </item>
-    
     <item>
       <title>Внутреннее устройство PostgreSQL для практикующих инженеров</title>
       <link>https://bege13mot.github.io/post/postgressql/</link>
       <pubDate>Sun, 25 Oct 2015 17:14:05 +0000</pubDate>
-      
       <guid>https://bege13mot.github.io/post/postgressql/</guid>
-      <description>Очень хорошая двухчасовая видео-лекция об устройстве и проблематике современных СУБД.
-  </description>
+      <description>Очень хорошая двухчасовая видео-лекция об устройстве и проблематике современных СУБД.</description>
     </item>
-    
     <item>
       <title>Web Operations, by John Allspaw</title>
       <link>https://bege13mot.github.io/post/web-operations-by-john-allspaw/</link>
       <pubDate>Thu, 10 Sep 2015 15:36:54 +0000</pubDate>
-      
       <guid>https://bege13mot.github.io/post/web-operations-by-john-allspaw/</guid>
       <description>В 21 веке книги, особенно технические очень тесно конкурируют со статьями в интернете. А эта вступила с ними в симбиоз. 17 разных статей-глав, которые иногда лишь косвенно связаны общей темой - администрирование web-сайтов. У каждой свой автор, своя тема и только одна вещь общая - опыт и профессионализм авторов. Не важно, о чем говорится - о NoSQL,continuous delivery или диагностике, всюду ощущается огромный опыт. И авторы с радостью им делятся, объясняют и разъясняют, рассказывают как они пришли к таким выводам.</description>
     </item>
-    
     <item>
       <title>Learn Git Branching</title>
       <link>https://bege13mot.github.io/post/learn-git-branching/</link>
       <pubDate>Wed, 18 Mar 2015 04:40:00 +0000</pubDate>
-      
       <guid>https://bege13mot.github.io/post/learn-git-branching/</guid>
-      <description>A interactive Git visualization tool to educate and challenge!
- Наглядно, красиво и очень понятно про ветвление в Git. Learn Git Branching</description>
+      <description>A interactive Git visualization tool to educate and challenge!&#xA;Наглядно, красиво и очень понятно про ветвление в Git. Learn Git Branching</description>
     </item>
-    
     <item>
       <title>Powershell для тестировщиков</title>
       <link>https://bege13mot.github.io/post/powershell-for-testers/</link>
       <pubDate>Mon, 16 Mar 2015 04:00:29 +0000</pubDate>
-      
       <guid>https://bege13mot.github.io/post/powershell-for-testers/</guid>
-      <description>Перед вами «быстрый старт» для работы с PowerShell для начинающих тестировщиков. Вы работаете и в один из дней, наконец, смиряетесь с тем фактом, что человек…
- Мой дебют на хабре Powershell для тестировщиков.</description>
+      <description>Перед вами «быстрый старт» для работы с PowerShell для начинающих тестировщиков. Вы работаете и в один из дней, наконец, смиряетесь с тем фактом, что человек…&#xA;Мой дебют на хабре Powershell для тестировщиков.</description>
     </item>
-    
     <item>
       <title>Лекции Яндекса</title>
       <link>https://bege13mot.github.io/post/%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D0%B8-%D1%8F%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D0%B0/</link>
       <pubDate>Mon, 09 Mar 2015 07:54:34 +0000</pubDate>
-      
       <guid>https://bege13mot.github.io/post/%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D0%B8-%D1%8F%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D0%B0/</guid>
-      <description>Недавно посмотрел курс лекция Яндекса про информационные технологии. Очень классный.
-Больше всего понравилось:
-  Простыми словами о самых распространенных уязвимостях.
-    Доступно про разные подсистемы MySQL и индексы.
-    О том как важно настраивать мониторинг и планировать нагрузку.
-    Чем интересна и сложна работа сисадмина. Куда расти и что учить.</description>
+      <description>Недавно посмотрел курс лекция Яндекса про информационные технологии. Очень классный.&#xA;Больше всего понравилось:&#xA;Простыми словами о самых распространенных уязвимостях.&#xA;Доступно про разные подсистемы MySQL и индексы.&#xA;О том как важно настраивать мониторинг и планировать нагрузку.&#xA;Чем интересна и сложна работа сисадмина. Куда расти и что учить.</description>
     </item>
-    
   </channel>
 </rss>

@@ -195,7 +195,7 @@ Difficulty Level: Easy</p>
 <h3 id="1-why-do-we-need-url-shortening">1. Why do we need URL shortening?</h3>
 <p>URL shortening is used to create shorter aliases for long URLs. We call these shortened aliases “short links.” Users are redirected to the original URL when they hit these short links. Short links save a lot of space when displayed, printed, messaged or tweeted. Additionally, users are less likely to mistype shorter URLs.</p>
 <p>For example, if we shorten this page through TinyURL:</p>
-<pre><code>https://www.educative.io/collection/page/5668639101419520/5649050225344512/5668600916475904/
+<pre tabindex="0"><code>https://www.educative.io/collection/page/5668639101419520/5649050225344512/5668600916475904/
 </code></pre><p>We would get:
 <code>http://tinyurl.com/jlg8zpc</code></p>
 <p>The shortened URL is nearly one-third of the size of the actual URL.</p>
@@ -312,7 +312,7 @@ Using base64 encoding, an 8 letter long key would result in 64^8 = ~281 trillion
 <p>If we use the MD5 algorithm as our hash function, it’ll produce a 128-bit hash value. After base64 encoding, we’ll get a string having more than 21 characters (since each base64 character encodes 6 bits of the hash value). Since we only have space for 8 characters per short key, how will we choose our key then? We can take the first 6 (or 8) letters for the key. This could result in key duplication though, upon which we can choose some other characters out of the encoding string or swap some characters.</p>
 <p><strong>What are different issues with our solution?</strong> We have the following couple of problems with our encoding scheme:</p>
 <p>If multiple users enter the same URL, they can get the same shortened URL, which is not acceptable.
-What if parts of the URL are URL-encoded? e.g., <a href="http://www.educative.io/distributed.php?id=design,">http://www.educative.io/distributed.php?id=design,</a> and <a href="http://www.educative.io/distributed.php%3Fid%3Ddesign">http://www.educative.io/distributed.php%3Fid%3Ddesign</a> are identical except for the URL encoding.</p>
+What if parts of the URL are URL-encoded? e.g., <a href="http://www.educative.io/distributed.php?id=design">http://www.educative.io/distributed.php?id=design</a>, and <a href="http://www.educative.io/distributed.php%3Fid%3Ddesign">http://www.educative.io/distributed.php%3Fid%3Ddesign</a> are identical except for the URL encoding.</p>
 <p><strong>Workaround for the issues:</strong> We can append an increasing sequence number to each input URL to make it unique, and then generate a hash of it. We don’t need to store this sequence number in the databases, though. Possible problems with this approach could be an ever-increasing sequence number. Can it overflow? Appending an increasing sequence number will also impact the performance of the service.</p>
 <p>Another solution could be to append user id (which should be unique) to the input URL. However, if the user has not signed in, we would have to ask the user to choose a uniqueness key. Even after this, if we have a conflict, we have to keep generating a key until we get a unique one.</p>
 <p><img src="/img/grokking/1_url.jpg" alt=""></p>
@@ -582,7 +582,7 @@ Difficulty Level: Medium</p>
 <p><strong>b. Partitioning based on PhotoID</strong> If we can generate unique PhotoIDs first and then find shard number through “PhotoID % 10”, this can solve the above problems. We would not need to append ShardID with PhotoID in this case as PhotoID will itself be unique throughout the system.</p>
 <p><strong>How can we generate PhotoIDs?</strong> Here we cannot have an auto-incrementing sequence in each shard to define PhotoID because we need to know PhotoID first to find the shard where it will be stored. One solution could be that we dedicate a separate database instance to generate auto-incrementing IDs. If our PhotoID can fit into 64 bits, we can define a table containing only a 64 bit ID field. So whenever we would like to add a photo in our system, we can insert a new row in this table and take that ID to be our PhotoID of the new photo.</p>
 <p><strong>Wouldn’t this key generating DB be a single point of failure?</strong> Yes, it will be. A workaround for that could be, we can define two such databases, with one generating even numbered IDs and the other odd numbered. For MySQL following script can define such sequences:</p>
-<pre><code>KeyGeneratingServer1:
+<pre tabindex="0"><code>KeyGeneratingServer1:
 auto-increment-increment = 2
 auto-increment-offset = 1
 
@@ -973,7 +973,7 @@ Difficulty Level: Medium</p>
 <h3 id="4-system-apis-1">4. System APIs</h3>
 <p><em>Once we’ve finalized the requirements, it’s always a good idea to define the system APIs. This should explicitly state what is expected from the system.</em></p>
 <p>We can have SOAP or REST APIs to expose the functionality of our service. Following could be the definition of the API for posting a new tweet:</p>
-<pre><code>tweet(api_dev_key, tweet_data, tweet_location, user_location, media_ids, maximum_results_to_return)
+<pre tabindex="0"><code>tweet(api_dev_key, tweet_data, tweet_location, user_location, media_ids, maximum_results_to_return)
 </code></pre><p><em>Parameters:</em></p>
 <p><code>api_dev_key (string):</code> The API developer key of a registered account. This will be used to, among other things, throttle users based on their allocated quota.</p>
 <p><code>tweet_data (string):</code> The text of the tweet, typically up to 140 characters.</p>
@@ -1087,7 +1087,7 @@ Difficulty Level: Medium</p>
 <p><strong>Assuming an upload:</strong> view ratio of 1:200, we would need 1TB/s outgoing bandwidth.</p>
 <h3 id="4-system-apis-2">4. System APIs</h3>
 <p>We can have SOAP or REST APIs to expose the functionality of our service. Following could be the definitions of the APIs for uploading and searching videos:</p>
-<pre><code>uploadVideo(api_dev_key, video_title, vide_description, tags[], category_id, default_language, recording_details, video_contents)
+<pre tabindex="0"><code>uploadVideo(api_dev_key, video_title, vide_description, tags[], category_id, default_language, recording_details, video_contents)
 </code></pre><p><strong>Parameters:</strong></p>
 <ul>
 <li><code>api_dev_key (string):</code> The API developer key of a registered account. This will be used to, among other things, throttle users based on their allocated quota.</li>
@@ -1101,7 +1101,7 @@ Difficulty Level: Medium</p>
 <li><code>Returns: (string):</code> A successful upload will return HTTP 202 (request accepted), and once the video encoding is completed, the user is notified through email with a link to access the video.</li>
 </ul>
 <p>We can also expose a queryable API to let users know the current status of their uploaded video.</p>
-<pre><code>searchVideo(api_dev_key, search_query, user_location, maximum_videos_to_return, page_token)
+<pre tabindex="0"><code>searchVideo(api_dev_key, search_query, user_location, maximum_videos_to_return, page_token)
 </code></pre><p><strong>Parameters:</strong></p>
 <ul>
 <li><code>api_dev_key (string):</code> The API developer key of a registered account of our service.</li>
@@ -1111,7 +1111,7 @@ Difficulty Level: Medium</p>
 <li><code>page_token (string):</code> This token will specify a page in the result set that should be returned.</li>
 <li><code>Returns: (JSON):</code> A JSON containing information about the list of video resources matching the search query. Each video resource will have a video title, a thumbnail, a video creation date and how many views it has.</li>
 </ul>
-<pre><code>streamVideo(api_dev_key, video_id, offset, codec, resolution)
+<pre tabindex="0"><code>streamVideo(api_dev_key, video_id, offset, codec, resolution)
 </code></pre><p><strong>Parameters:</strong></p>
 <ul>
 <li><code>api_dev_key (string):</code> The API developer key of a registered account of our service.</li>
@@ -1433,7 +1433,7 @@ Difficulty Level: Medium</p>
 <p><code>120GB / 24hours / 3600sec ~= 1.38MB/second</code></p>
 <h3 id="4-system-apis-3">4. System APIs</h3>
 <p>We can have SOAP or REST APIs to expose functionality of our service; following could be the definition of search API:</p>
-<pre><code>search(api_dev_key, search_terms, maximum_results_to_return, sort, page_token)
+<pre tabindex="0"><code>search(api_dev_key, search_terms, maximum_results_to_return, sort, page_token)
 </code></pre><p><strong>Parameters:</strong>
 <code>api_dev_key (string):</code> The API developer key of a registered account. This will be used to, among other things, throttle users based on their allocated quota.</p>
 <ul>
@@ -1526,7 +1526,7 @@ page_token (string): This token will specify a page in the result set that shoul
 </ol>
 <h4 id="how-to-crawl">How to crawl?</h4>
 <p><strong>Breadth first or depth first?</strong> Breadth-first search (BFS) is usually used. However, Depth First Search (DFS) is also utilized in some situations, such as if your crawler has already established a connection with the website, it might just DFS all the URLs within this website to save some handshaking overhead.</p>
-<p><strong>Path-ascending crawling:</strong> Path-ascending crawling can help discover a lot of isolated resources or resources for which no inbound link would have been found in regular crawling of a particular Web site. In this scheme, a crawler would ascend to every path in each URL that it intends to crawl. For example, when given a seed URL of <a href="http://foo.com/a/b/page.html,">http://foo.com/a/b/page.html,</a> it will attempt to crawl /a/b/, /a/, and /.</p>
+<p><strong>Path-ascending crawling:</strong> Path-ascending crawling can help discover a lot of isolated resources or resources for which no inbound link would have been found in regular crawling of a particular Web site. In this scheme, a crawler would ascend to every path in each URL that it intends to crawl. For example, when given a seed URL of <a href="http://foo.com/a/b/page.html">http://foo.com/a/b/page.html</a>, it will attempt to crawl /a/b/, /a/, and /.</p>
 <h4 id="difficulties-in-implementing-efficient-web-crawler">Difficulties in implementing efficient web crawler</h4>
 <p>There are two important characteristics of the Web that makes Web crawling a very difficult task:</p>
 <p><strong>1. Large volume of Web pages:</strong> A large volume of web page implies that web crawler can only download a fraction of the web pages at any time and hence it is critical that web crawler should be intelligent enough to prioritize download.</p>
@@ -1628,7 +1628,7 @@ Difficulty Level: Hard</p>
 <h3 id="4-system-apis-4">4. System APIs</h3>
 <p><em><strong>Once we have finalized the requirements, it’s always a good idea to define the system APIs. This should explicitly state what is expected from the system.</strong></em></p>
 <p>We can have SOAP or REST APIs to expose the functionality of our service. Following could be the definition of the API for getting the newsfeed:</p>
-<pre><code>getUserFeed(api_dev_key, user_id, since_id, count, max_id, exclude_replies)
+<pre tabindex="0"><code>getUserFeed(api_dev_key, user_id, since_id, count, max_id, exclude_replies)
 </code></pre><p><strong>Parameters:</strong></p>
 <ul>
 <li><code>api_dev_key (string):</code> The API developer key of a registered account. This can be used to, among other things, throttle users based on their allocated quota.</li>
@@ -1675,7 +1675,7 @@ One thing to notice here is that we generated the feed once and stored it in the
 <p>Let’s discuss different components of our system in detail.</p>
 <p><strong>a. Feed generation</strong></p>
 <p>Let’s take the simple case of the newsfeed generation service fetching most recent posts from all the users and entities that Jane follows; the query would look like this:</p>
-<pre><code>SELECT FeedItemID FROM FeedItem WHERE SourceID in (
+<pre tabindex="0"><code>SELECT FeedItemID FROM FeedItem WHERE SourceID in (
     SELECT EntityOrFriendID FROM UserFollow WHERE UserID = &lt;current_user_id&gt;
 )
 ORDER BY CreationDate DESC 
@@ -1689,7 +1689,7 @@ LIMIT 100
 </ol>
 <p><strong>Offline generation for newsfeed:</strong> We can have dedicated servers that are continuously generating users’ newsfeed and storing them in memory. So, whenever a user requests for the new posts for their feed, we can simply serve it from the pre-generated, stored location. Using this scheme user’s newsfeed is not compiled on load, but rather on a regular basis and returned to users whenever they request for it.</p>
 <p>Whenever these servers need to generate the feed for a user, they will first query to see what was the last time the feed was generated for that user. Then, new feed data would be generated from that time onwards. We can store this data in a hash table, where the “key” would be UserID and “value” would be a STRUCT like this:</p>
-<pre><code>Struct {
+<pre tabindex="0"><code>Struct {
     LinkedHashMap&lt;FeedItemID&gt; feedItems;
     DateTime lastGenerated;
 }
@@ -1759,7 +1759,7 @@ Difficulty Level: Hard</p>
 <p>Similarly, we can have a separate table to store photos for Places and Reviews.</p>
 <h3 id="5-system-apis-1">5. System APIs</h3>
 <p>We can have SOAP or REST APIs to expose the functionality of our service. Following could be the definition of the API for searching:</p>
-<pre><code>search(api_dev_key, search_terms, user_location, radius_filter, maximum_results_to_return, category_filter, sort, page_token)
+<pre tabindex="0"><code>search(api_dev_key, search_terms, user_location, radius_filter, maximum_results_to_return, category_filter, sort, page_token)
 </code></pre><p><strong>Parameters:</strong></p>
 <ul>
 <li><code>api_dev_key (string):</code> The API developer key of a registered account. This will be used to, among other things, throttle users based on their allocated quota.</li>
@@ -1960,7 +1960,7 @@ Difficulty Level: Hard</p>
 <p>To store five years of this data, we would need around 3.6TB.</p>
 <h3 id="5-system-apis-2">5. System APIs</h3>
 <p>We can have SOAP or REST APIs to expose the functionality of our service. Following could be the definition of the APIs to search movie shows and reserve seats.</p>
-<pre><code>SearchMovies(api_dev_key, keyword, city, lat_long, radius, start_datetime, end_datetime, postal_code, includeSpellcheck, results_per_page, sorting_order)
+<pre tabindex="0"><code>SearchMovies(api_dev_key, keyword, city, lat_long, radius, start_datetime, end_datetime, postal_code, includeSpellcheck, results_per_page, sorting_order)
 </code></pre><p><strong>Parameters:</strong></p>
 <ul>
 <li><code>api_dev_key (string):</code> The API developer key of a registered account. This will be used to, among other things, throttle users based on their allocated quota.</li>
@@ -1976,61 +1976,61 @@ Difficulty Level: Hard</p>
 </ul>
 <p><strong>Returns: (JSON)</strong>
 Here is a sample list of movies and their shows:</p>
-<pre><code>[
+<pre tabindex="0"><code>[
   {
-    &quot;MovieID&quot;: 1,
-    &quot;ShowID&quot;: 1,
-    &quot;Title&quot;: &quot;Cars 2&quot;,
-    &quot;Description&quot;: &quot;About cars&quot;,
-    &quot;Duration&quot;: 120,
-    &quot;Genre&quot;: &quot;Animation&quot;,
-    &quot;Language&quot;: &quot;English&quot;,
-    &quot;ReleaseDate&quot;: &quot;8th Oct. 2014&quot;,
-    &quot;Country&quot;: USA,
-    &quot;StartTime&quot;: &quot;14:00&quot;,
-    &quot;EndTime&quot;: &quot;16:00&quot;,
-    &quot;Seats&quot;: 
+    &#34;MovieID&#34;: 1,
+    &#34;ShowID&#34;: 1,
+    &#34;Title&#34;: &#34;Cars 2&#34;,
+    &#34;Description&#34;: &#34;About cars&#34;,
+    &#34;Duration&#34;: 120,
+    &#34;Genre&#34;: &#34;Animation&#34;,
+    &#34;Language&#34;: &#34;English&#34;,
+    &#34;ReleaseDate&#34;: &#34;8th Oct. 2014&#34;,
+    &#34;Country&#34;: USA,
+    &#34;StartTime&#34;: &#34;14:00&#34;,
+    &#34;EndTime&#34;: &#34;16:00&#34;,
+    &#34;Seats&#34;: 
     [
       {  
-        &quot;Type&quot;: &quot;Regular&quot;
-        &quot;Price&quot;: 14.99
-        &quot;Status: &quot;Almost Full&quot;
+        &#34;Type&#34;: &#34;Regular&#34;
+        &#34;Price&#34;: 14.99
+        &#34;Status: &#34;Almost Full&#34;
       },
       {  
-        &quot;Type&quot;: &quot;Premium&quot;
-        &quot;Price&quot;: 24.99
-        &quot;Status: &quot;Available&quot;
+        &#34;Type&#34;: &#34;Premium&#34;
+        &#34;Price&#34;: 24.99
+        &#34;Status: &#34;Available&#34;
       }
     ]
   },
   {
-    &quot;MovieID&quot;: 1,
-    &quot;ShowID&quot;: 2,
-    &quot;Title&quot;: &quot;Cars 2&quot;,
-    &quot;Description&quot;: &quot;About cars&quot;,
-    &quot;Duration&quot;: 120,
-    &quot;Genre&quot;: &quot;Animation&quot;,
-    &quot;Language&quot;: &quot;English&quot;,
-    &quot;ReleaseDate&quot;: &quot;8th Oct. 2014&quot;,
-    &quot;Country&quot;: USA,
-    &quot;StartTime&quot;: &quot;16:30&quot;,
-    &quot;EndTime&quot;: &quot;18:30&quot;,
-    &quot;Seats&quot;: 
+    &#34;MovieID&#34;: 1,
+    &#34;ShowID&#34;: 2,
+    &#34;Title&#34;: &#34;Cars 2&#34;,
+    &#34;Description&#34;: &#34;About cars&#34;,
+    &#34;Duration&#34;: 120,
+    &#34;Genre&#34;: &#34;Animation&#34;,
+    &#34;Language&#34;: &#34;English&#34;,
+    &#34;ReleaseDate&#34;: &#34;8th Oct. 2014&#34;,
+    &#34;Country&#34;: USA,
+    &#34;StartTime&#34;: &#34;16:30&#34;,
+    &#34;EndTime&#34;: &#34;18:30&#34;,
+    &#34;Seats&#34;: 
     [
         {  
-          &quot;Type&quot;: &quot;Regular&quot;
-          &quot;Price&quot;: 14.99
-          &quot;Status: &quot;Full&quot;
+          &#34;Type&#34;: &#34;Regular&#34;
+          &#34;Price&#34;: 14.99
+          &#34;Status: &#34;Full&#34;
       },
         {  
-          &quot;Type&quot;: &quot;Premium&quot;
-        &quot;Price&quot;: 24.99
-        &quot;Status: &quot;Almost Full&quot;
+          &#34;Type&#34;: &#34;Premium&#34;
+        &#34;Price&#34;: 24.99
+        &#34;Status: &#34;Almost Full&#34;
       }
     ]
   },
  ]
-</code></pre><pre><code>ReserveSeats(api_dev_key, session_id, movie_id, show_id, seats_to_reserve[])
+</code></pre><pre tabindex="0"><code>ReserveSeats(api_dev_key, session_id, movie_id, show_id, seats_to_reserve[])
 </code></pre><p><strong>Parameters:</strong></p>
 <ul>
 <li><code>api_dev_key (string):</code> same as above</li>
@@ -2100,7 +2100,7 @@ Just like ActiveReservationsService, we can keep all the waiting users of a show
 On the server, ActiveReservationsService keeps track of expiry (based on reservation time) of active reservations. As the client will be shown a timer (for the expiration time) which could be a little out of sync with the server, we can add a buffer of five seconds on the server to safeguard from a broken experience - such that – the client never times out after the server, preventing a successful purchase.</p>
 <h3 id="9-concurrency">9. Concurrency</h3>
 <p>How to handle concurrency; such that no two users are able to book same seat? We can use transactions in SQL databases to avoid any clashes. For example, if we are using SQL server we can utilize <a href="https://docs.microsoft.com/en-us/sql/odbc/reference/develop-app/transaction-isolation-levels">Transaction Isolation Levels</a> to lock the rows before we can update them. Here is the sample code:</p>
-<pre><code>SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+<pre tabindex="0"><code>SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
 
 BEGIN TRANSACTION;
 

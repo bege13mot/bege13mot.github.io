@@ -6,52 +6,56 @@
     <description>Recent content in Qas on Ivan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Tue, 12 Nov 2019 20:00:00 +0400</lastBuildDate><atom:link href="https://bege13mot.github.io/qa/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 14 Dec 2023 10:00:00 +0400</lastBuildDate>
+    <atom:link href="https://bege13mot.github.io/qa/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Advices</title>
+      <link>https://bege13mot.github.io/qa/advices/</link>
+      <pubDate>Thu, 14 Dec 2023 10:00:00 +0400</pubDate>
+      <guid>https://bege13mot.github.io/qa/advices/</guid>
+      <description>Как пройти скрининговое собеседование Оно проходит с одним из инженеров Facebook — техническое, и длится 45 минут. Состоит из следующих этапов: 5 минут — общие технические вопросы, 35 минут — две практические задачи на знание алгоритмов и 5 минут — ваши вопросы. Первым делом посмотрите все видео, которые вам пришлет рекрутер, регистрируйтесь на Leetcode и начинайте решать задачи из списка топ-100. На этом этапе стоит сконцентрироваться на Easy и Medium задачах.</description>
+    </item>
+    <item>
+      <title>Others</title>
+      <link>https://bege13mot.github.io/qa/others/</link>
+      <pubDate>Sun, 10 Dec 2023 10:00:00 +0400</pubDate>
+      <guid>https://bege13mot.github.io/qa/others/</guid>
+      <description>The Linux Initialization Process - Understand the basic steps the OS takes when it boots up&#xA;Эмиграция и всё о ней в телеграм-блогах&#xA;Advanced concurrency patterns in Go&#xA;Things You Should Know About Databases - Architecture Notes&#xA;How Web Works - githu&#xA;GREAT companies that relocate IT professionals&#xA;System Design Course&#xA;Мои собеседования (Golang developer)&#xA;how-kickass-new-software-engineer-raymond-gan&#xA;Как я получил 4 оффера в FAANG в Европе или из Воронежа в Лондон - Классная статья про опыт собесов в фаанг, главный инсайд от туда для меня что можно подаваться в одну компанию много раз, потому что похоже рекрутеры разных подразделений могут быть вообще не связаны никак друг с другом и чел так и делал и в итоге попал в Фейсбук как и хотел</description>
+    </item>
     <item>
       <title>Interview Preparation</title>
       <link>https://bege13mot.github.io/qa/interview/</link>
-      <pubDate>Tue, 12 Nov 2019 20:00:00 +0400</pubDate>
-      
+      <pubDate>Sun, 12 Nov 2023 20:00:00 +0400</pubDate>
       <guid>https://bege13mot.github.io/qa/interview/</guid>
-      <description>Interview   coding-interview-university - A complete computer science study plan to become a software engineer
-  Job at Google in 6 months recipe
-  Как я проходила собеседования в Яндекс: мой непростой, но успешный опыт
-  Practice Programming for interview
-  Awesome Interview Questions
-  Collection of *nix Sysadmin Test Questions and Answers
-  Another coding interview preparation guide
-  Salary Negotiation: Make More Money, Be More Valued</description>
+      <description>Lists coding-interview-university - A complete computer science study plan to become a software engineer&#xA;Tech Interview Handbook&#xA;FAANG Interview. Бортовые заметки сообщества&#xA;FAANG Interview&#xA;interviews - Everything you need to know to get the job. Short description of data structuress List of Questions Awesome Interview Questions&#xA;Collection of *nix Sysadmin Test Questions and Answers&#xA;test-your-sysadmin-skills&#xA;Delete Как я проходила собеседования в Яндекс: мой непростой, но успешный опыт&#xA;О чем думать на NALSD собеседовании</description>
     </item>
-    
+    <item>
+      <title>Golang Questions</title>
+      <link>https://bege13mot.github.io/qa/go-questions/</link>
+      <pubDate>Mon, 10 Apr 2023 10:00:00 +0400</pubDate>
+      <guid>https://bege13mot.github.io/qa/go-questions/</guid>
+      <description>Вопросы и ответы для собеседования Go-разработчика *Часть I. Базовые&#xA;*Часть II. Что там с конкурентностью?&#xA;Популярные задачи для собеседований бэкенд-разработчиков на Go и их решения&#xA;Співбесіда з Go. 200+ запитань для Junior, Middle, Senior&#xA;Коллеги, вы меня огорчаете&#xA;Junior Software engineering Какие бывают области памяти программы? В чем их особенности и отличия?&#xA;stack - ограниченный размер, диамически растет для goroutines heap - требует работу GC Расскажите, что вы знаете о HTTP-протоколе, какие составные части запроса?</description>
+    </item>
     <item>
       <title>Grokking the System Design Interview</title>
       <link>https://bege13mot.github.io/qa/grokking/</link>
       <pubDate>Mon, 15 Jul 2019 20:00:00 +0400</pubDate>
-      
       <guid>https://bege13mot.github.io/qa/grokking/</guid>
-      <description>Why System Design Interviews? System Design Interviews: A step by step guide Designing a URL Shortening service like TinyURL Designing Pastebin Designing Instagram Designing Dropbox Designing Facebook Messenger Designing Twitter Designing Youtube or Netflix Designing Typeahead Suggestion Designing an API Rate Limiter Designing Twitter Search Designing a Web Crawler Designing Facebook’s Newsfeed Designing Yelp or Nearby Friends Designing Uber backend Design Ticketmaster (New) System Design Basics  Load Balancing Caching Sharding or Data Partitioning Indexes Proxies Queues Redundancy and Replication SQL vs.</description>
+      <description>Why System Design Interviews? System Design Interviews: A step by step guide Designing a URL Shortening service like TinyURL Designing Pastebin Designing Instagram Designing Dropbox Designing Facebook Messenger Designing Twitter Designing Youtube or Netflix Designing Typeahead Suggestion Designing an API Rate Limiter Designing Twitter Search Designing a Web Crawler Designing Facebook’s Newsfeed Designing Yelp or Nearby Friends Designing Uber backend Design Ticketmaster (New) System Design Basics Load Balancing Caching Sharding or Data Partitioning Indexes Proxies Queues Redundancy and Replication SQL vs.</description>
     </item>
-    
     <item>
       <title>Bookmarks</title>
       <link>https://bege13mot.github.io/qa/bookmarks/</link>
       <pubDate>Wed, 13 Mar 2019 20:00:00 +0400</pubDate>
-      
       <guid>https://bege13mot.github.io/qa/bookmarks/</guid>
-      <description>Tools and Instructions:  htop Explained Visually Explanation of everything you can see in htop/top on Linux Linux tracing systems &amp;amp; how they fit together How I use Wireshark A small handbook about Linux debuggin tools 6 шагов загрузки Linux на пальцах Процессы в Linux Understanding Processes on Linux Учебник. Язык обработки структурированных текстов AWK In defence of swap: common misconceptions Linux Performance Analysis in 60,000 Milliseconds My First 5 Minutes On A Server; Or, Essential Security for Linux Servers OpenSSL Essentials: Working with SSL Certificates, Private Keys and CSRs Debugging Software Deployments with strace  Courses  Математика и Python для анализа данных AWS Certified SysOps Administrator Express Course Гарвардский курс CS50 на русском.</description>
+      <description>Tools and Instructions: htop Explained Visually Explanation of everything you can see in htop/top on Linux Linux tracing systems &amp;amp; how they fit together How I use Wireshark A small handbook about Linux debuggin tools 6 шагов загрузки Linux на пальцах Процессы в Linux Understanding Processes on Linux Учебник. Язык обработки структурированных текстов AWK In defence of swap: common misconceptions Linux Performance Analysis in 60,000 Milliseconds My First 5 Minutes On A Server; Or, Essential Security for Linux Servers OpenSSL Essentials: Working with SSL Certificates, Private Keys and CSRs Debugging Software Deployments with strace Courses Математика и Python для анализа данных AWS Certified SysOps Administrator Express Course Гарвардский курс CS50 на русском.</description>
     </item>
-    
     <item>
       <title>Questions</title>
       <link>https://bege13mot.github.io/qa/questions/</link>
       <pubDate>Thu, 12 Oct 2017 10:00:00 +0400</pubDate>
-      
       <guid>https://bege13mot.github.io/qa/questions/</guid>
-      <description>Questions from chassing/linux-sysadmin-interview-questions Inspired by collection of Linux SysAdm/DevOps interview questions with my answers
-General Questions:  What are the default ports used for SMTP,DNS,FTP,DHCP,SSH?
- SMTP - 25 DNS - 53 FTP- 20(data transfer), 21(connection established) DHCP- 67/UDP(dhcp server) , 68/UDP(dhcp client) SSH - 22    What function does DNS play on a network?
- The first place your computer looks is its local DNS cache, which stores information that your computer has recently retrieved.</description>
+      <description>Questions from chassing/linux-sysadmin-interview-questions Inspired by collection of Linux SysAdm/DevOps interview questions with my answers&#xA;General Questions: What are the default ports used for SMTP,DNS,FTP,DHCP,SSH?&#xA;SMTP - 25 DNS - 53 FTP- 20(data transfer), 21(connection established) DHCP- 67/UDP(dhcp server) , 68/UDP(dhcp client) SSH - 22 What function does DNS play on a network?&#xA;The first place your computer looks is its local DNS cache, which stores information that your computer has recently retrieved.</description>
     </item>
-    
   </channel>
 </rss>

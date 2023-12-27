@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Golang Questions &nbsp; </title>
+
+  
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde-overrides.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/hyde-x.css">
+  <link rel="stylesheet" href="https://bege13mot.github.io/css/highlight/sunburst.css">
+  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://bege13mot.github.io/touch-icon-144-precomposed.png">
+  <link href="/icon/fox.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+        <a href="https://bege13mot.github.io/">
+        <img src="/icon/fox.png" alt="avatar" title="">
+        </a>
+      
+      <h1></h1>
+      
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/">Home</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/tags/">Tags</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/categories/">Categories</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://bege13mot.github.io/about/">About</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/Bege13mot"><img src="/icon/github.svg" class="fa"></img></a>
+      <a href="https://www.goodreads.com/user/show/5520080-ivan"><img src="/icon/goodreads.svg" class="fa"></img></a>
+      <a href="mailto:bege13mot@gmail.com"><img src="/icon/mail.svg" class="fa"></img></a>
+      <a href="https://ru.linkedin.com/in/voronchihin"><img src="/icon/linkedin.svg" class="fa"></img></a>      
+      <a href="https://bege13mot.github.io/index.xml" type="application/rss+xml"><img src="/icon/rss.svg" class="fa"></img></a>
+      </li>
+    </ul>
+
+    
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1>Golang Questions</h1>
+    <ul>
+<li><a href="https://habr.com/ru/articles/658623/">Вопросы и ответы для собеседования Go-разработчика</a></li>
+</ul>
+<p>*<a href="https://habr.com/ru/articles/654569/">Часть I. Базовые</a></p>
+<p>*<a href="https://habr.com/ru/articles/670974/">Часть II. Что там с конкурентностью?</a></p>
+<ul>
+<li>
+<p><a href="https://habr.com/ru/companies/rebrainme/articles/540354/">Популярные задачи для собеседований бэкенд-разработчиков на Go и их решения</a></p>
+</li>
+<li>
+<p><a href="https://dou.ua/lenta/articles/interview-questions-go-developer/">Співбесіда з Go. 200+ запитань для Junior, Middle, Senior</a></p>
+</li>
+<li>
+<p><a href="https://habr.com/ru/companies/oleg-bunin/articles/521582/">Коллеги, вы меня огорчаете</a></p>
+</li>
+</ul>
+<h2 id="junior">Junior</h2>
+<h3 id="software-engineering">Software engineering</h3>
+<details><summary><b>Какие бывают области памяти программы? В чем их особенности и отличия?</b></summary><br>
+<ul>
+<li>stack - ограниченный размер, диамически растет для goroutines</li>
+<li>heap - требует работу GC</li>
+</ul>
+</details>
+<details><summary><b>Расскажите, что вы знаете о HTTP-протоколе, какие составные части запроса? Какие статус-коды знаете, какие группы можно выделить?</b></summary><br>
+<p>HTTP 1:</p>
+<ul>
+<li>Request Line - method, URL, protocol version</li>
+<li>Headers (обязательно только host)</li>
+<li>Request Body (не обязатель)</li>
+</ul>
+<p>HTTP 2:</p>
+<ul>
+<li>binary</li>
+<li>multiplexed (streams)</li>
+<li>cancel stream</li>
+<li>server push</li>
+</ul>
+<p>Statuses:</p>
+<ul>
+<li>1xx Informational responses</li>
+<li>2xx Success</li>
+<li>3xx Redirection</li>
+<li>4xx Client errors</li>
+<li>5xx Server errors</li>
+</ul>
+</details>
+<details><summary><b>Назовите и опишите любой паттерн программирования (по вашему выбору). Когда его целесообразно использовать и почему?</b></summary><br>
+<p><a href="https://github.com/AlexanderGrom/go-patterns">go-patterns</a></p>
+<p>Паттерн Facade предоставляет высокоуровневый унифицированный интерфейс в виде набора имен методов к набору взаимосвязанных классов или объектов некоторой подсистемы, что облегчает ее использование.</p>
+<p>В качестве примера можно привести интерфейс автомобиля. Современные автомобили имеют унифицированный интерфейс для водителя, под которым скрывается сложная подсистема. Благодаря применению навороченной электроники, делающей большую часть работы за водителя, тот может с лёгкостью управлять автомобилем, не задумываясь, как там все работает.</p>
+</details>
+<details><summary><b>Что такое процессы и потоки операционных систем? Опишите их взаимосвязь в контексте выполнения программы?</b></summary><br>
+<ul>
+<li>Both processes and threads are independent sequences of execution. The typical difference is that threads (of the same process) run in a shared memory space, while processes run in separate memory spaces.</li>
+<li>A thread is a lightweight process. Each process has a separate stack, text, data and heap. Threads have their own stack, but share text, data and heap with the process. Text is the actual program itself, data is the input to the program and heap is the memory which stores files, locks, sockets.</li>
+</ul>
+</details>
+<details><summary><b>Какие знаете алгоритмы сортировки?</b></summary><br>
+<ul>
+<li>Сортировка пузырьком</li>
+<li>Сортировка вставками</li>
+<li>Quick sort</li>
+<li>Merge sort</li>
+</ul>
+</details>
+<details><summary><b>Что такое SOLID?</b></summary><br>
+<ul>
+<li>S (single responsibility principle, принцип единственной ответственности) — определенный класс/модуль должен решать только определенную задачу, максимально узко но максимально хорошо (своеобразные UNIX-way). Если для выполнения своей задачи ему требуются какие-то другие ресурсы — они в него должны быть инкапсулированы (это отсылка к принципу инверсии зависимостей)</li>
+<li>O (open-closed principle, принцип открытости/закрытости) — классы/модули должны быть открыты для расширения, но закрыты для модификации. Должна быть возможность расширить поведение, наделить новым функционалом, но при этом исходный код/логика модуля должна быть неизменной</li>
+<li>L (Liskov substitution principle, принцип подстановки Лисков) — поведение наследующих классов не должно противоречить поведению, заданному базовым классом, то есть поведение наследующих классов должно быть ожидаемым для кода</li>
+<li>I (interface segregation principle, принцип разделения интерфейса) — много тонких интерфейсов лучше, чем один толстый</li>
+<li>D (dependency inversion principle, принцип инверсии зависимостей) — &ldquo;завязываться&rdquo; на абстракциях (интерфейсах), а не конкретных реализациях. Так же (это уже про IoC, но всё же) можно рассказать что если какому-то классу для своей работы требуется функциональность другого — то есть смысл &ldquo;запрашивать&rdquo; её в конструкторе нашего класса используя интерфейс, под который подходит наша зависимость. Таким образом целевая реализация опирается только на интерфейсы (не зависит от реализаций) и соответствует принципу под буквой S</li>
+</ul>
+</details>
+<h3 id="go">Go</h3>
+<details><summary><b>Что такое горутины и зачем они?</b></summary><br>
+<p>Горутины — это легковесные потоки, которые реализуют конкурентное программирование в Go. Их называют легковесными потоками, потому что они управляются рантаймом языка, а не операционной системой. Стоимость переключения контекста и расход памяти намного ниже, чем у потоков ОС.</p>
+<p>В исходном коде (src/pkg/runtime/proc.c) приняты такие термины:
+G (Goroutine) — Горутина
+M (Machine) — Машина</p>
+<p>Каждая Машина работает в отдельном потоке и способна выполнять только одну Горутину в момент времени. Планировщик операционной системы, в которой работает программа, переключает Машины. Число работающих Машин ограничено переменной среды GOMAXPROCS или функцией runtime.GOMAXPROCS(n int). По умолчанию оно равно 1. Обычно имеет смысл сделать его равным числу ядер.</p>
+<p>Планировщик Go</p>
+<p>Цель планировщика (scheduler) в том, чтобы распределять готовые к выполнению горутины (G) по свободным машинам (M).</p>
+</details>
+<details><summary><b>Что делает функция init()? Приведите примеры, где ее следует использовать. Приведите примеры, когда следует избегать.</b></summary><br>
+<p>The predefined <code>init()</code> function sets off a piece of code to run before any other part of your package. This code will execute as soon as the package is imported, and can be used when you need your application to initialize in a specific state, such as when you have a specific configuration or set of resources with which your application needs to start. It is also used when importing a side effect, a technique used to set the state of a program by importing a specific package. This is often used to register one package with another to make sure that the program is considering the correct code for the task.</p>
+<p>Although <code>init()</code> is a useful tool, it can sometimes make code difficult to read, since a hard-to-find init() instance will greatly affect the order in which the code is run.</p>
+</details>
+<details><summary><b>Какие типы данных используются в Go?</b></summary><br>
+<ul>
+<li>Целочисленные — int{8,16,32,64}, int, uint{8,16,32,64}, uint, byte как синоним uint8 и rune как синоним int32. Типы int и uint имеют наиболее эффективный размер для определенной платформы (32 или 64 бита), причем различные компиляторы могут предоставлять различный размер для этих типов даже для одной и той же платформы</li>
+<li>Числа с плавающей запятой — float32 (занимает 4 байта/32 бита) и float64 (занимает 8 байт/64 бита)</li>
+<li>Комплексные числа — complex64 (вещественная и мнимая части представляют числа float32) и complex128 (вещественная и мнимая части представляют числа float64)</li>
+<li>Логические aka bool</li>
+<li>Строки string</li>
+</ul>
+</details>
+<details><summary><b>Как отлавливать паники? </b></summary><br>
+<p><code>recover()</code></p>
+</details>
+<details><summary><b>Как получить настоящее время? </b></summary><br>
+<p><code>time.Now()</code></p>
+</details>
+<details><summary><b>Что такое iota? </b></summary><br>
+<p>Ключевое слово iota представляет последовательные целочисленные константы 0, 1, 2, … Оно сбрасывается в 0 всякий раз, когда слово const появляется в исходном коде, и увеличивается после каждой спецификации const</p>
+</details>
+<details><summary><b>Какая разница между слайсом и массивом? </b></summary><br>
+<ul>
+<li>Срез — всегда указатель на массив, массив — значение</li>
+<li>Срез может менять свой размер и динамически аллоцировать память</li>
+</ul>
+<p>Слайсы и массивы в Go это упорядоченные структуры данных последовательностей элементов. Ёмкость массива объявляется в момент его создания, и после изменить её уже нельзя (его длина это часть его типа). Память, необходимая для хранения элементов массива выделяется соответственно сразу при его объявлении, и по умолчанию инициализируется в соответствии с нулевыми значением для типа.</p>
+<p>Кстати, массивы с элементами одного типа но с разными размерами являются разными типами. Массивы не нужно инициализировать явно; нулевой массив — это готовый к использованию массив, элементы которого являются нулями:</p>
+<p>Так же следует помнить что в Go массивы передаются по значению, т.е. передавая массив в какую-либо функцию она получает копию массива (для передачи его указателя нужно явно это указывать, т.е. foo(&amp;a)).</p>
+<p>А слайс же это своего рода версия массива но с вариативным размером (структура данных, которая строится поверх массива и предоставляет доступ к элементами базового массива). Слайсы до 64 KB могут быть размещены на стеке. Если посмотреть исходники Go (src/runtime/slice.go), то увидим:</p>
+<pre tabindex="0"><code>type slice struct {
+    array unsafe.Pointer // указатель на массив
+    len   int            // длина (length)
+    cap   int            // вместимость (capacity)
+}
+</code></pre><p>Слайсы передаются &ldquo;по ссылке&rdquo; (фактически будет передана копия структуры slice со своими len и cap, но указатель на массив array будет тот-же самый). Для защиты слайса от изменений следует передавать его копию:</p>
+<p>Важной особенностью является то, так как &ldquo;под капотом&rdquo; у слайса лежит указатель на массив — при изменении значений слайса они будут изменяться везде, где слайс используется (будь то присвоение в переменную, передача в функцию и т.д.) до момента, пока размер слайса не будет переполнен и не будет выделен новый массив для его значений (т.е. в момент изменения cap слайса всегда происходит копирование данных массива).</p>
+</details>
+<details><summary><b>Из каких частей состоит переменная типа slice? </b></summary><br>
+<p>А слайс же это своего рода версия массива но с вариативным размером (структура данных, которая строится поверх массива и предоставляет доступ к элементами базового массива). Слайсы до 64 KB могут быть размещены на стеке. Если посмотреть исходники Go (src/runtime/slice.go), то увидим:</p>
+<pre tabindex="0"><code>type slice struct {
+    array unsafe.Pointer // указатель на массив
+    len   int            // длина (length)
+    cap   int            // вместимость (capacity)
+}
+</code></pre><p>Слайсы передаются &ldquo;по ссылке&rdquo; (фактически будет передана копия структуры slice со своими len и cap, но указатель на массив array будет тот-же самый). Для защиты слайса от изменений следует передавать его копию:</p>
+</details>
+<details><summary><b>Как работает append?</b></summary><br>
+<p><code>append()</code> делает простую операцию — добавляет элементы в слайс и возвращает новый. Но под капотом там делаются довольно сложные манипуляции, чтобы выделять память только при необходимости и делать это эффективно.</p>
+<p>Сперва append сравнивает значения len и cap у слайса. Если len меньше чем cap, то значение len увеличивается, а само добавляемое значение помещается в конец слайса. В противном случае происходит выделение памяти под новый массив для элементов слайса, в него копируются значения из старого, и значение помещается уже в новый массив.</p>
+<p>Увеличении размера слайса (метод growslice) происходит по следующему алгоритму — если его размер менее 1024 элементов, то его размер будет увеличиваться вдвое; иначе же слайс увеличивается на ~12.5% от своего текущего размера.</p>
+<p>Что важно помнить — если на основании слайса one выделить подслайс two, а затем увеличим слайс one (и его вместимость будет превышена) — то one и two будут уже ссылаться на разные участки памяти!</p>
+</details>
+<details><summary><b>Какое у слайса zero value? Какие операции над ним возможны?</b></summary><br>
+<p>Zero value у слайса всегда nil, а len и cap равны нулю, так как &ldquo;под ним&rdquo; нет инициализированного массива:</p>
+<p>Как видно из примера выше — несмотря на то, что a == nil (слайс &ldquo;не инициализирован&rdquo;), с этим слайсом возможна операция append — в этом случае Go самостоятельно создаёт нижележащий массив и всё работает так, как и ожидается. Более того — для полной очистки слайса рекомендуется его присваивать к nil.</p>
+<p>Так же важно помнить, что не делая make для слайса — не получится сделать пре-аллокацию, что часто очень болезненно для производительности.</p>
+</details>
+<details><summary><b>Что такое пакеты?</b></summary><br>
+<p>Весь код в языке Go организуется в пакеты. Пакеты представляют удобную организацию разделения кода на отдельные части или модули. Модульность позволяет определять один раз пакет с нужной функциональностью и потом использовать его многкратно в различных программах.</p>
+<p>Код пакета располагается в одном или нескольких файлах с расширением go. Для определения пакета применяется ключевое слово package.</p>
+<p>Есть два типа пакетов: исполняемые (executable) и библиотеки (reusable). Для создания исполняемых файлов пакет должен иметь имя main. Все остальные пакеты не являются исполняемыми. При этом пакет main должен содержать функцию main, которая является входной точкой в приложение.</p>
+</details>
+<details><summary><b>Что такое интерфейсы и как они работают?</b></summary><br>
+<p>Интерфейсы — это инструменты для определения наборов действий и поведения. Интерфейсы — это в первую очередь контракты. Они позволяют объектам опираться на абстракции, а не фактические реализации других объектов. При этом для компоновки различных поведений можно группировать несколько интерфейсов. В общем смысле — это набор методов, представляющих стандартное поведение для различных типов данных.</p>
+<p>В Go интерфейсный тип выглядит вот так:</p>
+<pre tabindex="0"><code>type iface struct {
+    tab  *itab
+    data unsafe.Pointer
+}
+</code></pre><p>Где <code>tab</code> — это указатель на Interface Table или itable — структуру, которая хранит некоторые метаданные о типе и список методов, используемых для удовлетворения интерфейса, а <code>data</code> указывает на реальную область памяти, в которой лежат данные изначального объекта (статическим типом).</p>
+<p>Компилятор генерирует метаданные для каждого статического типа, в которых, помимо прочего, хранится список методов, реализованных для данного типа. Аналогично генерируются метаданные со списком методов для каждого интерфейса. Теперь, во время исполнения программы, runtime Go может вычислить itable на лету (late binding) для каждой конкретной пары. Этот itable кешируется, поэтому просчёт происходит только один раз.</p>
+<p>Зная это, становится очевидно, почему Go ловит несоответствия типов на этапе компиляции, но кастинг к интерфейсу — во время исполнения.</p>
+<p>Что важно помнить — переменная интерфейсного типа может принимать nil. Но так как объект интерфейса в Go содержит два поля: tab и data — по правилам Go, интерфейс может быть равен nil только если оба этих поля не определены</p>
+</details>
+<details><summary><b>Что такое тип данных string?</b></summary><br>
+<p>В Go строка в действительности является слайсом (срезом) байт, доступным только для чтения. Строка содержит произвольные байты, и у неё нет ёмкости (cap). При преобразовании слайса байт в строку (str := string(slice)) или обратно (slice := []byte(str)) — происходит копирование массива (со всеми следствиями).</p>
+<p>Создание подстрок работает очень эффективно. Поскольку строка предназначена только для чтения, исходная строка и строка, полученная в результате операции среза, могут безопасно совместно использовать один и тот же массив:</p>
+<p>Go использует тип rune (алиас int32) для представления Unicode. Конструкция for &hellip; range итерирует строку посимвольно (а не побайтово, как можно было бы предположить):</p>
+<p>И мы видим, что для кодирования каждого символа кириллицы используются по 2 байта.</p>
+<p>Эффективным способом работы со строками (когда есть необходимость часто выполнять конкатенацию, например) является использование слайса байт или strings.Builder:</p>
+<p>И ещё одну важную особенность стоит иметь в виду — это подсчет длины строки (например — для какой-нибудь валидации). Если считать по количеству байт, и строка содержит не только ASCII символы — то количество байт и фактическое количество символов будут расходиться:</p>
+<p>Тут дело в том, что для кодирования символов м, и и р используются 2 байта вместо одного. Поэтому len == 13, а фактически в строке лишь 10 символов (пакет utf8, к примеру, нам в помощь).</p>
+</details>
+<details><summary><b> Чем отличаются кавычки в Go (двойные, одинарные, обратные): "", '', ``? </b></summary><br>
+<ul>
+<li>Двойные &quot;&quot; - обычные строки, можно использоват <code>\n</code> как перенос строки</li>
+<li>Одинарные &rsquo;&rsquo; - для рун, или байт (если указан тип). Можно только один символ.</li>
+<li>Обратные `` - raw string, только буквальный текст</li>
+</ul>
+<p>Важно помнить, что при использовании одинарных кавычек в Go создается чистая литераль строки, а при использовании двойных кавычек — интерпретированная литераль строки.</p>
+</details>
+<details><summary><b>Что такое rune?</b></summary><br>
+<p>Rune literals are just 32-bit integer values (however they&rsquo;re untyped constants, so their type can change). They represent unicode codepoints. For example, the rune literal &lsquo;a&rsquo; is actually the number 97.</p>
+</details>
+<details><summary><b>Может ли переменная типа string принимать nil-значение?</b></summary><br>
+<p>Нет</p>
+</details>
+<details><summary><b>Можно ли возвратить из функции несколько значений? </b></summary><br>
+<p>Теоретически, неограниченное количество значений. Так же хочется отметить, что есть правила &ldquo;де-факто&rdquo;, которых следует придерживаться:</p>
+<ul>
+<li>Последним значением возвращать ошибку, если её возврат подразумевается</li>
+<li>Первым значением возвращать контекст, если он подразумевается</li>
+<li>Хорошим тоном является не возвращать более четырёх значений</li>
+<li>Если функция что-то проверяет и возвращает значение + булевый результат проверки — то результат проверки возвращать последним (пример — os.LookupEnv(key string) (string, bool))</li>
+<li>Если возвращается ошибка, то остальные значения возвращать нулевыми или nil</li>
+</ul>
+</details>
+<details><summary><b>Как записать в файл?</b></summary><br>
+<pre tabindex="0"><code>func main() {
+    data := []byte(&#34;Hello Bold!&#34;)
+    file, err := os.Create(&#34;hello.bin&#34;)
+    if err != nil{
+        fmt.Println(&#34;Unable to create file:&#34;, err) 
+        os.Exit(1) 
+    }
+    defer file.Close() 
+    file.Write(data)
+     
+    fmt.Println(&#34;Done.&#34;)
+}
+</code></pre></details>
+<details><summary><b>Что такое структура?</b></summary><br>
+<p>Структуры представляют тип данных, определяемый разработчиком и служащий для представления каких-либо объектов. Структуры содержат набор полей, которые представляют различные атрибуты объекта. Для определения структуры применяются ключевые слова type и struct:</p>
+<pre tabindex="0"><code>type person struct{
+    name string
+    age int
+}
+</code></pre></details>
+<details><summary><b>Что будет, если вызвать log.Fatal?</b></summary><br>
+<p>Выход из приложения</p>
+</details>
+<details><summary><b>​​Объясните разницу между конкурентностью и параллельностью?</b></summary><br>
+<ul>
+<li>
+<p>Конкурентность — это выполнение задач за определённое время (например, есть 5 процессов и все они в сумме выполняются в течение 60 минут по очереди). Важная деталь заключается в том, что задачи необязательно выполняются одновременно, поэтому их можно разделить на более мелкие и чередующиеся.</p>
+</li>
+<li>
+<p>Параллелизм — это выполнение задач в одно и то же время (например, есть 5 задач, каждая из них выполняется в течение 60 минут). Само название подразумевает, что они выполняются параллельно.</p>
+</li>
+</ul>
+<p>Виписать из лекции</p>
+</details>
+<details><summary><b>Как работает defer? </b></summary><br>
+<p>Defer является функцией отложенного вызова. Выполняется всегда (даже в случае паники внутри функции вызываемой) после того, как функция завершила своё выполнение но до того, как управление вернётся вызывающей стороне (более того — внутри defer возможен захват переменных, и даже возвращаемого результата). Часто используется для освобождения ресурсов/снятия блокировок.</p>
+<p>Когда выполняется ключевое слово defer, оно помещает следующий за ним оператор в список, который будет вызван до возврата функции.</p>
+</details>
+<details><summary><b>Что такое канал? Какие типы каналов вы знаете? Зачем они нужны?</b></summary><br>
+<p>Если которотко, то синхронные (небуферизированным) и асинхронные (буферизированные), оба работают по принципу FIFO (first in, first out) очереди.</p>
+<p>Канал — это объект связи, с помощью которого (чаще всего) горутины обмениваются данными. Потокобезопасен, передаётся &ldquo;по указателю&rdquo;. Технически это можно представить как конвейер (или трубу), откуда можно считывать и помещать данные. Для создания канала предоставляет ключевое слово chan — создание не буферизированного канала c := make(chan int), для чтения из канала — data := &lt;-c, для записи — c &lt;- 123, и закрытие close(c).</p>
+<p>Запись данных в закрытый канал вызовет панику.</p>
+<p>Чтение или запись данных в небуферизированный канал блокирует горутину и контроль передается свободной горутине. Через закрытый канал невозможно будет передать или принять данные (проверить открытость канала можно используя val, isOpened := &lt;- channel, где isOpened == true в том случае, если канал открыт; в противном случае вернётся false и нулевое значение val исходя из типа данных для канала; isOpened == false если канал закрыт и отсутствуют данные для чтения из него).</p>
+<p>Буферизированный канал создается указанием второго аргумента для make — c := make(chan int, 5), в этом случае горутина не блокируется до тех пор, пока буфер не будет заполнен. Подобно слайсам, буферизированный канал имеет длину (len, количество сообщений в очереди, не считанных) и емкость (cap, размер самого буфера канала):</p>
+<pre tabindex="0"><code>c := make(chan string, 5)
+
+c &lt;- &#34;foo&#34;
+c &lt;- &#34;bar&#34;
+close(c)
+
+println(len(c), cap(c)) // 2 5
+
+for {
+    val, ok := &lt;-c // обрати внимание - читаем из уже закрытого канала
+
+    if !ok {
+        break
+    }
+
+    println(val)
+}
+// &#34;foo&#34;
+// &#34;bar&#34;
+</code></pre><p>При этом ok == true до того момента, пока в канале есть сообщения (вне зависимости от того, открыт он или закрыт), в противном случае ok == false а val будет нулевым значением в зависимости от типа данных канала. При попытке записи в закрытый канал будет паника (авторы языка так сделали &ldquo;ибо нефиг — канал закрыт значит закрыт&rdquo;).</p>
+<p>Используя буферизованный канал и цикл for val := range c { &hellip; } мы можем читать с закрытых каналов (поскольку у закрытых каналов данные все еще живут в буфере).</p>
+<p>Кроме того, существует синтаксический сахар однонаправленных каналов (улучшает безопасность типов в программe, что, как следствие, порождает меньше ошибок):</p>
+<p>c := make(&lt;-chan int) — только для чтения
+c := make(chan&lt;- int) — только для записи</p>
+<p>Так же можно в сигнатуре принимаемой функции указать однонаправленность канала (func write(c chan&lt;- string) { &hellip; }) — в этом случае функция не сможет из него читать, а сможет только писать или закрыть его.</p>
+<p>Читать &ldquo;одновременно&rdquo; из нескольких каналов возможно с помощью select (оператор select является блокируемым, за исключением использования default):</p>
+<pre tabindex="0"><code>c1, c2 := make(chan string), make(chan string)
+defer func() { close(c1); close(c2) }() // не забываем прибраться
+
+go func(c chan&lt;- string) { &lt;-time.After(time.Second); c &lt;- &#34;foo&#34; }(c1)
+go func(c chan&lt;- string) { &lt;-time.After(time.Second); c &lt;- &#34;bar&#34; }(c2)
+
+for i := 1; ; i++ {
+    select { // блокируемся, пока в один из каналов не попадёт сообщение
+    case val := &lt;-c1:
+        println(&#34;channel 1&#34;, val)
+
+    case val := &lt;-c2:
+        println(&#34;channel 2&#34;, val)
+    }
+
+    if i &gt;= 2 { // через 2 итерации выходим (иначе будет deadlock)
+        break
+    }
+}
+// channel 1 foo
+// channel 2 bar
+// Total execution time: 1.00s
+</code></pre><p>В случае, если в оба канала одновременно придут сообщения (или они уже там были), то case будет выбран случайно (а не по порядку их объявления, как могло бы показаться).</p>
+<p>Если ни один из каналов недоступен для взаимодействия, и секция default отсутствует, то текущая горутина переходит в состояние waiting до тех пор, пока какой-то из каналов не станет доступен.</p>
+<p>Если в select указан default, то он будет выбран в том случае, если все каналы не имеют сообщений (таким образом select становится не блокируемым).</p>
+<p>Под капотом (src/runtime/chan.go) канал представлен структурой:</p>
+<pre tabindex="0"><code>type hchan struct {
+    qcount   uint           // количество элементов в буфере
+    dataqsiz uint           // размерность буфера
+    buf      unsafe.Pointer // указатель на буфер для элементов канала
+    elemsize uint16         // размер одного элемента в канале
+    closed   uint32         // флаг, указывающий, закрыт канал или нет
+    elemtype *_type         // содержит указатель на тип данных в канале
+    sendx    uint           // индекс (смещение) в буфере по которому должна производиться запись
+    recvx    uint           // индекс (смещение) в буфере по которому должно производиться чтение
+    recvq    waitq          // указатель на связанный список горутин, ожидающих чтения из канала
+    sendq    waitq          // указатель на связанный список горутин, ожидающих запись в канал
+    lock     mutex          // мьютекс для безопасного доступа к каналу
+}
+</code></pre><p>В общем случае, горутина захватывает мьютекс, когда совершает какое-либо действие с каналом, кроме случаев lock-free проверок при неблокирующих вызовах.</p>
+<p>Go не выделяет буфер для синхронных (небуферизированных) каналов, поэтому указатель на буфер равен nil и dataqsiz равен нулю. При чтении из канала горутина произведёт некоторые проверки, такие как: закрыт ли канал, буферизирован он или нет, содержит ли гоуртины в send-очереди. Если ожидающих отправки горутин нет — горутина добавит сама себя в recvq и заблокируется. При записи другой горутиной все проверки повторяются снова, и когда она проверяет recvq очередь, она находит ожидающую чтение горутину, удаляет её из очереди, записывает данные в её стек и снимает блокировку. Это единственное место во всём рантайме Go, когда одна горутина пишет напрямую в стек другой горутины.</p>
+<p>При создании асинхронного (буферизированного) канала make(chan bool, 1) Go выделяет буфер и устанавливает значение dataqsiz в единицу. Чтобы горутине отправить отправить значение в канал, сперва производятся несколько проверок: пуста ли очередь recvq, пуст ли буфер, достаточно ли места в буфере. Если всё ок, то она просто записывает элемент в буфер, увеличивает значение qcount и продолжает исполнение далее. Когда буфер полон, буферизированный канал будет вести себя точно так же, как синхронный (небуферизированный), тоесть горутина добавит себя в очередь ожидания и заблокируется.</p>
+<p>Проверки буфера и очереди реализованы как атомарные операции, и не требуют блокировки мьютекса.</p>
+<p>При закрытии канала Go проходит по всем ожидающим на чтение или запись горутинам и разблокирует их. Все получатели получают дефолтные значение переменных того типа данных канала, а все отправители паникуют.</p>
+</details>
+<details><summary><b>Что можно делать с закрытым каналом??</b></summary><br>
+<p>Из закрытого канала можно читать с помощью for val := range c { &hellip; } — вычитает все сообщения что в нём есть, или с помощью:</p>
+<pre tabindex="0"><code>for {
+    if val, ok := &lt;-c; ok {
+        println(val)
+    } else {
+        break
+    }
+}
+</code></pre></details>
+<details><summary><b>Что будет, если читать по закрытому каналу? Что будет, если писать в закрытый канал?</b></summary><br>
+<ul>
+<li>
+<p>Чтение из пустого канала вернет пустое значение типа</p>
+</li>
+<li>
+<p>Запись данных в закрытый канал вызовет панику.</p>
+</li>
+<li>
+<p>A send to a nil channel blocks forever</p>
+</li>
+<li>
+<p>A receive from a nil channel blocks forever</p>
+</li>
+<li>
+<p>A send to a closed channel panics</p>
+</li>
+<li>
+<p>A receive from a closed channel returns the zero value immediately</p>
+</li>
+</ul>
+</details>
+<details><summary><b>Какие стандартные env-переменные в Go?</b></summary><br>
+<p>GOMAXPROCS
+GOROOT</p>
+</details>
+<details><summary><b>Как сделать type assertion? </b></summary><br>
+<p>A type assertion provides access to an interface value&rsquo;s underlying concrete value.</p>
+<pre tabindex="0"><code>t := i.(T)
+</code></pre><p>This statement asserts that the interface value i holds the concrete type T and assigns the underlying T value to the variable t.</p>
+<p>If i does not hold a T, the statement will trigger a panic.</p>
+<p>To test whether an interface value holds a specific type, a type assertion can return two values: the underlying value and a boolean value that reports whether the assertion succeeded.</p>
+<pre tabindex="0"><code>t, ok := i.(T)
+If i holds a T, then t will be the underlying value and ok will be true.
+</code></pre></details>
+<details><summary><b>Что такое type switch? </b></summary><br>
+<p>Проверка типа переменной, а не её значения. Может быть в виде одного switch и множеством case:</p>
+<pre tabindex="0"><code>func checkType(i interface{}) {
+  switch i.(type) {
+  case int:
+    println(&#34;is integer&#34;)
+
+  case string:
+    println(&#34;is string&#34;)
+
+  default:
+    println(&#34;has unknown type&#34;)
+  }
+}
+</code></pre><p>А может в виде if-конструкции:</p>
+<pre tabindex="0"><code>func main() {
+    var any interface{}
+
+    any = &#34;foobar&#34;
+
+    if s, ok := any.(string); ok {
+        println(&#34;this is a string:&#34;, s)
+    }
+
+    // а так можно проверить наличие функций у структуры
+  if closable, ok := any.(interface{ Close() }); ok {
+    closable.Close()
+  }
+}
+</code></pre></details>
+<details><summary><b>В каком порядке выполняются кейсы в select? </b></summary><br>
+<p>select блокируется до тех пор, пока один из его блоков case не будет готов к запуску, а затем выполняет этот блок. Если сразу несколько блоков могут быть запущены, то выбирается произвольный.</p>
+<p>Блок default в select запускается, если никакой другой блок не готов.</p>
+<p>Используйте default, чтобы посылать и получать данные без блокировок:</p>
+<p>(посмотреть еще раз лекцию)</p>
+</details>
+<h3 id="практические-задачи">Практические задачи</h3>
+<h2 id="middle">Middle</h2>
+<h3 id="software-engineering-1">Software engineering</h3>
+<details><summary><b>Назовите некоторые из принципов 12-factor-app. Зачем используют graceful shutdown?</b></summary><br>
+<p><a href="https://12factor.net/">https://12factor.net/</a></p>
+</details>
+<details><summary><b>Что такое dependency injection? А dependency inversion? ?</b></summary><br>
+<p>Dependency Injection is an implementation technique for populating instance variables of a class. Dependency Inversion is a general design guideline which recommends that classes should only have direct relationships with high-level abstractions.</p>
+</details>
+<details><summary><b>Как работает TLS handshake?</b></summary><br>
+<ol>
+<li>
+<p>The &lsquo;client hello&rsquo; message: The client initiates the handshake by sending a &ldquo;hello&rdquo; message to the server. The message will include which TLS version the client supports, the cipher suites supported, and a string of random bytes known as the &ldquo;client random.&rdquo;</p>
+</li>
+<li>
+<p>The &lsquo;server hello&rsquo; message: In reply to the client hello message, the server sends a message containing the server&rsquo;s SSL certificate, the server&rsquo;s chosen cipher suite, and the &ldquo;server random,&rdquo; another random string of bytes that&rsquo;s generated by the server.</p>
+</li>
+<li>
+<p>Authentication: The client verifies the server&rsquo;s SSL certificate with the certificate authority that issued it. This confirms that the server is who it says it is, and that the client is interacting with the actual owner of the domain.</p>
+</li>
+<li>
+<p>The premaster secret: The client sends one more random string of bytes, the &ldquo;premaster secret.&rdquo; The premaster secret is encrypted with the public key and can only be decrypted with the private key by the server. (The client gets the public key from the server&rsquo;s SSL certificate.)</p>
+</li>
+<li>
+<p>Private key used: The server decrypts the premaster secret.</p>
+</li>
+<li>
+<p>Session keys created: Both client and server generate session keys from the client random, the server random, and the premaster secret. They should arrive at the same results.</p>
+</li>
+<li>
+<p>Client is ready: The client sends a &ldquo;finished&rdquo; message that is encrypted with a session key.</p>
+</li>
+<li>
+<p>Server is ready: The server sends a &ldquo;finished&rdquo; message encrypted with a session key.</p>
+</li>
+<li>
+<p>Secure symmetric encryption achieved: The handshake is completed, and communication continues using the session keys.</p>
+</li>
+</ol>
+</details>
+<details><summary><b>Что такое Clean Architecture? Приведите пример</b></summary><br>
+<p>Чистая архитектура — это способ организации кода, который способствует строгому разделению ответственности. Приложение разбивается на независимые функциональные компоненты, которые взаимодействуют друг с другом определённым способом, при этом между ними передаются только те ресурсы, которые необходимы для выполнения поставленной задачи. Это помогает минимизировать сложность каждого компонента, снижает вероятность ошибок и ускоряет их устранение при выявлении.
+Как и любой архитектурный подход, чистая архитектура сама по себе не уберегает от написания плохого кода. Чтобы она упрощала жизнь, ты должен осознанно следовать её принципа</p>
+<p>Минусы чистой архитектуры
+На мой взгляд, основной минус чистой архитектуры в том, что тебе нужно писать больше кода. Допустим, ты хочешь настроить получение контактов из базы данных. Ты можешь написать метод, который обратится к библиотеке, сделать там небольшой select и задать ID-шник. Затем отправить данные на front, и это будет что-то около 200 строк.
+В чистой архитектуре тебе сначала нужно сделать папку со слоем delivery, который будет принимать данные от front. Затем описать данные, которые должен прислать front, и вызвать слой use case. Use case проведёт валидацию, вызовет метод обращения к базе, и только после этого ты сможешь получить данные.
+Ещё один минус — высокий порог входа. Продумать взаимодействие всех модулей системы довольно сложно, а для новичков это и вовсе непосильная задача.</p>
+</details>
+<details><summary><b>Что такое heap и stack?</b></summary><br>
+<p>Стек (stack) — это область оперативной памяти, которая создаётся для каждого потока. Он работает в порядке LIFO (Last In, First Out), то есть последний добавленный в стек кусок памяти будет первым в очереди на вывод из стека. Каждый раз, когда функция объявляет новую переменную, она добавляется в стек, а когда эта переменная пропадает из области видимости (например, когда функция заканчивается), она автоматически удаляется из стека. Когда стековая переменная освобождается, эта область памяти становится доступной для других стековых переменных.</p>
+<p>Стек быстрый, так как часто привязан к кэшу процессора. Размер стека ограничен, и задаётся при создании потока.</p>
+<p>Куча (heap) — это хранилище памяти, также расположенное в ОЗУ, которое допускает динамическое выделение памяти и не работает по принципу стека: это просто склад для ваших переменных. Когда вы выделяете в куче участок памяти для хранения переменной, к ней можно обратиться не только в потоке, но и во всем приложении. Именно так определяются глобальные переменные. По завершении приложения все выделенные участки памяти освобождаются. Размер кучи задаётся при запуске приложения, но, в отличие от стека, он ограничен лишь физически, и это позволяет создавать динамические переменные.</p>
+<p>В сравнении со стеком, куча работает медленнее, поскольку переменные разбросаны по памяти, а не сидят на верхушке стека. То что попадает в кучу, живёт там пока не придёт GC.</p>
+<p>Но почему стек так быстр? Основных причин две:</p>
+<p>Стеку не нужно иметь сборщик мусора (garbage collector). Как мы уже упоминали, переменные просто создаются и затем вытесняются, когда функция завершается. Не нужно запускать сложный процесс освобождения памяти от неиспользуемых переменных и т.п.
+Стек принадлежит одной горутине, переменные не нужно синхронизировать в сравнении с теми, что находятся в куче. Что также повышает производительность</p>
+</details>
+<details><summary><b>Расскажите о Data structures: stack, queue, linked list, trie, balanced tree</b></summary><br>
+<p>Dependency Injection is an implementation technique for populating instance variables of a class. Dependency Inversion is a general design guideline which recommends that classes should only have direct relationships with high-level abstractions.</p>
+</details>
+<h3 id="go-1">Go</h3>
+<details><summary><b>Какими библиотеками Go вы использовали для доступа к RDBMS? Какие у них положительные и отрицательные стороны?</b></summary><br>
+<ul>
+<li>GORM</li>
+<li>SQLC</li>
+<li>SQLX</li>
+<li>Beego</li>
+<li>GORP</li>
+<li>Go-firestorm</li>
+<li>SQLBoiler</li>
+</ul>
+<p>Посмотреть лекцию, дописать необходимое.</p>
+</details>
+<details><summary><b>Для чего используют Context? Какие варианты отмены контекстов?</b></summary><br>
+<p>Context — это Golang пакет включающий структуру Context и вспомогательные функции. Основная идея этого пакета — контролировать время выполнения сетевых запросов.</p>
+<p>Пакет context в Go особенно полезен при взаимодействиях с API и медленными процессами, особенно в production-grade системах. С его помощью можно уведомить горутины о необходимости завершить свою работу, &ldquo;пошарить&rdquo; какие-то данные (например, в middleware), или легко организовать работу с таймаутом.</p>
+<p><code>context.WithCancel()</code> - Эта функция создает новый контекст из переданного ей родительского, возвращая первым аргументом новый контекст, а вторым — функцию &ldquo;отмены контекста&rdquo; (при её вызове родительский контект &ldquo;отменен&rdquo; не будет). Важно — вызывать функцию отмены контекста должна только та функция, которая его создает. При вызове функции отмены сам контекст и все контексты, созданные на основе него получат в ctx.Done() пустую структуру и в ctx.Err() ошибку context.Canceled.</p>
+<pre tabindex="0"><code>ctx, cancel := context.WithCancel(context.Background())
+fmt.Println(ctx.Err()) // nil
+
+cancel()
+
+fmt.Println(&lt;-ctx.Done())      // {}
+fmt.Println(ctx.Err().Error()) // context canceled
+</code></pre><p><code>context.WithDeadline()</code> - Так же создает контекст от родительского, который отменится самостоятельно при наступлении переданной временной отметке, или при вызове функции отмены. Отмена/таймаут затрагивает только сам контекст и его &ldquo;наследников&rdquo;. ctx.Err() возвращает ошибку context.DeadlineExceeded. Полезно для реализации таймаутов:</p>
+<pre tabindex="0"><code>ctx, cancel := context.WithDeadline(
+    context.Background(),
+    time.Now().Add(time.Millisecond*100),
+)
+defer cancel()
+fmt.Println(ctx.Err()) // nil
+
+&lt;-time.After(time.Microsecond * 110)
+
+fmt.Println(&lt;-ctx.Done())      // {}
+fmt.Println(ctx.Err().Error()) // context deadline exceeded
+</code></pre><p><code>context.WithTimeout()</code> - Работает аналогично context.WithDeadline() за исключением того, что принимает в качестве значения таймаута длительность (например — time.Second):</p>
+<pre tabindex="0"><code>ctx, cancel := context.WithTimeout(context.Background(), time.Second*2)
+</code></pre><p><code>context.WithValue()</code> - Позволяет &ldquo;пошарить&rdquo; данные через всё контекстное дерево &ldquo;ниже&rdquo;. Часто используют чтоб передать таким образом, например, логгер или HTTP запрос в цепочке middleware (но в 9 из 10 случаев так делать не надо, это можно считать антипаттерном). Лучше всего использовать функции для помещения/извлечения данных из контекста (так как &ldquo;в нём&rdquo; они храняться как interface{}):</p>
+</details>
+<details><summary><b> Какими способами можно исключить (скрыть) поля структуры при JSON-сериализации?</b></summary><br>
+<p>Использовать omitempty, если значение пустое.</p>
+<pre tabindex="0"><code>type User struct {
+    Name string `json:&#34;name,omtiempty&#34;`
+    Age  int    `json:&#34;age,omitempty&#34;`
+}
+</code></pre><p>Использовать другую структуру скрыв нужные поля тем или иным способом</p>
+<pre tabindex="0"><code>type UserResponse struct {
+    Name string `json:&#34;name&#34;`
+    age  int                  // ну или Age int `json:&#34;-&#34;`
+}
+</code></pre><p>Использовать свой метод MarshalJSON</p>
+</details>
+<details><summary><b>Назовите примитивы пакета sync стандартной библиотеки. Каково назначение и примеры применения sync.WaitGroup? /b></summary><br>
+<p>Как устроен мьютекс?</p>
+<p>Mutex означает MUTual EXclusion (взаимное исключение), и обеспечивает безопасный доступ к общим ресурсам.</p>
+<p>Под капотом мьютекса используются функции из пакета atomic (atomic.CompareAndSwapInt32 и atomic.AddInt32), так что можно считать мьютекс надстройкой над atomic. Мьютекс медленнее чем atomic, потому что он блокирует другие горутины на всё время действия блокировки. А в свою очередь atomic быстрее потому как использует атомарные инструкции процессора.</p>
+<p>В момент, когда нужно обеспечить защиту доступа — вызываем метод Lock(), а по завершению операции изменения/чтения данных — метод Unlock().</p>
+<p>В чем отличие sync.Mutex от sync.RWMutex?</p>
+<p>Помимо Lock() и Unlock() (у sync.Mutex), у sync.RWMutex есть отдельные аналогичные методы только для чтения — RLock() и RUnlock(). Если участок в памяти нуждается только в чтении — он использует RLock(), который не заблокирует другие операции чтения, но заблокирует операцию записи и наоборот.</p>
+<p>По большому счёту, RWMutex это комбинация из двух мьютексов.</p>
+<p>Что такое synс.Map?</p>
+<p>Коротко — предоставляет атомарный доступ к элементам map.</p>
+<p>Go, как известно, является языком созданным для написания concurrent программ — программ, который эффективно работают на мультипроцессорных системах. Но тип map не безопасен для параллельного доступа. То есть для чтения, конечно, безопасен — 1000 горутин могут читать из map без опасений, но вот параллельно в неё ещё и писать — уже нет.</p>
+<p>Для обеспечения потоко-безопасного доступа к map можно использовать sync.RWMutex, но он имеет проблему производительности при работе на большом количестве ядер процессора (в RWMutex при блокировке на чтение каждая горутина должна обновить поле readerCount — простой счётчик, с помощью atomic.AddInt32(), что проиводит к сбросу кэша для этого адреса памяти для всех ядер, и каждое ядро становится в очередь и ждёт этот сброс и вычитывание из кэша — эта проблема называется cache contention).</p>
+<p>sync.Map решает совершенно конкретную проблему cache contention в стандартной библиотеке для таких случаев, когда ключи в map стабильны (не обновляются часто) и происходит намного больше чтений, чем записей.</p>
+<p>Пример работы с sync.Map:</p>
+<p>var m sync.Map</p>
+<p>m.Store(&ldquo;one&rdquo;, 1)        // запись
+one, ok := m.Load(&ldquo;one&rdquo;) // чтение</p>
+<p>fmt.Println(one, ok) // 1 true</p>
+<p>m.Range(func(k, v interface{}) bool { // итерация эл-ов мапы
+fmt.Println(k, v) // one 1</p>
+<pre><code>return true
+</code></pre>
+<p>})</p>
+<p>m.Delete(&ldquo;one&rdquo;) // удаление</p>
+<p>Как было сказано выше — для синхронизации можно использовать мьютексы. Кроме того из стандартной библиотеки нам доступны:</p>
+<p>sync.WaitGroup</p>
+<p>Используется для координации в случае, когда программе приходится ждать окончания работы нескольких горутин (эта конструкция похожа на CountDownLatch в Java). Отличный способ дождаться завершения набора одновременных операций. Принцип работы следующий:</p>
+<p>var wg sync.WaitGroup</p>
+<p>wg.Add(1) // увеличиваем счётчик на 1
+go func() {
+fmt.Println(&ldquo;task 1&rdquo;)
+&lt;-time.After(time.Second)
+fmt.Println(&ldquo;task 1 done&rdquo;)</p>
+<pre><code>wg.Done() // уменьшаем счётчик на 1
+</code></pre>
+<p>}()</p>
+<p>wg.Add(1) // увеличиваем счётчик на 1
+go func() {
+fmt.Println(&ldquo;task 2&rdquo;)
+&lt;-time.After(time.Second)
+fmt.Println(&ldquo;task 2 done&rdquo;)</p>
+<pre><code>wg.Done() // уменьшаем счётчик на 1
+</code></pre>
+<p>}()</p>
+<p>wg.Wait() // блокируемся, пока счётчик не будет == 0
+// task 2
+// task 1
+// task 2 done
+// task 1 done
+// Total time: 1.00s</p>
+<p>sync.Cond</p>
+<p>Условная переменная (CONDition variable) полезна, например, если мы хотим разблокировать сразу несколько горутин (Broadcast), что не получится сделать с помощью канала. Метод Signal отправляет сообщение самой долго-ожидающей горутине. Пример использования:</p>
+<p>var (
+c  = sync.NewCond(&amp;sync.Mutex{})
+wg sync.WaitGroup // нужна только для примера</p>
+<pre><code>free = true
+</code></pre>
+<p>)</p>
+<p>wg.Add(1)
+go func() {
+defer wg.Done()
+c.L.Lock()</p>
+<pre><code>for !free { // проверяем, что ресурс свободен
+    c.Wait()
+}
+fmt.Println(&quot;work&quot;)
+
+c.L.Unlock()
+</code></pre>
+<p>}()</p>
+<p>free = false                  // забрали ресурс, чтобы выполнить с ним работу
+&lt;-time.After(1 * time.Second) // эмуляция работы
+free = true                   // освободили ресурс
+c.Signal()                    // оповестили горутину</p>
+<p>wg.Wait()</p>
+<p>sync.Once</p>
+<p>Позволяет определить задачу для однократного выполнения за всё время работы программы. Содержит одну-единственную функцию Do, позволяющую передавать другую функцию для однократного применения.</p>
+<p>var once sync.Once</p>
+<p>for i := 0; i &lt; 10; i++ {
+once.Do(func() {
+fmt.Println(&ldquo;Hell yeah!&rdquo;)
+})
+}</p>
+<p>// Hell yeah! (выводится 1 раз вместо 10)</p>
+<p>sync.Pool</p>
+<p>Используется для уменьшения давления на GC путём повторного использования выделенной памяти (потоко-безопасно). Пул необязательно освободит данные при первом пробуждении GC, но он может освободить их в любой момент. У пула нет возможности определить и установить размер и нет необходимости заботиться о его переполнении.</p>
+</details>
+<details><summary><b>Какая разница между Mutex и RWMutex? </b></summary><br>
+<p>Помимо Lock() и Unlock() (у sync.Mutex), у sync.RWMutex есть отдельные аналогичные методы только для чтения — RLock() и RUnlock(). Если участок в памяти нуждается только в чтении — он использует RLock(), который не заблокирует другие операции чтения, но заблокирует операцию записи и наоборот.</p>
+<p>По большому счёту, RWMutex это комбинация из двух мьютексов.</p>
+</details>
+<details><summary><b>Какие способы остановить N горутин, запущенных одновременно (например, worker pool)? </b></summary><br>
+<p>context, другой канал</p>
+</details>
+<details><summary><b>Что такое замыкание функций?</b></summary><br>
+<p>Замыкания — это такие функции, которые вы можете создавать в рантайме и им будет доступно текущее окружение, в рамках которого они были созданы.</p>
+<p>Функции, у которых есть имя — это именованные функции. Функции, которые могут быть созданы без указания имени — это анонимные функции.</p>
+<pre tabindex="0"><code>func main() {
+    var text = &#34;some string&#34;
+
+    var ourFunc = func() { // именованное замыкание
+        println(text)
+    }
+
+    ourFunc() // some string
+    getFunc()() // another string
+}
+
+func getFunc() func() {
+    return func() { // анонимное
+        println(&#34;another string&#34;)
+    }
+}
+</code></pre><p>Замыкания сохраняют состояние. Это означает, что состояние переменных содержится в замыкании в момент декларации. Одна из самых очевидных ловушек — это создание замыканий в цикле:</p>
+<pre tabindex="0"><code>var funcs = make([]func(), 0, 5)
+
+for i := 0; i &lt; 5; i++ {
+    funcs = append(funcs, func() { println(&#34;counter =&#34;, i) })
+
+    // исправляется так:
+    //var value = i
+    //funcs = append(funcs, func() { println(&#34;counter =&#34;, value) })
+}
+
+for _, f := range funcs {
+    f()
+}
+
+// counter = 5 (так все 5 раз)
+</code></pre></details>
+<details><summary><b>Объясните разницу между switch и select?</b></summary><br>
+<ul>
+<li>
+<p>A select is only used with channels</p>
+</li>
+<li>
+<p>A switch is used with concrete types</p>
+</li>
+<li>
+<p>A select will choose multiple valid options at random, while aswitch will go in sequence (and would require a fallthrough to match multiple.)</p>
+</li>
+</ul>
+</details>
+<details><summary><b>Как устроен тип map?</b></summary><br>
+<p>Карта (map или hashmap) — это неупорядоченная коллекция пар вида ключ-значение. Пример:</p>
+<p>type myMap map[string]int</p>
+<p>Подобно массивам и слайсам, к элементам мапы можно обратиться с помощью скобок:</p>
+<p>var m = make(map[string]int) // инициализация</p>
+<p>m[&ldquo;one&rdquo;] = 1 // запись в мапу</p>
+<p>fmt.Println(m[&ldquo;one&rdquo;], m[&ldquo;two&rdquo;]) // 1 0</p>
+<p>Лучше выделить память заранее (передавая вторым аргументом функции make), если известно количество элементов — избежим эвакуаций
+В случае с m[&ldquo;two&rdquo;] вернулся 0 так как это является нулевым значением для типа int. Для проверки существования ключа используем конструкцию вида (доступ к элементу карты может вернуть два значения вместо одного) называемую &ldquo;multiple assignment&rdquo;:</p>
+<p>var m = map[string]int{&ldquo;one&rdquo;: 1}</p>
+<p>v1, ok1 := m[&ldquo;one&rdquo;] // чтение
+v2, ok2 := m[&ldquo;two&rdquo;]</p>
+<p>fmt.Println(v1, ok1) // 1 true
+fmt.Println(v2, ok2) // 0 false</p>
+<p>for k, v := range m { // итерация всех эл-ов мапы
+fmt.Println(k, v)
+}</p>
+<p>delete(m, &ldquo;one&rdquo;) // удаление</p>
+<p>v1, ok1 = m[&ldquo;one&rdquo;]</p>
+<p>fmt.Println(v1, ok1) // 0 false</p>
+<p>Мапы всегда передаются по ссылке (вообще-то Go не бывает ссылок, невозможно создать 2 переменные с 1 адресом, как в С++ например; но зато можно создать 2 переменные, указывающие на один адрес — но это уже указатели). Если же быть точнее, то мапа в Go — это просто указатель на структуру hmap:</p>
+<p>type hmap struct {
+// Note: the format of the hmap is also encoded in cmd/compile/internal/reflectdata/reflect.go.
+// Make sure this stays in sync with the compiler&rsquo;s definition.
+count     int // # live cells == size of map.  Must be first (used by len() builtin)
+flags     uint8
+B         uint8  // log_2 of # of buckets (can hold up to loadFactor * 2^B items)
+noverflow uint16 // approximate number of overflow buckets; see incrnoverflow for details
+hash0     uint32 // hash seed</p>
+<pre><code>buckets    unsafe.Pointer // array of 2^B Buckets. may be nil if count==0.
+oldbuckets unsafe.Pointer // previous bucket array of half the size, non-nil only when growing
+nevacuate  uintptr        // progress counter for evacuation (buckets less than this have been evacuated)
+
+extra *mapextra // optional fields
+</code></pre>
+<p>}</p>
+<p>Так же структура hmap содержит в себе следующее:</p>
+<p>Количество элементов
+Количество &ldquo;ведер&rdquo; (представлено в виде логарифма для ускорения вычислений)
+Seed для рандомизации хэшей (чтобы было сложнее заddosить — попытаться подобрать ключи так, что будут сплошные коллизии)
+Всякие служебные поля и главное указатель на buckets, где хранятся значения</p>
+<p>На картинке схематичное изображение структуры в памяти — есть хэдер hmap, указатель на который и есть map в Go (именно он создается при объявлении с помощью var, но не инициализируется, из-за чего падает программа при попытке вставки). Поле buckets — хранилище пар ключ-значение, таких &ldquo;ведер&rdquo; несколько, в каждом лежит 8 пар. Сначала в &ldquo;ведре&rdquo; лежат слоты для дополнительных битов хэшей (e0..e7 названо e — потому что extra hash bits). Далее лежат ключи и значения как сначала список всех ключей, потом список всех значений.</p>
+<p>По хэш функции определяется в какое &ldquo;ведро&rdquo; мы кладем значение, внутри каждого &ldquo;ведра&rdquo; может лежать до 8 коллизий, в конце каждого &ldquo;ведра&rdquo; есть указатель на дополнительное, если вдруг предыдущее переполнилось.</p>
+<p>Как растет map?</p>
+<p>В исходном коде можно найти строчку Maximum average load of a bucket that triggers growth is 6.5. То есть, если в каждом &ldquo;ведре&rdquo; в среднем более 6,5 элементов, происходит увеличение массива buckets. При этом выделяется массив в 2 раза больше, а старые данные копируются в него маленькими порциями каждые вставку или удаление, чтобы не создавать очень крупные задержки. Поэтому все операции будут чуть медленнее в процессе эвакуации данных (при поиске тоже, нам же приходится искать в двух местах). После успешной эвакуации начинают использоваться новые данные.</p>
+<p>Из-за эвакуации данных нельзя и взять адрес мапы — представьте, что мы взяли адрес значения, а потом мапа выросла, выделилась новая память, данные эвакуировались, старые удалились, указатель стал неправильным, поэтому такие операции запрещены.</p>
+<p>Что там про поиск?</p>
+<p>Поиск, если разобраться, устроен не так уж и сложно: проходимся по цепочкам &ldquo;ведер&rdquo;, переходя в следующее, если в этом не нашли. Поиск в &ldquo;ведре&rdquo; начинается с быстрого сравнения дополнительного хэша, для которого используется всего 8 бит (вот для чего эти e0&hellip;e7 в начале каждого — это &ldquo;мини&rdquo; хэш пары для быстрого сравнения). Если не совпало, идем дальше, если совпало, то проверяем тщательнее — определяем где лежит в памяти ключ, подозреваемый как искомый, сравниваем равен ли он тому, что запросили. Если равен, определяем положение значения в памяти и возвращаем.</p>
+<p>К сожалению, мир не совершенен. Когда имя хешируется, то некоторые данные теряются, так как хеш, как правило, короче исходной строки. Таким образом, в любой реализации хеш таблицы неизбежны коллизии когда по двум ключам получаются одинаковые хеши. Как следствие, поиск может быть дороже чем O(1) (возможно это связано с кешем процессора и коллизиями коротких хэшей), так что иногда выгоднее использовать бинарный поиск по слайсу данных нежели чем поиск в мапе (пишите бенчмарки).</p>
+<p>Есть ли у map такие же методы как у слайса: len, cap?</p>
+<p>У мапы есть len но нет cap. У нас есть только overflow который указывает &ldquo;куда-то&rdquo; когда мапа переполняется, и поэтому у нас не может быть capacity.</p>
+<p>Какие типы ключей разрешены для ключа в map?</p>
+<p>Любым сравнимым (comparable) типом, т.е. булевы, числовые, строковые, указатели, канальные и интерфейсные типы, а также структуры или массивы, содержащие только эти типы. Слайсы, мапы и функции использовать нельзя, так как эти типы не сравнить с помощью оператора == или !=.</p>
+<p>Может ли ключом быть структура? Если может, то всегда ли?</p>
+<p>Как было сказано выше — структура может быть ключом до тех пор, пока мы в поля структуры не поместим какой-либо слайс, мапу или любой другой non-comparable тип данных (например — функцию).</p>
+<p>Что будет в map, если не делать make или short assign?</p>
+<p>Будет паника (например — при попытке что-нибудь в неё поместить), так как любые &ldquo;структурные&rdquo; типы (а мапа как мы знаем таковой является) должны быть инициализированы для работы с ними.</p>
+</details>
+<details><summary><b>Каков порядок перебора map?</b></summary><br>
+<p>произвольный</p>
+</details>
+<details><summary><b>Что такое сериализация? Где она используется?</b></summary><br>
+<p>Сериализация — это процесс преобразования объекта в поток байтов для сохранения или передачи. Обратной операцией является десериализация (т.е. восстановление объекта/структуры из последовательности байтов). Синонимом можно считать термин &ldquo;маршалинг&rdquo; (от англ. marshal — упорядочивать).</p>
+<p>Из минусов сериализации можно выделить нарушение инкапсуляции, т.е. после сериализации &ldquo;приватные&rdquo; свойства структур могут быть доступны для изменения.</p>
+<p>Типичными примерами сериализации в Go являются преобразование структур в json-объекты. Кроме json существуют различные кодеки типа MessagePack, CBOR и т.д.</p>
+</details> 
+<details><summary><b>Можно ли использовать nil для инициализации переменной? </b></summary><br>
+<p>Нельзя использовать nil для инициализации переменной без явного указания типа Идентификатор nil можно использовать как «нулевое значение» (zero value) для интерфейсов, функций, указателей, хеш-таблиц (map), слайсов (slices) и каналов.</p>
+</details> 
+<details><summary><b> Можно ли задать емкость map? Можно ли получить емкость map?  </b></summary><br>
+<p>У мапы есть len но нет cap. У нас есть только overflow который указывает &ldquo;куда-то&rdquo; когда мапа переполняется, и поэтому у нас не может быть capacity.</p>
+</details>
+<details><summary><b> Как узнать количество символов в строке?   </b></summary><br>
+<p><code>utf8.RuneCountInString(str)</code></p>
+</details>
+<details><summary><b> Как указать главной горютине ожидать завершения работы всех рабочих горютин?  </b></summary><br>
+<p>sync.WaitGroup{}</p>
+</details>
+<details><summary><b> Чем отличается goroutine от OS thread?   </b></summary><br>
+<p>Gorutine</p>
+<ul>
+<li>Управляются рантаймом языка</li>
+<li>Более высокоуровневая абстракция, поэтому не зависит от системы</li>
+<li>Более легковесны</li>
+<li>Асинхронно вытесняющий планировщик</li>
+<li>Имеет стэк, который может расти</li>
+</ul>
+<p>Thread</p>
+<ul>
+<li>Управляются процессорным ядром</li>
+<li>Зависит от системы</li>
+<li>Требуют большего количества ресурсов</li>
+<li>Вытесняющий планировщик</li>
+<li>Фиксированный стэк</li>
+</ul>
+</details>
+<details><summary><b> Как указать главной горютине ожидать завершения работы всех рабочих горютин?  </b></summary><br>
+<p>sync.WaitGroup{}</p>
+</details>
+<details><summary><b> Всегда ли будет быстрее передача Pointer в качестве аргумента функции?</b></summary><br>
+<p>посмотреть онлайн, вроде там было</p>
+</details>
+<details><summary><b>Что такое вариативная переменная функции? Как работать с этой переменной? </b></summary><br>
+<p>Variadic functions can be called with any number of trailing arguments. For example, fmt.Println is a common variadic function. Like an array</p>
+</details>
+<details><summary><b>Как работать с пакетом internal? </b></summary><br>
+<p>модули, еще раз посмотреть лекцию</p>
+</details>
+<details><summary><b>ККак работает импорт через точку и почему это плохая практика?</b></summary><br>
+<p>Импорт с точкой добавляет все экспортируемые поля пакета в текущий скоуп (точнее говоря область видимости файла). И теперь Вы можете работать с полями импортированного пакет так, как будто они у вас в пакете.</p>
+<p>Как видно из вывода, при импорте в текущую область видимости пакетов с пересекающимися полями мы получим ошибку компиляции.</p>
+<p>Поэтому подумайте лишний раз перед тем как использовать такой импорт — можно получить ошибку совершенно неожиданно.</p>
+</details>
+<details><summary><b>Как работает импорт через подчеркивание?</b></summary><br>
+<p>Как видно по коду, мы импортируем два пакета: a и c. При этом перед пакетом c стоит _ и в самом коде пакет никак не используется. Такой прием используется для того, чтобы выполнить init() из пакета.</p>
+<p>Импорт с точкой добавляет все экспортируемые поля пакета в текущий скоуп (точнее говоря область видимости файла). И теперь Вы можете работать с полями импортированного пакет так, как будто они у вас в пакете.</p>
+</details>
+<details><summary><b>Что такое defer()?  </b></summary><br>
+<p>Defer является функцией отложенного вызова. Выполняется всегда (даже в случае паники внутри функции вызываемой) после того, как функция завершила своё выполнение но до того, как управление вернётся вызывающей стороне (более того — внутри defer возможен захват переменных, и даже возвращаемого результата). Часто используется для освобождения ресурсов/снятия блокировок. Пример использования:</p>
+<pre tabindex="0"><code>func main() {
+    println(&#34;result =&#34;, f())
+    // f started
+    // defer
+    // defer in defer
+    // result = 25
+}
+
+func f() (i int) {
+    println(&#34;f started&#34;)
+
+    defer func() {
+        recover()
+
+        defer func() { println(&#34;defer in defer&#34;); i += 5 }()
+
+        println(&#34;defer&#34;)
+
+        i = i * 2
+    }()
+
+    i = 10
+
+    panic(&#34;panic is here&#34;)
+}
+</code></pre><p>Когда выполняется ключевое слово defer, оно помещает следующий за ним оператор в список, который будет вызван до возврата функции.</p>
+</details>
+<details><summary><b>Как получить настоящее время? </b></summary><br>
+<p>Утверждение &ldquo;goto&rdquo; передает управление в утверждение с соответствующей меткой в той же функции.</p>
+<p>GotoStmt = &ldquo;goto&rdquo; Label .</p>
+<p>goto Error
+Выполнение утверждения &ldquo;goto&rdquo; не должно приводить к появлению в области видимости каких-либо переменных, которые еще не находились в области видимости на момент перехода. Например, этот пример:</p>
+</details>
+<details><summary><b>Что такое указатель и как с ним работать? </b></summary><br>
+<p>Указатель - это переменная, которая хранит адрес другой переменной, это обычная переменная, только вместо хранения значения, например, целочисленного значения или строкового значения, вместо этого он сохраняет местоположение адреса памяти этого значения. Под адресом памяти я подразумеваю фактическое расположение переменной в памяти нашего компьютера, и в основном это шестнадцатеричный формат, начинающийся с «0x».</p>
+<p>Указатели имеют тот же синтаксис в других языках программирования, таких как C, C++ и Golang.
+В указателях используются 2 оператора:</p>
+<ol>
+<li>Оператор (&amp;), известный как оператор адреса</li>
+<li>Оператор (*), известный как оператор разыменования</li>
+</ol>
+</details>
+<details><summary><b>Как проверить, переменная ли имплементирует интерфейс?  </b></summary><br>
+<p>в Go, реализация интерфейса является неявной. поэтому используется конструкция вида var _ myInterface = &amp;myImplementation{}</p>
+</details>
+<details><summary><b>Что такое embedding? </b></summary><br>
+<p>Go предлагает механизм встраивания(embedding) в качестве альтернативы механизму наследования в традиционных объектно-ориентированных языках программирования.</p>
+<p>В Go можно объявить анонимные поля у структур. Указав только тип. Тип поля должен представлять собой именованный тип или указатель на именованный тип. После этого появляется возможность использовать поля и методы встроенного типа.</p>
+<p>Начнем с простой структуры:</p>
+<pre tabindex="0"><code>type Human struct {
+   name  string
+   age int
+}
+</code></pre><p>Тип Human встроен(embedded) в тип Student:</p>
+<pre tabindex="0"><code>type Student struct {
+   Human
+   school string
+}
+</code></pre></details>
+<details><summary><b>Что такое memory leak? Какие способы его выявления? Как от него избавиться? </b></summary><br>
+<p>pprof and flame graphs are pretty useful to analyze application memory leaks.</p>
+</details>
+<details><summary><b>Что такое race condition? Какие способы его выявления? Как от него избавиться? </b></summary><br>
+<p>A race condition is an undesirable situation that occurs when a device or system attempts to perform two or more operations at the same time, but because of the nature of the device or system, the operations must be done in the proper sequence to be done correctly.</p>
+<p>Пишем тесты, и запускаем их с флагом -race (в этом случае рантайм будет в случайном порядке переключаться между горутинами (если не ошибаюсь), и компилятор генерирует дополнительный код, который &ldquo;журналирует&rdquo; обращения к памяти). Этот флаг можно использовать как для go test, так и для go run или go build.</p>
+<p>Детектор гонки основан на библиотеке времени выполнения (runtime library) C/C++ ThreadSanitizer.</p>
+<p>Так же предпочитаю писать тесты, провоцирующие гонку. Код в этом случае будет работать значительно медленнее, но для этапа тестирования это и не так важно. А именно для тестируемой структуры запускаю (например) 100 горутин которые читают и пишут что-то в случайном порядке.</p>
+<p>Важно и ещё одно высказывание — &ldquo;Если race detector обнаруживает состояние гонки, то оно у вас наверняка есть; если же не обнаруживает — то это не означает что его нет&rdquo;.</p>
+</details>
+<details><summary><b>Какое у slice zero value?</b></summary><br>
+<p>nil</p>
+</details>
+<h3 id="практические-задачи-1">Практические задачи</h3>
+<ol start="67">
+<li>Реализовать проверку слова на анаграмму. Написать тест и бенчмарк. Оценить сложность разработанного алгоритма.</li>
+<li>Есть код . Что выйдет на экран? Почему?</li>
+<li>Есть код . Можно ли предположить, что выводится на экран? Почему?</li>
+<li>Реализуйте Stack (LIFO).</li>
+<li>Реализуйте linked list.</li>
+<li>Задача о сумме подмножества (Subset Sum Problem). Дано: множество положительных целых чисел и значение sum. Определите, существует ли подмножество данного множества с суммой, равной значению sum.
+Input:  set [] = { 3 ,  34 ,  4 ,  12 ,  5 ,  2 },  sum  =  9</li>
+</ol>
+<p>Output:  True</p>
+<h2 id="senior">Senior</h2>
+<h3 id="software-engineering-2">Software engineering</h3>
+<ol>
+<li>Что такое процесс и поток? Как они соединены меж собой? Имеют ли разные процессы или потоки доступа в одну область памяти?</li>
+<li>Какие инструменты обычно используют для сбора метриков и логов? Как работает Prometheus?</li>
+<li>Как работает docker под капотом?</li>
+<li>Как работает load balancer под капотом?</li>
+<li>Зачем нужны очереди?</li>
+<li>Что такое CQRS?</li>
+<li>Какие архитектуры программного обеспечения вы знаете?</li>
+<li>Какая разница между микросервисами и монолитом? Какие преимущества и недостатки?</li>
+<li>Как выстроить межсервисную транзакцию?</li>
+<li>Что такое распределенные транзакции? Как реализовать?</li>
+<li>Какие проблемы решает паттерн Saga?</li>
+<li>Как реализовать аутентификацию в микросервисной архитектуре?</li>
+<li>Что такое Event Sourcing?</li>
+<li>Сформулируйте CAP-теорему.</li>
+<li>Расскажите о Raft Consensus Algorithm.</li>
+<li>В чем разница между императивной и декларативной парадигмой программирования? Приведите примеры языков.</li>
+</ol>
+<h1 id="go-2">Go</h1>
+<ol start="28">
+<li>За что отвечает переменная GOMAXPROCS? Каково ее значение по умолчанию?</li>
+<li>Кто отвечает за планирование горутин? Расскажите об алгоритме работы планировщика. Зачем он нужен, если и так есть системные потоки?</li>
+<li>Расскажите об алгоритме работы garbage collector. Mark and sweep, Reference counting и оптимизация алгоритма в языке Go. Что такое stop the world?</li>
+<li>Какие виды многозадачности вы знаете? Какой из них используется в Go?</li>
+<li>Зачем нужна рефлексия? В чем разница между рефлексией и кодогенерацией?</li>
+<li>В чем разница между value и reference типом? Назовите несколько примеров в языке Go.</li>
+<li>Как остановить горютину?</li>
+<li>Как в Go реализуется наследование?</li>
+<li>Что такое lvalue и rvalue?</li>
+<li>Какое у slice zero value?</li>
+<li>Как встроить стандартный профайлер в приложение?</li>
+<li>Что такое map-reduce? Как его продать в Go?</li>
+<li>Как в Go работает префиксный инкремент/декремент?</li>
+<li>Что будет, если преобразовать в JSON-объект, структура которого содержит поля с строчными буквами в названиях?</li>
+<li>Как прервать for/switch или for/select?</li>
+<li>Как можно оптимизировать выполнение большого количества последовательных операций чтения или записи?</li>
+<li>Можно ли вызвать метод у указателя (pointer) на структуру, если он равен nil?</li>
+<li>Что будет при попытке записи в закрытый канал?</li>
+<li>​​Что такое взаимная блокировка (deadlock)?</li>
+<li>В чем особенность nil-каналов?</li>
+<li>В каких случаях следует использовать мютексы, а не каналы, и наоборот?</li>
+<li>Что такое билд-теги?</li>
+<li>Как продать LRU cache?</li>
+<li>Что такое SSA-представление?</li>
+<li>Что вы знаете о работе с плагинами на Go?</li>
+<li>Что такое алиас типов?</li>
+<li>Что такое падинги в структурах и на что они влияют?</li>
+<li>Что такое escape-анализ?</li>
+<li>Какая разница между стеком и грудой?</li>
+<li>Что нам дает пакет unsafe?</li>
+<li>Можно ли изменить символ в строке? А с помощью пакета unsafe?</li>
+<li>Как работать с рефлексией и что мы с ней можем сделать?</li>
+<li>Как под капотом смотрятся слайсы и карты?</li>
+<li>Как работать с  copy()?</li>
+<li>Как работать с sync.Pool и  sync.Map ? Какие подводные камни у них есть?</li>
+<li>Расскажите о канкаренсе-паттерне в Go.</li>
+<li>Как у Go реализована арифметика указателей?*</li>
+</ol>
+<hr>
+<p>Вопросы по языку Golang</p>
+<ol>
+<li>
+<p>Что из себя представляет тип данных string в языке Golang? Можно ли изменить определенный символ в строке? Что происходит при склеивании строк?</p>
+</li>
+<li>
+<p>Вытекающий вопрос — как эффективно склеивать множество строк?</p>
+</li>
+<li>
+<p>Что будет происходить при конкуррентной записи в map? Как можно решить эту проблему?</p>
+</li>
+<li>
+<p>Нужно ли лочить структуру мьютексом, если идет конкуррентная запись в разные поля структуры?</p>
+</li>
+<li>
+<p>Что выведет код?</p>
+</li>
+</ol>
+<p>func main() {
+runtime.GOMAXPROCS(1)</p>
+<p>done := false</p>
+<p>go func() {
+done = true
+}()</p>
+<p>for !done {
+}
+fmt.Println(&ldquo;finished&rdquo;)
+}
+Как можно изменить этот код, чтобы был вывод “finished”?</p>
+<ol start="6">
+<li>
+<p>Как устроены каналы “под капотом”? (об этом я расказал в своих статьях “Под капотом Golang — как работают каналы. Часть 1” и “Строение каналов в Golang. Часть 2.”)</p>
+</li>
+<li>
+<p>Какая есть проблема в коде?</p>
+</li>
+</ol>
+<p>var counter int
+for i := 0; i &lt; 1000; i++ {
+go func() {
+counter++
+}()
+}
+Как её можно решить?</p>
+<p>А как её можно бы было решить, если бы в языке не было пакета sync?</p>
+<ol start="8">
+<li>
+<p>Можно ли реализовать sync.Mutex и sync.WaitGroup на каналах? Как?</p>
+</li>
+<li>
+<p>Что ты использовал из пакета sync(кроме Mutex и WaitGroup)?</p>
+</li>
+<li>
+<p>Что выведет код</p>
+</li>
+</ol>
+<p>func main() {
+v := 5
+p := &amp;v
+println(*p)</p>
+<p>changePointer(p)
+println(*p)
+}</p>
+<p>func changePointer(p *int) {
+v := 3
+p = &amp;v
+}
+Почему? Как нужно изменить функцию changePointer, чтобы вывело 5 и 3 (в оригинальной версии выводится 5 и 5)?</p>
+<ol start="11">
+<li>За сколько примерно выполнится приложение — за 3 секунды или за 6?</li>
+</ol>
+<p>func worker() chan int {
+ch := make(chan int)</p>
+<p>go func() {
+time.Sleep(3 * time.Second)
+ch &lt;- 42
+}()</p>
+<p>return ch
+}</p>
+<p>func main() {
+timeStart := time.Now()</p>
+<p>_, _ = &lt;-worker(), &lt;-worker()</p>
+<p>println(int(time.Since(timeStart).Seconds())) // что выведет - 3 или 6?
+}
+Что нужно изменить, чтобы код работал за 3 секунды?</p>
+<hr>
+<p>OZON
+От своего хорошего знакомого, который там работает, слышал положительные отзывы. Да и в принципе, как я думаю, маркетплейс - это должно быть интересно: много данных, много клиентов, нужно как-то с этим справляться: шардинг, микросервисы, консистентность данных, , с этим по сути я никогда по-серьёзному не работал.</p>
+<p>Был небольшой собес с рекрутером, потом с двумя техспецами, один из которых лид, второй - сеньор. Стандартный набор вопросов - задачка на алгоритмы, задачки на синхронизацию горутин и замыкания, запросы в БД. Спокойное сухое техническое собеседование.</p>
+<p>Были устные задачки на алгоритмы, задачки на работу рантайма go, как устроен планировщик задач, внутреннее устройство каналов, вопросы по линуксу, по базам, по http, по деплою. В общем, приятно пообщались. Было ощущение, что я собрался со знакомыми и мы просто обсуждаем работу современных технологий.</p>
+<p>на синхронизацию горутин - прорешеать</p>
+<p>Так же популярные вопросы задаваемые на интервью</p>
+<p>Общие вопросы:</p>
+<p>Как хранятся переменные в Golang? Что такое &ldquo;стек&rdquo; и &ldquo;куча&rdquo;? Почему аллокация в &ldquo;куче&rdquo; дорогая? Во сколько раз?
+Как в golang освобождаетс память и можно ли отключить это поведение и зачем это делать?
+Что такое интерфейс и как используется? Как устроен пустой интерфейс?
+Как устроен слайс и чем он отличается от массива? Как создать многомерный массив в Golang? Нужно ли передавать slice по ссылке в фукнцию?
+Что происходит в runtime Golang?
+В чем различия goroutine от потока системы?
+Как огранить число потоков на системы при запуске Golang программы и возможно ли огранить их до 1 потока?
+Что такое каналы и каких видов они бывают? Что будет если писать в закрытый канал? Что будет если писать в неинициализированный канал?
+Расскажите о ООП в Golang
+Вопросы по database/sql:</p>
+<p><a href="https://habr.com/ru/amp/post/654569/">https://habr.com/ru/amp/post/654569/</a> - Собеседование Golang разработчика (теоретические вопросы), Часть I
+<a href="https://habr.com/ru/post/670974/">https://habr.com/ru/post/670974/</a>  - Собеседование Golang разработчика (теоретические вопросы), Часть II. Что там с конкурентностью?s</p>
+<ul>
+<li>
+<p><a href="https://medium.com/@victor_nerd/golang-interview-questions-bd3064f2ff69">Вопросы для собеседования Golang разработчика</a></p>
+</li>
+<li>
+<p><a href="https://habr.com/ru/company/oleg-bunin/blog/521582/">Коллеги, вы меня огорчаете/Senior Golang Backend developer</a></p>
+</li>
+<li>
+<p><a href="https://habr.com/ru/post/658623/">Вопросы и ответы для собеседования Go-разработчика</a></p>
+</li>
+</ul>
+<p>Реализовать LRU cache LFU</p>
+<p>*<a href="https://habr.com/ru/articles/658623/">Вопросы и ответы для собеседования Go-разработчика</a> - огромная статья</p>
+<ul>
+<li>Что такое ООП? Как это сделано в Golang?</li>
+</ul>
+<p>Абстракция, Инкапсуляция, Наследование, Полиморфизм</p>
+<p>SOLID, а именно:</p>
+<p>O (open-closed principle, принцип открытости/закрытости) — классы/модули должны быть открыты для расширения, но закрыты для модификации.</p>
+<p>S (single responsibility principle, принцип единственной ответственности) — определенный класс/модуль должен решать только определенную задачу, максимально узко но максимально хорошо (своеобразные UNIX-way). Если для выполнения своей задачи ему требуются какие-то другие ресурсы — они в него должны быть инкапсулированы (это отсылка к принципу инверсии зависимостей)</p>
+<p>O (open-closed principle, принцип открытости/закрытости) — классы/модули должны быть открыты для расширения, но закрыты для модификации. Должна быть возможность расширить поведение, наделить новым функционалом, но при этом исходный код/логика модуля должна быть неизменной</p>
+<p>L (Liskov substitution principle, принцип подстановки Лисков) — поведение наследующих классов не должно противоречить поведению, заданному базовым классом, то есть поведение наследующих классов должно быть ожидаемым для кода</p>
+<p>I (interface segregation principle, принцип разделения интерфейса) — много тонких интерфейсов лучше, чем один толстый</p>
+<p>D (dependency inversion principle, принцип инверсии зависимостей) — &ldquo;завязываться&rdquo; на абстракциях (интерфейсах), а не конкретных реализациях. Так же (это уже про IoC, но всё же) можно рассказать что если какому-то классу для своей работы требуется функциональность другого — то есть смысл &ldquo;запрашивать&rdquo; её в конструкторе нашего класса используя интерфейс, под который подходит наша зависимость. Таким образом целевая реализация опирается только на интерфейсы (не зависит от реализаций) и соответствует принципу под буквой S</p>
+<p>В Go нет наследования. Совсем. Но есть встраивание (называемое &ldquo;анонимным&rdquo;, так как Foo в Bar встраивается не под каким-то именем, а без него) при этом встраиваются и свойства, и функции:</p>
+<p>Инкапсуляция реализована на уровне пакетов. Имена, начинающиеся со строчной буквы, видны только внутри этого пакета (не являются экспортируемыми). И наоборот — всё, что начинается с заглавной буквы — доступно извне пакета. Дешево и сердито.</p>
+<p>Полиморфизм — это основа объектно-ориентированного программирования: способность обрабатывать объекты разных типов одинаково, если они придерживаются одного и того же интерфейса. Интерфейсы Go предоставляют эту возможность очень прямым и интуитивно понятным способом. Пример использования интерфайса был описан выше.</p>
+<ul>
+<li>Как устроено инвертирование зависимостей?</li>
+</ul>
+<p>Принцип инверсии зависимостей (dependency inversion principle) в Go который можно реализовывать следующим образом:</p>
+<pre tabindex="0"><code>type speaker interface {
+    Speak() string
+}
+
+type Foo struct {
+    s speaker // s *Foo - было бы плохо
+}
+
+func NewFoo(s speaker) (*Foo, error) {
+    if s == nil {
+        return nil, errors.New(&#34;speaker is nil&#34;)
+    }
+
+    return &amp;Foo{s: s}, nil
+}
+
+func (f Foo) SaySomething() string { return f.s.Speak() }
+
+func main() {
+    var foo, err = NewFoo(someSpeaker)
+
+    if err != nil {
+        panic(err)
+    }
+
+    fmt.Println(foo.SaySomething()) // depends on the speaker implementation
+}
+</code></pre><p>Мы объявляем интерфейс speaker не экспортируемым на нашей, принимающей стороне, и используя псевдо-конструктор NewFoo гарантируем что свойство s будет проинициализировано верным типом (дополнительно проверяя его на nil).</p>
+<ul>
+<li>Как сделать свои методы для стороннего пакета?</li>
+</ul>
+<p>Например, если мы используем логгер Zap в нашем проекте, и хотим к этому Zap-у прикрутить наши методы — то для этого нам нужно будет создать свою структуру, внутри в неё встраивать логгер Zap-а, и к этой структуре уже прикручивать требуемые методы. Просто &ldquo;навесить сверху&rdquo; функции на сторонний пакет мы не можем.</p>
+<ul>
+<li>Типы данных и синтаксис</li>
+</ul>
+<p>Целочисленные — int{8,16,32,64}, int, uint{8,16,32,64}, uint, byte как синоним uint8 и rune как синоним int32. Типы int и uint имеют наиболее эффективный размер для определенной платформы (32 или 64 бита), причем различные компиляторы могут предоставлять различный размер для этих типов даже для одной и той же платформы
+Числа с плавающей запятой — float32 (занимает 4 байта/32 бита) и float64 (занимает 8 байт/64 бита)
+Комплексные числа — complex64 (вещественная и мнимая части представляют числа float32) и complex128 (вещественная и мнимая части представляют числа float64)
+Логические aka bool
+Строки string</p>
+<ul>
+<li>Как устроены строки в Go?</li>
+</ul>
+<p>В Go строка в действительности является слайсом (срезом) байт, доступным только для чтения. Строка содержит произвольные байты, и у неё нет ёмкости (cap). При преобразовании слайса байт в строку (str := string(slice)) или обратно (slice := []byte(str)) — происходит копирование массива (со всеми следствиями).</p>
+<p>Создание подстрок работает очень эффективно. Поскольку строка предназначена только для чтения, исходная строка и строка, полученная в результате операции среза, могут безопасно совместно использовать один и тот же массив:</p>
+<p>Go использует тип rune (алиас int32) для представления Unicode. Конструкция for &hellip; range итерирует строку посимвольно (а не побайтово, как можно было бы предположить):</p>
+<p>И мы видим, что для кодирования каждого символа кириллицы используются по 2 байта.</p>
+<p>Эффективным способом работы со строками (когда есть необходимость часто выполнять конкатенацию, например) является использование слайса байт или strings.Builder:</p>
+<p>И ещё одну важную особенность стоит иметь в виду — это подсчет длины строки (например — для какой-нибудь валидации). Если считать по количеству байт, и строка содержит не только ASCII символы — то количество байт и фактическое количество символов будут расходиться:</p>
+<p>HTTP 1 Основы
+Request Line - method, URL, protocol version
+Headers (обязательно только host)
+Request Body (не обязатель)</p>
+<p>hht2</p>
+<ul>
+<li>binary</li>
+<li>multiplexed (streams)</li>
+<li>cancel stream</li>
+<li>server push</li>
+</ul>
+<p>Understanding Allocations in Go</p>
+<p>Isolation Levels</p>
+<ul>
+<li>Read Uncommitted</li>
+<li>Read Committed</li>
+<li>Cursor Stability</li>
+<li>Repeatable Read</li>
+<li>Snapshot</li>
+<li>Serializable</li>
+</ul>
+<p>dirty read
+A transaction reads data written by a concurrent uncommitted transaction.</p>
+<p>nonrepeatable read
+A transaction re-reads data it has previously read and finds that data has been modified by another transaction (that committed since the initial read).</p>
+<p>phantom read
+A transaction re-executes a query returning a set of rows that satisfy a search condition and finds that the set of rows satisfying the condition has changed due to another recently-committed transaction.</p>
+<p>serialization anomaly
+The result of successfully committing a group of transactions is inconsistent with all possible orderings of running those transactions one at a time.</p>
+<p>Read Committed - базовый для постгрес</p>
+<p>(SQL Isolation Levels)[https://blog.acolyer.org/2016/02/24/a-critique-of-ansi-sql-isolation-levels/]</p>
+<p>Может ли структура быть ключом мапы
+Что такое интерфейс (это контракт), что такое пустой итерфейс
+Выравнивание памяти ( что такое)
+reciever - что это такое
+Виды индексов - b-tree, hash, gist?
+Распределенные транзакции</p>
+<p>Меняется ли копасити если мы режем  слайса</p>
+<p>у мапы есть len но нет cap</p>
+<ul>
+<li><a href="https://habr.com/ru/amp/publications/654569/">Собеседование Golang разработчика (теоретические вопросы), Часть I</a></li>
+<li><a href="https://habr.com/ru/articles/670974/">Собеседование Golang разработчика (теоретические вопросы), Часть II. Что там с конкурентностью?</a></li>
+<li><a href="https://habr.com/ru/articles/658623/">Вопросы и ответы для собеседования Go-разработчика</a></li>
+<li><a href="https://github.com/goavengers/go-interview/tree/master/docs/golang">Вопросы и ответы для собеседования Back-end/Golang разработчика и не только</a></li>
+<li><a href="https://github.com/dmitryrpm/maxima-tests">Вопросы для собеседования на языке Golang</a></li>
+</ul>
+<p><a href="https://github.com/loong/go-concurrency-exercises">https://github.com/loong/go-concurrency-exercises</a></p>
+<p><a href="https://github.com/luk4z7/go-concurrency-guide">https://github.com/luk4z7/go-concurrency-guide</a></p>
+<p><a href="https://github.com/MatthewJamesBoyle/golang-interview-prep">https://github.com/MatthewJamesBoyle/golang-interview-prep</a></p>
+<p><a href="https://github.com/abstractart/learn-system-design">https://github.com/abstractart/learn-system-design</a></p>
+<p><a href="https://github.com/ByteByteGoHq/system-design-101#table-of-contents">https://github.com/ByteByteGoHq/system-design-101#table-of-contents</a></p>
+<p><a href="https://github.com/cheatsnake/backend-cheats">https://github.com/cheatsnake/backend-cheats</a></p>
+<p><a href="https://github.com/vasanthk/how-web-works">https://github.com/vasanthk/how-web-works</a></p>
+<p>Linux Performance Checklists for SREs</p>
+<p>Linux Perf Analysis in 60s (<a href="https://netflixtechblog.com/linux-performance-analysis-in-60-000-milliseconds-accc10403c55">https://netflixtechblog.com/linux-performance-analysis-in-60-000-milliseconds-accc10403c55</a>)</p>
+<ol>
+<li>uptime ⟶ load averages</li>
+<li>dmesg -T | tail ⟶ kernel errors</li>
+<li>vmstat 1 ⟶ overall stats by time</li>
+<li>mpstat -P ALL 1 ⟶ CPU balance</li>
+<li>pidstat 1 ⟶ process usage</li>
+<li>iostat -xz 1 ⟶ disk I/O</li>
+<li>free -m ⟶ memory usage</li>
+<li>sar -n DEV 1 ⟶ network I/O</li>
+<li>sar -n TCP,ETCP 1 ⟶ TCP stats</li>
+<li>top ⟶ check overview</li>
+</ol>
+<p>Linux Disk Checklist</p>
+<ol>
+<li>iostat -xz 1 ⟶ any disk I/O? if not, stop looking</li>
+<li>vmstat 1 ⟶ is this swapping? or, high sys time?</li>
+<li>df -h ⟶ are file systems nearly full?</li>
+<li>ext4slower 10 ⟶ (zfs*, xfs*, etc.) slow file system I/O?</li>
+<li>bioslower 10 ⟶ if so, check disks</li>
+<li>ext4dist 1 ⟶ check distribution and rate</li>
+<li>biolatency 1 ⟶ if interesting, check disks</li>
+<li>cat /sys/devices/…/ioerr_cnt ⟶ (if available) errors</li>
+<li>smartctl -l error /dev/sda1 ⟶ (if available) errors</li>
+</ol>
+<ul>
+<li>Another short checklist. Won&rsquo;t solve everything. ext4slower/dist, bioslower/latency, are from bcc/BPF tools.</li>
+</ul>
+<p>Linux Network Checklist</p>
+<ol>
+<li>sar -n DEV,EDEV 1 ⟶ at interface limits? or use nicstat</li>
+<li>sar -n TCP,ETCP 1 ⟶ active/passive load, retransmit rate</li>
+<li>cat /etc/resolv.conf ⟶ it&rsquo;s always DNS</li>
+<li>mpstat -P ALL 1 ⟶ high kernel time? single hot CPU?</li>
+<li>tcpretrans ⟶ what are the retransmits? state?</li>
+<li>tcpconnect ⟶ connecting to anything unexpected?</li>
+<li>tcpaccept ⟶ unexpected workload?</li>
+<li>netstat -rnv ⟶ any inefficient routes?</li>
+<li>check firewall config ⟶ anything blocking/throttling?</li>
+<li>netstat -s ⟶ play 252 metric pickup</li>
+</ol>
+<ul>
+<li>tcp*, are from bcc/BPF tools.</li>
+</ul>
+<p>Linux CPU Checklist</p>
+<ol>
+<li>uptime ⟶ load averages</li>
+<li>vmstat 1 ⟶ system-wide utilization, run q length</li>
+<li>mpstat -P ALL 1 ⟶ CPU balance</li>
+<li>pidstat 1 ⟶ per-process CPU</li>
+<li>CPU flame graph ⟶ CPU profiling</li>
+<li>CPU subsecond offset heat map ⟶ look for gaps</li>
+<li>perf stat -a &ndash; sleep 10 ⟶ IPC, LLC hit ratio</li>
+</ol>
+<ul>
+<li>htop can do 1-4. I&rsquo;m tempted to add execsnoop for short-lived processes (it&rsquo;s in perf-tools or bcc/BPF tools).</li>
+</ul>
+<p><a href="https://www.brendangregg.com/blog/2016-05-04/srecon2016-perf-checklists-for-sres.html">https://www.brendangregg.com/blog/2016-05-04/srecon2016-perf-checklists-for-sres.html</a></p>
+<h1 id="банк-cv-от-agilefluent---httpsagilefluentnotionsitecv-agilefluent-4910d13666064c10b6e067d708055587">Банк CV от AgileFluent - <a href="https://agilefluent.notion.site/CV-AgileFluent-4910d13666064c10b6e067d708055587">https://agilefluent.notion.site/CV-AgileFluent-4910d13666064c10b6e067d708055587</a></h1>
+<p><a href="https://github.com/cheatsnake/backend-cheats/">https://github.com/cheatsnake/backend-cheats/</a> - базовые вещи, просто почитать когда скучно</p>
+<p><a href="https://github.com/karanpratapsingh/system-design">https://github.com/karanpratapsingh/system-design</a></p>
+<p><a href="https://book.soft-skillz.work/2018-10-23.html">https://book.soft-skillz.work/2018-10-23.html</a> - все милое</p>
+<p><a href="https://telegra.ph/Opyt-sobesedovaniya-v-Google-na-poziciyu-SRE-02-02">https://telegra.ph/Opyt-sobesedovaniya-v-Google-na-poziciyu-SRE-02-02</a> - Опыт собеседования в Google на позицию SRE</p>
+<p>Learn Makefiles - <a href="https://makefiletutorial.com">https://makefiletutorial.com</a></p>
+<p><a href="https://jepsen.io/consistency">https://jepsen.io/consistency</a> - Consistency Models</p>
+<p><a href="https://backendinterview.ru">https://backendinterview.ru</a> - Памятка PHP/GoLang разработчику для подготовки к собеседованиям</p>
+<p>A Senior Engineer&rsquo;s Guide to the System Design Interview - <a href="https://interviewing.io/guides/system-design-interview">https://interviewing.io/guides/system-design-interview</a></p>
+<p><a href="https://architecturenotes.co">https://architecturenotes.co</a></p>
+<p><a href="https://github.com/donnemartin/system-design-primer">https://github.com/donnemartin/system-design-primer</a></p>
+<p><a href="https://github.com/ByteByteGoHq/system-design-101">https://github.com/ByteByteGoHq/system-design-101</a> - крутецкий очень</p>
+<p><a href="https://github.com/goavengers/go-interview">https://github.com/goavengers/go-interview</a></p>
+<p><a href="https://github.com/dmitryrpm/maxima-tests">https://github.com/dmitryrpm/maxima-tests</a> - тест на golang</p>
+<p><a href="https://github.com/luk4z7/go-concurrency-guide">https://github.com/luk4z7/go-concurrency-guide</a></p>
+<p><a href="https://github.com/loong/go-concurrency-exercises">https://github.com/loong/go-concurrency-exercises</a></p>
+<p><a href="https://github.com/mridul-sahu/golang-concurrency-patterns">https://github.com/mridul-sahu/golang-concurrency-patterns</a></p>
+<p>Мои собеседования (Golang developer) - <a href="https://habr.com/ru/articles/683920/">https://habr.com/ru/articles/683920/</a></p>
+<p>Вопросы и ответы для собеседования Go-разработчика - <a href="https://habr.com/ru/articles/658623/">https://habr.com/ru/articles/658623/</a></p>
+
+  </div>
+</div>
+<script src="https://bege13mot.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+  var _gaq=[['_setAccount','UA-73422311-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>

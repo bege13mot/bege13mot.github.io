@@ -88,32 +88,32 @@
 <p>С тех пор я съехал с линукса - мне там не нравились все шрифты, даже кастомные. Но это уже другой разговор. Но идея про переезд не забыта. Зима, на улице -20 и как-то скучновато. А не попробовать ли мне это еще раз сделать, может на этот раз получиться? Заодно чему-нибудь новому научусь, а то все как-то слишком просто. Нажимай на кнопки, да выбирай тип постов. После непродолжительных поисков нахожу <a href="https://gohugo.io/overview/introduction">Hugo</a>, который во-первых на Go, что значит один exe файл, а не инсталляция Ruby и куча еще к нему, как в случае с Jekyll и Octopress. Во-вторых, у него есть возможность &ldquo;на лету&rdquo; перестраивать блог. Написал пост, сохранил, увидел результат на локальной машине. Быстро и просто, как раз то, что надо.</p>
 <p>Теперь другой момент, надо как-то сконвертировать посты из Tumblr в markdown. И вот тут начались пляски с бубном. Про официальный скрипт для Jekyll я уже писал, попробовал парочку Python скриптов, что есть на github, и тоже без результатов. Но я не сдаюсь, путем долгих мучений и экспериментов пришлось сделать следующее -  регистрируюсь на <a href="https://wordpress.com/">wordpress.com</a>, затем через админку связываю с моим блогом на Tumblr, а там уже экспортирую получившиеся посты в xml. А уже их <a href="https://github.com/thomasf/exitwp">конвертируем</a>.</p>
 <p>Казалось бы, вот и все, но нет. В результате конвертации получил названия файлов, вида:</p>
-<pre><code>	2016-01-26-d0b5d0b4d18b... .markdown
+<pre tabindex="0"><code>	2016-01-26-d0b5d0b4d18b... .markdown
 </code></pre><p>Не очень красиво, надо переименовывать. Пусть названия файлов берутся из поля Title - заголовка статьи. Прошу заметить, это далеко не самый простой способ, но см. выше, на улице зима, холодно и скучно. Пишу маленький скрипт на bash (под рукой есть машина с Ubuntu), заголовок статьи транслитерируется с помощью скрипта, найденного на <a href="https://habrahabr.ru/post/137089/">хабре</a>, только пришлось добавить вывод в stdout.</p>
-<pre><code>	if __name__ == &quot;__main__&quot;:
+<pre tabindex="0"><code>	if __name__ == &#34;__main__&#34;:
     for line in sys.stdin:
         sys.stdout.write(transliterate(line))
 </code></pre><p>Итоговый скрипт (хотел сделать в одну строку, но, к сожалению, не осилил):</p>
-<pre><code>	#!/bin/bash    
+<pre tabindex="0"><code>	#!/bin/bash    
 
 	for fn in *.markdown
 	do
-	  fn2=$( grep -H 'title:' $fn |sed -e 's/-[^0-9].*.markdown:title: /-/' | python trans.py | sed -e 's/$/.markdown/' | sed -e 's/[,!:'\'']//g' | sed -e 's/ /-/g' )	 
+	  fn2=$( grep -H &#39;title:&#39; $fn |sed -e &#39;s/-[^0-9].*.markdown:title: /-/&#39; | python trans.py | sed -e &#39;s/$/.markdown/&#39; | sed -e &#39;s/[,!:&#39;\&#39;&#39;]//g&#39; | sed -e &#39;s/ /-/g&#39; )	 
 	  mv $fn $fn2	
 	done
-	echo &quot;End&quot;
+	echo &#34;End&#34;
 </code></pre><p>На этом, казалось бы, и все, но нет. Открываю фалы, а в поле Slug - те же самые невразумительные символы вида <em>d0b5d0b4d18b</em>. Поскольку slug - это текст ссылки на статью, то и статьи не генерируются, Hugo не нравится форма.</p>
 <p>Обойдусь без &ldquo;велосипеда&rdquo;, и напишу более цивилизованный способ конвертации. Скрипт на Python:</p>
-<pre><code>	import os,urllib.parse
+<pre tabindex="0"><code>	import os,urllib.parse
 
-	for file in os.listdir(&quot;D:\Test\content_1&quot;):	    
-	    if file.endswith(&quot;.markdown&quot;):	        
-	        input = open(file, encoding=&quot;utf8&quot;)
-	        output = open(file[:-8] + 'md', 'w', encoding=&quot;utf8&quot;)	    
+	for file in os.listdir(&#34;D:\Test\content_1&#34;):	    
+	    if file.endswith(&#34;.markdown&#34;):	        
+	        input = open(file, encoding=&#34;utf8&#34;)
+	        output = open(file[:-8] + &#39;md&#39;, &#39;w&#39;, encoding=&#34;utf8&#34;)	    
 	        for s in input:
-	            if 'slug:' in s:
-	                    s = s.replace(s, 'slug: ' + urllib.parse.unquote(s[6:]))                
-	                    print('slug: ' + urllib.parse.unquote(s[6:]))        
+	            if &#39;slug:&#39; in s:
+	                    s = s.replace(s, &#39;slug: &#39; + urllib.parse.unquote(s[6:]))                
+	                    print(&#39;slug: &#39; + urllib.parse.unquote(s[6:]))        
 	            output.write(s)
         output.close()
         input.close()

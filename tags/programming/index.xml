@@ -6,85 +6,63 @@
     <description>Recent content in programming on Ivan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sat, 18 Jun 2016 09:12:22 +0400</lastBuildDate><atom:link href="https://bege13mot.github.io/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Jun 2016 09:12:22 +0400</lastBuildDate>
+    <atom:link href="https://bege13mot.github.io/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Семь баз данных за семь недель, Эрик Редмонд</title>
       <link>https://bege13mot.github.io/post/7-databases/</link>
       <pubDate>Sat, 18 Jun 2016 09:12:22 +0400</pubDate>
-      
       <guid>https://bege13mot.github.io/post/7-databases/</guid>
-      <description>Скажу сразу, без введения - отличная книга. Берется семь баз данных (PostgreSQL, Riak, HBase, MongoDB, CouchDB, Neo4J, Redis), все разных типов, и на примерах рассматривается работа с ними. Да, примеры простенькие, но вполне себе работающие и полезные. Попутно дается немного теории - CAP теорема, векторные часы, виды индексов, расстояние Левенштейна для нечеткого поиска, фильтр Блума.
-Плюс, написана книга доступно и с юмором. Например, каждую базу данных сравнивают со своим инструментом. PostgreSQL - молоток, MongoDB - профессиональная электродрель, Riak - арматура, а Redis - машинное масло.</description>
+      <description>Скажу сразу, без введения - отличная книга. Берется семь баз данных (PostgreSQL, Riak, HBase, MongoDB, CouchDB, Neo4J, Redis), все разных типов, и на примерах рассматривается работа с ними. Да, примеры простенькие, но вполне себе работающие и полезные. Попутно дается немного теории - CAP теорема, векторные часы, виды индексов, расстояние Левенштейна для нечеткого поиска, фильтр Блума.&#xA;Плюс, написана книга доступно и с юмором. Например, каждую базу данных сравнивают со своим инструментом.</description>
     </item>
-    
     <item>
       <title>Структуры данных и алгоритмы в Java, Роберт Лафоре</title>
       <link>https://bege13mot.github.io/post/data-structures-laforte/</link>
       <pubDate>Sat, 16 Apr 2016 17:01:04 +0400</pubDate>
-      
       <guid>https://bege13mot.github.io/post/data-structures-laforte/</guid>
-      <description>О книге по алгоритмам я уже писал. Но время идет и, как выяснилось, многое благополучно забылось. Поэтому, почему бы не прочитать заново, но на этот раз другого автора. В отличие от книги Скиены, тут больше практики. Множество примеров кода на Java, есть интерактивные примеры.
-В итоге - хороший учебник. Минимум теории, максимум практики. Особенно понравились скрупулезные объяснения, зачем нужна та или иная структура данных, в чем достоинства и недостатки.</description>
+      <description>О книге по алгоритмам я уже писал. Но время идет и, как выяснилось, многое благополучно забылось. Поэтому, почему бы не прочитать заново, но на этот раз другого автора. В отличие от книги Скиены, тут больше практики. Множество примеров кода на Java, есть интерактивные примеры.&#xA;В итоге - хороший учебник. Минимум теории, максимум практики. Особенно понравились скрупулезные объяснения, зачем нужна та или иная структура данных, в чем достоинства и недостатки.</description>
     </item>
-    
     <item>
       <title>Совершенный код, Стив Макконнелл</title>
       <link>https://bege13mot.github.io/post/%D1%81%D0%BE%D0%B2%D0%B5%D1%80%D1%88%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9-%D0%BA%D0%BE%D0%B4-%D1%81%D1%82%D0%B8%D0%B2-%D0%BC%D0%B0%D0%BA%D0%BA%D0%BE%D0%BD%D0%BD%D0%B5%D0%BB%D0%BB/</link>
       <pubDate>Fri, 26 Jun 2015 16:29:49 +0000</pubDate>
-      
       <guid>https://bege13mot.github.io/post/%D1%81%D0%BE%D0%B2%D0%B5%D1%80%D1%88%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9-%D0%BA%D0%BE%D0%B4-%D1%81%D1%82%D0%B8%D0%B2-%D0%BC%D0%B0%D0%BA%D0%BA%D0%BE%D0%BD%D0%BD%D0%B5%D0%BB%D0%BB/</guid>
-      <description>Бывает, хочешь сформулировать краткое описание книги и не выходит. Всего в ней много, и выделить самое-самое нельзя. Придется все пересказывать.
-Здесь всё определенно не так. Цель предельно понятна - как написать хороший код. Несмотря на возрастающую сложность проекта, недостатки языка, наличие большой команды и т.д. И это здорово. В книге детально и, самое важное понятно разбирают проблемы возникающие при разработке. Я бы не сказал коротко, книга не маленькая, но однозначно по делу.</description>
+      <description>Бывает, хочешь сформулировать краткое описание книги и не выходит. Всего в ней много, и выделить самое-самое нельзя. Придется все пересказывать.&#xA;Здесь всё определенно не так. Цель предельно понятна - как написать хороший код. Несмотря на возрастающую сложность проекта, недостатки языка, наличие большой команды и т.д. И это здорово. В книге детально и, самое важное понятно разбирают проблемы возникающие при разработке. Я бы не сказал коротко, книга не маленькая, но однозначно по делу.</description>
     </item>
-    
     <item>
       <title>Machine Learning is Fun!</title>
       <link>https://bege13mot.github.io/post/machine-learning-is-fun/</link>
       <pubDate>Wed, 25 Feb 2015 17:51:16 +0000</pubDate>
-      
       <guid>https://bege13mot.github.io/post/machine-learning-is-fun/</guid>
-      <description>The world’s easiest introduction to Machine Learning
- Machine Learning is Fun!</description>
+      <description>The world’s easiest introduction to Machine Learning&#xA;Machine Learning is Fun!</description>
     </item>
-    
     <item>
       <title>Python Koans</title>
       <link>https://bege13mot.github.io/post/python-koans/</link>
       <pubDate>Fri, 20 Feb 2015 16:24:40 +0000</pubDate>
-      
       <guid>https://bege13mot.github.io/post/python-koans/</guid>
-      <description>Python Koans. - обучение Python через тестирование. Проходишь все более и более сложные тесты и получаешь опыт. Здоровская форма, очень захватывает. С большим удовольствием прошел.
-Хочу еще похожего. Python Koans - &amp;ldquo;learn Python through TDD. It is an interactive tutorial for learning language by making tests pass&amp;rdquo;. Each next test is a bit more difficult than the previous one. I think, it&amp;rsquo;s a great form of studying. I&amp;rsquo;d like some more.</description>
+      <description>Python Koans. - обучение Python через тестирование. Проходишь все более и более сложные тесты и получаешь опыт. Здоровская форма, очень захватывает. С большим удовольствием прошел.&#xA;Хочу еще похожего. Python Koans - &amp;ldquo;learn Python through TDD. It is an interactive tutorial for learning language by making tests pass&amp;rdquo;. Each next test is a bit more difficult than the previous one. I think, it&amp;rsquo;s a great form of studying. I&amp;rsquo;d like some more.</description>
     </item>
-    
     <item>
       <title>Eloquent JavaScript by Marijn Haverbeke</title>
       <link>https://bege13mot.github.io/post/eloquent-javascript-by-marijn-haverbeke/</link>
       <pubDate>Tue, 17 Feb 2015 17:34:17 +0000</pubDate>
-      
       <guid>https://bege13mot.github.io/post/eloquent-javascript-by-marijn-haverbeke/</guid>
-      <description>Не успеваю удивляться современному образованию. Пару лет назад стали популярны MOOC (Massive Open Online Courses), благодаря которым можно бесплатно не только учиться, но и проходить тесты, получать сертификаты. Есть множество прекрасных курсов от университетов и компаний. Есть курсы, написанные одним человеком. Книга Eloquent Javasript как раз из таких. На русский переведена Вечяславом Головановым, и выложена на Хабр.
-В ней нет интерактивной проверки тестов, но это, пожалуй, единственный минус. Для меня она стала отличнымучебником по программированию - затрагивает основы ООП, немного функциональщины.</description>
+      <description>Не успеваю удивляться современному образованию. Пару лет назад стали популярны MOOC (Massive Open Online Courses), благодаря которым можно бесплатно не только учиться, но и проходить тесты, получать сертификаты. Есть множество прекрасных курсов от университетов и компаний. Есть курсы, написанные одним человеком. Книга Eloquent Javasript как раз из таких. На русский переведена Вечяславом Головановым, и выложена на Хабр.&#xA;В ней нет интерактивной проверки тестов, но это, пожалуй, единственный минус. Для меня она стала отличнымучебником по программированию - затрагивает основы ООП, немного функциональщины.</description>
     </item>
-    
     <item>
       <title>Регулярные выражения. Джеффри Фридл</title>
       <link>https://bege13mot.github.io/post/%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D1%8B%D0%B5-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B4%D0%B6%D0%B5%D1%84%D1%84%D1%80%D0%B8-%D1%84%D1%80%D0%B8%D0%B4%D0%BB/</link>
       <pubDate>Fri, 29 Aug 2014 06:35:00 +0000</pubDate>
-      
       <guid>https://bege13mot.github.io/post/%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D1%8B%D0%B5-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B4%D0%B6%D0%B5%D1%84%D1%84%D1%80%D0%B8-%D1%84%D1%80%D0%B8%D0%B4%D0%BB/</guid>
-      <description>Большинство технических книг откровенно нудные. Бу-бу-бу, неудобоваримые формулы - но делать нечего и приходится читать.
-Эта книга совершенно другая. Джеффри Фридл написал понятый, очень понятный учебник по регулярным выражениям. Рецепт простой: каждая часть описывается с самого начала максимально подробно, разжевывается и иллюстрируется. Постоянно ведет диалог с читателем, что не позволяет потерять ход мыслей. И случается чудо, страшные формулы вида: /^(([^&amp;lt;&amp;gt;()[].,;:s@&amp;quot;]+(.[^&amp;lt;&amp;gt;()[].,;:s@&amp;quot;]+)*)|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/; обретают смысл. Я читал только один такой учебник . И они оба прекрасны.</description>
+      <description>Большинство технических книг откровенно нудные. Бу-бу-бу, неудобоваримые формулы - но делать нечего и приходится читать.&#xA;Эта книга совершенно другая. Джеффри Фридл написал понятый, очень понятный учебник по регулярным выражениям. Рецепт простой: каждая часть описывается с самого начала максимально подробно, разжевывается и иллюстрируется. Постоянно ведет диалог с читателем, что не позволяет потерять ход мыслей. И случается чудо, страшные формулы вида: /^(([^&amp;lt;&amp;gt;()[].,;:s@&amp;quot;]+(.[^&amp;lt;&amp;gt;()[].,;:s@&amp;quot;]+)*)|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/; обретают смысл. Я читал только один такой учебник . И они оба прекрасны.</description>
     </item>
-    
     <item>
       <title>Effective Programming vs Joel on Software</title>
       <link>https://bege13mot.github.io/post/effective-programming-vs-joel-on-software/</link>
       <pubDate>Mon, 16 Jun 2014 17:17:00 +0000</pubDate>
-      
       <guid>https://bege13mot.github.io/post/effective-programming-vs-joel-on-software/</guid>
       <description>Джефф Этвуд на пару с Джоэлом Спольски разработали Stack Overflow. Каждый из них ведет свой блог, и если у Джоэла он более менее серьезный, то Джефф товарищ повеселее. Взять хотя бы название - Codding Horror. Статьи тоже не отстают - например, про противостояние вампиров и оборотней, где в качестве вампиров выступают программисты. Поскольку они бледны, избегают солнечного света, и предполагается, что их код бессмертен. Оборотни - это админы: под покровом дня не отличимы от обычных пользователей, но, как только случается что-то экстраординарное (например падает сервер), проявляются их таланты.</description>
     </item>
-    
   </channel>
 </rss>

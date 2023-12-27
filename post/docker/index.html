@@ -89,7 +89,7 @@
 Зачем это нужно? Свои приложения можно запускать в любом месте и везде будет одинаковое окружение. А поскольку это не полноценная виртуализация, то работает все намного быстрее. Более подробно можно прочитать в этом <a href="http://prakhar.me/docker-curriculum/">замечательном руководстве,</a> есть и <a href="https://habrahabr.ru/post/310460/">перевод на хабре</a>.</p>
 <p>Теперь приступим к практике. Для образовательных целей сделаю очень простой докер контейнер с моим блогом. Контейнеры строятся на основе образов, а образы, в свою очередь, можно скачивать из официального репозитория или сделать самим из докерфайлов.</p>
 <p>Использовать готовый образ не интересно, поэтому создам собственный.</p>
-<pre><code>FROM alpine:latest
+<pre tabindex="0"><code>FROM alpine:latest
 
 ENV HUGO_VERSION 0.16
 ENV HUGO_BINARY hugo_${HUGO_VERSION}_linux-64bit
@@ -115,32 +115,32 @@ CMD cd /bege13mot.blog/ &amp;&amp; hugo server -wD -p 1313 --bind=0.0.0.0
 <li>Отдельно проясню строку <em>&ndash;bind=0.0.0.0</em>. Дело в том, что по умолчанию <em>hugo server</em> использует адрес &ldquo;127.0.0.1&rdquo;, а у докер контейнера адрес по умолчанию &ldquo;0.0.0.0&rdquo;.</li>
 </ul>
 <p>Докерфайл готов, и теперь построим образ на его основе:</p>
-<pre><code>docker build -t test -f D:\Docker\dockerTest .
+<pre tabindex="0"><code>docker build -t test -f D:\Docker\dockerTest .
 </code></pre><ul>
 <li><em>-t</em> - имя образа.</li>
 <li><em>-f</em> - имя докерфайла.</li>
 </ul>
 <p>Можно запускать и без ключа <em>-f</em>, но мой докер на Windows отказывался без него работать.</p>
 <p>Образ построен, можно запустить контейнер:</p>
-<pre><code>docker run -p 1313:1313  test
+<pre tabindex="0"><code>docker run -p 1313:1313  test
 </code></pre><ul>
 <li><em>-p</em> - пробрасывает указанный порт с контейенра на хост машину.</li>
 </ul>
 <p>В результате, по адресу <em>localhost:1313</em> можно читать блог.</p>
 <p>Продолжим эксперимент дальше. Можно зайти внутрь контейнера и, например, написать новый пост.</p>
-<pre><code>docker run -p 1313:1313 -it test /bin/sh
+<pre tabindex="0"><code>docker run -p 1313:1313 -it test /bin/sh
 </code></pre><ul>
 <li><em>-it /bin/sh</em> - перенаправляет введенные команды в контейнер.</li>
 </ul>
 <p>Новый пост написать можно, но если остановить контейнер, то изменения в файловой системе не сохранятся. Это можно обойти, если использовать общую директорию между хостом и контейнером.</p>
 <p>Для докера на Windows эту возможность нужно включить дополнительно, об этом хорошо написано в <a href="https://rominirani.com/docker-on-windows-mounting-host-directories-d96f3f056a2c#.v8m0p9xbr">этом руководстве</a>.</p>
 <p>А после выполняем:</p>
-<pre><code>docker run -p 1313:1313 -v D:/Docker/content:/bege13mot.blog/content/post -it test /bin/sh
+<pre tabindex="0"><code>docker run -p 1313:1313 -v D:/Docker/content:/bege13mot.blog/content/post -it test /bin/sh
 </code></pre><ul>
 <li><em>-v D:/Docker/content:/bege13mot.blog/content/post</em> - монтируем папку <em>D:/Docker/content</em> из хост системы в контейнер, по адресу <em>/bege13mot.blog/content/post</em>.</li>
 </ul>
 <p>А можно заранее создать файлы и скопировать их в контейнер при помощи команды <em>cp</em>.</p>
-<pre><code>docker cp &lt;containerId&gt;:/file/path/within/container /host/path/target
+<pre tabindex="0"><code>docker cp &lt;containerId&gt;:/file/path/within/container /host/path/target
 </code></pre><p>На этом я эксперименты завершил. Надеюсь, пригодится в будущем.</p>
 
   </div>

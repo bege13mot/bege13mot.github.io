@@ -86,11 +86,11 @@
     </p>
     <p>Продолжим мою эпопею. Старый блог сконвертировал, где он будет хоститься выбрал (<a href="https://pages.github.com/">Github Pages</a>). Осталось самое сложное - выбрать оформление. Иду на официальный <a href="http://themes.gohugo.io/">сайт тем</a> и долго выбираю по душе. Изначально мне понравился Pixyll, но после краткого опроса читателей (в лице девушки и коллег) выяснилось, что читать такой блог не удобно, слишком уж минималистично. Ну ладно, берем общепризнанную тему <a href="https://github.com/zyro/hyde-x">Hyde</a> и настраиваем её под свои нужды. Как к ней прикрутить теги и категории можно подсмотреть <a href="https://github.com/abhi1010/hyde-a">здесь</a>.</p>
 <p>Ну вот, теперь внешний вид стал более приличным. На этом можно было бы закончить, но почему не автоматизировать его генерацию, благо, на официальном сайте есть <a href="https://gohugo.io/tutorials/automated-deployments">подробная инструкция</a>. К сожалению, как это периодически бывает c open source, пришлось внести небольшие измения. Вот мой рабочий wercker.yml:</p>
-<pre><code>box: switchback/git-debian
+<pre tabindex="0"><code>box: switchback/git-debian
 build:
   steps:
     - arjen/hugo-build:
-        version: &quot;0.15&quot;
+        version: &#34;0.15&#34;
 deploy:  
   steps:
     - lukevivier/gh-pages@0.2.1:
@@ -99,7 +99,7 @@ deploy:
         basedir: public
 </code></pre><p>Вот теперь стало совсем прилично. Для еще большего удобства поставил два плагина к sublime text: <a href="https://packagecontrol.io/packages/Hugofy">Hugofy</a>, <a href="https://github.com/SublimeText-Markdown/MarkdownEditing">MarkdownEditing</a>.
 И сохранил картинки из старого блога, мало ли что с ним может случиться.</p>
-<pre><code>wget -nd -H -p -A jpg,jpeg,png,gif -e robots=off http://bege13mot.tumblr.com/page/{1..14}
+<pre tabindex="0"><code>wget -nd -H -p -A jpg,jpeg,png,gif -e robots=off http://bege13mot.tumblr.com/page/{1..14}
 </code></pre><p>Краткие итоги:</p>
 <ul>
 <li>Писать в блог стало, конечно, сложнее. Но зато и интереснее.</li>
