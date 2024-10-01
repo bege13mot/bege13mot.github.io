@@ -9,11 +9,11 @@
     <lastBuildDate>Thu, 14 Dec 2023 10:00:00 +0400</lastBuildDate>
     <atom:link href="https://bege13mot.github.io/qa/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Advices</title>
-      <link>https://bege13mot.github.io/qa/advices/</link>
+      <title>Interview Advices</title>
+      <link>https://bege13mot.github.io/qa/interview-advices/</link>
       <pubDate>Thu, 14 Dec 2023 10:00:00 +0400</pubDate>
-      <guid>https://bege13mot.github.io/qa/advices/</guid>
-      <description>Как пройти скрининговое собеседование Оно проходит с одним из инженеров Facebook — техническое, и длится 45 минут. Состоит из следующих этапов: 5 минут — общие технические вопросы, 35 минут — две практические задачи на знание алгоритмов и 5 минут — ваши вопросы. Первым делом посмотрите все видео, которые вам пришлет рекрутер, регистрируйтесь на Leetcode и начинайте решать задачи из списка топ-100. На этом этапе стоит сконцентрироваться на Easy и Medium задачах.</description>
+      <guid>https://bege13mot.github.io/qa/interview-advices/</guid>
+      <description>Вам нужно знать следующее: Arrays, Maps / Dictionaries (они же хэш-массивы и ассоциативные хэш-массивы), Stack, Heap, Trees, Graphs, Linked List. Еще хорошо бы знать алгоритм построения Trie, так как он используется в некоторых задачах. В качестве базового ресурса для изучения структур данных я бы посоветовал всем известную книгу Cracking the Coding Interview и снова тот же LeetCode, где вы сможете выбрать задачи по категориям и потренироваться в их решении.&#xA;Как пройти Behavioral interview Это интервью может показаться самым простым, но это совсем не так.</description>
     </item>
     <item>
       <title>Others</title>
@@ -34,7 +34,7 @@
       <link>https://bege13mot.github.io/qa/go-questions/</link>
       <pubDate>Mon, 10 Apr 2023 10:00:00 +0400</pubDate>
       <guid>https://bege13mot.github.io/qa/go-questions/</guid>
-      <description>Вопросы и ответы для собеседования Go-разработчика *Часть I. Базовые&#xA;*Часть II. Что там с конкурентностью?&#xA;Популярные задачи для собеседований бэкенд-разработчиков на Go и их решения&#xA;Співбесіда з Go. 200+ запитань для Junior, Middle, Senior&#xA;Коллеги, вы меня огорчаете&#xA;Junior Software engineering Какие бывают области памяти программы? В чем их особенности и отличия?&#xA;stack - ограниченный размер, диамически растет для goroutines heap - требует работу GC Расскажите, что вы знаете о HTTP-протоколе, какие составные части запроса?</description>
+      <description>Вопросы и ответы для собеседования Go-разработчика *Часть I. Базовые&#xA;*Часть II. Что там с конкурентностью?&#xA;Популярные задачи для собеседований бэкенд-разработчиков на Go и их решения&#xA;Співбесіда з Go. 200+ запитань для Junior, Middle, Senior&#xA;Коллеги, вы меня огорчаете&#xA;Go — 100 вопросов/заданий с собеседований&#xA;Junior Software engineering Какие бывают области памяти программы? В чем их особенности и отличия?&#xA;stack - ограниченный размер, диамически растет для goroutines heap - требует работу GC Расскажите, что вы знаете о HTTP-протоколе, какие составные части запроса?</description>
     </item>
     <item>
       <title>Grokking the System Design Interview</title>
