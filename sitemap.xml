@@ -2,17 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://bege13mot.github.io/qa/interview-advices/</loc>
-    <lastmod>2023-12-14T10:00:00+04:00</lastmod>
-  </url><url>
     <loc>https://bege13mot.github.io/</loc>
-    <lastmod>2023-12-14T10:00:00+04:00</lastmod>
+    <lastmod>2025-01-10T20:00:00+03:00</lastmod>
+  </url><url>
+    <loc>https://bege13mot.github.io/qa/nice-learn/</loc>
+    <lastmod>2025-01-10T20:00:00+03:00</lastmod>
   </url><url>
     <loc>https://bege13mot.github.io/qa/</loc>
-    <lastmod>2023-12-14T10:00:00+04:00</lastmod>
+    <lastmod>2025-01-10T20:00:00+03:00</lastmod>
   </url><url>
-    <loc>https://bege13mot.github.io/qa/others/</loc>
-    <lastmod>2023-12-10T10:00:00+04:00</lastmod>
+    <loc>https://bege13mot.github.io/qa/promotion-money/</loc>
+    <lastmod>2024-12-10T10:00:00+04:00</lastmod>
+  </url><url>
+    <loc>https://bege13mot.github.io/qa/interview-advices/</loc>
+    <lastmod>2023-12-14T10:00:00+04:00</lastmod>
   </url><url>
     <loc>https://bege13mot.github.io/qa/interview/</loc>
     <lastmod>2023-11-12T20:00:00+04:00</lastmod>
@@ -122,7 +125,7 @@
     <loc>https://bege13mot.github.io/post/pandemic/</loc>
     <lastmod>2017-10-28T10:00:00+04:00</lastmod>
   </url><url>
-    <loc>https://bege13mot.github.io/qa/questions/</loc>
+    <loc>https://bege13mot.github.io/qa/linux-questions/</loc>
     <lastmod>2017-10-12T10:00:00+04:00</lastmod>
   </url><url>
     <loc>https://bege13mot.github.io/post/unix-book/</loc>
